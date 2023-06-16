@@ -1,0 +1,151 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Filter Include="Source Files">
+      <UniqueIdentifier>{4FC737F1-C7A5-4376-A066-2A32D752A2FF}</UniqueIdentifier>
+      <Extensions>qml;cpp;c;cc;cxx;def;odl;idl;hpj;bat;asm;asmx</Extensions>
+    </Filter>
+    <Filter Include="Header Files">
+      <UniqueIdentifier>{93995380-89BD-4b04-88EB-625FBE52EBFB}</UniqueIdentifier>
+      <Extensions>h;hh;hpp;hxx;hm;inl;inc;xsd</Extensions>
+    </Filter>
+    <Filter Include="Form Files">
+      <UniqueIdentifier>{99349809-55BA-4b9d-BF79-8FDBB0286EB3}</UniqueIdentifier>
+      <Extensions>ui</Extensions>
+    </Filter>
+    <Filter Include="Translation Files">
+      <UniqueIdentifier>{639EADAA-A684-42e4-A9AD-28FC9BCB8F7C}</UniqueIdentifier>
+      <Extensions>ts</Extensions>
+    </Filter>
+    <Filter Include="Form Files\Resource Files">
+      <UniqueIdentifier>{67DA6AB6-F800-4c08-8B7A-83BB121AAD01}</UniqueIdentifier>
+      <Extensions>qrc;rc;ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe;resx;tiff;tif;png;wav;mfcribbon-ms</Extensions>
+    </Filter>
+    <Filter Include="Header Files\ui">
+      <UniqueIdentifier>{896b376a-dbf9-43d9-b7e9-755062888ea3}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <QtRcc Include="calendar.qrc">
+      <Filter>Form Files\Resource Files</Filter>
+    </QtRcc>
+    <QtMoc Include="calendar.h">
+      <Filter>Header Files</Filter>
+    </QtMoc>
+    <ClCompile Include="calendar.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="main.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="TODOwidget.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="tsplan.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="decision_make.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="date.h">
+      <Filter>Header Files</Filter>
+    </ClCompile>
+    <ClCompile Include="REG_N_LOGIN.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="usr_mng.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="team_mng.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="bridge.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="calendar_team.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="event%280%29.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="category.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="config.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="event_mng.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="struct.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="usr_mng.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="USER.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="TEAM.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="EVENT.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <QtUic Include="TODOwidget.ui">
+      <Filter>Header Files\ui</Filter>
+    </QtUic>
+    <QtUic Include="REG_N_LOGIN.ui">
+      <Filter>Header Files\ui</Filter>
+    </QtUic>
+    <QtUic Include="calendar.ui">
+      <Filter>Header Files\ui</Filter>
+    </QtUic>
+    <QtUic Include="Team_mng.ui">
+      <Filter>Header Files\ui</Filter>
+    </QtUic>
+    <QtUic Include="calendar_team.ui">
+      <Filter>Header Files\ui</Filter>
+    </QtUic>
+  </ItemGroup>
+  <ItemGroup>
+    <QtMoc Include="TODOwidget.h">
+      <Filter>Header Files</Filter>
+    </QtMoc>
+    <QtMoc Include="REG_N_LOGIN.h">
+      <Filter>Header Files</Filter>
+    </QtMoc>
+    <QtMoc Include="team_mng.h">
+      <Filter>Header Files</Filter>
+    </QtMoc>
+    <QtMoc Include="bridge.h">
+      <Filter>Header Files</Filter>
+    </QtMoc>
+    <QtMoc Include="calendar_team.h">
+      <Filter>Header Files</Filter>
+    </QtMoc>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="cpp.hint" />
+    <None Include="Baidu_JS\BDmap.html">
+      <Filter>Form Files\Resource Files</Filter>
+    </None>
+    <None Include="Baidu_JS\qwebchannel.js">
+      <Filter>Form Files\Resource Files</Filter>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <Image Include="Baidu_JS\heli.png">
+      <Filter>Form Files\Resource Files</Filter>
+    </Image>
+    <Image Include="Baidu_JS\home.png">
+      <Filter>Form Files\Resource Files</Filter>
+    </Image>
+  </ItemGroup>
+</Project>
