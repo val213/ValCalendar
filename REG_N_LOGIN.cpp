@@ -9,7 +9,7 @@ reg_n_login::reg_n_login(QDialog* parent)
 	setWindowOpacity(0.9);
 	
 
-	this->setStyleSheet("background: url(:/calendar/111.jpg);");//窗口背景设置
+    //this->setStyleSheet("background: url(:/calendar/111.jpg);");//窗口背景设置
 	//或setStyleSheet("background-image: url(:/image/profile.png);")
 	ui.lineEdit->setEchoMode(QLineEdit::Password);//密文输入
 	ui.lineEdit_3->setStyleSheet("font: 25 14pt '微软雅黑 Light';" //字体

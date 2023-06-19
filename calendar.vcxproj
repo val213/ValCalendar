@@ -34,10 +34,11 @@
     <QtInstall>msvc2019_64</QtInstall>
     <QtModules>core;gui;network;widgets;opengl;openglwidgets;remoteobjects;sql;webchannel;webenginecore;websockets;webview;networkauth;webenginewidgets;webenginequick</QtModules>
     <QtBuildConfig>debug</QtBuildConfig>
+    <QtDeploy>true</QtDeploy>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Release|x64'" Label="QtSettings">
     <QtInstall>msvc2019_64</QtInstall>
-    <QtModules>core;gui;widgets</QtModules>
+    <QtModules>core;network;quick;quickcontrols2;quickdialogs2;quicklayouts;qmltest;testlib;widgets;core5compat;opengl;openglwidgets;quickwidgets;webchannel;webenginecore;websockets;webview;positioning;charts;networkauth;quicktimeline;webenginewidgets;webenginequick</QtModules>
     <QtBuildConfig>release</QtBuildConfig>
   </PropertyGroup>
   <Target Name="QtMsBuildNotFound" BeforeTargets="CustomBuild;ClCompile" Condition="!Exists('$(QtMsBuild)\qt.targets') or !Exists('$(QtMsBuild)\qt.props')">
@@ -100,6 +101,7 @@
     <ClCompile Include="REG_N_LOGIN.cpp" />
     <ClCompile Include="team_mng.cpp" />
     <ClCompile Include="TODOwidget.cpp" />
+    <ClCompile Include="TODO_team.cpp" />
     <ClCompile Include="tsplan.cpp" />
     <ClCompile Include="usr_mng.cpp" />
     <QtRcc Include="calendar.qrc" />
@@ -123,6 +125,7 @@
     <ClInclude Include="struct.h" />
     <QtMoc Include="team_mng.h" />
     <ClInclude Include="TEAM.h" />
+    <QtMoc Include="TODO_team.h" />
     <ClInclude Include="USER.h" />
     <ClInclude Include="usr_mng.h" />
     <QtMoc Include="REG_N_LOGIN.h" />

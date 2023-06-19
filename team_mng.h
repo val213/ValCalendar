@@ -21,6 +21,8 @@ public:
 	void on_cellselect(const QModelIndex& index);
 	void on_exit_team_ButtonClicked(const QModelIndex& index);
 	void on_delete_team_ButtonClicked(const QModelIndex& index);
+	void on_doubleClicked_belong();
+	void on_doubleClicked_create();
 private:
 
 public slots:

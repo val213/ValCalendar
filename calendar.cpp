@@ -258,6 +258,8 @@ void calendar::sortTableByColumn(QTableWidget* tableWidget, int column)
 
 calendar::~calendar()
 {}
+
+//这个函数好像没用上，被另一个函数迭代掉了
 void calendar::load_usr_Event()
 {
     //从当前用户对应的.txt文件中读取事件记录

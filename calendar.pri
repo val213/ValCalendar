@@ -10,26 +10,33 @@ message("You are running qmake on a generated .pro file. This may not work!")
 HEADERS += ./date.h \
     ./category.h \
     ./config.h \
-    ./event.h \
+    ./event(0).h \
+    ./EVENT.h \
     ./event_mng.h \
     ./struct.h \
+    ./TEAM.h \
+    ./USER.h \
     ./usr_mng.h \
     ./calendar.h \
+    ./bridge.h \
+    ./calendar_team.h \
     ./team_mng.h \
+    ./TODO_team.h \
     ./REG_N_LOGIN.h \
-    ./TODOwidget.h \
-    ./bridge.h
-SOURCES += ./decision_make.cpp \
+    ./TODOwidget.h
+SOURCES += ./bridge.cpp \
+    ./calendar_team.cpp \
+    ./decision_make.cpp \
     ./REG_N_LOGIN.cpp \
     ./team_mng.cpp \
     ./TODOwidget.cpp \
+    ./TODO_team.cpp \
     ./tsplan.cpp \
     ./usr_mng.cpp \
     ./calendar.cpp \
-    ./main.cpp \
-    ./bridge.cpp \
-    ./file_proc.cpp
+    ./main.cpp
 FORMS += ./calendar.ui \
+    ./calendar_team.ui \
     ./REG_N_LOGIN.ui \
     ./Team_mng.ui \
     ./TODOwidget.ui

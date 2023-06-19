@@ -67,6 +67,9 @@
     <ClCompile Include="calendar_team.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="TODO_team.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="event%280%29.h">
@@ -128,6 +131,9 @@
       <Filter>Header Files</Filter>
     </QtMoc>
     <QtMoc Include="calendar_team.h">
+      <Filter>Header Files</Filter>
+    </QtMoc>
+    <QtMoc Include="TODO_team.h">
       <Filter>Header Files</Filter>
     </QtMoc>
   </ItemGroup>

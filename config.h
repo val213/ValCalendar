@@ -21,10 +21,6 @@
 #include <QTextStream>
 #include <QDateTime>
 #include <QTimer>
-#include <QSqlDatabase>
-#include <QSqlError>
-#include <QSqlQuery>
-#include <QSqlRecord>
 #include <QVector>
 
 #include "struct.h"  // 自定义头文件

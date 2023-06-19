@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="viewport" content="initial-scale=1.0, user-scalable=no" />
+<title>CanvasLayer</title>
+<script type="text/javascript" src="https://api.map.baidu.com/api?v=2.0&ak=x1NFe6qIPjbg0CimviwmMxW5ycXKZeG2&s=1"></script>
+<style type="text/css">
+body, html, #container {
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  margin: 0;
+  font-family: "微软雅黑";
+}
+</style>
+</head>
+<body>
+<div id="container"></div>
+<script src="qwebchannel.js"></script>
+<script type="text/javascript">
+window.onload = function() {
+  var mp = new BMap.Map("container");
+  mp.centerAndZoom(new BMap.Point(113.411968, 23.054905), 10);
+  mp.enableScrollWheelZoom();
+
+  // QWebChannel 初始化代码
+  new QWebChannel(qt.webChannelTransport, function(channel) {
+    mw = channel.objects.bridge;
+    mp.addEventListener("click", function(e) {
+      mw.RcvPoint(e.point.lng, e.point.lat);
+    });
+  });
+};
+
+function SetPoint(lng, lat) {
+  if (typeof mp !== "undefined") {
+    mp.setCenter(new BMap.Point(lng, lat));
+  }
+}
+</script>
+</body>
+</html>

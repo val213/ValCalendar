@@ -5,6 +5,7 @@
 #include<qregularexpression.h>
 #include<qmessagebox.h>
 #include"calendar_team.h"
+#include"ui_Team_mng.h"
 //所有团队的集合
 TEAM teams[MAX_TEAM_NUM];
 unsigned int team_nums;
@@ -21,13 +22,13 @@ team_mng::team_mng(QWidget* parent)
 	connect(ui.pushButton, &QPushButton::clicked,this,&team_mng::create_new_team);
 	//加入团队
 	connect(ui.pushButton_4, &QPushButton::clicked, this, &team_mng::join_team);
-	//删除团队
-	connect(ui.pushButton_3, &QPushButton::clicked, this, &team_mng::delete_team);
-	//退出团队
-	connect(ui.pushButton_6, &QPushButton::clicked, this, &team_mng::exit_team);
 
-	//双击事件选中某个团队
+	//单击事件选中某个团队
 	connect(ui.tableWidget, &QTableWidget::clicked, this, &team_mng::on_cellselect);
+	connect(ui.tableWidget_2, &QTableWidget::clicked, this, &team_mng::on_cellselect);
+	//双击QTableWidget行，进入该行对应的team_id，并且传入打开的团队日历窗口
+	connect(ui.tableWidget, &QTableWidget::doubleClicked, this, &team_mng::on_doubleClicked_belong);
+	connect(ui.tableWidget_2, &QTableWidget::doubleClicked, this, &team_mng::on_doubleClicked_create);
 	updateTable_team();
 	//connect(timer_team, &QTimer::timeout, this, &team_mng::updateTable_team);
 	//timer_team->start(1000); // 每隔1秒触发更新
@@ -202,7 +203,7 @@ void team_mng::create_new_team()
 
 }
 
-
+//被迭代掉了
 void team_mng::delete_team()
 {
 	//这个是不是能整合进team_create的下一级操作？？
@@ -446,15 +447,10 @@ void team_mng::confirm_join(const int& team_id, const QString& team_password)
 	//以上程序崩溃的原因已经修改好（qvector只能push_back不能用索引）
 }
 
-
-void team_mng::exit_team()
-{
-	//这个是不是能整合进team_belong的下一级操作？？
-	//用一个QTableView控件展示当前用户所属于的所有团队，支持退出操作
-}
-
 void team_mng::confirm_creat(const QString& teamName, const QString& password)
 {
+	//id,name,pswd,founder,mem_num,event_num,team_mng_file,team_events_file
+	//2001,SCUT,2023,1001,1,0,2001_team members.txt,2001_team events.txt
 	//创建一个新的团队
 	myteam_create.push_back(TEAM(teamName, password, USR_ID_NOW));
 	//将新团队的信息写入TEAMS文件和创建团队自己的文件
@@ -462,7 +458,7 @@ void team_mng::confirm_creat(const QString& teamName, const QString& password)
 	new_team_id = TEAM_ID_FORE + team_nums;
 	//弹出窗口提示创建团队成功并且反馈团队id
 	QMessageBox::information(nullptr, "Successfully create a team!", "The id of your team is: " + QString::number(new_team_id));
-	//将新团队的信息写入所有团队数组中该团队的对应信息中
+	//将新团队的信息写入记录所有团队的数组中该团队的对应信息中
 	teams[team_nums].team_id = new_team_id;
 	teams[team_nums].team_name = teamName;
 	teams[team_nums].team_passwd = password;
@@ -485,23 +481,26 @@ void team_mng::confirm_creat(const QString& teamName, const QString& password)
 	}
 
 
-	//为每个团队的事件信息专门创建文件并写入
+	//为每个团队的事件信息专门创建文件
 	QString filename_2 = QString::number(new_team_id) + "_team events.txt";
 	QFile file_2(filename_2);
 	if (!file_2.open(QIODevice::WriteOnly | QIODevice::Text | QIODevice::Append))
 		return;
 	QTextStream out_2(&file_2);
-	out_2 << teams[team_nums].team_events_nums << " ,";
-	//循环写入所有事件的id
-	for (int i = 0; i < teams[team_nums].team_events_nums; i++)
+	teams[team_nums].team_events_nums = 0;
+
+	for (int i = 0; i < users[USR_ID_NOW - USER_ID_FORE].teams_create.size(); i++)
 	{
-		out_2 << teams[team_nums].team_events[i].event_id << ",";
+		qDebug() << users[USR_ID_NOW - USER_ID_FORE].teams_create[i].team_id << " " << users[USR_ID_NOW - USER_ID_FORE].teams_create[i].team_name << " " << users[USR_ID_NOW - USER_ID_FORE].teams_create[i].leader_id << " " << users[USR_ID_NOW - USER_ID_FORE].teams_create[i].team_members_nums << " " << users[USR_ID_NOW - USER_ID_FORE].teams_create[i].team_members[0].usr_id << " " << users[USR_ID_NOW - USER_ID_FORE].teams_create[i].team_events_nums;
 	}
-
-
-
 	//将新团队的信息写入用户的团队列表
 	users[USR_ID_NOW - USER_ID_FORE].teams_create.push_back(teams[team_nums]);
+	//打印检查users[USR_ID_NOW - USER_ID_FORE].teams_create中的内容
+	for (int i = 0; i < users[USR_ID_NOW - USER_ID_FORE].teams_create.size(); i++)
+	{
+		qDebug() << users[USR_ID_NOW - USER_ID_FORE].teams_create[i].team_id << " " << users[USR_ID_NOW - USER_ID_FORE].teams_create[i].team_name << " " << users[USR_ID_NOW - USER_ID_FORE].teams_create[i].leader_id << " " << users[USR_ID_NOW - USER_ID_FORE].teams_create[i].team_members_nums << " " << users[USR_ID_NOW - USER_ID_FORE].teams_create[i].team_members[0].usr_id << " " << users[USR_ID_NOW - USER_ID_FORE].teams_create[i].team_events_nums;
+	}
+
 	//更新用户的团队创建文件
 	//先清空文件
 	QString filename_usr_create = users[USR_ID_NOW - USER_ID_FORE].usr_team_create_filename;
@@ -509,10 +508,18 @@ void team_mng::confirm_creat(const QString& teamName, const QString& password)
 	if (!team_create_file.open(QIODevice::ReadWrite | QIODevice::Text | QIODevice::Append))
 		return;
 	QTextStream out_usr_create(&team_create_file);
+	team_create_file.seek(0);
+	//读取文件中第一个逗号前的内容存入users[USR_ID_NOW - USER_ID_FORE].usr_team_create_num
+	QString temp;
+	temp = team_create_file.readLine();
+	users[USR_ID_NOW - USER_ID_FORE].usr_team_create_num = temp.section(',', 0, 0).toInt();
 	team_create_file.resize(0);
 	//再写入数据
 	//创建的团队数量
 	//团队1的id，团队1的名称，团队1现有总人数，团队1的全部成员
+	qDebug() << "users[USR_ID_NOW - USER_ID_FORE].usr_team_create_num++;" << users[USR_ID_NOW - USER_ID_FORE].usr_team_create_num;
+	users[USR_ID_NOW - USER_ID_FORE].usr_team_create_num++;
+	qDebug() << "users[USR_ID_NOW - USER_ID_FORE].usr_team_create_num++;" << users[USR_ID_NOW - USER_ID_FORE].usr_team_create_num;
 	out_usr_create << users[USR_ID_NOW - USER_ID_FORE].usr_team_create_num<< ",";
 	for (int i = 0; i < users[USR_ID_NOW - USER_ID_FORE].usr_team_create_num; i++)
 	{
@@ -567,8 +574,9 @@ void team_mng::confirm_creat(const QString& teamName, const QString& password)
 	team_file_out << teams[team_nums].team_id << "," << teamName << "," << password << "," << USR_ID_NOW << "," << 1 << "," << 0 << "," << filename << "," << filename_2;
 	team_file_out << "\n";
 	team_file.close();
-	
-	
+	//更新表格视图
+	team_nums++;
+	updateTable_team();
 	
 }
 
@@ -620,15 +628,15 @@ void team_mng::updateTable_team()
 {
 	//更新创建的团队
 	QFile file_create(users[USR_ID_NOW - USER_ID_FORE].usr_team_create_filename);
-
+	qDebug() << "users[USR_ID_NOW - USER_ID_FORE].usr_team_create_filename "<< users[USR_ID_NOW - USER_ID_FORE].usr_team_create_filename;
 	if (file_create.open(QIODevice::ReadOnly | QIODevice::Text)) {
 		QTextStream in(&file_create);
 
 		// 清空原有表格内容
 		ui.tableWidget_2->clearContents();
 		ui.tableWidget_2->setRowCount(0);
-		ui.tableWidget_2->setColumnCount(3); // 设置列数为4
-		//ui.tableWidget->setHorizontalHeaderLabels(QStringList()<<"团队ID"<<"团队名称"<<"团队创始人"<<"团队现有总人数");
+		ui.tableWidget_2->setColumnCount(3); // 设置列数为3
+		//ui.tableWidget->setHorizontalHeaderLabels(QStringList()<<"团队ID"<<"团队名称"<<"团队现有总人数");
 		ui.tableWidget_2->setHorizontalHeaderLabels(QStringList() << "team id" << "team name" <<  "total number of the team");
 		int row = 0; // 行计数器
 		while (!in.atEnd()) {
@@ -641,7 +649,7 @@ void team_mng::updateTable_team()
 				QString content3 = fields[3]; // 第三个字段内容
 				// 在表格中添加一行
 				ui.tableWidget_2->insertRow(row);
-
+				qDebug()<<"add a line in QTableWidget! " << content1 << content2 << content3;
 				// 创建QTableWidgetItem并设置内容
 				QTableWidgetItem* item1 = new QTableWidgetItem(content1);
 				QTableWidgetItem* item2 = new QTableWidgetItem(content2);
@@ -687,7 +695,7 @@ void team_mng::updateTable_team()
 				QString content4 = fields[4]; // 第四个字段内容
 				// 在表格中添加一行
 				ui.tableWidget->insertRow(row);
-
+				qDebug() << "add a line in QTableWidget! " << content1 << content2 << content3<<content4;
 				// 创建QTableWidgetItem并设置内容
 				QTableWidgetItem* item1 = new QTableWidgetItem(content1);
 				QTableWidgetItem* item2 = new QTableWidgetItem(content2);
@@ -712,4 +720,39 @@ void team_mng::updateTable_team()
 	}
 
 	
+}
+
+void team_mng::on_doubleClicked_belong()
+{
+	//双击QTableWidget行，进入该行对应的team_id，并且传入打开的团队日历窗口
+	QModelIndex index = ui.tableWidget->currentIndex();
+	int row = index.row();
+	QTableWidgetItem *item = ui.tableWidget->item(row, 0);
+	QString team_id = item->text();
+	//qDebug() << team_id;
+	//qDebug() << "double clicked";
+	//打开团队日历窗口
+	calendar_team *calendar = new calendar_team;
+	calendar->setWindowTitle("Team Calendar");
+	calendar->set_team_id(team_id);
+	calendar->updateTable_calendar();
+	calendar->show();
+}
+
+void team_mng::on_doubleClicked_create()
+{
+	//双击QTableWidget行，进入该行对应的team_id，并且传入打开的团队日历窗口
+	QModelIndex index = ui.tableWidget_2->currentIndex();
+	int row = index.row();
+	QTableWidgetItem* item = ui.tableWidget_2->item(row, 0);
+	QString team_id = item->text();
+	qDebug() << "on_doubleClicked_create" << team_id;
+	//qDebug() << team_id;
+	//qDebug() << "double clicked";
+	//打开团队日历窗口
+	calendar_team* calendar = new calendar_team;
+	calendar->setWindowTitle("Team Calendar");
+	calendar->set_team_id(team_id);
+	calendar->updateTable_calendar();
+	calendar->show();
 }

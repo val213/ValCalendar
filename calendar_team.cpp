@@ -9,6 +9,7 @@
 #include "REG_N_LOGIN.h"
 #include <QMessageBox>
 #include"calendar_team.h"
+#include"TODO_team.h"
 using namespace std;
 calendar_team::calendar_team(QWidget* parent)
     : QMainWindow(parent)
@@ -24,7 +25,7 @@ calendar_team::calendar_team(QWidget* parent)
     QTimer* CurrentTime = new QTimer(this);
     CurrentTime->start(0);
     //使用定时器信号槽，尽快更新时间的显示
-    connect(CurrentTime, &QTimer::timeout, [=]() {
+    connect(CurrentTime, &QTimer::timeout,this, [=]() {
         QDateTime current_time = QDateTime::currentDateTime();
         //显示时间，格式为：年-月-日 时：分：秒 周几
         QString StrCurrentTime = current_time.toString("yyyy-MM-dd hh:mm:ss ddd");
@@ -33,22 +34,27 @@ calendar_team::calendar_team(QWidget* parent)
         ui.label->setText(StrCurrentTime);
         });
     //设置当前团队的团队名称
-    ui.label_2->setText(user_now.usr_name);
+    //ui.label_2->setText(user_now.usr_name);
     //users[user_nums - 1].usr_filename
 
 
     //双击选中团队
-    connect(ui.tableWidget, &QTableWidget::cellDoubleClicked, this, &calendar_team::on_cellselect);
+    //connect(ui.tableWidget, &QTableWidget::cellDoubleClicked, this, &calendar_team::on_cellselect);
     //connect(timer, &QTimer::timeout, this, &calendar_team::updateTable);
     //timer->start(1000); // 每隔1秒触发更新
     //关闭窗口后程序不退出
     setAttribute(Qt::WA_QuitOnClose, false);
+    
 
 }
 // 读取文件内容并解析为表格数据并更新
 void calendar_team::updateTable()
 {
-    QFile file(users[USR_ID_NOW - USER_ID_FORE].usr_filename);
+    team_now.team_id = team_id.toInt();
+    team_now.team_events_filename = QString::number(team_now.team_id) + "_team events.txt";
+    //team_now.team_id = team_id_from_TODOsignals.toInt();
+    qDebug() << team_now.team_id << " calendar " << team_now.team_events_filename;
+    QFile file(team_now.team_events_filename);
     //qDebug() <<"hey there!" << users[USR_ID_NOW - USER_ID_FORE].usr_filename;
     if (file.open(QIODevice::ReadOnly | QIODevice::Text)) {
         QTextStream in(&file);
@@ -108,20 +114,34 @@ void calendar_team::updateTable()
 
 }
 
+void calendar_team::set_team_id(QString id)
+{
+    this->team_id = id;
+    team_now = teams[team_id.toInt() - TEAM_ID_FORE];
+    qDebug() << "team_id set_team_id: " << team_id;
+    updateTable();
+    //设置当前团队的团队名称
+    ui.label_2->setText(team_id);
+}
+
+void calendar_team::updateTable_calendar()
+{
+
+}
+
 calendar_team::~calendar_team()
 {}
-void calendar_team::load_usr_Event()
+
+//这个函数被迭代掉了
+void calendar_team::load_team_Event()
 {
-    //从当前用户对应的.txt文件中读取事件记录
-    QFile usr_event_file(user_now.usr_filename);
-    if (!usr_event_file.open(QIODevice::ReadOnly | QIODevice::Text))
+    //从当前团队对应的.txt文件中读取事件记录
+    QFile team_event_file(team_now.team_events_filename);
+    if (!team_event_file.open(QIODevice::ReadOnly | QIODevice::Text))
     {
         QMessageBox::critical(this, "错误", "文件打开失败");
         return;
     }
-
-
-
 
 }
 void calendar_team::team_manage()
@@ -133,22 +153,12 @@ void calendar_team::team_manage()
 void calendar_team::handleDate(QDate date) // define the slot function
 {
 
-    TODOwidget* window = new TODOwidget(this); // create a new window object
+    TODO_team* window = new TODO_team(this); // create a new window object
+    window->set_team_id(team_id);
     window->show(); // show the window
+    connect(window, &TODO_team::TODO_add_team, this, &calendar_team::updateTable);
 }
 
-
-
-// 处理单元格文本修改的槽函数
-void calendar_team::on_cellselect(int row, int column) {
-    timer->stop(); // 停止定时器
-    /*
-    * 错误语法
-    connect(ui.pushButton_2, &QPushButton::clicked, [this](int row, int column) { &calendar_team::finished_cellChanged; });
-    */
-    connect(ui.pushButton_2, &QPushButton::clicked, [this, row, column]() { finished_cellChanged(row, column); });
-    connect(ui.pushButton_3, &QPushButton::clicked, this, &calendar_team::on_deleteRowButtonClicked);
-}
 
 // 处理行删除的槽函数
 void calendar_team::on_deleteRowButtonClicked() {
@@ -160,7 +170,7 @@ void calendar_team::on_deleteRowButtonClicked() {
 
 // 更新数据到文件存档中
 void calendar_team::updateDataToFile(int row, int column, const QString& newText) {
-    QFile file(users[USR_ID_NOW - USER_ID_FORE].usr_filename);
+    QFile file(team_now.team_events_filename);
     if (file.open(QIODevice::ReadWrite | QIODevice::Text)) {
         QTextStream stream(&file);
         QStringList lines;
@@ -193,5 +203,4 @@ void calendar_team::finished_cellChanged(int row, int column)
     //qDebug() << newText;
     // 更新数据到文件存档中
     updateDataToFile(row, column, newText);
-    timer->start(1000);
 }
