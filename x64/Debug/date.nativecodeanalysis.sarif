@@ -1,0 +1,161 @@
+{
+  "version": "2.1.0",
+  "$schema": "https://schemastore.azurewebsites.net/schemas/json/sarif-2.1.0-rtm.5.json",
+  "runs": [
+    {
+      "results": [
+        {
+          "ruleId": "C26495",
+          "message": {
+            "text": "未初始化变量 Date::mday。始终初始化成员变量(type.6)。"
+          },
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "file:///C:/Users/yangluwei/source/repos/calendar/calendar/date.h"
+                },
+                "region": {
+                  "startLine": 17,
+                  "startColumn": 5,
+                  "endLine": 17,
+                  "endColumn": 5
+                }
+              },
+              "logicalLocations": [
+                {
+                  "fullyQualifiedName": "Date::{ctor}",
+                  "decoratedName": "??0Date@@QEAA@XZ",
+                  "kind": "function"
+                }
+              ]
+            }
+          ],
+          "properties": {
+            "targetSymbol": "Date::mday"
+          }
+        },
+        {
+          "ruleId": "C26495",
+          "message": {
+            "text": "未初始化变量 Date::wday。始终初始化成员变量(type.6)。"
+          },
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "file:///C:/Users/yangluwei/source/repos/calendar/calendar/date.h"
+                },
+                "region": {
+                  "startLine": 17,
+                  "startColumn": 5,
+                  "endLine": 17,
+                  "endColumn": 5
+                }
+              },
+              "logicalLocations": [
+                {
+                  "fullyQualifiedName": "Date::{ctor}",
+                  "decoratedName": "??0Date@@QEAA@XZ",
+                  "kind": "function"
+                }
+              ]
+            }
+          ],
+          "properties": {
+            "targetSymbol": "Date::wday"
+          }
+        },
+        {
+          "ruleId": "C26495",
+          "message": {
+            "text": "未初始化变量 Date::month。始终初始化成员变量(type.6)。"
+          },
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "file:///C:/Users/yangluwei/source/repos/calendar/calendar/date.h"
+                },
+                "region": {
+                  "startLine": 17,
+                  "startColumn": 5,
+                  "endLine": 17,
+                  "endColumn": 5
+                }
+              },
+              "logicalLocations": [
+                {
+                  "fullyQualifiedName": "Date::{ctor}",
+                  "decoratedName": "??0Date@@QEAA@XZ",
+                  "kind": "function"
+                }
+              ]
+            }
+          ],
+          "properties": {
+            "targetSymbol": "Date::month"
+          }
+        },
+        {
+          "ruleId": "C26495",
+          "message": {
+            "text": "未初始化变量 Date::year。始终初始化成员变量(type.6)。"
+          },
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "file:///C:/Users/yangluwei/source/repos/calendar/calendar/date.h"
+                },
+                "region": {
+                  "startLine": 17,
+                  "startColumn": 5,
+                  "endLine": 17,
+                  "endColumn": 5
+                }
+              },
+              "logicalLocations": [
+                {
+                  "fullyQualifiedName": "Date::{ctor}",
+                  "decoratedName": "??0Date@@QEAA@XZ",
+                  "kind": "function"
+                }
+              ]
+            }
+          ],
+          "properties": {
+            "targetSymbol": "Date::year"
+          }
+        }
+      ],
+      "tool": {
+        "driver": {
+          "name": "PREfast",
+          "fullName": "PREfast Code Analysis",
+          "version": "14.35.32216.1",
+          "informationUri": "https://aka.ms/cpp/ca"
+        }
+      },
+      "invocations": [
+        {
+          "executionSuccessful": true
+        }
+      ],
+      "artifacts": [
+        {
+          "location": {
+            "uri": "file:///C:/Users/yangluwei/source/repos/calendar/calendar/date.h"
+          },
+          "roles": [
+            "analysisTarget",
+            "resultFile"
+          ],
+          "hashes": {
+            "sha-256": "2e77485845b2f3a1e303abe814225510e3a29c31615a30d4d910439934609754"
+          }
+        }
+      ]
+    }
+  ]
+}

@@ -13,11 +13,18 @@ extern int USR_ID_NOW;
 class TODOwidget : public QMainWindow
 {
     Q_OBJECT
-
+protected:
+    bridge* JSBridge;
 public:
     TODOwidget(QWidget* parent = nullptr);
+
+    void geocodeAddress(const QString& address);
+
+
+    void onCalculateButtonClicked();
     void DisplaySlot(QString lng, QString lat);
     void on_pushButton_clicked();
+    void onDistanceAndTimeCalculated(const QString& duration, const QString& distance);
     ~TODOwidget();
     void save_Date();
 
@@ -29,8 +36,7 @@ public:
     //QWebEngineView* webEngineView_2;
     Ui::TODOwidget1 ui;
 
-protected:
-    bridge* JSBridge;
+
 signals:
     // 声明一个信号，用于通知calendar新的日程已经被添加，需要更新日程数据
     void TODO_add();

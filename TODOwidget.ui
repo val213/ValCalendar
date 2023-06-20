@@ -115,7 +115,7 @@
        </widget>
       </item>
       <item>
-       <widget class="QWebEngineView" name="webEngineView" native="true">
+       <widget class="QWebEngineView" name="webEngineView">
         <property name="sizePolicy">
          <sizepolicy hsizetype="Expanding" vsizetype="Expanding">
           <horstretch>0</horstretch>
@@ -125,15 +125,54 @@
         <property name="inputMethodHints">
          <set>Qt::ImhNone</set>
         </property>
-        <property name="url" stdset="0">
+        <property name="url">
          <url>
-          <string/>
+          <string>about:blank</string>
          </url>
         </property>
        </widget>
       </item>
       <item>
        <layout class="QHBoxLayout" name="horizontalLayout_2">
+        <item>
+         <widget class="QLabel" name="label_8">
+          <property name="minimumSize">
+           <size>
+            <width>0</width>
+            <height>30</height>
+           </size>
+          </property>
+          <property name="text">
+           <string>起点：</string>
+          </property>
+         </widget>
+        </item>
+        <item>
+         <widget class="QLineEdit" name="startInput"/>
+        </item>
+        <item>
+         <widget class="QLabel" name="label_9">
+          <property name="minimumSize">
+           <size>
+            <width>0</width>
+            <height>30</height>
+           </size>
+          </property>
+          <property name="text">
+           <string>终点：</string>
+          </property>
+         </widget>
+        </item>
+        <item>
+         <widget class="QLineEdit" name="endInput"/>
+        </item>
+        <item>
+         <widget class="QPushButton" name="calculateButton">
+          <property name="text">
+           <string>计算距离时间</string>
+          </property>
+         </widget>
+        </item>
         <item>
          <widget class="QLabel" name="label_6">
           <property name="minimumSize">
@@ -143,18 +182,15 @@
            </size>
           </property>
           <property name="text">
-           <string>接收框：</string>
+           <string>距离：</string>
           </property>
          </widget>
         </item>
         <item>
-         <widget class="QLineEdit" name="lineEdit_5"/>
+         <widget class="QLineEdit" name="distanceOutput"/>
         </item>
         <item>
-         <widget class="QLineEdit" name="lineEdit_4"/>
-        </item>
-        <item>
-         <widget class="QPushButton" name="pushButton">
+         <widget class="QLabel" name="label_10">
           <property name="minimumSize">
            <size>
             <width>0</width>
@@ -162,9 +198,12 @@
            </size>
           </property>
           <property name="text">
-           <string>发送</string>
+           <string>时间</string>
           </property>
          </widget>
+        </item>
+        <item>
+         <widget class="QLineEdit" name="durationOutput"/>
         </item>
        </layout>
       </item>

@@ -1,43 +1,109 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
+
 <head>
-<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-<meta name="viewport" content="initial-scale=1.0, user-scalable=no" />
-<title>CanvasLayer</title>
-<script type="text/javascript" src="https://api.map.baidu.com/api?v=2.0&ak=x1NFe6qIPjbg0CimviwmMxW5ycXKZeG2&s=1"></script>
-<style type="text/css">
-body, html, #container {
-  width: 100%;
-  height: 100%;
-  overflow: hidden;
-  margin: 0;
-  font-family: "微软雅黑";
-}
-</style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>计算驾车时间与距离</title>
+//<script type="text/javascript" src="qrc:/calendar/Baidu_JS/qwebchannel.js"></script>
+
+    <script type="text/javascript" src="https://api.map.baidu.com/api?type=webgl&v=3.0&ak=x1NFe6qIPjbg0CimviwmMxW5ycXKZeG2"></script>
+    <style>
+        html,
+        body {
+            width: 100%;
+            height: 100%;
+            padding: 0;
+            margin: 0;
+        }
+
+        #allmap {
+            width: 100%;
+            height: 100%;
+            overflow: hidden;
+        }
+    </style>
 </head>
+
 <body>
-<div id="container"></div>
-<script src="qwebchannel.js"></script>
-<script type="text/javascript">
-window.onload = function() {
-  var mp = new BMap.Map("container");
-  mp.centerAndZoom(new BMap.Point(113.411968, 23.054905), 10);
-  mp.enableScrollWheelZoom();
+    <div id='allmap'></div>
+    <script>
+        var map = new BMapGL.Map("allmap");
+        map.centerAndZoom(new BMapGL.Point(113.411968, 23.054905), 12);
 
-  // QWebChannel 初始化代码
-  new QWebChannel(qt.webChannelTransport, function(channel) {
-    mw = channel.objects.bridge;
-    mp.addEventListener("click", function(e) {
-      mw.RcvPoint(e.point.lng, e.point.lat);
-    });
-  });
-};
+        // 定义全局变量用于保存计算结果
+        var duration = "";
+        var distance = "";
 
-function SetPoint(lng, lat) {
-  if (typeof mp !== "undefined") {
-    mp.setCenter(new BMap.Point(lng, lat));
-  }
-}
-</script>
+        var searchComplete = function(results) {
+            if (transit.getStatus() != BMAP_STATUS_SUCCESS) {
+		console.log("搜索失败");
+                return;
+            }
+            var plan = results.getPlan(0);
+            duration = plan.getDuration(true); // 获取时间
+            distance = plan.getDistance(true); // 获取距离
+		console.log("bridge.distanceAndTimeCalculated");
+            // 在计算完成后，可以根据需要执行进一步的操作，或将结果返回给QT
+            // 例如，可以通过调用Qt的槽函数，将计算结果传递给QT进行显示
+            bridge.distanceAndTimeCalculated(duration, distance);
+        }
+
+        var transit = new BMapGL.DrivingRoute(map, {
+            renderOptions: { map: map },
+            onSearchComplete: searchComplete,
+            onPolylinesSet: function() {
+                setTimeout(function() { alert(output) }, "1000");
+            }
+        });
+
+        function geocodeAndCalculateDistance(startAddress, endAddress) {
+            var startGeo = new BMapGL.Geocoder();
+            startGeo.getPoint(startAddress, function(startPoint) {
+                if (startPoint) {
+                    var endGeo = new BMapGL.Geocoder();
+                    endGeo.getPoint(endAddress, function(endPoint) {
+                        if (endPoint) {
+                            map.centerAndZoom(startPoint, 16);
+                            map.addOverlay(new BMapGL.Marker(startPoint, { title: startAddress }));
+                            map.addOverlay(new BMapGL.Marker(endPoint, { title: endAddress }));
+                            calculateDistanceAndTime(startPoint.lng, startPoint.lat, endPoint.lng, endPoint.lat);
+                        } else {
+                            alert('终点地址没有解析到结果！');
+                        }
+                    }, '终点城市');
+                } else {
+                    alert('起点地址没有解析到结果！');
+                }
+            }, '起点城市');
+        }
+
+        function calculateDistanceAndTime(startLongitude, startLatitude, endLongitude, endLatitude) {
+            var startPt = new BMapGL.Point(startLongitude, startLatitude);
+            var endPt = new BMapGL.Point(endLongitude, endLatitude);
+		console.log("transit.search(startPt, endPt);");
+            transit.search(startPt, endPt);
+        }
+
+        // 在QT中注册bridge对象
+        var bridge = new QWebChannel(qt.webChannelTransport, function(channel) {
+            var bridgeObject = channel.objects.bridge;
+
+            // 定义bridge的geocodeAndCalculateDistance函数
+            bridgeObject.geocodeAndCalculateDistance.connect(function(startAddress, endAddress) {
+                // 这里可以执行地理编码和距离/时间计算的操作
+                geocodeAndCalculateDistance(startAddress, endAddress);
+            });
+
+            // 定义bridge的distanceAndTimeCalculated函数
+            bridgeObject.distanceAndTimeCalculated.connect(function(duration, distance) {
+                // 这里可以执行QT的相关操作，例如更新文本框等
+                console.log("Duration: " + duration);
+                console.log("Distance: " + distance);
+            });
+        });
+
+    </script>
 </body>
+
 </html>

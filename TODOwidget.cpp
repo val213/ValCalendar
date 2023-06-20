@@ -14,35 +14,48 @@ TODOwidget::TODOwidget(QWidget* parent)
 	connect(ui.buttonBox,&QDialogButtonBox::accepted,this,&TODOwidget::TODOwidget_accepted);
 	connect(ui.buttonBox, &QDialogButtonBox::rejected, this, &TODOwidget::close);
 
+    JSBridge = new bridge(ui.webEngineView, this); 
+    QWebChannel* channel = new QWebChannel(this);
+    channel->registerObject("bridge", JSBridge); // 将对象名称改为"bridge"
 
 
-    //JSBridge = new bridge(this);
-    //QWebChannel* channel = new QWebChannel(this);
-    //channel->registerObject("bridge", JSBridge); // 将对象名称改为"bridge"
-   // ui.webEngineView->settings()->setAttribute(QWebEngineSettings::JavascriptEnabled, true);
+    ui.webEngineView->settings()->setAttribute(QWebEngineSettings::JavascriptEnabled, true);
+    ui.webEngineView->settings()->setAttribute(QWebEngineSettings::WebGLEnabled, true);
+    // 将 QWebChannel 对象绑定到 view 的 profile 中
+    ui.webEngineView->page()->setWebChannel(channel);
+
+
+    //ui.webEngineView->settings()->setAttribute(QWebEngineSettings::JavascriptEnabled, true);
     //ui.webEngineView->setGeometry(QRect(10, 30, 581, 341));// 设置锚点与大小
     //ui.webEngineView->load(QUrl("C:\\Users\\yangluwei\\source\\repos\\calendar\\calendar\\Baidu_JS\\BDmap.html"));
-    QString path = QApplication::applicationDirPath() + "/BDmap.html";  //将html文件放入debug目录下
+    //QString path = QApplication::applicationDirPath() + "/BDmap.html";  //将html文件放入debug目录下
     //qDebug() << __FUNCTION__ << path;
-    //ui.webEngineView->load(QUrl(u8"file:///C:/Users/yangluwei/source/repos/calendar/calendar/Baidu_JS/BDmap.html"));
+    ui.webEngineView->load(QUrl("qrc:/calendar/Baidu_JS/BDmap.html"));
     //ui.webEngineView->load(QUrl::fromLocalFile(path));
 
-    ui.webEngineView->load(QUrl("https://map.baidu.com/search/%E5%8D%8E%E5%8D%97%E7%90%86%E5%B7%A5%E5%A4%A7%E5%AD%A6%E7%94%9F%E6%B4%BB%E5%8C%BA-c10%E6%A0%8B%E5%AD%A6%E7%94%9F%E5%85%AC%E5%AF%93/@12624641.275,2622040.17,19z?querytype=s&da_src=shareurl&wd=%E5%8D%8E%E5%8D%97%E7%90%86%E5%B7%A5%E5%A4%A7%E5%AD%A6%E7%94%9F%E6%B4%BB%E5%8C%BA-C10%E6%A0%8B%E5%AD%A6%E7%94%9F%E5%85%AC%E5%AF%93&c=25&src=0&wd2=%E5%B9%BF%E5%B7%9E%E5%B8%82%E7%95%AA%E7%A6%BA%E5%8C%BA&pn=0&sug=1&l=10&b=(12829376.05403883,4629568.744784641;13188689.18733266,4841930.870945831)&from=webmap&biz_forward=%7B%22scaler%22:2,%22styles%22:%22pl%22%7D&sug_forward=7496367a5f075bf0b9df8fd2&device_ratio=2"));  // 加载目标网页
+    //ui.webEngineView->load(QUrl(u8"https://www.ditu6.com/walk/"));  // 加载目标网页
 
     connect(ui.webEngineView, &QWebEngineView::loadFinished, [](bool ok) {
         if (ok) {
             // 页面加载完成后执行的操作
             qDebug() << "Page loaded successfully";
+  
+           
         }
         else {
             // 页面加载失败时执行的操作
             qDebug() << "Page failed to load";
         }
         });
-
-    //ui.webEngineView->setZoomFactor(1.2);  // 调整缩放因子以适应页面大小
+    connect(ui.calculateButton, &QPushButton::clicked, this, &TODOwidget::onCalculateButtonClicked);
+    connect(JSBridge, &bridge::distanceAndTimeCalculated, this, &TODOwidget::onDistanceAndTimeCalculated);
 
     ui.webEngineView->show();
+
+       
+    //ui.webEngineView->setZoomFactor(1.2);  // 调整缩放因子以适应页面大小
+
+    
    // ui.webEngineView->page()->setWebChannel(channel);
     
     /*
@@ -62,28 +75,26 @@ TODOwidget::TODOwidget(QWidget* parent)
    
    // connect(ui.webEngineView, &QWebEngineView::loadFinished,this, &TODOwidget::handleWebPageLoadFinished);
    // connect(JSBridge, &bridge::DisplayPoint, this, &TODOwidget::DisplaySlot);
-    ui.webEngineView->show();
-
-}
-void TODOwidget::DisplaySlot(QString lng, QString lat)
-{
-	qDebug() << lng << "," << lat;
-	ui.lineEdit_3->setText(lng);
-	ui.lineEdit_4->setText(lat);
 }
 
-void  TODOwidget::on_pushButton_clicked()
-{
-    QString context = ui.lineEdit_4->text();
-    if (!context.contains(','))
-    {
-        qDebug() << "wrong input format";        //输入格式 经度+纬度，中间以英文逗号‘,’隔开
-        return;
-    }
-    QString lng = context.split(',').at(0);
-    QString lat = context.split(',').at(1);
 
-    ui.webEngineView->page()->runJavaScript(QString("SetPoint(%1,%2)").arg(lng).arg(lat));
+
+void TODOwidget::onCalculateButtonClicked()
+{
+    // 获取起点和终点输入框的文本
+    QString start = ui.startInput->text();
+    QString end = ui.endInput->text();
+
+    // 调用JSBridge的槽函数，将起点和终点传递给JS文件
+    JSBridge->setStartAndEnd(start, end);
+}
+
+// 槽函数，用于接收计算结果并更新QT中的文本框
+void TODOwidget::onDistanceAndTimeCalculated(const QString& duration, const QString& distance)
+{
+    // 更新文本框显示计算结果
+    ui.distanceOutput->setText(duration);
+    ui.durationOutput->setText(distance);
 }
 
 TODOwidget::~TODOwidget()

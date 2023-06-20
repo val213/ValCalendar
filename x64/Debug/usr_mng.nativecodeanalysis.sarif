@@ -1,0 +1,235 @@
+{
+  "version": "2.1.0",
+  "$schema": "https://schemastore.azurewebsites.net/schemas/json/sarif-2.1.0-rtm.5.json",
+  "runs": [
+    {
+      "results": [
+        {
+          "ruleId": "C26495",
+          "message": {
+            "text": "未初始化变量 TEAM::team_id。始终初始化成员变量(type.6)。"
+          },
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "file:///C:/Users/yangluwei/source/repos/calendar/calendar/struct.h"
+                },
+                "region": {
+                  "startLine": 58,
+                  "startColumn": 2,
+                  "endLine": 58,
+                  "endColumn": 2
+                }
+              },
+              "logicalLocations": [
+                {
+                  "fullyQualifiedName": "TEAM::{ctor}",
+                  "decoratedName": "??0TEAM@@QEAA@VQString@@0H@Z",
+                  "kind": "function"
+                }
+              ]
+            }
+          ],
+          "properties": {
+            "targetSymbol": "TEAM::team_id"
+          }
+        },
+        {
+          "ruleId": "C26495",
+          "message": {
+            "text": "未初始化变量 TEAM::team_events_nums。始终初始化成员变量(type.6)。"
+          },
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "file:///C:/Users/yangluwei/source/repos/calendar/calendar/struct.h"
+                },
+                "region": {
+                  "startLine": 58,
+                  "startColumn": 2,
+                  "endLine": 58,
+                  "endColumn": 2
+                }
+              },
+              "logicalLocations": [
+                {
+                  "fullyQualifiedName": "TEAM::{ctor}",
+                  "decoratedName": "??0TEAM@@QEAA@VQString@@0H@Z",
+                  "kind": "function"
+                }
+              ]
+            }
+          ],
+          "properties": {
+            "targetSymbol": "TEAM::team_events_nums"
+          }
+        },
+        {
+          "ruleId": "C26495",
+          "message": {
+            "text": "未初始化变量 TEAM::team_members_nums。始终初始化成员变量(type.6)。"
+          },
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "file:///C:/Users/yangluwei/source/repos/calendar/calendar/struct.h"
+                },
+                "region": {
+                  "startLine": 58,
+                  "startColumn": 2,
+                  "endLine": 58,
+                  "endColumn": 2
+                }
+              },
+              "logicalLocations": [
+                {
+                  "fullyQualifiedName": "TEAM::{ctor}",
+                  "decoratedName": "??0TEAM@@QEAA@VQString@@0H@Z",
+                  "kind": "function"
+                }
+              ]
+            }
+          ],
+          "properties": {
+            "targetSymbol": "TEAM::team_members_nums"
+          }
+        },
+        {
+          "ruleId": "C26495",
+          "message": {
+            "text": "未初始化变量 TEAM::leader_id。始终初始化成员变量(type.6)。"
+          },
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "file:///C:/Users/yangluwei/source/repos/calendar/calendar/struct.h"
+                },
+                "region": {
+                  "startLine": 58,
+                  "startColumn": 2,
+                  "endLine": 58,
+                  "endColumn": 2
+                }
+              },
+              "logicalLocations": [
+                {
+                  "fullyQualifiedName": "TEAM::{ctor}",
+                  "decoratedName": "??0TEAM@@QEAA@VQString@@0H@Z",
+                  "kind": "function"
+                }
+              ]
+            }
+          ],
+          "properties": {
+            "targetSymbol": "TEAM::leader_id"
+          }
+        }
+      ],
+      "tool": {
+        "driver": {
+          "name": "PREfast",
+          "fullName": "PREfast Code Analysis",
+          "version": "14.35.32216.1",
+          "informationUri": "https://aka.ms/cpp/ca"
+        }
+      },
+      "invocations": [
+        {
+          "executionSuccessful": true
+        }
+      ],
+      "artifacts": [
+        {
+          "location": {
+            "uri": "file:///C:/Users/yangluwei/source/repos/calendar/calendar/struct.h"
+          },
+          "roles": [
+            "resultFile"
+          ],
+          "hashes": {
+            "sha-256": "48ad830e2a9370111da4b72413a624f6b43a390a5e7f971ac5ddf6494aba96a6"
+          }
+        },
+        {
+          "location": {
+            "uri": "file:///c:/users/yangluwei/source/repos/calendar/calendar/usr_mng.cpp"
+          },
+          "roles": [
+            "analysisTarget"
+          ],
+          "hashes": {
+            "sha-256": "1caee453ac4282c6c9987e5942de30e10ecfe1d3add4fb0bbf12945200c5373c"
+          }
+        },
+        {
+          "location": {
+            "uri": "file:///c:/users/yangluwei/source/repos/calendar/calendar/config.h"
+          },
+          "hashes": {
+            "sha-256": "9f4a7911f6a519146ef62b8254968163f1858ee029d2bdf28339fe5dc910aa65"
+          }
+        },
+        {
+          "location": {
+            "uri": "file:///c:/users/yangluwei/source/repos/calendar/calendar/usr_mng.h"
+          },
+          "hashes": {
+            "sha-256": "60bfde0b8e5edb6ca6d300f63777399c8c926754ffd502c9b5d1fba72177e435"
+          }
+        },
+        {
+          "location": {
+            "uri": "file:///c:/users/yangluwei/source/repos/calendar/calendar/team_mng.h"
+          },
+          "hashes": {
+            "sha-256": "e6110de8fddabb952772147b35ea2b1a7d44ce9e5ccd4df26cba0fa1cfc0eb19"
+          }
+        },
+        {
+          "location": {
+            "uri": "file:///c:/users/yangluwei/source/repos/calendar/calendar/reg_n_login.h"
+          },
+          "hashes": {
+            "sha-256": "a806d30af0618a5b7b082b1b22f96931dc7464973656fa2bb6cebf8b93f119b4"
+          }
+        },
+        {
+          "location": {
+            "uri": "file:///c:/users/yangluwei/source/repos/calendar/calendar/calendar.h"
+          },
+          "hashes": {
+            "sha-256": "e25b69d184ea1bee70b546e8ca388ab4bfd413ad40f5ece1f55a5441c42092b3"
+          }
+        },
+        {
+          "location": {
+            "uri": "file:///c:/users/yangluwei/source/repos/calendar/calendar/todowidget.h"
+          },
+          "hashes": {
+            "sha-256": "7a9f8862783d3e16fd565d99728f324e07e7c7decdf6bf55983211469b547d25"
+          }
+        },
+        {
+          "location": {
+            "uri": "file:///c:/users/yangluwei/source/repos/calendar/calendar/bridge.h"
+          },
+          "hashes": {
+            "sha-256": "464766d43f471c26cd5ce85ee0c72c9754b81c956fe9b7b6709adc5a66cdd886"
+          }
+        },
+        {
+          "location": {
+            "uri": "file:///c:/users/yangluwei/source/repos/calendar/calendar/event_mng.h"
+          },
+          "hashes": {
+            "sha-256": "2f3e946164d43233dfb38cbb7ea9fad9df269f91bcf306fcf55a36966f78e3a3"
+          }
+        }
+      ]
+    }
+  ]
+}

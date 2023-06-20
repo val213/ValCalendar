@@ -136,6 +136,9 @@
     <QtMoc Include="TODO_team.h">
       <Filter>Header Files</Filter>
     </QtMoc>
+    <QtMoc Include="tsplan.h">
+      <Filter>Header Files</Filter>
+    </QtMoc>
   </ItemGroup>
   <ItemGroup>
     <None Include="cpp.hint" />
