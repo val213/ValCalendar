@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<DEFECTS>
+  <DEFECT>
+    <SFA>
+      <FILEPATH>C:\Users\yangluwei\source\repos\calendar\calendar\</FILEPATH>
+      <FILENAME>struct.h</FILENAME>
+      <LINE>58</LINE>
+      <COLUMN>1</COLUMN>
+    </SFA>
+    <DEFECTCODE>26495</DEFECTCODE>
+    <DESCRIPTION>未初始化变量 TEAM::team_id。始终初始化成员变量(type.6)。</DESCRIPTION>
+    <FUNCTION>TEAM::{ctor}</FUNCTION>
+    <DECORATED>??0TEAM@@QEAA@VQString@@0H@Z</DECORATED>
+    <FUNCLINE>58</FUNCLINE>
+    <ADDITIONALINFO>
+      <targetSymbol>TEAM::team_id</targetSymbol>
+    </ADDITIONALINFO>
+    <PATH></PATH>
+  </DEFECT>
+  <DEFECT>
+    <SFA>
+      <FILEPATH>C:\Users\yangluwei\source\repos\calendar\calendar\</FILEPATH>
+      <FILENAME>struct.h</FILENAME>
+      <LINE>58</LINE>
+      <COLUMN>1</COLUMN>
+    </SFA>
+    <DEFECTCODE>26495</DEFECTCODE>
+    <DESCRIPTION>未初始化变量 TEAM::leader_id。始终初始化成员变量(type.6)。</DESCRIPTION>
+    <FUNCTION>TEAM::{ctor}</FUNCTION>
+    <DECORATED>??0TEAM@@QEAA@VQString@@0H@Z</DECORATED>
+    <FUNCLINE>58</FUNCLINE>
+    <ADDITIONALINFO>
+      <targetSymbol>TEAM::leader_id</targetSymbol>
+    </ADDITIONALINFO>
+    <PATH></PATH>
+  </DEFECT>
+  <DEFECT>
+    <SFA>
+      <FILEPATH>C:\Users\yangluwei\source\repos\calendar\calendar\</FILEPATH>
+      <FILENAME>struct.h</FILENAME>
+      <LINE>58</LINE>
+      <COLUMN>1</COLUMN>
+    </SFA>
+    <DEFECTCODE>26495</DEFECTCODE>
+    <DESCRIPTION>未初始化变量 TEAM::team_members_nums。始终初始化成员变量(type.6)。</DESCRIPTION>
+    <FUNCTION>TEAM::{ctor}</FUNCTION>
+    <DECORATED>??0TEAM@@QEAA@VQString@@0H@Z</DECORATED>
+    <FUNCLINE>58</FUNCLINE>
+    <ADDITIONALINFO>
+      <targetSymbol>TEAM::team_members_nums</targetSymbol>
+    </ADDITIONALINFO>
+    <PATH></PATH>
+  </DEFECT>
+  <DEFECT>
+    <SFA>
+      <FILEPATH>C:\Users\yangluwei\source\repos\calendar\calendar\</FILEPATH>
+      <FILENAME>struct.h</FILENAME>
+      <LINE>58</LINE>
+      <COLUMN>1</COLUMN>
+    </SFA>
+    <DEFECTCODE>26495</DEFECTCODE>
+    <DESCRIPTION>未初始化变量 TEAM::team_events_nums。始终初始化成员变量(type.6)。</DESCRIPTION>
+    <FUNCTION>TEAM::{ctor}</FUNCTION>
+    <DECORATED>??0TEAM@@QEAA@VQString@@0H@Z</DECORATED>
+    <FUNCLINE>58</FUNCLINE>
+    <ADDITIONALINFO>
+      <targetSymbol>TEAM::team_events_nums</targetSymbol>
+    </ADDITIONALINFO>
+    <PATH></PATH>
+  </DEFECT>
+</DEFECTS>

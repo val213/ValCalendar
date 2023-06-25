@@ -67,6 +67,9 @@
     <ClCompile Include="TODO_team.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="Mapwidget.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="category.h">
@@ -110,6 +113,9 @@
     <QtUic Include="calendar_team.ui">
       <Filter>Header Files\ui</Filter>
     </QtUic>
+    <QtUic Include="Mapwidget.ui">
+      <Filter>Header Files\ui</Filter>
+    </QtUic>
   </ItemGroup>
   <ItemGroup>
     <QtMoc Include="TODOwidget.h">
@@ -131,6 +137,9 @@
       <Filter>Header Files</Filter>
     </QtMoc>
     <QtMoc Include="tsplan.h">
+      <Filter>Header Files</Filter>
+    </QtMoc>
+    <QtMoc Include="Mapwidget.h">
       <Filter>Header Files</Filter>
     </QtMoc>
   </ItemGroup>

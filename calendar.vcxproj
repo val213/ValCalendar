@@ -98,6 +98,7 @@
     <ClCompile Include="bridge.cpp" />
     <ClCompile Include="calendar_team.cpp" />
     <ClCompile Include="decision_make.cpp" />
+    <ClCompile Include="Mapwidget.cpp" />
     <ClCompile Include="REG_N_LOGIN.cpp" />
     <ClCompile Include="team_mng.cpp" />
     <ClCompile Include="TODOwidget.cpp" />
@@ -110,6 +111,7 @@
     <ClCompile Include="calendar.cpp" />
     <ClCompile Include="main.cpp" />
     <QtUic Include="calendar_team.ui" />
+    <QtUic Include="Mapwidget.ui" />
     <QtUic Include="REG_N_LOGIN.ui" />
     <QtUic Include="Team_mng.ui" />
     <QtUic Include="TODOwidget.ui" />
@@ -121,6 +123,7 @@
     <ClInclude Include="config.h" />
     <ClInclude Include="EVENT.h" />
     <ClInclude Include="event_mng.h" />
+    <QtMoc Include="Mapwidget.h" />
     <ClInclude Include="struct.h" />
     <QtMoc Include="team_mng.h" />
     <ClInclude Include="TEAM.h" />

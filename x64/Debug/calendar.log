@@ -1,17 +1,7 @@
-﻿  REG_N_LOGIN.cpp
-  TODO_team.cpp
-  TODOwidget.cpp
-  calendar.cpp
-  calendar_team.cpp
-  main.cpp
-  team_mng.cpp
-  usr_mng.cpp
-  moc_REG_N_LOGIN.cpp
-  moc_TODO_team.cpp
-  moc_TODOwidget.cpp
-  moc_calendar.cpp
-  moc_calendar_team.cpp
-  moc_team_mng.cpp
+﻿  uic Mapwidget.ui
+  moc Mapwidget.h
+  Mapwidget.cpp
+  moc_Mapwidget.cpp
   calendar.vcxproj -> C:\Users\yangluwei\source\repos\calendar\x64\Debug\calendar.exe
   windeployqt: "C:/Qt/6.2.4/msvc2019_64/bin\windeployqt.exe" --list target --dir C:\Users\yangluwei\source\repos\calendar\x64\Debug\ C:\Users\yangluwei\source\repos\calendar\x64\Debug\calendar.exe
 EXEC : warning : Cannot find Visual Studio installation directory, VCINSTALLDIR is not set.

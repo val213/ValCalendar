@@ -1,0 +1,51 @@
+{
+  "version": "2.1.0",
+  "$schema": "https://schemastore.azurewebsites.net/schemas/json/sarif-2.1.0-rtm.5.json",
+  "runs": [
+    {
+      "results": [],
+      "tool": {
+        "driver": {
+          "name": "PREfast",
+          "fullName": "PREfast Code Analysis",
+          "version": "14.35.32216.1",
+          "informationUri": "https://aka.ms/cpp/ca"
+        }
+      },
+      "invocations": [
+        {
+          "executionSuccessful": true
+        }
+      ],
+      "artifacts": [
+        {
+          "location": {
+            "uri": "file:///c:/users/yangluwei/source/repos/calendar/calendar/mapwidget.cpp"
+          },
+          "roles": [
+            "analysisTarget"
+          ],
+          "hashes": {
+            "sha-256": "e514c2489e8bf8e0dc434e1ae8964a5f6052912516cfb55462cc6e3fa35ce9d9"
+          }
+        },
+        {
+          "location": {
+            "uri": "file:///c:/users/yangluwei/source/repos/calendar/calendar/mapwidget.h"
+          },
+          "hashes": {
+            "sha-256": "38d381750f64b89bbb691068ff5de5e69db25e4587b17477d205235ffdcc53d5"
+          }
+        },
+        {
+          "location": {
+            "uri": "file:///c:/users/yangluwei/source/repos/calendar/calendar/bridge.h"
+          },
+          "hashes": {
+            "sha-256": "9fe0a351acf2983382491d1523a4d9645c18bfc5cc09530189a7e98efd416eaa"
+          }
+        }
+      ]
+    }
+  ]
+}
