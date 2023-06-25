@@ -1,4 +1,4 @@
-#pragma once
+ï»¿#pragma once
 #include"config.h"
 #include<qwidget.h>
 #include <QtWebEngineWidgets/QWebEngineView>
@@ -18,16 +18,12 @@ protected:
 public:
     TODOwidget(QWidget* parent = nullptr);
 
-    void geocodeAddress(const QString& address);
-
-
     void onCalculateButtonClicked();
-    void DisplaySlot(QString lng, QString lat);
     void on_pushButton_clicked();
     void onDistanceAndTimeCalculated(const QString& duration, const QString& distance);
     ~TODOwidget();
     void save_Date();
-
+    int check_todo();
     void handleWebPageLoadFinished(bool success);
 
     void handleJavaScriptConsoleMessage(const QString& message);
@@ -38,10 +34,10 @@ public:
 
 
 signals:
-    // ÉùÃ÷Ò»¸öĞÅºÅ£¬ÓÃÓÚÍ¨ÖªcalendarĞÂµÄÈÕ³ÌÒÑ¾­±»Ìí¼Ó£¬ĞèÒª¸üĞÂÈÕ³ÌÊı¾İ
+    // å£°æ˜ä¸€ä¸ªä¿¡å·ï¼Œç”¨äºé€šçŸ¥calendaræ–°çš„æ—¥ç¨‹å·²ç»è¢«æ·»åŠ ï¼Œéœ€è¦æ›´æ–°æ—¥ç¨‹æ•°æ®
     void TODO_add();
-
+    void TODO_Add_Correct();
 protected slots:
-    // ²Ûº¯Êı£¬´¦Àí°´Å¥µã»÷ÊÂ¼ş
+    // æ§½å‡½æ•°ï¼Œå¤„ç†æŒ‰é’®ç‚¹å‡»äº‹ä»¶
     void TODOwidget_accepted();
 };

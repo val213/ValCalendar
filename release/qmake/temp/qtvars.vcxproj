@@ -34,7 +34,7 @@
   </PropertyGroup>
   <ItemDefinitionGroup Condition="&apos;$(Configuration)|$(Platform)&apos;==&apos;Release|x64&apos;">
     <ClCompile>
-      <AdditionalIncludeDirectories>C:\Users\YANGLU~1\AppData\Local\Temp\ba4c1jlp.tb2;C:\Qt\6.2.4\msvc2019_64\include;C:\Qt\6.2.4\msvc2019_64\include\QtGui;C:\Qt\6.2.4\msvc2019_64\include\QtNetwork;C:\Qt\6.2.4\msvc2019_64\include\QtSql;C:\Qt\6.2.4\msvc2019_64\include\QtCore;C:\Users\YANGLU~1\AppData\Local\Temp\ba4c1jlp.tb2;/include;C:\Qt\6.2.4\msvc2019_64\mkspecs\win32-msvc;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>C:\Users\YANGLU~1\AppData\Local\Temp\dher5lxa.ujm;C:\Qt\6.2.4\msvc2019_64\include;C:\Qt\6.2.4\msvc2019_64\include\QtWebEngineWidgets;C:\Qt\6.2.4\msvc2019_64\include\QtWebEngineQuick;C:\Qt\6.2.4\msvc2019_64\include\QtWebEngineCore;C:\Qt\6.2.4\msvc2019_64\include\QtQuick;C:\Qt\6.2.4\msvc2019_64\include\QtOpenGLWidgets;C:\Qt\6.2.4\msvc2019_64\include\QtOpenGL;C:\Qt\6.2.4\msvc2019_64\include\QtPrintSupport;C:\Qt\6.2.4\msvc2019_64\include\QtWidgets;C:\Qt\6.2.4\msvc2019_64\include\QtWebView;C:\Qt\6.2.4\msvc2019_64\include\QtGui;C:\Qt\6.2.4\msvc2019_64\include\QtQmlModels;C:\Qt\6.2.4\msvc2019_64\include\QtWebChannel;C:\Qt\6.2.4\msvc2019_64\include\QtQml;C:\Qt\6.2.4\msvc2019_64\include\QtRemoteObjects;C:\Qt\6.2.4\msvc2019_64\include\QtWebSockets;C:\Qt\6.2.4\msvc2019_64\include\QtNetworkAuth;C:\Qt\6.2.4\msvc2019_64\include\QtNetwork;C:\Qt\6.2.4\msvc2019_64\include\QtSql;C:\Qt\6.2.4\msvc2019_64\include\QtPositioning;C:\Qt\6.2.4\msvc2019_64\include\QtCore;C:\Users\YANGLU~1\AppData\Local\Temp\dher5lxa.ujm;/include;C:\Qt\6.2.4\msvc2019_64\mkspecs\win32-msvc;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <AdditionalOptions>-Zc:rvalueCast -Zc:inline -Zc:strictStrings -Zc:throwingNew -permissive- -Zc:__cplusplus -Zc:externConstexpr -utf-8 %(AdditionalOptions)</AdditionalOptions>
       <AssemblerListingLocation>.\</AssemblerListingLocation>
       <BrowseInformation>false</BrowseInformation>
@@ -43,7 +43,7 @@
       <LanguageStandard>stdcpp17</LanguageStandard>
       <ObjectFileName>.\</ObjectFileName>
       <Optimization>MaxSpeed</Optimization>
-      <PreprocessorDefinitions>_WINDOWS;UNICODE;_UNICODE;WIN32;_ENABLE_EXTENDED_ALIGNED_STORAGE;WIN64;NDEBUG;QT_NO_DEBUG;QT_GUI_LIB;QT_NETWORK_LIB;QT_SQL_LIB;QT_CORE_LIB;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <PreprocessorDefinitions>_WINDOWS;UNICODE;_UNICODE;WIN32;_ENABLE_EXTENDED_ALIGNED_STORAGE;WIN64;NDEBUG;QT_NO_DEBUG;QT_WEBENGINEWIDGETS_LIB;QT_WEBENGINEQUICK_LIB;QT_WEBENGINECORE_LIB;QT_QUICK_LIB;QT_OPENGLWIDGETS_LIB;QT_OPENGL_LIB;QT_PRINTSUPPORT_LIB;QT_WIDGETS_LIB;QT_WEBVIEW_LIB;QT_GUI_LIB;QT_QMLMODELS_LIB;QT_WEBCHANNEL_LIB;QT_QML_LIB;QT_REMOTEOBJECTS_LIB;QT_WEBSOCKETS_LIB;QT_NETWORKAUTH_LIB;QT_NETWORK_LIB;QT_SQL_LIB;QT_POSITIONING_LIB;QT_CORE_LIB;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <PreprocessToFile>false</PreprocessToFile>
       <ProgramDataBaseFileName></ProgramDataBaseFileName>
       <RuntimeLibrary>MultiThreadedDLL</RuntimeLibrary>
@@ -52,7 +52,7 @@
       <WarningLevel>TurnOffAllWarnings</WarningLevel>
     </ClCompile>
     <Link>
-      <AdditionalDependencies>C:\Qt\6.2.4\msvc2019_64\lib\Qt6Gui.lib;C:\Qt\6.2.4\msvc2019_64\lib\Qt6Network.lib;C:\Qt\6.2.4\msvc2019_64\lib\Qt6Sql.lib;C:\Qt\6.2.4\msvc2019_64\lib\Qt6Core.lib;C:\Qt\6.2.4\msvc2019_64\lib\Qt6EntryPoint.lib;shell32.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <AdditionalDependencies>C:\Qt\6.2.4\msvc2019_64\lib\Qt6WebEngineWidgets.lib;C:\Qt\6.2.4\msvc2019_64\lib\Qt6WebEngineQuick.lib;C:\Qt\6.2.4\msvc2019_64\lib\Qt6WebEngineCore.lib;C:\Qt\6.2.4\msvc2019_64\lib\Qt6Quick.lib;C:\Qt\6.2.4\msvc2019_64\lib\Qt6OpenGLWidgets.lib;C:\Qt\6.2.4\msvc2019_64\lib\Qt6OpenGL.lib;C:\Qt\6.2.4\msvc2019_64\lib\Qt6PrintSupport.lib;C:\Qt\6.2.4\msvc2019_64\lib\Qt6Widgets.lib;C:\Qt\6.2.4\msvc2019_64\lib\Qt6WebView.lib;C:\Qt\6.2.4\msvc2019_64\lib\Qt6Gui.lib;C:\Qt\6.2.4\msvc2019_64\lib\Qt6QmlModels.lib;C:\Qt\6.2.4\msvc2019_64\lib\Qt6WebChannel.lib;C:\Qt\6.2.4\msvc2019_64\lib\Qt6Qml.lib;C:\Qt\6.2.4\msvc2019_64\lib\Qt6RemoteObjects.lib;C:\Qt\6.2.4\msvc2019_64\lib\Qt6WebSockets.lib;C:\Qt\6.2.4\msvc2019_64\lib\Qt6NetworkAuth.lib;C:\Qt\6.2.4\msvc2019_64\lib\Qt6Network.lib;C:\Qt\6.2.4\msvc2019_64\lib\Qt6Sql.lib;C:\Qt\6.2.4\msvc2019_64\lib\Qt6Positioning.lib;C:\Qt\6.2.4\msvc2019_64\lib\Qt6Core.lib;C:\Qt\6.2.4\msvc2019_64\lib\Qt6EntryPoint.lib;shell32.lib;%(AdditionalDependencies)</AdditionalDependencies>
       <AdditionalOptions>&quot;/MANIFESTDEPENDENCY:type=&apos;win32&apos; name=&apos;Microsoft.Windows.Common-Controls&apos; version=&apos;6.0.0.0&apos; publicKeyToken=&apos;6595b64144ccf1df&apos; language=&apos;*&apos; processorArchitecture=&apos;*&apos;&quot; %(AdditionalOptions)</AdditionalOptions>
       <DataExecutionPrevention>true</DataExecutionPrevention>
       <EnableCOMDATFolding>true</EnableCOMDATFolding>
@@ -71,7 +71,7 @@
       <WarningLevel>0</WarningLevel>
     </Midl>
     <ResourceCompile>
-      <PreprocessorDefinitions>_WINDOWS;UNICODE;_UNICODE;WIN32;_ENABLE_EXTENDED_ALIGNED_STORAGE;WIN64;NDEBUG;QT_NO_DEBUG;QT_GUI_LIB;QT_NETWORK_LIB;QT_SQL_LIB;QT_CORE_LIB;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <PreprocessorDefinitions>_WINDOWS;UNICODE;_UNICODE;WIN32;_ENABLE_EXTENDED_ALIGNED_STORAGE;WIN64;NDEBUG;QT_NO_DEBUG;QT_WEBENGINEWIDGETS_LIB;QT_WEBENGINEQUICK_LIB;QT_WEBENGINECORE_LIB;QT_QUICK_LIB;QT_OPENGLWIDGETS_LIB;QT_OPENGL_LIB;QT_PRINTSUPPORT_LIB;QT_WIDGETS_LIB;QT_WEBVIEW_LIB;QT_GUI_LIB;QT_QMLMODELS_LIB;QT_WEBCHANNEL_LIB;QT_QML_LIB;QT_REMOTEOBJECTS_LIB;QT_WEBSOCKETS_LIB;QT_NETWORKAUTH_LIB;QT_NETWORK_LIB;QT_SQL_LIB;QT_POSITIONING_LIB;QT_CORE_LIB;%(PreprocessorDefinitions)</PreprocessorDefinitions>
     </ResourceCompile>
   </ItemDefinitionGroup>
   <ItemGroup>
@@ -81,6 +81,17 @@
       <Command Condition="&apos;$(Configuration)|$(Platform)&apos;==&apos;Release|x64&apos;">cl -BxC:\Qt\6.2.4\msvc2019_64\bin\qmake.exe -nologo -Zc:wchar_t -FS -Zc:rvalueCast -Zc:inline -Zc:strictStrings -Zc:throwingNew -permissive- -Zc:__cplusplus -Zc:externConstexpr -O2 -MD -std:c++17 -utf-8 -W0 -E C:\Qt\6.2.4\msvc2019_64\mkspecs\features\data\dummy.cpp 2&gt;NUL &gt;moc_predefs.h</Command>
       <Message Condition="&apos;$(Configuration)|$(Platform)&apos;==&apos;Release|x64&apos;">Generate moc_predefs.h</Message>
       <Outputs Condition="&apos;$(Configuration)|$(Platform)&apos;==&apos;Release|x64&apos;">moc_predefs.h;%(Outputs)</Outputs>
+    </CustomBuild>
+    <ClCompile Include="qrc_qml.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="C:\Users\YANGLU~1\AppData\Local\Temp\dher5lxa.ujm\main.qml" />
+    <CustomBuild Include="qml.qrc">
+      <FileType>Document</FileType>
+      <AdditionalInputs Condition="&apos;$(Configuration)|$(Platform)&apos;==&apos;Release|x64&apos;">qml.qrc;C:\Qt\6.2.4\msvc2019_64\bin\rcc.exe;C:\Users\YANGLU~1\AppData\Local\Temp\dher5lxa.ujm\main.qml;%(AdditionalInputs)</AdditionalInputs>
+      <Command Condition="&apos;$(Configuration)|$(Platform)&apos;==&apos;Release|x64&apos;">C:\Qt\6.2.4\msvc2019_64\bin\rcc.exe -name qml qml.qrc -o qrc_qml.cpp</Command>
+      <Message Condition="&apos;$(Configuration)|$(Platform)&apos;==&apos;Release|x64&apos;">RCC qml.qrc</Message>
+      <Outputs Condition="&apos;$(Configuration)|$(Platform)&apos;==&apos;Release|x64&apos;">qrc_qml.cpp;%(Outputs)</Outputs>
     </CustomBuild>
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />

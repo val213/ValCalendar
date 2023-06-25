@@ -1,4 +1,4 @@
-#pragma once
+ï»¿#pragma once
 #include"ui_Team_mng.h"
 #include"config.h"
 extern TEAM teams[MAX_TEAM_NUM];
@@ -9,7 +9,7 @@ public:
 	int new_team_id;
 	team_mng(QWidget *parent = Q_NULLPTR);
 	~team_mng();
-	Ui::team_mng ui;//ÕâÒ»ĞĞÒª·ÅÔÚÇ°Ãæ
+	Ui::team_mng ui;//è¿™ä¸€è¡Œè¦æ”¾åœ¨å‰é¢
 	QTimer* timer_team = new QTimer(this);
 	void create_new_team();
 	void confirm_creat(const QString& teamName, const QString& password);
@@ -23,11 +23,14 @@ public:
 	void on_delete_team_ButtonClicked(const QModelIndex& index);
 	void on_doubleClicked_belong();
 	void on_doubleClicked_create();
+	
 private:
-
+	
 public slots:
 
 
 };
+void init_team_members_structarr(QVector<USER>team_members, int size, QString filename);
+void init_team_events_structarr(QVector<EVENT> team_events, int size, QString filename);
 void init_teams_structarr(TEAM* teams, int size);
 

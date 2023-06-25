@@ -16,9 +16,9 @@
                   "uri": "file:///C:/Users/yangluwei/source/repos/calendar/calendar/struct.h"
                 },
                 "region": {
-                  "startLine": 58,
+                  "startLine": 61,
                   "startColumn": 2,
-                  "endLine": 58,
+                  "endLine": 61,
                   "endColumn": 2
                 }
               },
@@ -47,9 +47,9 @@
                   "uri": "file:///C:/Users/yangluwei/source/repos/calendar/calendar/struct.h"
                 },
                 "region": {
-                  "startLine": 58,
+                  "startLine": 61,
                   "startColumn": 2,
-                  "endLine": 58,
+                  "endLine": 61,
                   "endColumn": 2
                 }
               },
@@ -78,9 +78,9 @@
                   "uri": "file:///C:/Users/yangluwei/source/repos/calendar/calendar/struct.h"
                 },
                 "region": {
-                  "startLine": 58,
+                  "startLine": 61,
                   "startColumn": 2,
-                  "endLine": 58,
+                  "endLine": 61,
                   "endColumn": 2
                 }
               },
@@ -109,9 +109,9 @@
                   "uri": "file:///C:/Users/yangluwei/source/repos/calendar/calendar/struct.h"
                 },
                 "region": {
-                  "startLine": 58,
+                  "startLine": 61,
                   "startColumn": 2,
-                  "endLine": 58,
+                  "endLine": 61,
                   "endColumn": 2
                 }
               },
@@ -126,37 +126,6 @@
           ],
           "properties": {
             "targetSymbol": "TEAM::leader_id"
-          }
-        },
-        {
-          "ruleId": "C26495",
-          "message": {
-            "text": "未初始化变量 team_mng::new_team_id。始终初始化成员变量(type.6)。"
-          },
-          "locations": [
-            {
-              "physicalLocation": {
-                "artifactLocation": {
-                  "uri": "file:///C:/Users/yangluwei/source/repos/calendar/calendar/team_mng.cpp"
-                },
-                "region": {
-                  "startLine": 12,
-                  "startColumn": 11,
-                  "endLine": 12,
-                  "endColumn": 11
-                }
-              },
-              "logicalLocations": [
-                {
-                  "fullyQualifiedName": "team_mng::{ctor}",
-                  "decoratedName": "??0team_mng@@QEAA@PEAVQWidget@@@Z",
-                  "kind": "function"
-                }
-              ]
-            }
-          ],
-          "properties": {
-            "targetSymbol": "team_mng::new_team_id"
           }
         }
       ],
@@ -182,19 +151,18 @@
             "resultFile"
           ],
           "hashes": {
-            "sha-256": "48ad830e2a9370111da4b72413a624f6b43a390a5e7f971ac5ddf6494aba96a6"
+            "sha-256": "04af2043bd9f9165e70405440ea17ae45c0c0cb2d6dc62c04d5f6fbdfe8d6870"
           }
         },
         {
           "location": {
-            "uri": "file:///C:/Users/yangluwei/source/repos/calendar/calendar/team_mng.cpp"
+            "uri": "file:///c:/users/yangluwei/source/repos/calendar/calendar/team_mng.cpp"
           },
           "roles": [
-            "analysisTarget",
-            "resultFile"
+            "analysisTarget"
           ],
           "hashes": {
-            "sha-256": "a8c05f5a30277714fd56b0046df106cc71af4924cab96c4468c121e000b5f2f3"
+            "sha-256": "5e1a152f8d95767646dd3bb27e545ed15691780f40bb37aaf7f91f30141293f8"
           }
         },
         {
@@ -202,7 +170,7 @@
             "uri": "file:///c:/users/yangluwei/source/repos/calendar/calendar/config.h"
           },
           "hashes": {
-            "sha-256": "9f4a7911f6a519146ef62b8254968163f1858ee029d2bdf28339fe5dc910aa65"
+            "sha-256": "fb06baa0edb1bfc86528dd3290e9837e1de3abfa2958fd4cf961988b22658106"
           }
         },
         {
@@ -210,7 +178,7 @@
             "uri": "file:///c:/users/yangluwei/source/repos/calendar/calendar/usr_mng.h"
           },
           "hashes": {
-            "sha-256": "60bfde0b8e5edb6ca6d300f63777399c8c926754ffd502c9b5d1fba72177e435"
+            "sha-256": "ee14f41bb1c89061a8103403fbb1aa8427978b1772a6850345d4b0d26fbff145"
           }
         },
         {
@@ -218,7 +186,7 @@
             "uri": "file:///c:/users/yangluwei/source/repos/calendar/calendar/team_mng.h"
           },
           "hashes": {
-            "sha-256": "e6110de8fddabb952772147b35ea2b1a7d44ce9e5ccd4df26cba0fa1cfc0eb19"
+            "sha-256": "98551579c74a1942c6938b0a4c376abea68d429d8d41291e282a176ead84a643"
           }
         },
         {
@@ -226,7 +194,7 @@
             "uri": "file:///c:/users/yangluwei/source/repos/calendar/calendar/reg_n_login.h"
           },
           "hashes": {
-            "sha-256": "a806d30af0618a5b7b082b1b22f96931dc7464973656fa2bb6cebf8b93f119b4"
+            "sha-256": "90e7960fc8055ecf4512c964a09e75ed44655f982256505bef2c10c6221bb119"
           }
         },
         {
@@ -234,7 +202,15 @@
             "uri": "file:///c:/users/yangluwei/source/repos/calendar/calendar/calendar.h"
           },
           "hashes": {
-            "sha-256": "e25b69d184ea1bee70b546e8ca388ab4bfd413ad40f5ece1f55a5441c42092b3"
+            "sha-256": "3ea872a7e59ea0098038949b412e6dfe80ddc1afaf9f4412bf84f0ee46b4169a"
+          }
+        },
+        {
+          "location": {
+            "uri": "file:///c:/users/yangluwei/source/repos/calendar/calendar/tsplan.h"
+          },
+          "hashes": {
+            "sha-256": "3c31b52628aec24eb76909fb201fe26b56edf34cdc425f07b4d69b7b8c2027be"
           }
         },
         {
@@ -242,7 +218,7 @@
             "uri": "file:///c:/users/yangluwei/source/repos/calendar/calendar/todowidget.h"
           },
           "hashes": {
-            "sha-256": "7a9f8862783d3e16fd565d99728f324e07e7c7decdf6bf55983211469b547d25"
+            "sha-256": "54a3806fc46ff12cfaa15a3519b0ed658c634d5dd31a1f6ffe8cbc7078198d4b"
           }
         },
         {
@@ -250,7 +226,7 @@
             "uri": "file:///c:/users/yangluwei/source/repos/calendar/calendar/bridge.h"
           },
           "hashes": {
-            "sha-256": "464766d43f471c26cd5ce85ee0c72c9754b81c956fe9b7b6709adc5a66cdd886"
+            "sha-256": "9fe0a351acf2983382491d1523a4d9645c18bfc5cc09530189a7e98efd416eaa"
           }
         },
         {
@@ -259,6 +235,14 @@
           },
           "hashes": {
             "sha-256": "2f3e946164d43233dfb38cbb7ea9fad9df269f91bcf306fcf55a36966f78e3a3"
+          }
+        },
+        {
+          "location": {
+            "uri": "file:///c:/users/yangluwei/source/repos/calendar/calendar/calendar_team.h"
+          },
+          "hashes": {
+            "sha-256": "a7a718fd9901ddc0574e9886661eef4ce1e07a5df62766e595d32a8f8011cd69"
           }
         }
       ]

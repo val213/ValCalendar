@@ -26,7 +26,7 @@
             "analysisTarget"
           ],
           "hashes": {
-            "sha-256": "cd640a7dd596694511edcfeaafba38ff8eab59982e5a008a312f92ceef0e0da3"
+            "sha-256": "68a9a7fdc68ba62ebd72764f9427f73205e0080b21c5c95bdc0b69037b531c55"
           }
         },
         {
@@ -34,7 +34,7 @@
             "uri": "file:///c:/users/yangluwei/source/repos/calendar/calendar/bridge.h"
           },
           "hashes": {
-            "sha-256": "464766d43f471c26cd5ce85ee0c72c9754b81c956fe9b7b6709adc5a66cdd886"
+            "sha-256": "9fe0a351acf2983382491d1523a4d9645c18bfc5cc09530189a7e98efd416eaa"
           }
         }
       ]

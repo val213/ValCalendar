@@ -85,14 +85,14 @@
   <widget class="QPushButton" name="pushButton_4">
    <property name="geometry">
     <rect>
-     <x>780</x>
-     <y>250</y>
+     <x>870</x>
+     <y>220</y>
      <width>75</width>
      <height>24</height>
     </rect>
    </property>
    <property name="text">
-    <string>筛选</string>
+    <string>更新公告栏</string>
    </property>
   </widget>
   <widget class="QPushButton" name="pushButton_2">
@@ -172,11 +172,31 @@
     <attribute name="title">
      <string>公告栏</string>
     </attribute>
+    <widget class="QTextEdit" name="textEdit">
+     <property name="geometry">
+      <rect>
+       <x>0</x>
+       <y>0</y>
+       <width>311</width>
+       <height>81</height>
+      </rect>
+     </property>
+    </widget>
    </widget>
    <widget class="QWidget" name="tab_2">
     <attribute name="title">
      <string>其他信息</string>
     </attribute>
+    <widget class="QTextEdit" name="textEdit_2">
+     <property name="geometry">
+      <rect>
+       <x>0</x>
+       <y>0</y>
+       <width>321</width>
+       <height>81</height>
+      </rect>
+     </property>
+    </widget>
    </widget>
   </widget>
  </widget>

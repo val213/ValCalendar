@@ -1,13 +1,13 @@
-#include"config.h"
+ï»¿#include"config.h"
 int main(int argc, char *argv[])
 {
     QApplication a(argc, argv);
     reg_n_login w1;
-    //ÉèÖÃ´°¿Ú±êÌâ
+    //è®¾ç½®çª—å£æ ‡é¢˜
     w1.setWindowTitle("Regist or Login");
-    //´ÓÎÄ¼şÖĞ¶ÁÈ¡²¢³õÊ¼»¯ÓÃ»§½á¹¹ÌåÊı×é
+    //ä»æ–‡ä»¶ä¸­è¯»å–å¹¶åˆå§‹åŒ–ç”¨æˆ·ç»“æ„ä½“æ•°ç»„
     init_users_structarr(users, MAX_USRS_NUM);
-    //´ÓÎÄ¼şÖĞ¶ÁÈ¡²¢³õÊ¼»¯ÍÅ¶Ó½á¹¹ÌåÊı×é
+    //ä»æ–‡ä»¶ä¸­è¯»å–å¹¶åˆå§‹åŒ–å›¢é˜Ÿç»“æ„ä½“æ•°ç»„
     init_teams_structarr(teams,MAX_TEAM_NUM);
 
     w1.show();

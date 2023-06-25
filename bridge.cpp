@@ -1,4 +1,4 @@
-#include"bridge.h"
+ï»¿#include"bridge.h"
 #include<qwebchannel.h>
 #include <QWebEngineSettings>
 #include <QWebEngineView>
@@ -27,7 +27,7 @@ void bridge::setStartAndEnd(const QString& start, const QString& end)
 	m_start = start;
 	m_end = end;
 	qDebug() << "start:" << m_start << "end:" << m_end;
-    // Ö´ÐÐ¾àÀëºÍÊ±¼ä¼ÆËã
+    // æ‰§è¡Œè·ç¦»å’Œæ—¶é—´è®¡ç®—
     calculateDistanceAndTime(m_start, m_end);
 }
 
@@ -35,8 +35,8 @@ void bridge::setStartAndEnd(const QString& start, const QString& end)
 
 void bridge::calculateDistanceAndTime(const QString& start, const QString& end)
 {
-    // ÔÚÕâÀïÖ´ÐÐÓë¾­Î³¶ÈÏà¹ØµÄ²Ù×÷£¬°üÀ¨µ÷ÓÃ JavaScript º¯Êý
-    QString script = QString("var startlatitude = '%1'; var startlongitude = '%2'; ")
+    // åœ¨è¿™é‡Œæ‰§è¡Œä¸Žç»çº¬åº¦ç›¸å…³çš„æ“ä½œï¼ŒåŒ…æ‹¬è°ƒç”¨ JavaScript å‡½æ•°
+    QString script = QString("var startAddress = '%1'; var endAddress = '%2'; ")
         .arg(start).arg(end);
 
     m_webEngineView->page()->runJavaScript(script);

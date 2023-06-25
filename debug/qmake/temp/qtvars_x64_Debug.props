@@ -1,11 +1,11 @@
 <Project xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <PropertyGroup>
-<Qt_DEFINES_>_WINDOWS;UNICODE;_UNICODE;WIN32;_ENABLE_EXTENDED_ALIGNED_STORAGE;WIN64;QT_GUI_LIB;QT_NETWORK_LIB;QT_SQL_LIB;QT_CORE_LIB</Qt_DEFINES_>
-<Qt_INCLUDEPATH_>C:\Users\YANGLU~1\AppData\Local\Temp\arjvwxoi.cwc;C:\Qt\6.2.4\msvc2019_64\include;C:\Qt\6.2.4\msvc2019_64\include\QtGui;C:\Qt\6.2.4\msvc2019_64\include\QtNetwork;C:\Qt\6.2.4\msvc2019_64\include\QtSql;C:\Qt\6.2.4\msvc2019_64\include\QtCore;C:\Users\YANGLU~1\AppData\Local\Temp\arjvwxoi.cwc;/include;C:\Qt\6.2.4\msvc2019_64\mkspecs\win32-msvc</Qt_INCLUDEPATH_>
+<Qt_DEFINES_>_WINDOWS;UNICODE;_UNICODE;WIN32;_ENABLE_EXTENDED_ALIGNED_STORAGE;WIN64;QT_WEBENGINEWIDGETS_LIB;QT_WEBENGINEQUICK_LIB;QT_WEBENGINECORE_LIB;QT_QUICK_LIB;QT_OPENGLWIDGETS_LIB;QT_OPENGL_LIB;QT_PRINTSUPPORT_LIB;QT_WIDGETS_LIB;QT_WEBVIEW_LIB;QT_GUI_LIB;QT_QMLMODELS_LIB;QT_WEBCHANNEL_LIB;QT_QML_LIB;QT_REMOTEOBJECTS_LIB;QT_WEBSOCKETS_LIB;QT_NETWORKAUTH_LIB;QT_NETWORK_LIB;QT_SQL_LIB;QT_POSITIONING_LIB;QT_CORE_LIB</Qt_DEFINES_>
+<Qt_INCLUDEPATH_>C:\Users\YANGLU~1\AppData\Local\Temp\hri3elba.qhl;C:\Qt\6.2.4\msvc2019_64\include;C:\Qt\6.2.4\msvc2019_64\include\QtWebEngineWidgets;C:\Qt\6.2.4\msvc2019_64\include\QtWebEngineQuick;C:\Qt\6.2.4\msvc2019_64\include\QtWebEngineCore;C:\Qt\6.2.4\msvc2019_64\include\QtQuick;C:\Qt\6.2.4\msvc2019_64\include\QtOpenGLWidgets;C:\Qt\6.2.4\msvc2019_64\include\QtOpenGL;C:\Qt\6.2.4\msvc2019_64\include\QtPrintSupport;C:\Qt\6.2.4\msvc2019_64\include\QtWidgets;C:\Qt\6.2.4\msvc2019_64\include\QtWebView;C:\Qt\6.2.4\msvc2019_64\include\QtGui;C:\Qt\6.2.4\msvc2019_64\include\QtQmlModels;C:\Qt\6.2.4\msvc2019_64\include\QtWebChannel;C:\Qt\6.2.4\msvc2019_64\include\QtQml;C:\Qt\6.2.4\msvc2019_64\include\QtRemoteObjects;C:\Qt\6.2.4\msvc2019_64\include\QtWebSockets;C:\Qt\6.2.4\msvc2019_64\include\QtNetworkAuth;C:\Qt\6.2.4\msvc2019_64\include\QtNetwork;C:\Qt\6.2.4\msvc2019_64\include\QtSql;C:\Qt\6.2.4\msvc2019_64\include\QtPositioning;C:\Qt\6.2.4\msvc2019_64\include\QtCore;C:\Users\YANGLU~1\AppData\Local\Temp\hri3elba.qhl;/include;C:\Qt\6.2.4\msvc2019_64\mkspecs\win32-msvc</Qt_INCLUDEPATH_>
 <Qt_STDCPP_>stdcpp17</Qt_STDCPP_>
 <Qt_RUNTIME_>MultiThreadedDebugDLL</Qt_RUNTIME_>
 <Qt_CL_OPTIONS_>-Zc:rvalueCast -Zc:inline -Zc:strictStrings -Zc:throwingNew -permissive- -Zc:__cplusplus -Zc:externConstexpr -utf-8</Qt_CL_OPTIONS_>
-<Qt_LIBS_>C:\Qt\6.2.4\msvc2019_64\lib\Qt6Guid.lib;C:\Qt\6.2.4\msvc2019_64\lib\Qt6Networkd.lib;C:\Qt\6.2.4\msvc2019_64\lib\Qt6Sqld.lib;C:\Qt\6.2.4\msvc2019_64\lib\Qt6Cored.lib;C:\Qt\6.2.4\msvc2019_64\lib\Qt6EntryPointd.lib;shell32.lib</Qt_LIBS_>
+<Qt_LIBS_>C:\Qt\6.2.4\msvc2019_64\lib\Qt6WebEngineWidgetsd.lib;C:\Qt\6.2.4\msvc2019_64\lib\Qt6WebEngineQuickd.lib;C:\Qt\6.2.4\msvc2019_64\lib\Qt6WebEngineCored.lib;C:\Qt\6.2.4\msvc2019_64\lib\Qt6Quickd.lib;C:\Qt\6.2.4\msvc2019_64\lib\Qt6OpenGLWidgetsd.lib;C:\Qt\6.2.4\msvc2019_64\lib\Qt6OpenGLd.lib;C:\Qt\6.2.4\msvc2019_64\lib\Qt6PrintSupportd.lib;C:\Qt\6.2.4\msvc2019_64\lib\Qt6Widgetsd.lib;C:\Qt\6.2.4\msvc2019_64\lib\Qt6WebViewd.lib;C:\Qt\6.2.4\msvc2019_64\lib\Qt6Guid.lib;C:\Qt\6.2.4\msvc2019_64\lib\Qt6QmlModelsd.lib;C:\Qt\6.2.4\msvc2019_64\lib\Qt6WebChanneld.lib;C:\Qt\6.2.4\msvc2019_64\lib\Qt6Qmld.lib;C:\Qt\6.2.4\msvc2019_64\lib\Qt6RemoteObjectsd.lib;C:\Qt\6.2.4\msvc2019_64\lib\Qt6WebSocketsd.lib;C:\Qt\6.2.4\msvc2019_64\lib\Qt6NetworkAuthd.lib;C:\Qt\6.2.4\msvc2019_64\lib\Qt6Networkd.lib;C:\Qt\6.2.4\msvc2019_64\lib\Qt6Sqld.lib;C:\Qt\6.2.4\msvc2019_64\lib\Qt6Positioningd.lib;C:\Qt\6.2.4\msvc2019_64\lib\Qt6Cored.lib;C:\Qt\6.2.4\msvc2019_64\lib\Qt6EntryPointd.lib;shell32.lib</Qt_LIBS_>
 <Qt_LINK_OPTIONS_>"/MANIFESTDEPENDENCY:type='win32' name='Microsoft.Windows.Common-Controls' version='6.0.0.0' publicKeyToken='6595b64144ccf1df' language='*' processorArchitecture='*'"</Qt_LINK_OPTIONS_>
 <QMake_QT_SYSROOT_></QMake_QT_SYSROOT_>
 <QMake_QT_INSTALL_PREFIX_>C:/Qt/6.2.4/msvc2019_64</QMake_QT_INSTALL_PREFIX_>
@@ -37,7 +37,7 @@
     <QtBkup_QtInstall
       >msvc2019_64</QtBkup_QtInstall>
     <QtBkup_QtModules
-      >core;gui;network;sql</QtBkup_QtModules>
+      >core;gui;network;qml;quick;widgets;opengl;openglwidgets;printsupport;remoteobjects;sql;webchannel;webenginecore;websockets;webview;positioning;networkauth;webenginewidgets;webenginequick</QtBkup_QtModules>
     <QtBkup_QtPathBinaries
       >bin</QtBkup_QtPathBinaries>
     <QtBkup_QtPathLibraryExecutables

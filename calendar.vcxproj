@@ -97,7 +97,6 @@
   <ItemGroup>
     <ClCompile Include="bridge.cpp" />
     <ClCompile Include="calendar_team.cpp" />
-    <ClCompile Include="date.h" />
     <ClCompile Include="decision_make.cpp" />
     <ClCompile Include="REG_N_LOGIN.cpp" />
     <ClCompile Include="team_mng.cpp" />
@@ -120,7 +119,6 @@
     <QtMoc Include="calendar_team.h" />
     <ClInclude Include="category.h" />
     <ClInclude Include="config.h" />
-    <ClInclude Include="event%280%29.h" />
     <ClInclude Include="EVENT.h" />
     <ClInclude Include="event_mng.h" />
     <ClInclude Include="struct.h" />

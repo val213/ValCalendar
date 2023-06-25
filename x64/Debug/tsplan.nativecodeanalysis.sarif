@@ -26,7 +26,15 @@
             "analysisTarget"
           ],
           "hashes": {
-            "sha-256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+            "sha-256": "2b1d18bb6311b7471eca78a4af970425fece7f102b6d401c6a092d99faa80ac9"
+          }
+        },
+        {
+          "location": {
+            "uri": "file:///c:/users/yangluwei/source/repos/calendar/calendar/tsplan.h"
+          },
+          "hashes": {
+            "sha-256": "3c31b52628aec24eb76909fb201fe26b56edf34cdc425f07b4d69b7b8c2027be"
           }
         }
       ]

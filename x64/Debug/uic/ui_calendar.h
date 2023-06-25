@@ -13,7 +13,6 @@
 #include <QtCore/QVariant>
 #include <QtWidgets/QApplication>
 #include <QtWidgets/QCalendarWidget>
-#include <QtWidgets/QCheckBox>
 #include <QtWidgets/QComboBox>
 #include <QtWidgets/QFrame>
 #include <QtWidgets/QHBoxLayout>
@@ -22,7 +21,6 @@
 #include <QtWidgets/QMainWindow>
 #include <QtWidgets/QMenuBar>
 #include <QtWidgets/QPushButton>
-#include <QtWidgets/QStackedWidget>
 #include <QtWidgets/QStatusBar>
 #include <QtWidgets/QTableWidget>
 #include <QtWidgets/QTextBrowser>
@@ -41,14 +39,7 @@ public:
     QHBoxLayout *horizontalLayout_6;
     QVBoxLayout *verticalLayout;
     QLabel *label_3;
-    QCheckBox *checkBox_3;
-    QCheckBox *checkBox_2;
-    QCheckBox *checkBox;
     QVBoxLayout *verticalLayout_3;
-    QLabel *label_2;
-    QCheckBox *checkBox_4;
-    QCheckBox *checkBox_5;
-    QCheckBox *checkBox_6;
     QVBoxLayout *verticalLayout_6;
     QCalendarWidget *Calendar1;
     QVBoxLayout *verticalLayout_5;
@@ -58,10 +49,8 @@ public:
     QHBoxLayout *horizontalLayout_5;
     QLabel *label_11;
     QLabel *label_13;
-    QStackedWidget *stackedWidget;
-    QWidget *page;
-    QWidget *verticalLayoutWidget;
-    QVBoxLayout *verticalLayout_8;
+    QVBoxLayout *verticalLayout_2;
+    QVBoxLayout *verticalLayout_4;
     QHBoxLayout *horizontalLayout_9;
     QLabel *label_8;
     QTextBrowser *textBrowser_7;
@@ -72,9 +61,8 @@ public:
     QLabel *label_7;
     QHBoxLayout *horizontalLayout_10;
     QLabel *label_10;
+    QLabel *label_2;
     QTextBrowser *textBrowser_8;
-    QWidget *page_2;
-    QVBoxLayout *verticalLayout_2;
     QWidget *widget;
     QHBoxLayout *horizontalLayout_7;
     QPushButton *pushButton;
@@ -103,12 +91,13 @@ public:
     {
         if (calendarClass->objectName().isEmpty())
             calendarClass->setObjectName(QString::fromUtf8("calendarClass"));
-        calendarClass->resize(960, 662);
+        calendarClass->resize(948, 662);
         QSizePolicy sizePolicy(QSizePolicy::Expanding, QSizePolicy::Expanding);
         sizePolicy.setHorizontalStretch(0);
         sizePolicy.setVerticalStretch(0);
         sizePolicy.setHeightForWidth(calendarClass->sizePolicy().hasHeightForWidth());
         calendarClass->setSizePolicy(sizePolicy);
+        calendarClass->setStyleSheet(QString::fromUtf8("calendar{background-image: url(:/calendar/SCUT.jpg);}"));
         centralWidget = new QWidget(calendarClass);
         centralWidget->setObjectName(QString::fromUtf8("centralWidget"));
         centralWidget->setEnabled(true);
@@ -140,51 +129,9 @@ public:
 
         verticalLayout->addWidget(label_3);
 
-        checkBox_3 = new QCheckBox(verticalLayoutWidget_5);
-        checkBox_3->setObjectName(QString::fromUtf8("checkBox_3"));
-
-        verticalLayout->addWidget(checkBox_3);
-
-        checkBox_2 = new QCheckBox(verticalLayoutWidget_5);
-        checkBox_2->setObjectName(QString::fromUtf8("checkBox_2"));
-
-        verticalLayout->addWidget(checkBox_2);
-
-        checkBox = new QCheckBox(verticalLayoutWidget_5);
-        checkBox->setObjectName(QString::fromUtf8("checkBox"));
-
-        verticalLayout->addWidget(checkBox);
-
         verticalLayout_3 = new QVBoxLayout();
         verticalLayout_3->setSpacing(6);
         verticalLayout_3->setObjectName(QString::fromUtf8("verticalLayout_3"));
-        label_2 = new QLabel(verticalLayoutWidget_5);
-        label_2->setObjectName(QString::fromUtf8("label_2"));
-        sizePolicy1.setHeightForWidth(label_2->sizePolicy().hasHeightForWidth());
-        label_2->setSizePolicy(sizePolicy1);
-        label_2->setFont(font);
-        label_2->setWordWrap(false);
-        label_2->setMargin(-1);
-        label_2->setIndent(-1);
-        label_2->setOpenExternalLinks(false);
-
-        verticalLayout_3->addWidget(label_2);
-
-        checkBox_4 = new QCheckBox(verticalLayoutWidget_5);
-        checkBox_4->setObjectName(QString::fromUtf8("checkBox_4"));
-
-        verticalLayout_3->addWidget(checkBox_4);
-
-        checkBox_5 = new QCheckBox(verticalLayoutWidget_5);
-        checkBox_5->setObjectName(QString::fromUtf8("checkBox_5"));
-
-        verticalLayout_3->addWidget(checkBox_5);
-
-        checkBox_6 = new QCheckBox(verticalLayoutWidget_5);
-        checkBox_6->setObjectName(QString::fromUtf8("checkBox_6"));
-
-        verticalLayout_3->addWidget(checkBox_6);
-
 
         verticalLayout->addLayout(verticalLayout_3);
 
@@ -205,6 +152,9 @@ public:
         sizePolicy2.setVerticalStretch(0);
         sizePolicy2.setHeightForWidth(Calendar1->sizePolicy().hasHeightForWidth());
         Calendar1->setSizePolicy(sizePolicy2);
+        QFont font1;
+        font1.setFamilies({QString::fromUtf8("\346\275\256\345\255\227\347\244\276\345\207\214\346\270\241\345\264\251\345\241\214\347\256\200\347\271\201-\351\227\252")});
+        Calendar1->setFont(font1);
         Calendar1->setMouseTracking(true);
         Calendar1->setTabletTracking(true);
         Calendar1->setAcceptDrops(true);
@@ -224,6 +174,9 @@ public:
         horizontalLayout_3->setObjectName(QString::fromUtf8("horizontalLayout_3"));
         label = new QLabel(verticalLayoutWidget_5);
         label->setObjectName(QString::fromUtf8("label"));
+        QFont font2;
+        font2.setFamilies({QString::fromUtf8("Times New Roman")});
+        label->setFont(font2);
         label->setAcceptDrops(false);
 
         horizontalLayout_3->addWidget(label);
@@ -246,6 +199,7 @@ public:
         sizePolicy3.setVerticalStretch(0);
         sizePolicy3.setHeightForWidth(label_11->sizePolicy().hasHeightForWidth());
         label_11->setSizePolicy(sizePolicy3);
+        label_11->setFont(font2);
         label_11->setAcceptDrops(false);
 
         horizontalLayout_5->addWidget(label_11);
@@ -258,28 +212,27 @@ public:
 
         verticalLayout_5->addLayout(horizontalLayout_5);
 
-        stackedWidget = new QStackedWidget(verticalLayoutWidget_5);
-        stackedWidget->setObjectName(QString::fromUtf8("stackedWidget"));
-        page = new QWidget();
-        page->setObjectName(QString::fromUtf8("page"));
-        verticalLayoutWidget = new QWidget(page);
-        verticalLayoutWidget->setObjectName(QString::fromUtf8("verticalLayoutWidget"));
-        verticalLayoutWidget->setGeometry(QRect(10, 10, 371, 170));
-        verticalLayout_8 = new QVBoxLayout(verticalLayoutWidget);
-        verticalLayout_8->setSpacing(6);
-        verticalLayout_8->setContentsMargins(11, 11, 11, 11);
-        verticalLayout_8->setObjectName(QString::fromUtf8("verticalLayout_8"));
-        verticalLayout_8->setContentsMargins(0, 0, 0, 0);
+        verticalLayout_2 = new QVBoxLayout();
+        verticalLayout_2->setSpacing(6);
+        verticalLayout_2->setObjectName(QString::fromUtf8("verticalLayout_2"));
+        verticalLayout_4 = new QVBoxLayout();
+        verticalLayout_4->setSpacing(6);
+        verticalLayout_4->setObjectName(QString::fromUtf8("verticalLayout_4"));
         horizontalLayout_9 = new QHBoxLayout();
         horizontalLayout_9->setSpacing(6);
         horizontalLayout_9->setObjectName(QString::fromUtf8("horizontalLayout_9"));
-        label_8 = new QLabel(verticalLayoutWidget);
+        label_8 = new QLabel(verticalLayoutWidget_5);
         label_8->setObjectName(QString::fromUtf8("label_8"));
 
         horizontalLayout_9->addWidget(label_8);
 
-        textBrowser_7 = new QTextBrowser(verticalLayoutWidget);
+        textBrowser_7 = new QTextBrowser(verticalLayoutWidget_5);
         textBrowser_7->setObjectName(QString::fromUtf8("textBrowser_7"));
+        QSizePolicy sizePolicy4(QSizePolicy::Expanding, QSizePolicy::Minimum);
+        sizePolicy4.setHorizontalStretch(0);
+        sizePolicy4.setVerticalStretch(0);
+        sizePolicy4.setHeightForWidth(textBrowser_7->sizePolicy().hasHeightForWidth());
+        textBrowser_7->setSizePolicy(sizePolicy4);
         textBrowser_7->setMaximumSize(QSize(16777215, 50));
         textBrowser_7->setAcceptDrops(false);
         textBrowser_7->setTabChangesFocus(false);
@@ -290,30 +243,27 @@ public:
 
         horizontalLayout_9->addWidget(textBrowser_7, 0, Qt::AlignHCenter);
 
-        label_9 = new QLabel(verticalLayoutWidget);
+        label_9 = new QLabel(verticalLayoutWidget_5);
         label_9->setObjectName(QString::fromUtf8("label_9"));
 
         horizontalLayout_9->addWidget(label_9);
 
 
-        verticalLayout_8->addLayout(horizontalLayout_9);
+        verticalLayout_4->addLayout(horizontalLayout_9);
 
         horizontalLayout_8 = new QHBoxLayout();
         horizontalLayout_8->setSpacing(6);
         horizontalLayout_8->setObjectName(QString::fromUtf8("horizontalLayout_8"));
         horizontalLayout_8->setSizeConstraint(QLayout::SetFixedSize);
-        label_6 = new QLabel(verticalLayoutWidget);
+        label_6 = new QLabel(verticalLayoutWidget_5);
         label_6->setObjectName(QString::fromUtf8("label_6"));
         sizePolicy1.setHeightForWidth(label_6->sizePolicy().hasHeightForWidth());
         label_6->setSizePolicy(sizePolicy1);
 
         horizontalLayout_8->addWidget(label_6);
 
-        textBrowser_6 = new QTextBrowser(verticalLayoutWidget);
+        textBrowser_6 = new QTextBrowser(verticalLayoutWidget_5);
         textBrowser_6->setObjectName(QString::fromUtf8("textBrowser_6"));
-        QSizePolicy sizePolicy4(QSizePolicy::Expanding, QSizePolicy::Fixed);
-        sizePolicy4.setHorizontalStretch(0);
-        sizePolicy4.setVerticalStretch(0);
         sizePolicy4.setHeightForWidth(textBrowser_6->sizePolicy().hasHeightForWidth());
         textBrowser_6->setSizePolicy(sizePolicy4);
         textBrowser_6->setMaximumSize(QSize(16777215, 50));
@@ -326,7 +276,7 @@ public:
 
         horizontalLayout_8->addWidget(textBrowser_6, 0, Qt::AlignHCenter);
 
-        label_7 = new QLabel(verticalLayoutWidget);
+        label_7 = new QLabel(verticalLayoutWidget_5);
         label_7->setObjectName(QString::fromUtf8("label_7"));
         sizePolicy1.setHeightForWidth(label_7->sizePolicy().hasHeightForWidth());
         label_7->setSizePolicy(sizePolicy1);
@@ -334,15 +284,15 @@ public:
         horizontalLayout_8->addWidget(label_7);
 
 
-        verticalLayout_8->addLayout(horizontalLayout_8);
+        verticalLayout_4->addLayout(horizontalLayout_8);
 
         horizontalLayout_10 = new QHBoxLayout();
         horizontalLayout_10->setSpacing(6);
         horizontalLayout_10->setObjectName(QString::fromUtf8("horizontalLayout_10"));
-        label_10 = new QLabel(verticalLayoutWidget);
+        label_10 = new QLabel(verticalLayoutWidget_5);
         label_10->setObjectName(QString::fromUtf8("label_10"));
         label_10->setEnabled(true);
-        QSizePolicy sizePolicy5(QSizePolicy::Fixed, QSizePolicy::Preferred);
+        QSizePolicy sizePolicy5(QSizePolicy::Fixed, QSizePolicy::Fixed);
         sizePolicy5.setHorizontalStretch(0);
         sizePolicy5.setVerticalStretch(0);
         sizePolicy5.setHeightForWidth(label_10->sizePolicy().hasHeightForWidth());
@@ -351,11 +301,26 @@ public:
 
         horizontalLayout_10->addWidget(label_10);
 
-        textBrowser_8 = new QTextBrowser(verticalLayoutWidget);
+        label_2 = new QLabel(verticalLayoutWidget_5);
+        label_2->setObjectName(QString::fromUtf8("label_2"));
+        sizePolicy1.setHeightForWidth(label_2->sizePolicy().hasHeightForWidth());
+        label_2->setSizePolicy(sizePolicy1);
+
+        horizontalLayout_10->addWidget(label_2);
+
+        textBrowser_8 = new QTextBrowser(verticalLayoutWidget_5);
         textBrowser_8->setObjectName(QString::fromUtf8("textBrowser_8"));
-        sizePolicy4.setHeightForWidth(textBrowser_8->sizePolicy().hasHeightForWidth());
-        textBrowser_8->setSizePolicy(sizePolicy4);
+        QSizePolicy sizePolicy6(QSizePolicy::Expanding, QSizePolicy::Expanding);
+        sizePolicy6.setHorizontalStretch(0);
+        sizePolicy6.setVerticalStretch(100);
+        sizePolicy6.setHeightForWidth(textBrowser_8->sizePolicy().hasHeightForWidth());
+        textBrowser_8->setSizePolicy(sizePolicy6);
+        textBrowser_8->setMinimumSize(QSize(0, 50));
         textBrowser_8->setMaximumSize(QSize(16777215, 50));
+        QFont font3;
+        font3.setFamilies({QString::fromUtf8("\346\275\256\345\255\227\347\244\276\345\233\275\351\243\216\347\235\277\346\245\267\347\256\200\347\271\201-\351\227\252")});
+        font3.setPointSize(14);
+        textBrowser_8->setFont(font3);
         textBrowser_8->setAcceptDrops(false);
         textBrowser_8->setTabChangesFocus(false);
         textBrowser_8->setUndoRedoEnabled(false);
@@ -366,18 +331,11 @@ public:
         horizontalLayout_10->addWidget(textBrowser_8);
 
 
-        verticalLayout_8->addLayout(horizontalLayout_10);
+        verticalLayout_4->addLayout(horizontalLayout_10);
 
-        stackedWidget->addWidget(page);
-        page_2 = new QWidget();
-        page_2->setObjectName(QString::fromUtf8("page_2"));
-        stackedWidget->addWidget(page_2);
 
-        verticalLayout_5->addWidget(stackedWidget);
+        verticalLayout_2->addLayout(verticalLayout_4);
 
-        verticalLayout_2 = new QVBoxLayout();
-        verticalLayout_2->setSpacing(6);
-        verticalLayout_2->setObjectName(QString::fromUtf8("verticalLayout_2"));
 
         verticalLayout_5->addLayout(verticalLayout_2);
 
@@ -398,11 +356,13 @@ public:
         horizontalLayout_7->setSizeConstraint(QLayout::SetDefaultConstraint);
         pushButton = new QPushButton(widget);
         pushButton->setObjectName(QString::fromUtf8("pushButton"));
+        pushButton->setFont(font2);
 
         horizontalLayout_7->addWidget(pushButton);
 
         label_15 = new QLabel(widget);
         label_15->setObjectName(QString::fromUtf8("label_15"));
+        label_15->setFont(font2);
 
         horizontalLayout_7->addWidget(label_15);
 
@@ -414,6 +374,7 @@ public:
         view->addItem(QString());
         view->addItem(QString());
         view->setObjectName(QString::fromUtf8("view"));
+        view->setFont(font2);
 
         horizontalLayout_7->addWidget(view);
 
@@ -477,14 +438,11 @@ public:
         tableWidget = new QTableWidget(centralWidget);
         tableWidget->setObjectName(QString::fromUtf8("tableWidget"));
         tableWidget->setGeometry(QRect(20, 390, 911, 211));
-        QSizePolicy sizePolicy6(QSizePolicy::Fixed, QSizePolicy::Fixed);
-        sizePolicy6.setHorizontalStretch(0);
-        sizePolicy6.setVerticalStretch(0);
-        sizePolicy6.setHeightForWidth(tableWidget->sizePolicy().hasHeightForWidth());
-        tableWidget->setSizePolicy(sizePolicy6);
+        sizePolicy5.setHeightForWidth(tableWidget->sizePolicy().hasHeightForWidth());
+        tableWidget->setSizePolicy(sizePolicy5);
         horizontalLayoutWidget = new QWidget(centralWidget);
         horizontalLayoutWidget->setObjectName(QString::fromUtf8("horizontalLayoutWidget"));
-        horizontalLayoutWidget->setGeometry(QRect(20, 0, 191, 21));
+        horizontalLayoutWidget->setGeometry(QRect(20, 0, 191, 32));
         horizontalLayout = new QHBoxLayout(horizontalLayoutWidget);
         horizontalLayout->setSpacing(6);
         horizontalLayout->setContentsMargins(11, 11, 11, 11);
@@ -494,14 +452,27 @@ public:
         label_14->setObjectName(QString::fromUtf8("label_14"));
         sizePolicy3.setHeightForWidth(label_14->sizePolicy().hasHeightForWidth());
         label_14->setSizePolicy(sizePolicy3);
+        QFont font4;
+        font4.setFamilies({QString::fromUtf8("Rockwell Condensed")});
+        font4.setPointSize(12);
+        label_14->setFont(font4);
         label_14->setAlignment(Qt::AlignLeading|Qt::AlignLeft|Qt::AlignVCenter);
 
         horizontalLayout->addWidget(label_14);
 
         label_16 = new QLabel(horizontalLayoutWidget);
         label_16->setObjectName(QString::fromUtf8("label_16"));
-        sizePolicy6.setHeightForWidth(label_16->sizePolicy().hasHeightForWidth());
-        label_16->setSizePolicy(sizePolicy6);
+        QSizePolicy sizePolicy7(QSizePolicy::Expanding, QSizePolicy::Fixed);
+        sizePolicy7.setHorizontalStretch(0);
+        sizePolicy7.setVerticalStretch(0);
+        sizePolicy7.setHeightForWidth(label_16->sizePolicy().hasHeightForWidth());
+        label_16->setSizePolicy(sizePolicy7);
+        QFont font5;
+        font5.setFamilies({QString::fromUtf8("Monotype Corsiva")});
+        font5.setPointSize(20);
+        font5.setItalic(true);
+        label_16->setFont(font5);
+        label_16->setAlignment(Qt::AlignLeading|Qt::AlignLeft|Qt::AlignVCenter);
 
         horizontalLayout->addWidget(label_16);
 
@@ -524,7 +495,7 @@ public:
         calendarClass->setCentralWidget(centralWidget);
         menuBar = new QMenuBar(calendarClass);
         menuBar->setObjectName(QString::fromUtf8("menuBar"));
-        menuBar->setGeometry(QRect(0, 0, 960, 22));
+        menuBar->setGeometry(QRect(0, 0, 948, 22));
         calendarClass->setMenuBar(menuBar);
         mainToolBar = new QToolBar(calendarClass);
         mainToolBar->setObjectName(QString::fromUtf8("mainToolBar"));
@@ -535,9 +506,6 @@ public:
 
         retranslateUi(calendarClass);
 
-        stackedWidget->setCurrentIndex(0);
-
-
         QMetaObject::connectSlotsByName(calendarClass);
     } // setupUi
 
@@ -545,13 +513,6 @@ public:
     {
         calendarClass->setWindowTitle(QCoreApplication::translate("calendarClass", "calendar", nullptr));
         label_3->setText(QCoreApplication::translate("calendarClass", "MyCalendar", nullptr));
-        checkBox_3->setText(QCoreApplication::translate("calendarClass", "Important Events", nullptr));
-        checkBox_2->setText(QCoreApplication::translate("calendarClass", "Holiday", nullptr));
-        checkBox->setText(QCoreApplication::translate("calendarClass", "Tasks", nullptr));
-        label_2->setText(QCoreApplication::translate("calendarClass", "Other Calendars", nullptr));
-        checkBox_4->setText(QCoreApplication::translate("calendarClass", "Individual", nullptr));
-        checkBox_5->setText(QCoreApplication::translate("calendarClass", "Group 1", nullptr));
-        checkBox_6->setText(QCoreApplication::translate("calendarClass", "Group 2", nullptr));
         label->setText(QCoreApplication::translate("calendarClass", "Time now", nullptr));
         label_12->setText(QString());
         label_11->setText(QCoreApplication::translate("calendarClass", "The time of the next event ", nullptr));
@@ -561,6 +522,7 @@ public:
         label_6->setText(QCoreApplication::translate("calendarClass", "\345\273\272\350\256\256", nullptr));
         label_7->setText(QCoreApplication::translate("calendarClass", "\345\220\216\345\207\272\345\217\221", nullptr));
         label_10->setText(QCoreApplication::translate("calendarClass", "\345\244\251\346\260\224\345\273\272\350\256\256", nullptr));
+        label_2->setText(QCoreApplication::translate("calendarClass", "\345\233\276\346\240\207", nullptr));
         pushButton->setText(QCoreApplication::translate("calendarClass", "Team manage", nullptr));
         label_15->setText(QCoreApplication::translate("calendarClass", "  View\357\274\232", nullptr));
         view->setItemText(0, QCoreApplication::translate("calendarClass", "Day", nullptr));

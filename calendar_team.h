@@ -1,4 +1,4 @@
-#pragma once
+ï»¿#pragma once
 #ifndef CALENDAR_TEAM_H
 #define CALENDAR_TEAM_H
 #include"config.h"
@@ -6,7 +6,7 @@
 #include"ui_calendar_team.h"
 extern int user_nums;
 extern int USR_ID_NOW;
-//¼Ì³ĞÓÚcalendar
+//ç»§æ‰¿äºcalendar
 class calendar_team: public  QMainWindow
 {
     Q_OBJECT
@@ -17,7 +17,7 @@ public:
     QString team_id;
     USER user_now = users[USR_ID_NOW - USER_ID_FORE];
     TEAM team_now;
-    //´ÓÎÄ¼şµ¼Èëµ±Ç°ÓÃ»§Ö®Ç°µÄËùÓĞÈÕ³Ì¼ÇÂ¼
+    //ä»æ–‡ä»¶å¯¼å…¥å½“å‰ç”¨æˆ·ä¹‹å‰çš„æ‰€æœ‰æ—¥ç¨‹è®°å½•
     void load_team_Event();
     void updateTable();
     void set_team_id(QString);

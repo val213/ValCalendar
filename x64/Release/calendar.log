@@ -1,0 +1,689 @@
+﻿  uic calendar.ui
+  uic calendar_team.ui
+  uic REG_N_LOGIN.ui
+  uic Team_mng.ui
+  uic TODOwidget.ui
+  rcc calendar.qrc
+  moc calendar.h
+  moc bridge.h
+  moc calendar_team.h
+  moc team_mng.h
+  moc TODO_team.h
+  moc tsplan.h
+  moc REG_N_LOGIN.h
+  moc TODOwidget.h
+   C:\Users\yangluwei\source\repos\calendar\calendar\calendar.h(0:1): note: No relevant classes found. No output generated.
+   C:\Users\yangluwei\source\repos\calendar\calendar\team_mng.h(0:1): note: No relevant classes found. No output generated.
+   C:\Users\yangluwei\source\repos\calendar\calendar\tsplan.h(0:1): note: No relevant classes found. No output generated.
+   C:\Users\yangluwei\source\repos\calendar\calendar\TODOwidget.h(0:1): note: No relevant classes found. No output generated.
+  bridge.cpp
+  calendar_team.cpp
+  decision_make.cpp
+  REG_N_LOGIN.cpp
+  team_mng.cpp
+  TODOwidget.cpp
+  TODO_team.cpp
+  tsplan.cpp
+  usr_mng.cpp
+  calendar.cpp
+  main.cpp
+C:\Users\yangluwei\source\repos\calendar\calendar\TODO_team.cpp(1,1): warning C4828: 文件包含在偏移 0x4ab 处开始的字符，该字符在当前源字符集中无效(代码页 65001)。
+C:\Users\yangluwei\source\repos\calendar\calendar\TODO_team.cpp(1,1): warning C4828: 文件包含在偏移 0x4ac 处开始的字符，该字符在当前源字符集中无效(代码页 65001)。
+C:\Users\yangluwei\source\repos\calendar\calendar\TODO_team.cpp(1,1): warning C4828: 文件包含在偏移 0x4ad 处开始的字符，该字符在当前源字符集中无效(代码页 65001)。
+C:\Users\yangluwei\source\repos\calendar\calendar\TODO_team.cpp(1,1): warning C4828: 文件包含在偏移 0x4ae 处开始的字符，该字符在当前源字符集中无效(代码页 65001)。
+C:\Users\yangluwei\source\repos\calendar\calendar\TODO_team.cpp(1,1): warning C4828: 文件包含在偏移 0x4b1 处开始的字符，该字符在当前源字符集中无效(代码页 65001)。
+C:\Users\yangluwei\source\repos\calendar\calendar\usr_mng.cpp(1,1): warning C4828: 文件包含在偏移 0x22d 处开始的字符，该字符在当前源字符集中无效(代码页 65001)。
+C:\Users\yangluwei\source\repos\calendar\calendar\TODO_team.cpp(1,1): warning C4828: 文件包含在偏移 0x4b2 处开始的字符，该字符在当前源字符集中无效(代码页 65001)。
+C:\Users\yangluwei\source\repos\calendar\calendar\TODO_team.cpp(1,1): warning C4828: 文件包含在偏移 0x4b8 处开始的字符，该字符在当前源字符集中无效(代码页 65001)。
+C:\Users\yangluwei\source\repos\calendar\calendar\usr_mng.cpp(1,1): warning C4828: 文件包含在偏移 0x22e 处开始的字符，该字符在当前源字符集中无效(代码页 65001)。
+C:\Users\yangluwei\source\repos\calendar\calendar\TODO_team.cpp(1,1): warning C4828: 文件包含在偏移 0x4b9 处开始的字符，该字符在当前源字符集中无效(代码页 65001)。
+C:\Users\yangluwei\source\repos\calendar\calendar\usr_mng.cpp(1,1): warning C4828: 文件包含在偏移 0x231 处开始的字符，该字符在当前源字符集中无效(代码页 65001)。
+C:\Users\yangluwei\source\repos\calendar\calendar\TODO_team.cpp(1,1): warning C4828: 文件包含在偏移 0x4bb 处开始的字符，该字符在当前源字符集中无效(代码页 65001)。
+C:\Users\yangluwei\source\repos\calendar\calendar\usr_mng.cpp(1,1): warning C4828: 文件包含在偏移 0x232 处开始的字符，该字符在当前源字符集中无效(代码页 65001)。
+C:\Users\yangluwei\source\repos\calendar\calendar\TODO_team.cpp(1,1): warning C4828: 文件包含在偏移 0x4bf 处开始的字符，该字符在当前源字符集中无效(代码页 65001)。
+C:\Users\yangluwei\source\repos\calendar\calendar\usr_mng.cpp(1,1): warning C4828: 文件包含在偏移 0x233 处开始的字符，该字符在当前源字符集中无效(代码页 65001)。
+C:\Users\yangluwei\source\repos\calendar\calendar\TODO_team.cpp(1,1): warning C4828: 文件包含在偏移 0x4c0 处开始的字符，该字符在当前源字符集中无效(代码页 65001)。
+C:\Users\yangluwei\source\repos\calendar\calendar\usr_mng.cpp(1,1): warning C4828: 文件包含在偏移 0x234 处开始的字符，该字符在当前源字符集中无效(代码页 65001)。
+C:\Users\yangluwei\source\repos\calendar\calendar\usr_mng.cpp(1,1): warning C4828: 文件包含在偏移 0x235 处开始的字符，该字符在当前源字符集中无效(代码页 65001)。
+C:\Users\yangluwei\source\repos\calendar\calendar\TODO_team.cpp(1,1): warning C4828: 文件包含在偏移 0x4c1 处开始的字符，该字符在当前源字符集中无效(代码页 65001)。
+C:\Users\yangluwei\source\repos\calendar\calendar\usr_mng.cpp(1,1): warning C4828: 文件包含在偏移 0x239 处开始的字符，该字符在当前源字符集中无效(代码页 65001)。
+C:\Users\yangluwei\source\repos\calendar\calendar\TODO_team.cpp(1,1): warning C4828: 文件包含在偏移 0x4c4 处开始的字符，该字符在当前源字符集中无效(代码页 65001)。
+C:\Users\yangluwei\source\repos\calendar\calendar\usr_mng.cpp(1,1): warning C4828: 文件包含在偏移 0x23d 处开始的字符，该字符在当前源字符集中无效(代码页 65001)。
+C:\Users\yangluwei\source\repos\calendar\calendar\TODO_team.cpp(1,1): warning C4828: 文件包含在偏移 0x4c5 处开始的字符，该字符在当前源字符集中无效(代码页 65001)。
+C:\Users\yangluwei\source\repos\calendar\calendar\usr_mng.cpp(1,1): warning C4828: 文件包含在偏移 0x23f 处开始的字符，该字符在当前源字符集中无效(代码页 65001)。
+C:\Users\yangluwei\source\repos\calendar\calendar\TODO_team.cpp(1,1): warning C4828: 文件包含在偏移 0x4c6 处开始的字符，该字符在当前源字符集中无效(代码页 65001)。
+C:\Users\yangluwei\source\repos\calendar\calendar\usr_mng.cpp(1,1): warning C4828: 文件包含在偏移 0x241 处开始的字符，该字符在当前源字符集中无效(代码页 65001)。
+C:\Users\yangluwei\source\repos\calendar\calendar\TODO_team.cpp(1,1): warning C4828: 文件包含在偏移 0x4c7 处开始的字符，该字符在当前源字符集中无效(代码页 65001)。
+C:\Users\yangluwei\source\repos\calendar\calendar\usr_mng.cpp(1,1): warning C4828: 文件包含在偏移 0x4f4 处开始的字符，该字符在当前源字符集中无效(代码页 65001)。
+C:\Users\yangluwei\source\repos\calendar\calendar\TODO_team.cpp(1,1): warning C4828: 文件包含在偏移 0x4ca 处开始的字符，该字符在当前源字符集中无效(代码页 65001)。
+C:\Users\yangluwei\source\repos\calendar\calendar\TODO_team.cpp(1,1): warning C4828: 文件包含在偏移 0x4cc 处开始的字符，该字符在当前源字符集中无效(代码页 65001)。
+C:\Users\yangluwei\source\repos\calendar\calendar\usr_mng.cpp(1,1): warning C4828: 文件包含在偏移 0x4f5 处开始的字符，该字符在当前源字符集中无效(代码页 65001)。
+C:\Users\yangluwei\source\repos\calendar\calendar\TODO_team.cpp(1,1): warning C4828: 文件包含在偏移 0x4cd 处开始的字符，该字符在当前源字符集中无效(代码页 65001)。
+C:\Users\yangluwei\source\repos\calendar\calendar\usr_mng.cpp(1,1): warning C4828: 文件包含在偏移 0x51d 处开始的字符，该字符在当前源字符集中无效(代码页 65001)。
+C:\Users\yangluwei\source\repos\calendar\calendar\TODO_team.cpp(1,1): warning C4828: 文件包含在偏移 0x4ce 处开始的字符，该字符在当前源字符集中无效(代码页 65001)。
+C:\Users\yangluwei\source\repos\calendar\calendar\usr_mng.cpp(1,1): warning C4828: 文件包含在偏移 0x51e 处开始的字符，该字符在当前源字符集中无效(代码页 65001)。
+C:\Users\yangluwei\source\repos\calendar\calendar\TODO_team.cpp(1,1): warning C4828: 文件包含在偏移 0x521 处开始的字符，该字符在当前源字符集中无效(代码页 65001)。
+C:\Users\yangluwei\source\repos\calendar\calendar\usr_mng.cpp(1,1): warning C4828: 文件包含在偏移 0x544 处开始的字符，该字符在当前源字符集中无效(代码页 65001)。
+C:\Users\yangluwei\source\repos\calendar\calendar\TODO_team.cpp(1,1): warning C4828: 文件包含在偏移 0x525 处开始的字符，该字符在当前源字符集中无效(代码页 65001)。
+C:\Users\yangluwei\source\repos\calendar\calendar\usr_mng.cpp(1,1): warning C4828: 文件包含在偏移 0x545 处开始的字符，该字符在当前源字符集中无效(代码页 65001)。
+C:\Users\yangluwei\source\repos\calendar\calendar\TODO_team.cpp(1,1): warning C4828: 文件包含在偏移 0x527 处开始的字符，该字符在当前源字符集中无效(代码页 65001)。
+C:\Users\yangluwei\source\repos\calendar\calendar\usr_mng.cpp(1,1): warning C4828: 文件包含在偏移 0x549 处开始的字符，该字符在当前源字符集中无效(代码页 65001)。
+C:\Users\yangluwei\source\repos\calendar\calendar\TODO_team.cpp(1,1): warning C4828: 文件包含在偏移 0x528 处开始的字符，该字符在当前源字符集中无效(代码页 65001)。
+C:\Users\yangluwei\source\repos\calendar\calendar\usr_mng.cpp(1,1): warning C4828: 文件包含在偏移 0x564 处开始的字符，该字符在当前源字符集中无效(代码页 65001)。
+C:\Users\yangluwei\source\repos\calendar\calendar\TODO_team.cpp(1,1): warning C4828: 文件包含在偏移 0x52c 处开始的字符，该字符在当前源字符集中无效(代码页 65001)。
+C:\Users\yangluwei\source\repos\calendar\calendar\usr_mng.cpp(1,1): warning C4828: 文件包含在偏移 0x565 处开始的字符，该字符在当前源字符集中无效(代码页 65001)。
+C:\Users\yangluwei\source\repos\calendar\calendar\TODO_team.cpp(1,1): warning C4828: 文件包含在偏移 0x531 处开始的字符，该字符在当前源字符集中无效(代码页 65001)。
+C:\Users\yangluwei\source\repos\calendar\calendar\usr_mng.cpp(1,1): warning C4828: 文件包含在偏移 0x71e 处开始的字符，该字符在当前源字符集中无效(代码页 65001)。
+C:\Users\yangluwei\source\repos\calendar\calendar\TODO_team.cpp(1,1): warning C4828: 文件包含在偏移 0x532 处开始的字符，该字符在当前源字符集中无效(代码页 65001)。
+C:\Users\yangluwei\source\repos\calendar\calendar\usr_mng.cpp(1,1): warning C4828: 文件包含在偏移 0x71f 处开始的字符，该字符在当前源字符集中无效(代码页 65001)。
+C:\Users\yangluwei\source\repos\calendar\calendar\TODO_team.cpp(1,1): warning C4828: 文件包含在偏移 0x538 处开始的字符，该字符在当前源字符集中无效(代码页 65001)。
+C:\Users\yangluwei\source\repos\calendar\calendar\usr_mng.cpp(1,1): warning C4828: 文件包含在偏移 0x722 处开始的字符，该字符在当前源字符集中无效(代码页 65001)。
+C:\Users\yangluwei\source\repos\calendar\calendar\TODO_team.cpp(1,1): warning C4828: 文件包含在偏移 0x55d 处开始的字符，该字符在当前源字符集中无效(代码页 65001)。
+C:\Users\yangluwei\source\repos\calendar\calendar\usr_mng.cpp(1,1): warning C4828: 文件包含在偏移 0x723 处开始的字符，该字符在当前源字符集中无效(代码页 65001)。
+C:\Users\yangluwei\source\repos\calendar\calendar\TODO_team.cpp(1,1): warning C4828: 文件包含在偏移 0x55e 处开始的字符，该字符在当前源字符集中无效(代码页 65001)。
+C:\Users\yangluwei\source\repos\calendar\calendar\usr_mng.cpp(1,1): warning C4828: 文件包含在偏移 0x724 处开始的字符，该字符在当前源字符集中无效(代码页 65001)。
+C:\Users\yangluwei\source\repos\calendar\calendar\TODO_team.cpp(1,1): warning C4828: 文件包含在偏移 0x55f 处开始的字符，该字符在当前源字符集中无效(代码页 65001)。
+C:\Users\yangluwei\source\repos\calendar\calendar\usr_mng.cpp(1,1): warning C4828: 文件包含在偏移 0x725 处开始的字符，该字符在当前源字符集中无效(代码页 65001)。
+C:\Users\yangluwei\source\repos\calendar\calendar\TODO_team.cpp(1,1): warning C4828: 文件包含在偏移 0x560 处开始的字符，该字符在当前源字符集中无效(代码页 65001)。
+C:\Users\yangluwei\source\repos\calendar\calendar\usr_mng.cpp(1,1): warning C4828: 文件包含在偏移 0x726 处开始的字符，该字符在当前源字符集中无效(代码页 65001)。
+C:\Users\yangluwei\source\repos\calendar\calendar\TODO_team.cpp(1,1): warning C4828: 文件包含在偏移 0x563 处开始的字符，该字符在当前源字符集中无效(代码页 65001)。
+C:\Users\yangluwei\source\repos\calendar\calendar\usr_mng.cpp(1,1): warning C4828: 文件包含在偏移 0x72a 处开始的字符，该字符在当前源字符集中无效(代码页 65001)。
+C:\Users\yangluwei\source\repos\calendar\calendar\TODO_team.cpp(1,1): warning C4828: 文件包含在偏移 0x564 处开始的字符，该字符在当前源字符集中无效(代码页 65001)。
+C:\Users\yangluwei\source\repos\calendar\calendar\usr_mng.cpp(1,1): warning C4828: 文件包含在偏移 0x72e 处开始的字符，该字符在当前源字符集中无效(代码页 65001)。
+C:\Users\yangluwei\source\repos\calendar\calendar\TODO_team.cpp(1,1): warning C4828: 文件包含在偏移 0x570 处开始的字符，该字符在当前源字符集中无效(代码页 65001)。
+C:\Users\yangluwei\source\repos\calendar\calendar\usr_mng.cpp(1,1): warning C4828: 文件包含在偏移 0x730 处开始的字符，该字符在当前源字符集中无效(代码页 65001)。
+C:\Users\yangluwei\source\repos\calendar\calendar\TODO_team.cpp(1,1): warning C4828: 文件包含在偏移 0x571 处开始的字符，该字符在当前源字符集中无效(代码页 65001)。
+C:\Users\yangluwei\source\repos\calendar\calendar\usr_mng.cpp(1,1): warning C4828: 文件包含在偏移 0x732 处开始的字符，该字符在当前源字符集中无效(代码页 65001)。
+C:\Users\yangluwei\source\repos\calendar\calendar\TODO_team.cpp(1,1): warning C4828: 文件包含在偏移 0x577 处开始的字符，该字符在当前源字符集中无效(代码页 65001)。
+C:\Users\yangluwei\source\repos\calendar\calendar\TODO_team.cpp(1,1): warning C4828: 文件包含在偏移 0x579 处开始的字符，该字符在当前源字符集中无效(代码页 65001)。
+C:\Users\yangluwei\source\repos\calendar\calendar\usr_mng.cpp(1,1): warning C4828: 文件包含在偏移 0x757 处开始的字符，该字符在当前源字符集中无效(代码页 65001)。
+C:\Users\yangluwei\source\repos\calendar\calendar\TODO_team.cpp(1,1): warning C4828: 文件包含在偏移 0x57a 处开始的字符，该字符在当前源字符集中无效(代码页 65001)。
+C:\Users\yangluwei\source\repos\calendar\calendar\usr_mng.cpp(1,1): warning C4828: 文件包含在偏移 0x758 处开始的字符，该字符在当前源字符集中无效(代码页 65001)。
+C:\Users\yangluwei\source\repos\calendar\calendar\usr_mng.cpp(1,1): warning C4828: 文件包含在偏移 0x75c 处开始的字符，该字符在当前源字符集中无效(代码页 65001)。
+C:\Users\yangluwei\source\repos\calendar\calendar\TODO_team.cpp(1,1): warning C4828: 文件包含在偏移 0x57b 处开始的字符，该字符在当前源字符集中无效(代码页 65001)。
+C:\Users\yangluwei\source\repos\calendar\calendar\TODO_team.cpp(1,1): warning C4828: 文件包含在偏移 0x57c 处开始的字符，该字符在当前源字符集中无效(代码页 65001)。
+C:\Users\yangluwei\source\repos\calendar\calendar\usr_mng.cpp(1,1): warning C4828: 文件包含在偏移 0x7d7 处开始的字符，该字符在当前源字符集中无效(代码页 65001)。
+C:\Users\yangluwei\source\repos\calendar\calendar\usr_mng.cpp(1,1): warning C4828: 文件包含在偏移 0x7d8 处开始的字符，该字符在当前源字符集中无效(代码页 65001)。
+C:\Users\yangluwei\source\repos\calendar\calendar\TODO_team.cpp(1,1): warning C4828: 文件包含在偏移 0x57e 处开始的字符，该字符在当前源字符集中无效(代码页 65001)。
+C:\Users\yangluwei\source\repos\calendar\calendar\usr_mng.cpp(1,1): warning C4828: 文件包含在偏移 0x7db 处开始的字符，该字符在当前源字符集中无效(代码页 65001)。
+C:\Users\yangluwei\source\repos\calendar\calendar\TODO_team.cpp(1,1): warning C4828: 文件包含在偏移 0x57f 处开始的字符，该字符在当前源字符集中无效(代码页 65001)。
+C:\Users\yangluwei\source\repos\calendar\calendar\usr_mng.cpp(1,1): warning C4828: 文件包含在偏移 0x7dc 处开始的字符，该字符在当前源字符集中无效(代码页 65001)。
+C:\Users\yangluwei\source\repos\calendar\calendar\TODO_team.cpp(1,1): warning C4828: 文件包含在偏移 0x58c 处开始的字符，该字符在当前源字符集中无效(代码页 65001)。
+C:\Users\yangluwei\source\repos\calendar\calendar\usr_mng.cpp(1,1): warning C4828: 文件包含在偏移 0x7dd 处开始的字符，该字符在当前源字符集中无效(代码页 65001)。
+C:\Users\yangluwei\source\repos\calendar\calendar\TODO_team.cpp(1,1): warning C4828: 文件包含在偏移 0x58e 处开始的字符，该字符在当前源字符集中无效(代码页 65001)。
+C:\Users\yangluwei\source\repos\calendar\calendar\usr_mng.cpp(1,1): warning C4828: 文件包含在偏移 0x7de 处开始的字符，该字符在当前源字符集中无效(代码页 65001)。
+C:\Users\yangluwei\source\repos\calendar\calendar\TODO_team.cpp(1,1): warning C4828: 文件包含在偏移 0x58f 处开始的字符，该字符在当前源字符集中无效(代码页 65001)。
+C:\Users\yangluwei\source\repos\calendar\calendar\TODO_team.cpp(1,1): warning C4828: 文件包含在偏移 0x593 处开始的字符，该字符在当前源字符集中无效(代码页 65001)。
+C:\Users\yangluwei\source\repos\calendar\calendar\usr_mng.cpp(1,1): warning C4828: 文件包含在偏移 0x7df 处开始的字符，该字符在当前源字符集中无效(代码页 65001)。
+C:\Users\yangluwei\source\repos\calendar\calendar\usr_mng.cpp(1,1): warning C4828: 文件包含在偏移 0x7e0 处开始的字符，该字符在当前源字符集中无效(代码页 65001)。
+C:\Users\yangluwei\source\repos\calendar\calendar\TODO_team.cpp(1,1): warning C4828: 文件包含在偏移 0x594 处开始的字符，该字符在当前源字符集中无效(代码页 65001)。
+C:\Users\yangluwei\source\repos\calendar\calendar\usr_mng.cpp(1,1): warning C4828: 文件包含在偏移 0x7e4 处开始的字符，该字符在当前源字符集中无效(代码页 65001)。
+C:\Users\yangluwei\source\repos\calendar\calendar\TODO_team.cpp(1,1): warning C4828: 文件包含在偏移 0x596 处开始的字符，该字符在当前源字符集中无效(代码页 65001)。
+C:\Users\yangluwei\source\repos\calendar\calendar\usr_mng.cpp(1,1): warning C4828: 文件包含在偏移 0x7e6 处开始的字符，该字符在当前源字符集中无效(代码页 65001)。
+C:\Users\yangluwei\source\repos\calendar\calendar\TODO_team.cpp(1,1): warning C4828: 文件包含在偏移 0x597 处开始的字符，该字符在当前源字符集中无效(代码页 65001)。
+C:\Users\yangluwei\source\repos\calendar\calendar\usr_mng.cpp(1,1): warning C4828: 文件包含在偏移 0x7e8 处开始的字符，该字符在当前源字符集中无效(代码页 65001)。
+C:\Users\yangluwei\source\repos\calendar\calendar\TODO_team.cpp(1,1): warning C4828: 文件包含在偏移 0x5cc 处开始的字符，该字符在当前源字符集中无效(代码页 65001)。
+C:\Users\yangluwei\source\repos\calendar\calendar\TODO_team.cpp(1,1): warning C4828: 文件包含在偏移 0x5cd 处开始的字符，该字符在当前源字符集中无效(代码页 65001)。
+C:\Users\yangluwei\source\repos\calendar\calendar\usr_mng.cpp(1,1): warning C4828: 文件包含在偏移 0x8f2 处开始的字符，该字符在当前源字符集中无效(代码页 65001)。
+C:\Users\yangluwei\source\repos\calendar\calendar\TODO_team.cpp(1,1): warning C4828: 文件包含在偏移 0x5ce 处开始的字符，该字符在当前源字符集中无效(代码页 65001)。
+C:\Users\yangluwei\source\repos\calendar\calendar\usr_mng.cpp(1,1): warning C4828: 文件包含在偏移 0x8f3 处开始的字符，该字符在当前源字符集中无效(代码页 65001)。
+C:\Users\yangluwei\source\repos\calendar\calendar\TODO_team.cpp(1,1): warning C4828: 文件包含在偏移 0x5d0 处开始的字符，该字符在当前源字符集中无效(代码页 65001)。
+C:\Users\yangluwei\source\repos\calendar\calendar\usr_mng.cpp(1,1): warning C4828: 文件包含在偏移 0x8f4 处开始的字符，该字符在当前源字符集中无效(代码页 65001)。
+C:\Users\yangluwei\source\repos\calendar\calendar\TODO_team.cpp(1,1): warning C4828: 文件包含在偏移 0x5d1 处开始的字符，该字符在当前源字符集中无效(代码页 65001)。
+C:\Users\yangluwei\source\repos\calendar\calendar\usr_mng.cpp(1,1): warning C4828: 文件包含在偏移 0x8f5 处开始的字符，该字符在当前源字符集中无效(代码页 65001)。
+C:\Users\yangluwei\source\repos\calendar\calendar\TODO_team.cpp(1,1): warning C4828: 文件包含在偏移 0x5d2 处开始的字符，该字符在当前源字符集中无效(代码页 65001)。
+C:\Users\yangluwei\source\repos\calendar\calendar\usr_mng.cpp(1,1): warning C4828: 文件包含在偏移 0x8f8 处开始的字符，该字符在当前源字符集中无效(代码页 65001)。
+C:\Users\yangluwei\source\repos\calendar\calendar\usr_mng.cpp(1,1): warning C4828: 文件包含在偏移 0x8f9 处开始的字符，该字符在当前源字符集中无效(代码页 65001)。
+C:\Users\yangluwei\source\repos\calendar\calendar\TODO_team.cpp(1,1): warning C4828: 文件包含在偏移 0x5d6 处开始的字符，该字符在当前源字符集中无效(代码页 65001)。
+C:\Users\yangluwei\source\repos\calendar\calendar\usr_mng.cpp(1,1): warning C4828: 文件包含在偏移 0x8fa 处开始的字符，该字符在当前源字符集中无效(代码页 65001)。
+C:\Users\yangluwei\source\repos\calendar\calendar\TODO_team.cpp(1,1): warning C4828: 文件包含在偏移 0x5d7 处开始的字符，该字符在当前源字符集中无效(代码页 65001)。
+C:\Users\yangluwei\source\repos\calendar\calendar\usr_mng.cpp(1,1): warning C4828: 文件包含在偏移 0x8fb 处开始的字符，该字符在当前源字符集中无效(代码页 65001)。
+C:\Users\yangluwei\source\repos\calendar\calendar\TODO_team.cpp(1,1): warning C4828: 文件包含在偏移 0x5db 处开始的字符，该字符在当前源字符集中无效(代码页 65001)。
+C:\Users\yangluwei\source\repos\calendar\calendar\usr_mng.cpp(1,1): warning C4828: 文件包含在偏移 0x8fc 处开始的字符，该字符在当前源字符集中无效(代码页 65001)。
+C:\Users\yangluwei\source\repos\calendar\calendar\TODO_team.cpp(1,1): warning C4828: 文件包含在偏移 0x5dd 处开始的字符，该字符在当前源字符集中无效(代码页 65001)。
+C:\Users\yangluwei\source\repos\calendar\calendar\usr_mng.cpp(1,1): warning C4828: 文件包含在偏移 0x8fd 处开始的字符，该字符在当前源字符集中无效(代码页 65001)。
+C:\Users\yangluwei\source\repos\calendar\calendar\TODO_team.cpp(1,1): warning C4828: 文件包含在偏移 0x5df 处开始的字符，该字符在当前源字符集中无效(代码页 65001)。
+C:\Users\yangluwei\source\repos\calendar\calendar\usr_mng.cpp(1,1): warning C4828: 文件包含在偏移 0x8ff 处开始的字符，该字符在当前源字符集中无效(代码页 65001)。
+C:\Users\yangluwei\source\repos\calendar\calendar\TODO_team.cpp(1,1): warning C4828: 文件包含在偏移 0x5e0 处开始的字符，该字符在当前源字符集中无效(代码页 65001)。
+C:\Users\yangluwei\source\repos\calendar\calendar\TODO_team.cpp(1,1): warning C4828: 文件包含在偏移 0x5e2 处开始的字符，该字符在当前源字符集中无效(代码页 65001)。
+C:\Users\yangluwei\source\repos\calendar\calendar\usr_mng.cpp(1,1): warning C4828: 文件包含在偏移 0x900 处开始的字符，该字符在当前源字符集中无效(代码页 65001)。
+C:\Users\yangluwei\source\repos\calendar\calendar\TODO_team.cpp(1,1): warning C4828: 文件包含在偏移 0x5e4 处开始的字符，该字符在当前源字符集中无效(代码页 65001)。
+C:\Users\yangluwei\source\repos\calendar\calendar\usr_mng.cpp(1,1): warning C4828: 文件包含在偏移 0x901 处开始的字符，该字符在当前源字符集中无效(代码页 65001)。
+C:\Users\yangluwei\source\repos\calendar\calendar\TODO_team.cpp(1,1): warning C4828: 文件包含在偏移 0x5e5 处开始的字符，该字符在当前源字符集中无效(代码页 65001)。
+C:\Users\yangluwei\source\repos\calendar\calendar\usr_mng.cpp(1,1): warning C4828: 文件包含在偏移 0x907 处开始的字符，该字符在当前源字符集中无效(代码页 65001)。
+C:\Users\yangluwei\source\repos\calendar\calendar\usr_mng.cpp(1,1): warning C4828: 文件包含在偏移 0x90a 处开始的字符，该字符在当前源字符集中无效(代码页 65001)。
+C:\Users\yangluwei\source\repos\calendar\calendar\TODO_team.cpp(1,1): warning C4828: 文件包含在偏移 0x5f4 处开始的字符，该字符在当前源字符集中无效(代码页 65001)。
+C:\Users\yangluwei\source\repos\calendar\calendar\usr_mng.cpp(1,1): warning C4828: 文件包含在偏移 0x90b 处开始的字符，该字符在当前源字符集中无效(代码页 65001)。
+C:\Users\yangluwei\source\repos\calendar\calendar\TODO_team.cpp(1,1): warning C4828: 文件包含在偏移 0x5f6 处开始的字符，该字符在当前源字符集中无效(代码页 65001)。
+C:\Users\yangluwei\source\repos\calendar\calendar\usr_mng.cpp(1,1): warning C4828: 文件包含在偏移 0x90c 处开始的字符，该字符在当前源字符集中无效(代码页 65001)。
+C:\Users\yangluwei\source\repos\calendar\calendar\TODO_team.cpp(1,1): warning C4828: 文件包含在偏移 0x5f8 处开始的字符，该字符在当前源字符集中无效(代码页 65001)。
+C:\Users\yangluwei\source\repos\calendar\calendar\usr_mng.cpp(1,1): warning C4828: 文件包含在偏移 0x90e 处开始的字符，该字符在当前源字符集中无效(代码页 65001)。
+C:\Users\yangluwei\source\repos\calendar\calendar\TODO_team.cpp(1,1): warning C4828: 文件包含在偏移 0x5f9 处开始的字符，该字符在当前源字符集中无效(代码页 65001)。
+C:\Users\yangluwei\source\repos\calendar\calendar\usr_mng.cpp(1,1): warning C4828: 文件包含在偏移 0x911 处开始的字符，该字符在当前源字符集中无效(代码页 65001)。
+C:\Users\yangluwei\source\repos\calendar\calendar\TODO_team.cpp(1,1): warning C4828: 文件包含在偏移 0x5fa 处开始的字符，该字符在当前源字符集中无效(代码页 65001)。
+C:\Users\yangluwei\source\repos\calendar\calendar\usr_mng.cpp(1,1): warning C4828: 文件包含在偏移 0x912 处开始的字符，该字符在当前源字符集中无效(代码页 65001)。
+C:\Users\yangluwei\source\repos\calendar\calendar\TODO_team.cpp(1,1): warning C4828: 文件包含在偏移 0x5fb 处开始的字符，该字符在当前源字符集中无效(代码页 65001)。
+C:\Users\yangluwei\source\repos\calendar\calendar\usr_mng.cpp(1,1): warning C4828: 文件包含在偏移 0x914 处开始的字符，该字符在当前源字符集中无效(代码页 65001)。
+C:\Users\yangluwei\source\repos\calendar\calendar\TODO_team.cpp(1,1): warning C4828: 文件包含在偏移 0x638 处开始的字符，该字符在当前源字符集中无效(代码页 65001)。
+C:\Users\yangluwei\source\repos\calendar\calendar\usr_mng.cpp(1,1): warning C4828: 文件包含在偏移 0x916 处开始的字符，该字符在当前源字符集中无效(代码页 65001)。
+C:\Users\yangluwei\source\repos\calendar\calendar\TODO_team.cpp(1,1): warning C4828: 文件包含在偏移 0x63a 处开始的字符，该字符在当前源字符集中无效(代码页 65001)。
+C:\Users\yangluwei\source\repos\calendar\calendar\usr_mng.cpp(1,1): warning C4828: 文件包含在偏移 0x919 处开始的字符，该字符在当前源字符集中无效(代码页 65001)。
+C:\Users\yangluwei\source\repos\calendar\calendar\TODO_team.cpp(1,1): warning C4828: 文件包含在偏移 0x63d 处开始的字符，该字符在当前源字符集中无效(代码页 65001)。
+C:\Users\yangluwei\source\repos\calendar\calendar\usr_mng.cpp(1,1): warning C4828: 文件包含在偏移 0x91a 处开始的字符，该字符在当前源字符集中无效(代码页 65001)。
+C:\Users\yangluwei\source\repos\calendar\calendar\TODO_team.cpp(1,1): warning C4828: 文件包含在偏移 0x678 处开始的字符，该字符在当前源字符集中无效(代码页 65001)。
+C:\Users\yangluwei\source\repos\calendar\calendar\usr_mng.cpp(1,1): warning C4828: 文件包含在偏移 0x91b 处开始的字符，该字符在当前源字符集中无效(代码页 65001)。
+C:\Users\yangluwei\source\repos\calendar\calendar\TODO_team.cpp(1,1): warning C4828: 文件包含在偏移 0x679 处开始的字符，该字符在当前源字符集中无效(代码页 65001)。
+C:\Users\yangluwei\source\repos\calendar\calendar\usr_mng.cpp(1,1): warning C4828: 文件包含在偏移 0x91c 处开始的字符，该字符在当前源字符集中无效(代码页 65001)。
+C:\Users\yangluwei\source\repos\calendar\calendar\TODO_team.cpp(1,1): warning C4828: 文件包含在偏移 0x67d 处开始的字符，该字符在当前源字符集中无效(代码页 65001)。
+C:\Users\yangluwei\source\repos\calendar\calendar\usr_mng.cpp(1,1): warning C4828: 文件包含在偏移 0x91e 处开始的字符，该字符在当前源字符集中无效(代码页 65001)。
+C:\Users\yangluwei\source\repos\calendar\calendar\TODO_team.cpp(1,1): warning C4828: 文件包含在偏移 0x682 处开始的字符，该字符在当前源字符集中无效(代码页 65001)。
+C:\Users\yangluwei\source\repos\calendar\calendar\usr_mng.cpp(1,1): warning C4828: 文件包含在偏移 0x91f 处开始的字符，该字符在当前源字符集中无效(代码页 65001)。
+C:\Users\yangluwei\source\repos\calendar\calendar\usr_mng.cpp(1,1): warning C4828: 文件包含在偏移 0xbd2 处开始的字符，该字符在当前源字符集中无效(代码页 65001)。
+C:\Users\yangluwei\source\repos\calendar\calendar\TODO_team.cpp(1,1): warning C4828: 文件包含在偏移 0x683 处开始的字符，该字符在当前源字符集中无效(代码页 65001)。
+C:\Users\yangluwei\source\repos\calendar\calendar\usr_mng.cpp(1,1): warning C4828: 文件包含在偏移 0xbd3 处开始的字符，该字符在当前源字符集中无效(代码页 65001)。
+C:\Users\yangluwei\source\repos\calendar\calendar\TODO_team.cpp(1,1): warning C4828: 文件包含在偏移 0x6bc 处开始的字符，该字符在当前源字符集中无效(代码页 65001)。
+C:\Users\yangluwei\source\repos\calendar\calendar\usr_mng.cpp(1,1): warning C4828: 文件包含在偏移 0xbd4 处开始的字符，该字符在当前源字符集中无效(代码页 65001)。
+C:\Users\yangluwei\source\repos\calendar\calendar\TODO_team.cpp(1,1): warning C4828: 文件包含在偏移 0x6bd 处开始的字符，该字符在当前源字符集中无效(代码页 65001)。
+C:\Users\yangluwei\source\repos\calendar\calendar\usr_mng.cpp(1,1): warning C4828: 文件包含在偏移 0xbd5 处开始的字符，该字符在当前源字符集中无效(代码页 65001)。
+C:\Users\yangluwei\source\repos\calendar\calendar\TODO_team.cpp(1,1): warning C4828: 文件包含在偏移 0x6cc 处开始的字符，该字符在当前源字符集中无效(代码页 65001)。
+C:\Users\yangluwei\source\repos\calendar\calendar\usr_mng.cpp(1,1): warning C4828: 文件包含在偏移 0xbd8 处开始的字符，该字符在当前源字符集中无效(代码页 65001)。
+C:\Users\yangluwei\source\repos\calendar\calendar\TODO_team.cpp(1,1): warning C4828: 文件包含在偏移 0x6ce 处开始的字符，该字符在当前源字符集中无效(代码页 65001)。
+C:\Users\yangluwei\source\repos\calendar\calendar\usr_mng.cpp(1,1): warning C4828: 文件包含在偏移 0xbd9 处开始的字符，该字符在当前源字符集中无效(代码页 65001)。
+C:\Users\yangluwei\source\repos\calendar\calendar\TODO_team.cpp(1,1): warning C4828: 文件包含在偏移 0x6cf 处开始的字符，该字符在当前源字符集中无效(代码页 65001)。
+C:\Users\yangluwei\source\repos\calendar\calendar\usr_mng.cpp(1,1): warning C4828: 文件包含在偏移 0xbda 处开始的字符，该字符在当前源字符集中无效(代码页 65001)。
+C:\Users\yangluwei\source\repos\calendar\calendar\TODO_team.cpp(1,1): warning C4828: 文件包含在偏移 0x6d1 处开始的字符，该字符在当前源字符集中无效(代码页 65001)。
+C:\Users\yangluwei\source\repos\calendar\calendar\usr_mng.cpp(1,1): warning C4828: 文件包含在偏移 0xbdb 处开始的字符，该字符在当前源字符集中无效(代码页 65001)。
+C:\Users\yangluwei\source\repos\calendar\calendar\TODO_team.cpp(1,1): warning C4828: 文件包含在偏移 0x6d3 处开始的字符，该字符在当前源字符集中无效(代码页 65001)。
+C:\Users\yangluwei\source\repos\calendar\calendar\usr_mng.cpp(1,1): warning C4828: 文件包含在偏移 0xbdc 处开始的字符，该字符在当前源字符集中无效(代码页 65001)。
+C:\Users\yangluwei\source\repos\calendar\calendar\TODO_team.cpp(1,1): warning C4828: 文件包含在偏移 0x70b 处开始的字符，该字符在当前源字符集中无效(代码页 65001)。
+C:\Users\yangluwei\source\repos\calendar\calendar\usr_mng.cpp(1,1): warning C4828: 文件包含在偏移 0xbdd 处开始的字符，该字符在当前源字符集中无效(代码页 65001)。
+C:\Users\yangluwei\source\repos\calendar\calendar\usr_mng.cpp(1,1): warning C4828: 文件包含在偏移 0xbdf 处开始的字符，该字符在当前源字符集中无效(代码页 65001)。
+C:\Users\yangluwei\source\repos\calendar\calendar\TODO_team.cpp(1,1): warning C4828: 文件包含在偏移 0x70c 处开始的字符，该字符在当前源字符集中无效(代码页 65001)。
+C:\Users\yangluwei\source\repos\calendar\calendar\usr_mng.cpp(1,1): warning C4828: 文件包含在偏移 0xbe0 处开始的字符，该字符在当前源字符集中无效(代码页 65001)。
+C:\Users\yangluwei\source\repos\calendar\calendar\TODO_team.cpp(1,1): warning C4828: 文件包含在偏移 0x71b 处开始的字符，该字符在当前源字符集中无效(代码页 65001)。
+C:\Users\yangluwei\source\repos\calendar\calendar\usr_mng.cpp(1,1): warning C4828: 文件包含在偏移 0xbe1 处开始的字符，该字符在当前源字符集中无效(代码页 65001)。
+C:\Users\yangluwei\source\repos\calendar\calendar\TODO_team.cpp(1,1): warning C4828: 文件包含在偏移 0x71d 处开始的字符，该字符在当前源字符集中无效(代码页 65001)。
+C:\Users\yangluwei\source\repos\calendar\calendar\usr_mng.cpp(1,1): warning C4828: 文件包含在偏移 0xbe9 处开始的字符，该字符在当前源字符集中无效(代码页 65001)。
+C:\Users\yangluwei\source\repos\calendar\calendar\TODO_team.cpp(1,1): warning C4828: 文件包含在偏移 0x71e 处开始的字符，该字符在当前源字符集中无效(代码页 65001)。
+C:\Users\yangluwei\source\repos\calendar\calendar\usr_mng.cpp(1,1): warning C4828: 文件包含在偏移 0xbeb 处开始的字符，该字符在当前源字符集中无效(代码页 65001)。
+C:\Users\yangluwei\source\repos\calendar\calendar\TODO_team.cpp(1,1): warning C4828: 文件包含在偏移 0x720 处开始的字符，该字符在当前源字符集中无效(代码页 65001)。
+C:\Users\yangluwei\source\repos\calendar\calendar\usr_mng.cpp(1,1): warning C4828: 文件包含在偏移 0xbec 处开始的字符，该字符在当前源字符集中无效(代码页 65001)。
+C:\Users\yangluwei\source\repos\calendar\calendar\TODO_team.cpp(1,1): warning C4828: 文件包含在偏移 0x721 处开始的字符，该字符在当前源字符集中无效(代码页 65001)。
+C:\Users\yangluwei\source\repos\calendar\calendar\usr_mng.cpp(1,1): warning C4828: 文件包含在偏移 0xbed 处开始的字符，该字符在当前源字符集中无效(代码页 65001)。
+C:\Users\yangluwei\source\repos\calendar\calendar\TODO_team.cpp(1,1): warning C4828: 文件包含在偏移 0x722 处开始的字符，该字符在当前源字符集中无效(代码页 65001)。
+C:\Users\yangluwei\source\repos\calendar\calendar\usr_mng.cpp(1,1): warning C4828: 文件包含在偏移 0xed7 处开始的字符，该字符在当前源字符集中无效(代码页 65001)。
+C:\Users\yangluwei\source\repos\calendar\calendar\TODO_team.cpp(1,1): warning C4828: 文件包含在偏移 0x76d 处开始的字符，该字符在当前源字符集中无效(代码页 65001)。
+C:\Users\yangluwei\source\repos\calendar\calendar\usr_mng.cpp(1,1): warning C4828: 文件包含在偏移 0xed8 处开始的字符，该字符在当前源字符集中无效(代码页 65001)。
+C:\Users\yangluwei\source\repos\calendar\calendar\TODO_team.cpp(1,1): warning C4828: 文件包含在偏移 0x76e 处开始的字符，该字符在当前源字符集中无效(代码页 65001)。
+C:\Users\yangluwei\source\repos\calendar\calendar\usr_mng.cpp(1,1): warning C4828: 文件包含在偏移 0xedb 处开始的字符，该字符在当前源字符集中无效(代码页 65001)。
+C:\Users\yangluwei\source\repos\calendar\calendar\TODO_team.cpp(1,1): warning C4828: 文件包含在偏移 0x76f 处开始的字符，该字符在当前源字符集中无效(代码页 65001)。
+C:\Users\yangluwei\source\repos\calendar\calendar\usr_mng.cpp(1,1): warning C4828: 文件包含在偏移 0xedc 处开始的字符，该字符在当前源字符集中无效(代码页 65001)。
+C:\Users\yangluwei\source\repos\calendar\calendar\TODO_team.cpp(1,1): warning C4828: 文件包含在偏移 0x771 处开始的字符，该字符在当前源字符集中无效(代码页 65001)。
+C:\Users\yangluwei\source\repos\calendar\calendar\TODO_team.cpp(1,1): warning C4828: 文件包含在偏移 0x775 处开始的字符，该字符在当前源字符集中无效(代码页 65001)。
+C:\Users\yangluwei\source\repos\calendar\calendar\usr_mng.cpp(1,1): warning C4828: 文件包含在偏移 0xedd 处开始的字符，该字符在当前源字符集中无效(代码页 65001)。
+C:\Users\yangluwei\source\repos\calendar\calendar\TODO_team.cpp(1,1): warning C4828: 文件包含在偏移 0x776 处开始的字符，该字符在当前源字符集中无效(代码页 65001)。
+C:\Users\yangluwei\source\repos\calendar\calendar\usr_mng.cpp(1,1): warning C4828: 文件包含在偏移 0xede 处开始的字符，该字符在当前源字符集中无效(代码页 65001)。
+C:\Users\yangluwei\source\repos\calendar\calendar\usr_mng.cpp(1,1): warning C4828: 文件包含在偏移 0xedf 处开始的字符，该字符在当前源字符集中无效(代码页 65001)。
+C:\Users\yangluwei\source\repos\calendar\calendar\TODO_team.cpp(1,1): warning C4828: 文件包含在偏移 0x779 处开始的字符，该字符在当前源字符集中无效(代码页 65001)。
+C:\Users\yangluwei\source\repos\calendar\calendar\usr_mng.cpp(1,1): warning C4828: 文件包含在偏移 0xee3 处开始的字符，该字符在当前源字符集中无效(代码页 65001)。
+C:\Users\yangluwei\source\repos\calendar\calendar\TODO_team.cpp(1,1): warning C4828: 文件包含在偏移 0x77b 处开始的字符，该字符在当前源字符集中无效(代码页 65001)。
+C:\Users\yangluwei\source\repos\calendar\calendar\usr_mng.cpp(1,1): warning C4828: 文件包含在偏移 0xee7 处开始的字符，该字符在当前源字符集中无效(代码页 65001)。
+C:\Users\yangluwei\source\repos\calendar\calendar\TODO_team.cpp(1,1): warning C4828: 文件包含在偏移 0x77c 处开始的字符，该字符在当前源字符集中无效(代码页 65001)。
+C:\Users\yangluwei\source\repos\calendar\calendar\usr_mng.cpp(1,1): warning C4828: 文件包含在偏移 0xee9 处开始的字符，该字符在当前源字符集中无效(代码页 65001)。
+C:\Users\yangluwei\source\repos\calendar\calendar\TODO_team.cpp(1,1): warning C4828: 文件包含在偏移 0x77d 处开始的字符，该字符在当前源字符集中无效(代码页 65001)。
+C:\Users\yangluwei\source\repos\calendar\calendar\usr_mng.cpp(1,1): warning C4828: 文件包含在偏移 0xeeb 处开始的字符，该字符在当前源字符集中无效(代码页 65001)。
+C:\Users\yangluwei\source\repos\calendar\calendar\TODO_team.cpp(1,1): warning C4828: 文件包含在偏移 0x77e 处开始的字符，该字符在当前源字符集中无效(代码页 65001)。
+C:\Users\yangluwei\source\repos\calendar\calendar\TODO_team.cpp(1,1): warning C4828: 文件包含在偏移 0x77f 处开始的字符，该字符在当前源字符集中无效(代码页 65001)。
+C:\Users\yangluwei\source\repos\calendar\calendar\usr_mng.cpp(1,1): warning C4828: 文件包含在偏移 0xf4c 处开始的字符，该字符在当前源字符集中无效(代码页 65001)。
+C:\Users\yangluwei\source\repos\calendar\calendar\TODO_team.cpp(1,1): warning C4828: 文件包含在偏移 0x780 处开始的字符，该字符在当前源字符集中无效(代码页 65001)。
+C:\Users\yangluwei\source\repos\calendar\calendar\usr_mng.cpp(1,1): warning C4828: 文件包含在偏移 0xf4d 处开始的字符，该字符在当前源字符集中无效(代码页 65001)。
+C:\Users\yangluwei\source\repos\calendar\calendar\usr_mng.cpp(1,1): warning C4828: 文件包含在偏移 0xf51 处开始的字符，该字符在当前源字符集中无效(代码页 65001)。
+C:\Users\yangluwei\source\repos\calendar\calendar\TODO_team.cpp(1,1): warning C4828: 文件包含在偏移 0x7cb 处开始的字符，该字符在当前源字符集中无效(代码页 65001)。
+C:\Users\yangluwei\source\repos\calendar\calendar\usr_mng.cpp(1,1): warning C4828: 文件包含在偏移 0xf88 处开始的字符，该字符在当前源字符集中无效(代码页 65001)。
+C:\Users\yangluwei\source\repos\calendar\calendar\TODO_team.cpp(1,1): warning C4828: 文件包含在偏移 0x7cc 处开始的字符，该字符在当前源字符集中无效(代码页 65001)。
+C:\Users\yangluwei\source\repos\calendar\calendar\usr_mng.cpp(1,1): warning C4828: 文件包含在偏移 0xf89 处开始的字符，该字符在当前源字符集中无效(代码页 65001)。
+C:\Users\yangluwei\source\repos\calendar\calendar\TODO_team.cpp(1,1): warning C4828: 文件包含在偏移 0x7cf 处开始的字符，该字符在当前源字符集中无效(代码页 65001)。
+C:\Users\yangluwei\source\repos\calendar\calendar\usr_mng.cpp(1,1): warning C4828: 文件包含在偏移 0xf8c 处开始的字符，该字符在当前源字符集中无效(代码页 65001)。
+C:\Users\yangluwei\source\repos\calendar\calendar\TODO_team.cpp(1,1): warning C4828: 文件包含在偏移 0x7d0 处开始的字符，该字符在当前源字符集中无效(代码页 65001)。
+C:\Users\yangluwei\source\repos\calendar\calendar\usr_mng.cpp(1,1): warning C4828: 文件包含在偏移 0xf8d 处开始的字符，该字符在当前源字符集中无效(代码页 65001)。
+C:\Users\yangluwei\source\repos\calendar\calendar\TODO_team.cpp(1,1): warning C4828: 文件包含在偏移 0x7d3 处开始的字符，该字符在当前源字符集中无效(代码页 65001)。
+C:\Users\yangluwei\source\repos\calendar\calendar\usr_mng.cpp(1,1): warning C4828: 文件包含在偏移 0xf8f 处开始的字符，该字符在当前源字符集中无效(代码页 65001)。
+C:\Users\yangluwei\source\repos\calendar\calendar\TODO_team.cpp(1,1): warning C4828: 文件包含在偏移 0x7d4 处开始的字符，该字符在当前源字符集中无效(代码页 65001)。
+C:\Users\yangluwei\source\repos\calendar\calendar\usr_mng.cpp(1,1): warning C4828: 文件包含在偏移 0xf93 处开始的字符，该字符在当前源字符集中无效(代码页 65001)。
+C:\Users\yangluwei\source\repos\calendar\calendar\TODO_team.cpp(1,1): warning C4828: 文件包含在偏移 0x7d7 处开始的字符，该字符在当前源字符集中无效(代码页 65001)。
+C:\Users\yangluwei\source\repos\calendar\calendar\usr_mng.cpp(1,1): warning C4828: 文件包含在偏移 0xf95 处开始的字符，该字符在当前源字符集中无效(代码页 65001)。
+C:\Users\yangluwei\source\repos\calendar\calendar\TODO_team.cpp(1,1): warning C4828: 文件包含在偏移 0x7d9 处开始的字符，该字符在当前源字符集中无效(代码页 65001)。
+C:\Users\yangluwei\source\repos\calendar\calendar\usr_mng.cpp(1,1): warning C4828: 文件包含在偏移 0xf97 处开始的字符，该字符在当前源字符集中无效(代码页 65001)。
+C:\Users\yangluwei\source\repos\calendar\calendar\TODO_team.cpp(1,1): warning C4828: 文件包含在偏移 0x7da 处开始的字符，该字符在当前源字符集中无效(代码页 65001)。
+C:\Users\yangluwei\source\repos\calendar\calendar\usr_mng.cpp(1,1): warning C4828: 文件包含在偏移 0x108c 处开始的字符，该字符在当前源字符集中无效(代码页 65001)。
+C:\Users\yangluwei\source\repos\calendar\calendar\TODO_team.cpp(1,1): warning C4828: 文件包含在偏移 0x7db 处开始的字符，该字符在当前源字符集中无效(代码页 65001)。
+C:\Users\yangluwei\source\repos\calendar\calendar\usr_mng.cpp(1,1): warning C4828: 文件包含在偏移 0x108d 处开始的字符，该字符在当前源字符集中无效(代码页 65001)。
+C:\Users\yangluwei\source\repos\calendar\calendar\TODO_team.cpp(1,1): warning C4828: 文件包含在偏移 0x7dc 处开始的字符，该字符在当前源字符集中无效(代码页 65001)。
+C:\Users\yangluwei\source\repos\calendar\calendar\usr_mng.cpp(1,1): warning C4828: 文件包含在偏移 0x108e 处开始的字符，该字符在当前源字符集中无效(代码页 65001)。
+C:\Users\yangluwei\source\repos\calendar\calendar\TODO_team.cpp(1,1): warning C4828: 文件包含在偏移 0x7dd 处开始的字符，该字符在当前源字符集中无效(代码页 65001)。
+C:\Users\yangluwei\source\repos\calendar\calendar\usr_mng.cpp(1,1): warning C4828: 文件包含在偏移 0x108f 处开始的字符，该字符在当前源字符集中无效(代码页 65001)。
+C:\Users\yangluwei\source\repos\calendar\calendar\TODO_team.cpp(1,1): warning C4828: 文件包含在偏移 0x7de 处开始的字符，该字符在当前源字符集中无效(代码页 65001)。
+C:\Users\yangluwei\source\repos\calendar\calendar\usr_mng.cpp(1,1): warning C4828: 文件包含在偏移 0x1092 处开始的字符，该字符在当前源字符集中无效(代码页 65001)。
+C:\Users\yangluwei\source\repos\calendar\calendar\TODO_team.cpp(1,1): warning C4828: 文件包含在偏移 0x828 处开始的字符，该字符在当前源字符集中无效(代码页 65001)。
+C:\Users\yangluwei\source\repos\calendar\calendar\usr_mng.cpp(1,1): warning C4828: 文件包含在偏移 0x1093 处开始的字符，该字符在当前源字符集中无效(代码页 65001)。
+C:\Users\yangluwei\source\repos\calendar\calendar\TODO_team.cpp(1,1): warning C4828: 文件包含在偏移 0x829 处开始的字符，该字符在当前源字符集中无效(代码页 65001)。
+C:\Users\yangluwei\source\repos\calendar\calendar\usr_mng.cpp(1,1): warning C4828: 文件包含在偏移 0x1095 处开始的字符，该字符在当前源字符集中无效(代码页 65001)。
+C:\Users\yangluwei\source\repos\calendar\calendar\TODO_team.cpp(1,1): warning C4828: 文件包含在偏移 0x82a 处开始的字符，该字符在当前源字符集中无效(代码页 65001)。
+C:\Users\yangluwei\source\repos\calendar\calendar\usr_mng.cpp(1,1): warning C4828: 文件包含在偏移 0x1099 处开始的字符，该字符在当前源字符集中无效(代码页 65001)。
+C:\Users\yangluwei\source\repos\calendar\calendar\TODO_team.cpp(1,1): warning C4828: 文件包含在偏移 0x82c 处开始的字符，该字符在当前源字符集中无效(代码页 65001)。
+C:\Users\yangluwei\source\repos\calendar\calendar\usr_mng.cpp(1,1): warning C4828: 文件包含在偏移 0x109a 处开始的字符，该字符在当前源字符集中无效(代码页 65001)。
+C:\Users\yangluwei\source\repos\calendar\calendar\TODO_team.cpp(1,1): warning C4828: 文件包含在偏移 0x82e 处开始的字符，该字符在当前源字符集中无效(代码页 65001)。
+C:\Users\yangluwei\source\repos\calendar\calendar\usr_mng.cpp(1,1): warning C4828: 文件包含在偏移 0x109b 处开始的字符，该字符在当前源字符集中无效(代码页 65001)。
+C:\Users\yangluwei\source\repos\calendar\calendar\TODO_team.cpp(1,1): warning C4828: 文件包含在偏移 0x82f 处开始的字符，该字符在当前源字符集中无效(代码页 65001)。
+C:\Users\yangluwei\source\repos\calendar\calendar\usr_mng.cpp(1,1): warning C4828: 文件包含在偏移 0x10a1 处开始的字符，该字符在当前源字符集中无效(代码页 65001)。
+C:\Users\yangluwei\source\repos\calendar\calendar\TODO_team.cpp(1,1): warning C4828: 文件包含在偏移 0x831 处开始的字符，该字符在当前源字符集中无效(代码页 65001)。
+C:\Users\yangluwei\source\repos\calendar\calendar\usr_mng.cpp(1,1): warning C4828: 文件包含在偏移 0x10a4 处开始的字符，该字符在当前源字符集中无效(代码页 65001)。
+C:\Users\yangluwei\source\repos\calendar\calendar\TODO_team.cpp(1,1): warning C4828: 文件包含在偏移 0x832 处开始的字符，该字符在当前源字符集中无效(代码页 65001)。
+C:\Users\yangluwei\source\repos\calendar\calendar\usr_mng.cpp(1,1): warning C4828: 文件包含在偏移 0x10a5 处开始的字符，该字符在当前源字符集中无效(代码页 65001)。
+C:\Users\yangluwei\source\repos\calendar\calendar\TODO_team.cpp(1,1): warning C4828: 文件包含在偏移 0x833 处开始的字符，该字符在当前源字符集中无效(代码页 65001)。
+C:\Users\yangluwei\source\repos\calendar\calendar\usr_mng.cpp(1,1): warning C4828: 文件包含在偏移 0x10a6 处开始的字符，该字符在当前源字符集中无效(代码页 65001)。
+C:\Users\yangluwei\source\repos\calendar\calendar\TODO_team.cpp(1,1): warning C4828: 文件包含在偏移 0x836 处开始的字符，该字符在当前源字符集中无效(代码页 65001)。
+C:\Users\yangluwei\source\repos\calendar\calendar\usr_mng.cpp(1,1): warning C4828: 文件包含在偏移 0x10a8 处开始的字符，该字符在当前源字符集中无效(代码页 65001)。
+C:\Users\yangluwei\source\repos\calendar\calendar\TODO_team.cpp(1,1): warning C4828: 文件包含在偏移 0x837 处开始的字符，该字符在当前源字符集中无效(代码页 65001)。
+C:\Users\yangluwei\source\repos\calendar\calendar\usr_mng.cpp(1,1): warning C4828: 文件包含在偏移 0x10ab 处开始的字符，该字符在当前源字符集中无效(代码页 65001)。
+C:\Users\yangluwei\source\repos\calendar\calendar\TODO_team.cpp(1,1): warning C4828: 文件包含在偏移 0x838 处开始的字符，该字符在当前源字符集中无效(代码页 65001)。
+C:\Users\yangluwei\source\repos\calendar\calendar\usr_mng.cpp(1,1): warning C4828: 文件包含在偏移 0x10ac 处开始的字符，该字符在当前源字符集中无效(代码页 65001)。
+C:\Users\yangluwei\source\repos\calendar\calendar\TODO_team.cpp(1,1): warning C4828: 文件包含在偏移 0x839 处开始的字符，该字符在当前源字符集中无效(代码页 65001)。
+C:\Users\yangluwei\source\repos\calendar\calendar\usr_mng.cpp(1,1): warning C4828: 文件包含在偏移 0x10ae 处开始的字符，该字符在当前源字符集中无效(代码页 65001)。
+C:\Users\yangluwei\source\repos\calendar\calendar\TODO_team.cpp(1,1): warning C4828: 文件包含在偏移 0x83c 处开始的字符，该字符在当前源字符集中无效(代码页 65001)。
+C:\Users\yangluwei\source\repos\calendar\calendar\usr_mng.cpp(1,1): warning C4828: 文件包含在偏移 0x10b0 处开始的字符，该字符在当前源字符集中无效(代码页 65001)。
+C:\Users\yangluwei\source\repos\calendar\calendar\TODO_team.cpp(1,1): warning C4828: 文件包含在偏移 0x83e 处开始的字符，该字符在当前源字符集中无效(代码页 65001)。
+C:\Users\yangluwei\source\repos\calendar\calendar\usr_mng.cpp(1,1): warning C4828: 文件包含在偏移 0x10b1 处开始的字符，该字符在当前源字符集中无效(代码页 65001)。
+C:\Users\yangluwei\source\repos\calendar\calendar\TODO_team.cpp(1,1): warning C4828: 文件包含在偏移 0x840 处开始的字符，该字符在当前源字符集中无效(代码页 65001)。
+C:\Users\yangluwei\source\repos\calendar\calendar\usr_mng.cpp(1,1): warning C4828: 文件包含在偏移 0x10b3 处开始的字符，该字符在当前源字符集中无效(代码页 65001)。
+C:\Users\yangluwei\source\repos\calendar\calendar\TODO_team.cpp(1,1): warning C4828: 文件包含在偏移 0x841 处开始的字符，该字符在当前源字符集中无效(代码页 65001)。
+C:\Users\yangluwei\source\repos\calendar\calendar\usr_mng.cpp(1,1): warning C4828: 文件包含在偏移 0x10b4 处开始的字符，该字符在当前源字符集中无效(代码页 65001)。
+C:\Users\yangluwei\source\repos\calendar\calendar\TODO_team.cpp(1,1): warning C4828: 文件包含在偏移 0x850 处开始的字符，该字符在当前源字符集中无效(代码页 65001)。
+C:\Users\yangluwei\source\repos\calendar\calendar\usr_mng.cpp(1,1): warning C4828: 文件包含在偏移 0x10b6 处开始的字符，该字符在当前源字符集中无效(代码页 65001)。
+C:\Users\yangluwei\source\repos\calendar\calendar\TODO_team.cpp(1,1): warning C4828: 文件包含在偏移 0x851 处开始的字符，该字符在当前源字符集中无效(代码页 65001)。
+C:\Users\yangluwei\source\repos\calendar\calendar\usr_mng.cpp(1,1): warning C4828: 文件包含在偏移 0x10b7 处开始的字符，该字符在当前源字符集中无效(代码页 65001)。
+C:\Users\yangluwei\source\repos\calendar\calendar\TODO_team.cpp(1,1): warning C4828: 文件包含在偏移 0x855 处开始的字符，该字符在当前源字符集中无效(代码页 65001)。
+C:\Users\yangluwei\source\repos\calendar\calendar\usr_mng.cpp(1,1): warning C4828: 文件包含在偏移 0x10b9 处开始的字符，该字符在当前源字符集中无效(代码页 65001)。
+C:\Users\yangluwei\source\repos\calendar\calendar\TODO_team.cpp(1,1): warning C4828: 文件包含在偏移 0x85a 处开始的字符，该字符在当前源字符集中无效(代码页 65001)。
+C:\Users\yangluwei\source\repos\calendar\calendar\usr_mng.cpp(1,1): warning C4828: 文件包含在偏移 0x10ba 处开始的字符，该字符在当前源字符集中无效(代码页 65001)。
+C:\Users\yangluwei\source\repos\calendar\calendar\TODO_team.cpp(1,1): warning C4828: 文件包含在偏移 0x85b 处开始的字符，该字符在当前源字符集中无效(代码页 65001)。
+C:\Users\yangluwei\source\repos\calendar\calendar\usr_mng.cpp(1,1): warning C4828: 文件包含在偏移 0x10bb 处开始的字符，该字符在当前源字符集中无效(代码页 65001)。
+C:\Users\yangluwei\source\repos\calendar\calendar\TODO_team.cpp(1,1): warning C4828: 文件包含在偏移 0x894 处开始的字符，该字符在当前源字符集中无效(代码页 65001)。
+C:\Users\yangluwei\source\repos\calendar\calendar\TODO_team.cpp(1,1): warning C4828: 文件包含在偏移 0x895 处开始的字符，该字符在当前源字符集中无效(代码页 65001)。
+C:\Users\yangluwei\source\repos\calendar\calendar\TODO_team.cpp(1,1): warning C4828: 文件包含在偏移 0x8a4 处开始的字符，该字符在当前源字符集中无效(代码页 65001)。
+C:\Users\yangluwei\source\repos\calendar\calendar\TODO_team.cpp(1,1): warning C4828: 文件包含在偏移 0x8a6 处开始的字符，该字符在当前源字符集中无效(代码页 65001)。
+C:\Users\yangluwei\source\repos\calendar\calendar\TODO_team.cpp(1,1): warning C4828: 文件包含在偏移 0x8a7 处开始的字符，该字符在当前源字符集中无效(代码页 65001)。
+C:\Users\yangluwei\source\repos\calendar\calendar\TODO_team.cpp(1,1): warning C4828: 文件包含在偏移 0x8a9 处开始的字符，该字符在当前源字符集中无效(代码页 65001)。
+C:\Users\yangluwei\source\repos\calendar\calendar\TODO_team.cpp(1,1): warning C4828: 文件包含在偏移 0x8ab 处开始的字符，该字符在当前源字符集中无效(代码页 65001)。
+C:\Users\yangluwei\source\repos\calendar\calendar\TODO_team.cpp(1,1): warning C4828: 文件包含在偏移 0x8e3 处开始的字符，该字符在当前源字符集中无效(代码页 65001)。
+C:\Users\yangluwei\source\repos\calendar\calendar\TODO_team.cpp(1,1): warning C4828: 文件包含在偏移 0x8e4 处开始的字符，该字符在当前源字符集中无效(代码页 65001)。
+C:\Users\yangluwei\source\repos\calendar\calendar\TODO_team.cpp(1,1): warning C4828: 文件包含在偏移 0x8f3 处开始的字符，该字符在当前源字符集中无效(代码页 65001)。
+C:\Users\yangluwei\source\repos\calendar\calendar\TODO_team.cpp(1,1): warning C4828: 文件包含在偏移 0x8f5 处开始的字符，该字符在当前源字符集中无效(代码页 65001)。
+C:\Users\yangluwei\source\repos\calendar\calendar\TODO_team.cpp(1,1): warning C4828: 文件包含在偏移 0x8f6 处开始的字符，该字符在当前源字符集中无效(代码页 65001)。
+C:\Users\yangluwei\source\repos\calendar\calendar\TODO_team.cpp(1,1): warning C4828: 文件包含在偏移 0x8f8 处开始的字符，该字符在当前源字符集中无效(代码页 65001)。
+C:\Users\yangluwei\source\repos\calendar\calendar\TODO_team.cpp(1,1): warning C4828: 文件包含在偏移 0x8f9 处开始的字符，该字符在当前源字符集中无效(代码页 65001)。
+C:\Users\yangluwei\source\repos\calendar\calendar\TODO_team.cpp(1,1): warning C4828: 文件包含在偏移 0x8fa 处开始的字符，该字符在当前源字符集中无效(代码页 65001)。
+C:\Users\yangluwei\source\repos\calendar\calendar\TODO_team.cpp(1,1): warning C4828: 文件包含在偏移 0x941 处开始的字符，该字符在当前源字符集中无效(代码页 65001)。
+C:\Users\yangluwei\source\repos\calendar\calendar\TODO_team.cpp(1,1): warning C4828: 文件包含在偏移 0x942 处开始的字符，该字符在当前源字符集中无效(代码页 65001)。
+C:\Users\yangluwei\source\repos\calendar\calendar\TODO_team.cpp(1,1): warning C4828: 文件包含在偏移 0x943 处开始的字符，该字符在当前源字符集中无效(代码页 65001)。
+C:\Users\yangluwei\source\repos\calendar\calendar\TODO_team.cpp(1,1): warning C4828: 文件包含在偏移 0x945 处开始的字符，该字符在当前源字符集中无效(代码页 65001)。
+C:\Users\yangluwei\source\repos\calendar\calendar\TODO_team.cpp(1,1): warning C4828: 文件包含在偏移 0x949 处开始的字符，该字符在当前源字符集中无效(代码页 65001)。
+C:\Users\yangluwei\source\repos\calendar\calendar\TODO_team.cpp(1,1): warning C4828: 文件包含在偏移 0x94a 处开始的字符，该字符在当前源字符集中无效(代码页 65001)。
+C:\Users\yangluwei\source\repos\calendar\calendar\TODO_team.cpp(1,1): warning C4828: 文件包含在偏移 0x94d 处开始的字符，该字符在当前源字符集中无效(代码页 65001)。
+C:\Users\yangluwei\source\repos\calendar\calendar\TODO_team.cpp(1,1): warning C4828: 文件包含在偏移 0x94f 处开始的字符，该字符在当前源字符集中无效(代码页 65001)。
+C:\Users\yangluwei\source\repos\calendar\calendar\TODO_team.cpp(1,1): warning C4828: 文件包含在偏移 0x950 处开始的字符，该字符在当前源字符集中无效(代码页 65001)。
+C:\Users\yangluwei\source\repos\calendar\calendar\TODO_team.cpp(1,1): warning C4828: 文件包含在偏移 0x951 处开始的字符，该字符在当前源字符集中无效(代码页 65001)。
+C:\Users\yangluwei\source\repos\calendar\calendar\TODO_team.cpp(1,1): warning C4828: 文件包含在偏移 0x952 处开始的字符，该字符在当前源字符集中无效(代码页 65001)。
+C:\Users\yangluwei\source\repos\calendar\calendar\TODO_team.cpp(1,1): warning C4828: 文件包含在偏移 0x953 处开始的字符，该字符在当前源字符集中无效(代码页 65001)。
+C:\Users\yangluwei\source\repos\calendar\calendar\TODO_team.cpp(1,1): warning C4828: 文件包含在偏移 0x954 处开始的字符，该字符在当前源字符集中无效(代码页 65001)。
+C:\Users\yangluwei\source\repos\calendar\calendar\TODO_team.cpp(1,1): warning C4828: 文件包含在偏移 0x99b 处开始的字符，该字符在当前源字符集中无效(代码页 65001)。
+C:\Users\yangluwei\source\repos\calendar\calendar\TODO_team.cpp(1,1): warning C4828: 文件包含在偏移 0x99c 处开始的字符，该字符在当前源字符集中无效(代码页 65001)。
+C:\Users\yangluwei\source\repos\calendar\calendar\TODO_team.cpp(1,1): warning C4828: 文件包含在偏移 0x99f 处开始的字符，该字符在当前源字符集中无效(代码页 65001)。
+C:\Users\yangluwei\source\repos\calendar\calendar\TODO_team.cpp(1,1): warning C4828: 文件包含在偏移 0x9a0 处开始的字符，该字符在当前源字符集中无效(代码页 65001)。
+C:\Users\yangluwei\source\repos\calendar\calendar\TODO_team.cpp(1,1): warning C4828: 文件包含在偏移 0x9a3 处开始的字符，该字符在当前源字符集中无效(代码页 65001)。
+C:\Users\yangluwei\source\repos\calendar\calendar\TODO_team.cpp(1,1): warning C4828: 文件包含在偏移 0x9a4 处开始的字符，该字符在当前源字符集中无效(代码页 65001)。
+C:\Users\yangluwei\source\repos\calendar\calendar\TODO_team.cpp(1,1): warning C4828: 文件包含在偏移 0x9a7 处开始的字符，该字符在当前源字符集中无效(代码页 65001)。
+C:\Users\yangluwei\source\repos\calendar\calendar\TODO_team.cpp(1,1): warning C4828: 文件包含在偏移 0x9a9 处开始的字符，该字符在当前源字符集中无效(代码页 65001)。
+C:\Users\yangluwei\source\repos\calendar\calendar\TODO_team.cpp(1,1): warning C4828: 文件包含在偏移 0x9aa 处开始的字符，该字符在当前源字符集中无效(代码页 65001)。
+C:\Users\yangluwei\source\repos\calendar\calendar\TODO_team.cpp(1,1): warning C4828: 文件包含在偏移 0x9ab 处开始的字符，该字符在当前源字符集中无效(代码页 65001)。
+C:\Users\yangluwei\source\repos\calendar\calendar\TODO_team.cpp(1,1): warning C4828: 文件包含在偏移 0x9ac 处开始的字符，该字符在当前源字符集中无效(代码页 65001)。
+C:\Users\yangluwei\source\repos\calendar\calendar\TODO_team.cpp(1,1): warning C4828: 文件包含在偏移 0x9ad 处开始的字符，该字符在当前源字符集中无效(代码页 65001)。
+C:\Users\yangluwei\source\repos\calendar\calendar\TODO_team.cpp(1,1): warning C4828: 文件包含在偏移 0x9ae 处开始的字符，该字符在当前源字符集中无效(代码页 65001)。
+C:\Users\yangluwei\source\repos\calendar\calendar\TODO_team.cpp(1,1): warning C4828: 文件包含在偏移 0x9f3 处开始的字符，该字符在当前源字符集中无效(代码页 65001)。
+C:\Users\yangluwei\source\repos\calendar\calendar\TODO_team.cpp(1,1): warning C4828: 文件包含在偏移 0x9f4 处开始的字符，该字符在当前源字符集中无效(代码页 65001)。
+C:\Users\yangluwei\source\repos\calendar\calendar\TODO_team.cpp(1,1): warning C4828: 文件包含在偏移 0x9f5 处开始的字符，该字符在当前源字符集中无效(代码页 65001)。
+C:\Users\yangluwei\source\repos\calendar\calendar\TODO_team.cpp(1,1): warning C4828: 文件包含在偏移 0x9f7 处开始的字符，该字符在当前源字符集中无效(代码页 65001)。
+C:\Users\yangluwei\source\repos\calendar\calendar\TODO_team.cpp(1,1): warning C4828: 文件包含在偏移 0x9f9 处开始的字符，该字符在当前源字符集中无效(代码页 65001)。
+C:\Users\yangluwei\source\repos\calendar\calendar\TODO_team.cpp(1,1): warning C4828: 文件包含在偏移 0x9fa 处开始的字符，该字符在当前源字符集中无效(代码页 65001)。
+C:\Users\yangluwei\source\repos\calendar\calendar\TODO_team.cpp(1,1): warning C4828: 文件包含在偏移 0x9fc 处开始的字符，该字符在当前源字符集中无效(代码页 65001)。
+C:\Users\yangluwei\source\repos\calendar\calendar\TODO_team.cpp(1,1): warning C4828: 文件包含在偏移 0x9fd 处开始的字符，该字符在当前源字符集中无效(代码页 65001)。
+C:\Users\yangluwei\source\repos\calendar\calendar\TODO_team.cpp(1,1): warning C4828: 文件包含在偏移 0x9fe 处开始的字符，该字符在当前源字符集中无效(代码页 65001)。
+C:\Users\yangluwei\source\repos\calendar\calendar\TODO_team.cpp(1,1): warning C4828: 文件包含在偏移 0xa01 处开始的字符，该字符在当前源字符集中无效(代码页 65001)。
+C:\Users\yangluwei\source\repos\calendar\calendar\TODO_team.cpp(1,1): warning C4828: 文件包含在偏移 0xa02 处开始的字符，该字符在当前源字符集中无效(代码页 65001)。
+C:\Users\yangluwei\source\repos\calendar\calendar\TODO_team.cpp(1,1): warning C4828: 文件包含在偏移 0xa03 处开始的字符，该字符在当前源字符集中无效(代码页 65001)。
+C:\Users\yangluwei\source\repos\calendar\calendar\TODO_team.cpp(1,1): warning C4828: 文件包含在偏移 0xa04 处开始的字符，该字符在当前源字符集中无效(代码页 65001)。
+C:\Users\yangluwei\source\repos\calendar\calendar\TODO_team.cpp(1,1): warning C4828: 文件包含在偏移 0xa07 处开始的字符，该字符在当前源字符集中无效(代码页 65001)。
+C:\Users\yangluwei\source\repos\calendar\calendar\TODO_team.cpp(1,1): warning C4828: 文件包含在偏移 0xa09 处开始的字符，该字符在当前源字符集中无效(代码页 65001)。
+C:\Users\yangluwei\source\repos\calendar\calendar\TODO_team.cpp(1,1): warning C4828: 文件包含在偏移 0xa0b 处开始的字符，该字符在当前源字符集中无效(代码页 65001)。
+C:\Users\yangluwei\source\repos\calendar\calendar\TODO_team.cpp(1,1): warning C4828: 文件包含在偏移 0xa0c 处开始的字符，该字符在当前源字符集中无效(代码页 65001)。
+C:\Users\yangluwei\source\repos\calendar\calendar\TODO_team.cpp(1,1): warning C4828: 文件包含在偏移 0xa1f 处开始的字符，该字符在当前源字符集中无效(代码页 65001)。
+C:\Users\yangluwei\source\repos\calendar\calendar\TODO_team.cpp(1,1): warning C4828: 文件包含在偏移 0xa21 处开始的字符，该字符在当前源字符集中无效(代码页 65001)。
+C:\Users\yangluwei\source\repos\calendar\calendar\TODO_team.cpp(1,1): warning C4828: 文件包含在偏移 0xa23 处开始的字符，该字符在当前源字符集中无效(代码页 65001)。
+C:\Users\yangluwei\source\repos\calendar\calendar\TODO_team.cpp(1,1): warning C4828: 文件包含在偏移 0xa24 处开始的字符，该字符在当前源字符集中无效(代码页 65001)。
+C:\Users\yangluwei\source\repos\calendar\calendar\TODO_team.cpp(1,1): warning C4828: 文件包含在偏移 0xa25 处开始的字符，该字符在当前源字符集中无效(代码页 65001)。
+C:\Users\yangluwei\source\repos\calendar\calendar\TODO_team.cpp(1,1): warning C4828: 文件包含在偏移 0xa26 处开始的字符，该字符在当前源字符集中无效(代码页 65001)。
+C:\Users\yangluwei\source\repos\calendar\calendar\TODO_team.cpp(1,1): warning C4828: 文件包含在偏移 0xa36 处开始的字符，该字符在当前源字符集中无效(代码页 65001)。
+C:\Users\yangluwei\source\repos\calendar\calendar\TODO_team.cpp(1,1): warning C4828: 文件包含在偏移 0xa37 处开始的字符，该字符在当前源字符集中无效(代码页 65001)。
+C:\Users\yangluwei\source\repos\calendar\calendar\TODO_team.cpp(1,1): warning C4828: 文件包含在偏移 0xa39 处开始的字符，该字符在当前源字符集中无效(代码页 65001)。
+C:\Users\yangluwei\source\repos\calendar\calendar\TODO_team.cpp(1,1): warning C4828: 文件包含在偏移 0xa3c 处开始的字符，该字符在当前源字符集中无效(代码页 65001)。
+C:\Users\yangluwei\source\repos\calendar\calendar\TODO_team.cpp(1,1): warning C4828: 文件包含在偏移 0xa3d 处开始的字符，该字符在当前源字符集中无效(代码页 65001)。
+C:\Users\yangluwei\source\repos\calendar\calendar\TODO_team.cpp(1,1): warning C4828: 文件包含在偏移 0xa3e 处开始的字符，该字符在当前源字符集中无效(代码页 65001)。
+C:\Users\yangluwei\source\repos\calendar\calendar\TODO_team.cpp(1,1): warning C4828: 文件包含在偏移 0xa3f 处开始的字符，该字符在当前源字符集中无效(代码页 65001)。
+C:\Users\yangluwei\source\repos\calendar\calendar\TODO_team.cpp(1,1): warning C4828: 文件包含在偏移 0xa43 处开始的字符，该字符在当前源字符集中无效(代码页 65001)。
+C:\Users\yangluwei\source\repos\calendar\calendar\TODO_team.cpp(1,1): warning C4828: 文件包含在偏移 0xa44 处开始的字符，该字符在当前源字符集中无效(代码页 65001)。
+C:\Users\yangluwei\source\repos\calendar\calendar\TODO_team.cpp(1,1): warning C4828: 文件包含在偏移 0xa45 处开始的字符，该字符在当前源字符集中无效(代码页 65001)。
+C:\Users\yangluwei\source\repos\calendar\calendar\TODO_team.cpp(1,1): warning C4828: 文件包含在偏移 0xa47 处开始的字符，该字符在当前源字符集中无效(代码页 65001)。
+C:\Users\yangluwei\source\repos\calendar\calendar\TODO_team.cpp(1,1): warning C4828: 文件包含在偏移 0xa48 处开始的字符，该字符在当前源字符集中无效(代码页 65001)。
+C:\Users\yangluwei\source\repos\calendar\calendar\TODO_team.cpp(1,1): warning C4828: 文件包含在偏移 0xa49 处开始的字符，该字符在当前源字符集中无效(代码页 65001)。
+C:\Users\yangluwei\source\repos\calendar\calendar\TODO_team.cpp(1,1): warning C4828: 文件包含在偏移 0xa4b 处开始的字符，该字符在当前源字符集中无效(代码页 65001)。
+C:\Users\yangluwei\source\repos\calendar\calendar\TODO_team.cpp(1,1): warning C4828: 文件包含在偏移 0xa9c 处开始的字符，该字符在当前源字符集中无效(代码页 65001)。
+C:\Users\yangluwei\source\repos\calendar\calendar\TODO_team.cpp(1,1): warning C4828: 文件包含在偏移 0xa9d 处开始的字符，该字符在当前源字符集中无效(代码页 65001)。
+C:\Users\yangluwei\source\repos\calendar\calendar\TODO_team.cpp(1,1): warning C4828: 文件包含在偏移 0xaa1 处开始的字符，该字符在当前源字符集中无效(代码页 65001)。
+C:\Users\yangluwei\source\repos\calendar\calendar\TODO_team.cpp(1,1): warning C4828: 文件包含在偏移 0xaa3 处开始的字符，该字符在当前源字符集中无效(代码页 65001)。
+C:\Users\yangluwei\source\repos\calendar\calendar\TODO_team.cpp(1,1): warning C4828: 文件包含在偏移 0xaa4 处开始的字符，该字符在当前源字符集中无效(代码页 65001)。
+C:\Users\yangluwei\source\repos\calendar\calendar\TODO_team.cpp(1,1): warning C4828: 文件包含在偏移 0xaa5 处开始的字符，该字符在当前源字符集中无效(代码页 65001)。
+C:\Users\yangluwei\source\repos\calendar\calendar\TODO_team.cpp(1,1): warning C4828: 文件包含在偏移 0xaa9 处开始的字符，该字符在当前源字符集中无效(代码页 65001)。
+C:\Users\yangluwei\source\repos\calendar\calendar\TODO_team.cpp(1,1): warning C4828: 文件包含在偏移 0xaaa 处开始的字符，该字符在当前源字符集中无效(代码页 65001)。
+C:\Users\yangluwei\source\repos\calendar\calendar\TODO_team.cpp(1,1): warning C4828: 文件包含在偏移 0xaab 处开始的字符，该字符在当前源字符集中无效(代码页 65001)。
+C:\Users\yangluwei\source\repos\calendar\calendar\TODO_team.cpp(1,1): warning C4828: 文件包含在偏移 0xaad 处开始的字符，该字符在当前源字符集中无效(代码页 65001)。
+C:\Users\yangluwei\source\repos\calendar\calendar\TODO_team.cpp(1,1): warning C4828: 文件包含在偏移 0xaae 处开始的字符，该字符在当前源字符集中无效(代码页 65001)。
+C:\Users\yangluwei\source\repos\calendar\calendar\TODO_team.cpp(1,1): warning C4828: 文件包含在偏移 0xb0d 处开始的字符，该字符在当前源字符集中无效(代码页 65001)。
+C:\Users\yangluwei\source\repos\calendar\calendar\TODO_team.cpp(1,1): warning C4828: 文件包含在偏移 0xb0e 处开始的字符，该字符在当前源字符集中无效(代码页 65001)。
+C:\Users\yangluwei\source\repos\calendar\calendar\TODO_team.cpp(1,1): warning C4828: 文件包含在偏移 0xb12 处开始的字符，该字符在当前源字符集中无效(代码页 65001)。
+C:\Users\yangluwei\source\repos\calendar\calendar\TODO_team.cpp(1,1): warning C4828: 文件包含在偏移 0xb17 处开始的字符，该字符在当前源字符集中无效(代码页 65001)。
+C:\Users\yangluwei\source\repos\calendar\calendar\TODO_team.cpp(1,1): warning C4828: 文件包含在偏移 0xb19 处开始的字符，该字符在当前源字符集中无效(代码页 65001)。
+C:\Users\yangluwei\source\repos\calendar\calendar\TODO_team.cpp(1,1): warning C4828: 文件包含在偏移 0xb1b 处开始的字符，该字符在当前源字符集中无效(代码页 65001)。
+C:\Users\yangluwei\source\repos\calendar\calendar\TODO_team.cpp(1,1): warning C4828: 文件包含在偏移 0xb1c 处开始的字符，该字符在当前源字符集中无效(代码页 65001)。
+C:\Users\yangluwei\source\repos\calendar\calendar\TODO_team.cpp(1,1): warning C4828: 文件包含在偏移 0xb20 处开始的字符，该字符在当前源字符集中无效(代码页 65001)。
+C:\Users\yangluwei\source\repos\calendar\calendar\TODO_team.cpp(1,1): warning C4828: 文件包含在偏移 0xcb5 处开始的字符，该字符在当前源字符集中无效(代码页 65001)。
+C:\Users\yangluwei\source\repos\calendar\calendar\TODO_team.cpp(1,1): warning C4828: 文件包含在偏移 0xcb7 处开始的字符，该字符在当前源字符集中无效(代码页 65001)。
+C:\Users\yangluwei\source\repos\calendar\calendar\TODO_team.cpp(1,1): warning C4828: 文件包含在偏移 0xcb8 处开始的字符，该字符在当前源字符集中无效(代码页 65001)。
+C:\Users\yangluwei\source\repos\calendar\calendar\TODO_team.cpp(1,1): warning C4828: 文件包含在偏移 0xcbe 处开始的字符，该字符在当前源字符集中无效(代码页 65001)。
+C:\Users\yangluwei\source\repos\calendar\calendar\TODO_team.cpp(1,1): warning C4828: 文件包含在偏移 0xcf0 处开始的字符，该字符在当前源字符集中无效(代码页 65001)。
+C:\Users\yangluwei\source\repos\calendar\calendar\TODO_team.cpp(1,1): warning C4828: 文件包含在偏移 0xcf1 处开始的字符，该字符在当前源字符集中无效(代码页 65001)。
+C:\Users\yangluwei\source\repos\calendar\calendar\TODO_team.cpp(1,1): warning C4828: 文件包含在偏移 0xd72 处开始的字符，该字符在当前源字符集中无效(代码页 65001)。
+C:\Users\yangluwei\source\repos\calendar\calendar\TODO_team.cpp(1,1): warning C4828: 文件包含在偏移 0xd75 处开始的字符，该字符在当前源字符集中无效(代码页 65001)。
+C:\Users\yangluwei\source\repos\calendar\calendar\TODO_team.cpp(1,1): warning C4828: 文件包含在偏移 0xd79 处开始的字符，该字符在当前源字符集中无效(代码页 65001)。
+C:\Users\yangluwei\source\repos\calendar\calendar\TODO_team.cpp(1,1): warning C4828: 文件包含在偏移 0xe22 处开始的字符，该字符在当前源字符集中无效(代码页 65001)。
+C:\Users\yangluwei\source\repos\calendar\calendar\TODO_team.cpp(1,1): warning C4828: 文件包含在偏移 0xe23 处开始的字符，该字符在当前源字符集中无效(代码页 65001)。
+C:\Users\yangluwei\source\repos\calendar\calendar\TODO_team.cpp(1,1): warning C4828: 文件包含在偏移 0xe24 处开始的字符，该字符在当前源字符集中无效(代码页 65001)。
+C:\Users\yangluwei\source\repos\calendar\calendar\TODO_team.cpp(1,1): warning C4828: 文件包含在偏移 0xe26 处开始的字符，该字符在当前源字符集中无效(代码页 65001)。
+C:\Users\yangluwei\source\repos\calendar\calendar\TODO_team.cpp(1,1): warning C4828: 文件包含在偏移 0xe28 处开始的字符，该字符在当前源字符集中无效(代码页 65001)。
+C:\Users\yangluwei\source\repos\calendar\calendar\TODO_team.cpp(1,1): warning C4828: 文件包含在偏移 0xe2b 处开始的字符，该字符在当前源字符集中无效(代码页 65001)。
+C:\Users\yangluwei\source\repos\calendar\calendar\usr_mng.h(1,1): warning C4828: 文件包含在偏移 0x5f 处开始的字符，该字符在当前源字符集中无效(代码页 65001)。 (编译源文件 main.cpp)
+C:\Users\yangluwei\source\repos\calendar\calendar\usr_mng.h(1,1): warning C4828: 文件包含在偏移 0x61 处开始的字符，该字符在当前源字符集中无效(代码页 65001)。 (编译源文件 main.cpp)
+C:\Users\yangluwei\source\repos\calendar\calendar\usr_mng.h(1,1): warning C4828: 文件包含在偏移 0x62 处开始的字符，该字符在当前源字符集中无效(代码页 65001)。 (编译源文件 main.cpp)
+C:\Users\yangluwei\source\repos\calendar\calendar\usr_mng.h(1,1): warning C4828: 文件包含在偏移 0x63 处开始的字符，该字符在当前源字符集中无效(代码页 65001)。 (编译源文件 main.cpp)
+C:\Users\yangluwei\source\repos\calendar\calendar\usr_mng.h(1,1): warning C4828: 文件包含在偏移 0x65 处开始的字符，该字符在当前源字符集中无效(代码页 65001)。 (编译源文件 main.cpp)
+C:\Users\yangluwei\source\repos\calendar\calendar\usr_mng.h(1,1): warning C4828: 文件包含在偏移 0x66 处开始的字符，该字符在当前源字符集中无效(代码页 65001)。 (编译源文件 main.cpp)
+C:\Users\yangluwei\source\repos\calendar\calendar\usr_mng.h(1,1): warning C4828: 文件包含在偏移 0x5f 处开始的字符，该字符在当前源字符集中无效(代码页 65001)。 (编译源文件 TODOwidget.cpp)
+C:\Users\yangluwei\source\repos\calendar\calendar\usr_mng.h(1,1): warning C4828: 文件包含在偏移 0x61 处开始的字符，该字符在当前源字符集中无效(代码页 65001)。 (编译源文件 TODOwidget.cpp)
+C:\Users\yangluwei\source\repos\calendar\calendar\usr_mng.h(1,1): warning C4828: 文件包含在偏移 0x62 处开始的字符，该字符在当前源字符集中无效(代码页 65001)。 (编译源文件 TODOwidget.cpp)
+C:\Users\yangluwei\source\repos\calendar\calendar\usr_mng.h(1,1): warning C4828: 文件包含在偏移 0x63 处开始的字符，该字符在当前源字符集中无效(代码页 65001)。 (编译源文件 TODOwidget.cpp)
+C:\Users\yangluwei\source\repos\calendar\calendar\usr_mng.h(1,1): warning C4828: 文件包含在偏移 0x65 处开始的字符，该字符在当前源字符集中无效(代码页 65001)。 (编译源文件 TODOwidget.cpp)
+C:\Users\yangluwei\source\repos\calendar\calendar\usr_mng.h(1,1): warning C4828: 文件包含在偏移 0x66 处开始的字符，该字符在当前源字符集中无效(代码页 65001)。 (编译源文件 TODOwidget.cpp)
+C:\Users\yangluwei\source\repos\calendar\calendar\usr_mng.h(1,1): warning C4828: 文件包含在偏移 0x5f 处开始的字符，该字符在当前源字符集中无效(代码页 65001)。 (编译源文件 calendar.cpp)
+C:\Users\yangluwei\source\repos\calendar\calendar\usr_mng.h(1,1): warning C4828: 文件包含在偏移 0x61 处开始的字符，该字符在当前源字符集中无效(代码页 65001)。 (编译源文件 calendar.cpp)
+C:\Users\yangluwei\source\repos\calendar\calendar\usr_mng.h(1,1): warning C4828: 文件包含在偏移 0x62 处开始的字符，该字符在当前源字符集中无效(代码页 65001)。 (编译源文件 calendar.cpp)
+C:\Users\yangluwei\source\repos\calendar\calendar\usr_mng.h(1,1): warning C4828: 文件包含在偏移 0x63 处开始的字符，该字符在当前源字符集中无效(代码页 65001)。 (编译源文件 calendar.cpp)
+C:\Users\yangluwei\source\repos\calendar\calendar\usr_mng.h(1,1): warning C4828: 文件包含在偏移 0x65 处开始的字符，该字符在当前源字符集中无效(代码页 65001)。 (编译源文件 calendar.cpp)
+C:\Users\yangluwei\source\repos\calendar\calendar\usr_mng.h(1,1): warning C4828: 文件包含在偏移 0x66 处开始的字符，该字符在当前源字符集中无效(代码页 65001)。 (编译源文件 calendar.cpp)
+C:\Users\yangluwei\source\repos\calendar\calendar\usr_mng.h(1,1): warning C4828: 文件包含在偏移 0x5f 处开始的字符，该字符在当前源字符集中无效(代码页 65001)。 (编译源文件 calendar_team.cpp)
+C:\Users\yangluwei\source\repos\calendar\calendar\usr_mng.h(1,1): warning C4828: 文件包含在偏移 0x61 处开始的字符，该字符在当前源字符集中无效(代码页 65001)。 (编译源文件 calendar_team.cpp)
+C:\Users\yangluwei\source\repos\calendar\calendar\usr_mng.h(1,1): warning C4828: 文件包含在偏移 0x62 处开始的字符，该字符在当前源字符集中无效(代码页 65001)。 (编译源文件 calendar_team.cpp)
+C:\Users\yangluwei\source\repos\calendar\calendar\usr_mng.h(1,1): warning C4828: 文件包含在偏移 0x63 处开始的字符，该字符在当前源字符集中无效(代码页 65001)。 (编译源文件 calendar_team.cpp)
+C:\Users\yangluwei\source\repos\calendar\calendar\usr_mng.h(1,1): warning C4828: 文件包含在偏移 0x65 处开始的字符，该字符在当前源字符集中无效(代码页 65001)。 (编译源文件 calendar_team.cpp)
+C:\Users\yangluwei\source\repos\calendar\calendar\usr_mng.h(1,1): warning C4828: 文件包含在偏移 0x66 处开始的字符，该字符在当前源字符集中无效(代码页 65001)。 (编译源文件 calendar_team.cpp)
+C:\Users\yangluwei\source\repos\calendar\calendar\usr_mng.h(1,1): warning C4828: 文件包含在偏移 0x5f 处开始的字符，该字符在当前源字符集中无效(代码页 65001)。 (编译源文件 REG_N_LOGIN.cpp)
+C:\Users\yangluwei\source\repos\calendar\calendar\usr_mng.h(1,1): warning C4828: 文件包含在偏移 0x61 处开始的字符，该字符在当前源字符集中无效(代码页 65001)。 (编译源文件 REG_N_LOGIN.cpp)
+C:\Users\yangluwei\source\repos\calendar\calendar\usr_mng.h(1,1): warning C4828: 文件包含在偏移 0x62 处开始的字符，该字符在当前源字符集中无效(代码页 65001)。 (编译源文件 REG_N_LOGIN.cpp)
+C:\Users\yangluwei\source\repos\calendar\calendar\usr_mng.h(1,1): warning C4828: 文件包含在偏移 0x63 处开始的字符，该字符在当前源字符集中无效(代码页 65001)。 (编译源文件 REG_N_LOGIN.cpp)
+C:\Users\yangluwei\source\repos\calendar\calendar\usr_mng.h(1,1): warning C4828: 文件包含在偏移 0x65 处开始的字符，该字符在当前源字符集中无效(代码页 65001)。 (编译源文件 REG_N_LOGIN.cpp)
+C:\Users\yangluwei\source\repos\calendar\calendar\usr_mng.h(1,1): warning C4828: 文件包含在偏移 0x66 处开始的字符，该字符在当前源字符集中无效(代码页 65001)。 (编译源文件 REG_N_LOGIN.cpp)
+C:\Users\yangluwei\source\repos\calendar\calendar\usr_mng.h(1,1): warning C4828: 文件包含在偏移 0x5f 处开始的字符，该字符在当前源字符集中无效(代码页 65001)。 (编译源文件 team_mng.cpp)
+C:\Users\yangluwei\source\repos\calendar\calendar\usr_mng.h(1,1): warning C4828: 文件包含在偏移 0x61 处开始的字符，该字符在当前源字符集中无效(代码页 65001)。 (编译源文件 team_mng.cpp)
+C:\Users\yangluwei\source\repos\calendar\calendar\usr_mng.h(1,1): warning C4828: 文件包含在偏移 0x62 处开始的字符，该字符在当前源字符集中无效(代码页 65001)。 (编译源文件 team_mng.cpp)
+C:\Users\yangluwei\source\repos\calendar\calendar\usr_mng.h(1,1): warning C4828: 文件包含在偏移 0x63 处开始的字符，该字符在当前源字符集中无效(代码页 65001)。 (编译源文件 team_mng.cpp)
+C:\Users\yangluwei\source\repos\calendar\calendar\usr_mng.h(1,1): warning C4828: 文件包含在偏移 0x65 处开始的字符，该字符在当前源字符集中无效(代码页 65001)。 (编译源文件 team_mng.cpp)
+C:\Users\yangluwei\source\repos\calendar\calendar\usr_mng.h(1,1): warning C4828: 文件包含在偏移 0x66 处开始的字符，该字符在当前源字符集中无效(代码页 65001)。 (编译源文件 team_mng.cpp)
+C:\Users\yangluwei\source\repos\calendar\calendar\usr_mng.h(1,1): warning C4828: 文件包含在偏移 0x5f 处开始的字符，该字符在当前源字符集中无效(代码页 65001)。 (编译源文件 TODO_team.cpp)
+C:\Users\yangluwei\source\repos\calendar\calendar\usr_mng.h(1,1): warning C4828: 文件包含在偏移 0x61 处开始的字符，该字符在当前源字符集中无效(代码页 65001)。 (编译源文件 TODO_team.cpp)
+C:\Users\yangluwei\source\repos\calendar\calendar\usr_mng.h(1,1): warning C4828: 文件包含在偏移 0x62 处开始的字符，该字符在当前源字符集中无效(代码页 65001)。 (编译源文件 TODO_team.cpp)
+C:\Users\yangluwei\source\repos\calendar\calendar\usr_mng.h(1,1): warning C4828: 文件包含在偏移 0x63 处开始的字符，该字符在当前源字符集中无效(代码页 65001)。 (编译源文件 TODO_team.cpp)
+C:\Users\yangluwei\source\repos\calendar\calendar\usr_mng.h(1,1): warning C4828: 文件包含在偏移 0x65 处开始的字符，该字符在当前源字符集中无效(代码页 65001)。 (编译源文件 TODO_team.cpp)
+C:\Users\yangluwei\source\repos\calendar\calendar\usr_mng.h(1,1): warning C4828: 文件包含在偏移 0x66 处开始的字符，该字符在当前源字符集中无效(代码页 65001)。 (编译源文件 TODO_team.cpp)
+C:\Users\yangluwei\source\repos\calendar\calendar\usr_mng.h(1,1): warning C4828: 文件包含在偏移 0x5f 处开始的字符，该字符在当前源字符集中无效(代码页 65001)。 (编译源文件 usr_mng.cpp)
+C:\Users\yangluwei\source\repos\calendar\calendar\usr_mng.h(1,1): warning C4828: 文件包含在偏移 0x61 处开始的字符，该字符在当前源字符集中无效(代码页 65001)。 (编译源文件 usr_mng.cpp)
+C:\Users\yangluwei\source\repos\calendar\calendar\usr_mng.h(1,1): warning C4828: 文件包含在偏移 0x62 处开始的字符，该字符在当前源字符集中无效(代码页 65001)。 (编译源文件 usr_mng.cpp)
+C:\Users\yangluwei\source\repos\calendar\calendar\usr_mng.h(1,1): warning C4828: 文件包含在偏移 0x63 处开始的字符，该字符在当前源字符集中无效(代码页 65001)。 (编译源文件 usr_mng.cpp)
+C:\Users\yangluwei\source\repos\calendar\calendar\usr_mng.h(1,1): warning C4828: 文件包含在偏移 0x65 处开始的字符，该字符在当前源字符集中无效(代码页 65001)。 (编译源文件 usr_mng.cpp)
+C:\Users\yangluwei\source\repos\calendar\calendar\usr_mng.h(1,1): warning C4828: 文件包含在偏移 0x66 处开始的字符，该字符在当前源字符集中无效(代码页 65001)。 (编译源文件 usr_mng.cpp)
+C:\Users\yangluwei\source\repos\calendar\calendar\calendar_team.h(1,1): warning C4828: 文件包含在偏移 0xb9 处开始的字符，该字符在当前源字符集中无效(代码页 65001)。 (编译源文件 calendar_team.cpp)
+C:\Users\yangluwei\source\repos\calendar\calendar\calendar_team.h(1,1): warning C4828: 文件包含在偏移 0xbc 处开始的字符，该字符在当前源字符集中无效(代码页 65001)。 (编译源文件 calendar_team.cpp)
+C:\Users\yangluwei\source\repos\calendar\calendar\calendar_team.h(1,1): warning C4828: 文件包含在偏移 0xbe 处开始的字符，该字符在当前源字符集中无效(代码页 65001)。 (编译源文件 calendar_team.cpp)
+C:\Users\yangluwei\source\repos\calendar\calendar\calendar_team.h(1,1): warning C4828: 文件包含在偏移 0x1bc 处开始的字符，该字符在当前源字符集中无效(代码页 65001)。 (编译源文件 calendar_team.cpp)
+C:\Users\yangluwei\source\repos\calendar\calendar\calendar_team.h(1,1): warning C4828: 文件包含在偏移 0x1bd 处开始的字符，该字符在当前源字符集中无效(代码页 65001)。 (编译源文件 calendar_team.cpp)
+C:\Users\yangluwei\source\repos\calendar\calendar\calendar_team.h(1,1): warning C4828: 文件包含在偏移 0x1c1 处开始的字符，该字符在当前源字符集中无效(代码页 65001)。 (编译源文件 calendar_team.cpp)
+C:\Users\yangluwei\source\repos\calendar\calendar\calendar_team.h(1,1): warning C4828: 文件包含在偏移 0x1c2 处开始的字符，该字符在当前源字符集中无效(代码页 65001)。 (编译源文件 calendar_team.cpp)
+C:\Users\yangluwei\source\repos\calendar\calendar\calendar_team.h(1,1): warning C4828: 文件包含在偏移 0x1c3 处开始的字符，该字符在当前源字符集中无效(代码页 65001)。 (编译源文件 calendar_team.cpp)
+C:\Users\yangluwei\source\repos\calendar\calendar\calendar_team.h(1,1): warning C4828: 文件包含在偏移 0x1c4 处开始的字符，该字符在当前源字符集中无效(代码页 65001)。 (编译源文件 calendar_team.cpp)
+C:\Users\yangluwei\source\repos\calendar\calendar\calendar_team.h(1,1): warning C4828: 文件包含在偏移 0x1c6 处开始的字符，该字符在当前源字符集中无效(代码页 65001)。 (编译源文件 calendar_team.cpp)
+C:\Users\yangluwei\source\repos\calendar\calendar\calendar_team.h(1,1): warning C4828: 文件包含在偏移 0x1c7 处开始的字符，该字符在当前源字符集中无效(代码页 65001)。 (编译源文件 calendar_team.cpp)
+C:\Users\yangluwei\source\repos\calendar\calendar\calendar_team.h(1,1): warning C4828: 文件包含在偏移 0x1ca 处开始的字符，该字符在当前源字符集中无效(代码页 65001)。 (编译源文件 calendar_team.cpp)
+C:\Users\yangluwei\source\repos\calendar\calendar\calendar_team.h(1,1): warning C4828: 文件包含在偏移 0x1cc 处开始的字符，该字符在当前源字符集中无效(代码页 65001)。 (编译源文件 calendar_team.cpp)
+C:\Users\yangluwei\source\repos\calendar\calendar\calendar_team.h(1,1): warning C4828: 文件包含在偏移 0x1cd 处开始的字符，该字符在当前源字符集中无效(代码页 65001)。 (编译源文件 calendar_team.cpp)
+C:\Users\yangluwei\source\repos\calendar\calendar\calendar_team.h(1,1): warning C4828: 文件包含在偏移 0x1d2 处开始的字符，该字符在当前源字符集中无效(代码页 65001)。 (编译源文件 calendar_team.cpp)
+C:\Users\yangluwei\source\repos\calendar\calendar\calendar_team.h(1,1): warning C4828: 文件包含在偏移 0x1d3 处开始的字符，该字符在当前源字符集中无效(代码页 65001)。 (编译源文件 calendar_team.cpp)
+C:\Users\yangluwei\source\repos\calendar\calendar\calendar_team.h(1,1): warning C4828: 文件包含在偏移 0x1d5 处开始的字符，该字符在当前源字符集中无效(代码页 65001)。 (编译源文件 calendar_team.cpp)
+C:\Users\yangluwei\source\repos\calendar\calendar\calendar_team.h(1,1): warning C4828: 文件包含在偏移 0x1d6 处开始的字符，该字符在当前源字符集中无效(代码页 65001)。 (编译源文件 calendar_team.cpp)
+C:\Users\yangluwei\source\repos\calendar\calendar\calendar_team.h(1,1): warning C4828: 文件包含在偏移 0x1d8 处开始的字符，该字符在当前源字符集中无效(代码页 65001)。 (编译源文件 calendar_team.cpp)
+C:\Users\yangluwei\source\repos\calendar\calendar\calendar_team.h(1,1): warning C4828: 文件包含在偏移 0x1da 处开始的字符，该字符在当前源字符集中无效(代码页 65001)。 (编译源文件 calendar_team.cpp)
+C:\Users\yangluwei\source\repos\calendar\calendar\calendar_team.h(1,1): warning C4828: 文件包含在偏移 0x1dd 处开始的字符，该字符在当前源字符集中无效(代码页 65001)。 (编译源文件 calendar_team.cpp)
+C:\Users\yangluwei\source\repos\calendar\calendar\calendar_team.h(1,1): warning C4828: 文件包含在偏移 0x1df 处开始的字符，该字符在当前源字符集中无效(代码页 65001)。 (编译源文件 calendar_team.cpp)
+C:\Users\yangluwei\source\repos\calendar\calendar\TODO_team.h(1,1): warning C4828: 文件包含在偏移 0x26c 处开始的字符，该字符在当前源字符集中无效(代码页 65001)。 (编译源文件 calendar_team.cpp)
+C:\Users\yangluwei\source\repos\calendar\calendar\TODO_team.h(1,1): warning C4828: 文件包含在偏移 0x26e 处开始的字符，该字符在当前源字符集中无效(代码页 65001)。 (编译源文件 calendar_team.cpp)
+C:\Users\yangluwei\source\repos\calendar\calendar\TODO_team.h(1,1): warning C4828: 文件包含在偏移 0x272 处开始的字符，该字符在当前源字符集中无效(代码页 65001)。 (编译源文件 calendar_team.cpp)
+C:\Users\yangluwei\source\repos\calendar\calendar\TODO_team.h(1,1): warning C4828: 文件包含在偏移 0x273 处开始的字符，该字符在当前源字符集中无效(代码页 65001)。 (编译源文件 calendar_team.cpp)
+C:\Users\yangluwei\source\repos\calendar\calendar\TODO_team.h(1,1): warning C4828: 文件包含在偏移 0x279 处开始的字符，该字符在当前源字符集中无效(代码页 65001)。 (编译源文件 calendar_team.cpp)
+C:\Users\yangluwei\source\repos\calendar\calendar\TODO_team.h(1,1): warning C4828: 文件包含在偏移 0x27a 处开始的字符，该字符在当前源字符集中无效(代码页 65001)。 (编译源文件 calendar_team.cpp)
+C:\Users\yangluwei\source\repos\calendar\calendar\TODO_team.h(1,1): warning C4828: 文件包含在偏移 0x27c 处开始的字符，该字符在当前源字符集中无效(代码页 65001)。 (编译源文件 calendar_team.cpp)
+C:\Users\yangluwei\source\repos\calendar\calendar\TODO_team.h(1,1): warning C4828: 文件包含在偏移 0x28f 处开始的字符，该字符在当前源字符集中无效(代码页 65001)。 (编译源文件 calendar_team.cpp)
+C:\Users\yangluwei\source\repos\calendar\calendar\TODO_team.h(1,1): warning C4828: 文件包含在偏移 0x291 处开始的字符，该字符在当前源字符集中无效(代码页 65001)。 (编译源文件 calendar_team.cpp)
+C:\Users\yangluwei\source\repos\calendar\calendar\TODO_team.h(1,1): warning C4828: 文件包含在偏移 0x292 处开始的字符，该字符在当前源字符集中无效(代码页 65001)。 (编译源文件 calendar_team.cpp)
+C:\Users\yangluwei\source\repos\calendar\calendar\TODO_team.h(1,1): warning C4828: 文件包含在偏移 0x296 处开始的字符，该字符在当前源字符集中无效(代码页 65001)。 (编译源文件 calendar_team.cpp)
+C:\Users\yangluwei\source\repos\calendar\calendar\TODO_team.h(1,1): warning C4828: 文件包含在偏移 0x29a 处开始的字符，该字符在当前源字符集中无效(代码页 65001)。 (编译源文件 calendar_team.cpp)
+C:\Users\yangluwei\source\repos\calendar\calendar\TODO_team.h(1,1): warning C4828: 文件包含在偏移 0x29b 处开始的字符，该字符在当前源字符集中无效(代码页 65001)。 (编译源文件 calendar_team.cpp)
+C:\Users\yangluwei\source\repos\calendar\calendar\TODO_team.h(1,1): warning C4828: 文件包含在偏移 0x29c 处开始的字符，该字符在当前源字符集中无效(代码页 65001)。 (编译源文件 calendar_team.cpp)
+C:\Users\yangluwei\source\repos\calendar\calendar\TODO_team.h(1,1): warning C4828: 文件包含在偏移 0x29d 处开始的字符，该字符在当前源字符集中无效(代码页 65001)。 (编译源文件 calendar_team.cpp)
+C:\Users\yangluwei\source\repos\calendar\calendar\TODO_team.h(1,1): warning C4828: 文件包含在偏移 0x29f 处开始的字符，该字符在当前源字符集中无效(代码页 65001)。 (编译源文件 calendar_team.cpp)
+C:\Users\yangluwei\source\repos\calendar\calendar\TODO_team.h(1,1): warning C4828: 文件包含在偏移 0x2a2 处开始的字符，该字符在当前源字符集中无效(代码页 65001)。 (编译源文件 calendar_team.cpp)
+C:\Users\yangluwei\source\repos\calendar\calendar\TODO_team.h(1,1): warning C4828: 文件包含在偏移 0x2a3 处开始的字符，该字符在当前源字符集中无效(代码页 65001)。 (编译源文件 calendar_team.cpp)
+C:\Users\yangluwei\source\repos\calendar\calendar\TODO_team.h(1,1): warning C4828: 文件包含在偏移 0x2a7 处开始的字符，该字符在当前源字符集中无效(代码页 65001)。 (编译源文件 calendar_team.cpp)
+C:\Users\yangluwei\source\repos\calendar\calendar\TODO_team.h(1,1): warning C4828: 文件包含在偏移 0x2a8 处开始的字符，该字符在当前源字符集中无效(代码页 65001)。 (编译源文件 calendar_team.cpp)
+C:\Users\yangluwei\source\repos\calendar\calendar\TODO_team.h(1,1): warning C4828: 文件包含在偏移 0x2a9 处开始的字符，该字符在当前源字符集中无效(代码页 65001)。 (编译源文件 calendar_team.cpp)
+C:\Users\yangluwei\source\repos\calendar\calendar\TODO_team.h(1,1): warning C4828: 文件包含在偏移 0x2ab 处开始的字符，该字符在当前源字符集中无效(代码页 65001)。 (编译源文件 calendar_team.cpp)
+C:\Users\yangluwei\source\repos\calendar\calendar\TODO_team.h(1,1): warning C4828: 文件包含在偏移 0x2ad 处开始的字符，该字符在当前源字符集中无效(代码页 65001)。 (编译源文件 calendar_team.cpp)
+C:\Users\yangluwei\source\repos\calendar\calendar\TODO_team.h(1,1): warning C4828: 文件包含在偏移 0x2ae 处开始的字符，该字符在当前源字符集中无效(代码页 65001)。 (编译源文件 calendar_team.cpp)
+C:\Users\yangluwei\source\repos\calendar\calendar\TODO_team.h(1,1): warning C4828: 文件包含在偏移 0x2b0 处开始的字符，该字符在当前源字符集中无效(代码页 65001)。 (编译源文件 calendar_team.cpp)
+C:\Users\yangluwei\source\repos\calendar\calendar\TODO_team.h(1,1): warning C4828: 文件包含在偏移 0x2b1 处开始的字符，该字符在当前源字符集中无效(代码页 65001)。 (编译源文件 calendar_team.cpp)
+C:\Users\yangluwei\source\repos\calendar\calendar\TODO_team.h(1,1): warning C4828: 文件包含在偏移 0x2b2 处开始的字符，该字符在当前源字符集中无效(代码页 65001)。 (编译源文件 calendar_team.cpp)
+C:\Users\yangluwei\source\repos\calendar\calendar\calendar_team.h(1,1): warning C4828: 文件包含在偏移 0xb9 处开始的字符，该字符在当前源字符集中无效(代码页 65001)。 (编译源文件 team_mng.cpp)
+C:\Users\yangluwei\source\repos\calendar\calendar\calendar_team.h(1,1): warning C4828: 文件包含在偏移 0xbc 处开始的字符，该字符在当前源字符集中无效(代码页 65001)。 (编译源文件 team_mng.cpp)
+C:\Users\yangluwei\source\repos\calendar\calendar\calendar_team.h(1,1): warning C4828: 文件包含在偏移 0xbe 处开始的字符，该字符在当前源字符集中无效(代码页 65001)。 (编译源文件 team_mng.cpp)
+C:\Users\yangluwei\source\repos\calendar\calendar\calendar_team.h(1,1): warning C4828: 文件包含在偏移 0x1bc 处开始的字符，该字符在当前源字符集中无效(代码页 65001)。 (编译源文件 team_mng.cpp)
+C:\Users\yangluwei\source\repos\calendar\calendar\calendar_team.h(1,1): warning C4828: 文件包含在偏移 0x1bd 处开始的字符，该字符在当前源字符集中无效(代码页 65001)。 (编译源文件 team_mng.cpp)
+C:\Users\yangluwei\source\repos\calendar\calendar\calendar_team.h(1,1): warning C4828: 文件包含在偏移 0x1c1 处开始的字符，该字符在当前源字符集中无效(代码页 65001)。 (编译源文件 team_mng.cpp)
+C:\Users\yangluwei\source\repos\calendar\calendar\calendar_team.h(1,1): warning C4828: 文件包含在偏移 0x1c2 处开始的字符，该字符在当前源字符集中无效(代码页 65001)。 (编译源文件 team_mng.cpp)
+C:\Users\yangluwei\source\repos\calendar\calendar\calendar_team.h(1,1): warning C4828: 文件包含在偏移 0x1c3 处开始的字符，该字符在当前源字符集中无效(代码页 65001)。 (编译源文件 team_mng.cpp)
+C:\Users\yangluwei\source\repos\calendar\calendar\calendar_team.h(1,1): warning C4828: 文件包含在偏移 0x1c4 处开始的字符，该字符在当前源字符集中无效(代码页 65001)。 (编译源文件 team_mng.cpp)
+C:\Users\yangluwei\source\repos\calendar\calendar\calendar_team.h(1,1): warning C4828: 文件包含在偏移 0x1c6 处开始的字符，该字符在当前源字符集中无效(代码页 65001)。 (编译源文件 team_mng.cpp)
+C:\Users\yangluwei\source\repos\calendar\calendar\calendar_team.h(1,1): warning C4828: 文件包含在偏移 0x1c7 处开始的字符，该字符在当前源字符集中无效(代码页 65001)。 (编译源文件 team_mng.cpp)
+C:\Users\yangluwei\source\repos\calendar\calendar\calendar_team.h(1,1): warning C4828: 文件包含在偏移 0x1ca 处开始的字符，该字符在当前源字符集中无效(代码页 65001)。 (编译源文件 team_mng.cpp)
+C:\Users\yangluwei\source\repos\calendar\calendar\calendar_team.h(1,1): warning C4828: 文件包含在偏移 0x1cc 处开始的字符，该字符在当前源字符集中无效(代码页 65001)。 (编译源文件 team_mng.cpp)
+C:\Users\yangluwei\source\repos\calendar\calendar\calendar_team.h(1,1): warning C4828: 文件包含在偏移 0x1cd 处开始的字符，该字符在当前源字符集中无效(代码页 65001)。 (编译源文件 team_mng.cpp)
+C:\Users\yangluwei\source\repos\calendar\calendar\calendar_team.h(1,1): warning C4828: 文件包含在偏移 0x1d2 处开始的字符，该字符在当前源字符集中无效(代码页 65001)。 (编译源文件 team_mng.cpp)
+C:\Users\yangluwei\source\repos\calendar\calendar\calendar_team.h(1,1): warning C4828: 文件包含在偏移 0x1d3 处开始的字符，该字符在当前源字符集中无效(代码页 65001)。 (编译源文件 team_mng.cpp)
+C:\Users\yangluwei\source\repos\calendar\calendar\calendar_team.h(1,1): warning C4828: 文件包含在偏移 0x1d5 处开始的字符，该字符在当前源字符集中无效(代码页 65001)。 (编译源文件 team_mng.cpp)
+C:\Users\yangluwei\source\repos\calendar\calendar\calendar_team.h(1,1): warning C4828: 文件包含在偏移 0x1d6 处开始的字符，该字符在当前源字符集中无效(代码页 65001)。 (编译源文件 team_mng.cpp)
+C:\Users\yangluwei\source\repos\calendar\calendar\calendar_team.h(1,1): warning C4828: 文件包含在偏移 0x1d8 处开始的字符，该字符在当前源字符集中无效(代码页 65001)。 (编译源文件 team_mng.cpp)
+C:\Users\yangluwei\source\repos\calendar\calendar\calendar_team.h(1,1): warning C4828: 文件包含在偏移 0x1da 处开始的字符，该字符在当前源字符集中无效(代码页 65001)。 (编译源文件 team_mng.cpp)
+C:\Users\yangluwei\source\repos\calendar\calendar\calendar_team.h(1,1): warning C4828: 文件包含在偏移 0x1dd 处开始的字符，该字符在当前源字符集中无效(代码页 65001)。 (编译源文件 team_mng.cpp)
+C:\Users\yangluwei\source\repos\calendar\calendar\calendar_team.h(1,1): warning C4828: 文件包含在偏移 0x1df 处开始的字符，该字符在当前源字符集中无效(代码页 65001)。 (编译源文件 team_mng.cpp)
+C:\Users\yangluwei\source\repos\calendar\calendar\calendar_team.h(1,1): warning C4828: 文件包含在偏移 0xb9 处开始的字符，该字符在当前源字符集中无效(代码页 65001)。 (编译源文件 TODO_team.cpp)
+C:\Users\yangluwei\source\repos\calendar\calendar\calendar_team.h(1,1): warning C4828: 文件包含在偏移 0xbc 处开始的字符，该字符在当前源字符集中无效(代码页 65001)。 (编译源文件 TODO_team.cpp)
+C:\Users\yangluwei\source\repos\calendar\calendar\calendar_team.h(1,1): warning C4828: 文件包含在偏移 0xbe 处开始的字符，该字符在当前源字符集中无效(代码页 65001)。 (编译源文件 TODO_team.cpp)
+C:\Users\yangluwei\source\repos\calendar\calendar\calendar_team.h(1,1): warning C4828: 文件包含在偏移 0x1bc 处开始的字符，该字符在当前源字符集中无效(代码页 65001)。 (编译源文件 TODO_team.cpp)
+C:\Users\yangluwei\source\repos\calendar\calendar\calendar_team.h(1,1): warning C4828: 文件包含在偏移 0x1bd 处开始的字符，该字符在当前源字符集中无效(代码页 65001)。 (编译源文件 TODO_team.cpp)
+C:\Users\yangluwei\source\repos\calendar\calendar\calendar_team.h(1,1): warning C4828: 文件包含在偏移 0x1c1 处开始的字符，该字符在当前源字符集中无效(代码页 65001)。 (编译源文件 TODO_team.cpp)
+C:\Users\yangluwei\source\repos\calendar\calendar\calendar_team.h(1,1): warning C4828: 文件包含在偏移 0x1c2 处开始的字符，该字符在当前源字符集中无效(代码页 65001)。 (编译源文件 TODO_team.cpp)
+C:\Users\yangluwei\source\repos\calendar\calendar\calendar_team.h(1,1): warning C4828: 文件包含在偏移 0x1c3 处开始的字符，该字符在当前源字符集中无效(代码页 65001)。 (编译源文件 TODO_team.cpp)
+C:\Users\yangluwei\source\repos\calendar\calendar\calendar_team.h(1,1): warning C4828: 文件包含在偏移 0x1c4 处开始的字符，该字符在当前源字符集中无效(代码页 65001)。 (编译源文件 TODO_team.cpp)
+C:\Users\yangluwei\source\repos\calendar\calendar\calendar_team.h(1,1): warning C4828: 文件包含在偏移 0x1c6 处开始的字符，该字符在当前源字符集中无效(代码页 65001)。 (编译源文件 TODO_team.cpp)
+C:\Users\yangluwei\source\repos\calendar\calendar\calendar_team.h(1,1): warning C4828: 文件包含在偏移 0x1c7 处开始的字符，该字符在当前源字符集中无效(代码页 65001)。 (编译源文件 TODO_team.cpp)
+C:\Users\yangluwei\source\repos\calendar\calendar\calendar_team.h(1,1): warning C4828: 文件包含在偏移 0x1ca 处开始的字符，该字符在当前源字符集中无效(代码页 65001)。 (编译源文件 TODO_team.cpp)
+C:\Users\yangluwei\source\repos\calendar\calendar\calendar_team.h(1,1): warning C4828: 文件包含在偏移 0x1cc 处开始的字符，该字符在当前源字符集中无效(代码页 65001)。 (编译源文件 TODO_team.cpp)
+C:\Users\yangluwei\source\repos\calendar\calendar\calendar_team.h(1,1): warning C4828: 文件包含在偏移 0x1cd 处开始的字符，该字符在当前源字符集中无效(代码页 65001)。 (编译源文件 TODO_team.cpp)
+C:\Users\yangluwei\source\repos\calendar\calendar\calendar_team.h(1,1): warning C4828: 文件包含在偏移 0x1d2 处开始的字符，该字符在当前源字符集中无效(代码页 65001)。 (编译源文件 TODO_team.cpp)
+C:\Users\yangluwei\source\repos\calendar\calendar\calendar_team.h(1,1): warning C4828: 文件包含在偏移 0x1d3 处开始的字符，该字符在当前源字符集中无效(代码页 65001)。 (编译源文件 TODO_team.cpp)
+C:\Users\yangluwei\source\repos\calendar\calendar\calendar_team.h(1,1): warning C4828: 文件包含在偏移 0x1d5 处开始的字符，该字符在当前源字符集中无效(代码页 65001)。 (编译源文件 TODO_team.cpp)
+C:\Users\yangluwei\source\repos\calendar\calendar\calendar_team.h(1,1): warning C4828: 文件包含在偏移 0x1d6 处开始的字符，该字符在当前源字符集中无效(代码页 65001)。 (编译源文件 TODO_team.cpp)
+C:\Users\yangluwei\source\repos\calendar\calendar\calendar_team.h(1,1): warning C4828: 文件包含在偏移 0x1d8 处开始的字符，该字符在当前源字符集中无效(代码页 65001)。 (编译源文件 TODO_team.cpp)
+C:\Users\yangluwei\source\repos\calendar\calendar\calendar_team.h(1,1): warning C4828: 文件包含在偏移 0x1da 处开始的字符，该字符在当前源字符集中无效(代码页 65001)。 (编译源文件 TODO_team.cpp)
+C:\Users\yangluwei\source\repos\calendar\calendar\calendar_team.h(1,1): warning C4828: 文件包含在偏移 0x1dd 处开始的字符，该字符在当前源字符集中无效(代码页 65001)。 (编译源文件 TODO_team.cpp)
+C:\Users\yangluwei\source\repos\calendar\calendar\calendar_team.h(1,1): warning C4828: 文件包含在偏移 0x1df 处开始的字符，该字符在当前源字符集中无效(代码页 65001)。 (编译源文件 TODO_team.cpp)
+C:\Users\yangluwei\source\repos\calendar\calendar\TODO_team.h(1,1): warning C4828: 文件包含在偏移 0x26c 处开始的字符，该字符在当前源字符集中无效(代码页 65001)。 (编译源文件 TODO_team.cpp)
+C:\Users\yangluwei\source\repos\calendar\calendar\TODO_team.h(1,1): warning C4828: 文件包含在偏移 0x26e 处开始的字符，该字符在当前源字符集中无效(代码页 65001)。 (编译源文件 TODO_team.cpp)
+C:\Users\yangluwei\source\repos\calendar\calendar\TODO_team.h(1,1): warning C4828: 文件包含在偏移 0x272 处开始的字符，该字符在当前源字符集中无效(代码页 65001)。 (编译源文件 TODO_team.cpp)
+C:\Users\yangluwei\source\repos\calendar\calendar\TODO_team.h(1,1): warning C4828: 文件包含在偏移 0x273 处开始的字符，该字符在当前源字符集中无效(代码页 65001)。 (编译源文件 TODO_team.cpp)
+C:\Users\yangluwei\source\repos\calendar\calendar\TODO_team.h(1,1): warning C4828: 文件包含在偏移 0x279 处开始的字符，该字符在当前源字符集中无效(代码页 65001)。 (编译源文件 TODO_team.cpp)
+C:\Users\yangluwei\source\repos\calendar\calendar\TODO_team.h(1,1): warning C4828: 文件包含在偏移 0x27a 处开始的字符，该字符在当前源字符集中无效(代码页 65001)。 (编译源文件 TODO_team.cpp)
+C:\Users\yangluwei\source\repos\calendar\calendar\TODO_team.h(1,1): warning C4828: 文件包含在偏移 0x27c 处开始的字符，该字符在当前源字符集中无效(代码页 65001)。 (编译源文件 TODO_team.cpp)
+C:\Users\yangluwei\source\repos\calendar\calendar\TODO_team.h(1,1): warning C4828: 文件包含在偏移 0x28f 处开始的字符，该字符在当前源字符集中无效(代码页 65001)。 (编译源文件 TODO_team.cpp)
+C:\Users\yangluwei\source\repos\calendar\calendar\TODO_team.h(1,1): warning C4828: 文件包含在偏移 0x291 处开始的字符，该字符在当前源字符集中无效(代码页 65001)。 (编译源文件 TODO_team.cpp)
+C:\Users\yangluwei\source\repos\calendar\calendar\TODO_team.h(1,1): warning C4828: 文件包含在偏移 0x292 处开始的字符，该字符在当前源字符集中无效(代码页 65001)。 (编译源文件 TODO_team.cpp)
+C:\Users\yangluwei\source\repos\calendar\calendar\TODO_team.h(1,1): warning C4828: 文件包含在偏移 0x296 处开始的字符，该字符在当前源字符集中无效(代码页 65001)。 (编译源文件 TODO_team.cpp)
+C:\Users\yangluwei\source\repos\calendar\calendar\TODO_team.h(1,1): warning C4828: 文件包含在偏移 0x29a 处开始的字符，该字符在当前源字符集中无效(代码页 65001)。 (编译源文件 TODO_team.cpp)
+C:\Users\yangluwei\source\repos\calendar\calendar\TODO_team.h(1,1): warning C4828: 文件包含在偏移 0x29b 处开始的字符，该字符在当前源字符集中无效(代码页 65001)。 (编译源文件 TODO_team.cpp)
+C:\Users\yangluwei\source\repos\calendar\calendar\TODO_team.h(1,1): warning C4828: 文件包含在偏移 0x29c 处开始的字符，该字符在当前源字符集中无效(代码页 65001)。 (编译源文件 TODO_team.cpp)
+C:\Users\yangluwei\source\repos\calendar\calendar\TODO_team.h(1,1): warning C4828: 文件包含在偏移 0x29d 处开始的字符，该字符在当前源字符集中无效(代码页 65001)。 (编译源文件 TODO_team.cpp)
+C:\Users\yangluwei\source\repos\calendar\calendar\TODO_team.h(1,1): warning C4828: 文件包含在偏移 0x29f 处开始的字符，该字符在当前源字符集中无效(代码页 65001)。 (编译源文件 TODO_team.cpp)
+C:\Users\yangluwei\source\repos\calendar\calendar\TODO_team.h(1,1): warning C4828: 文件包含在偏移 0x2a2 处开始的字符，该字符在当前源字符集中无效(代码页 65001)。 (编译源文件 TODO_team.cpp)
+C:\Users\yangluwei\source\repos\calendar\calendar\TODO_team.h(1,1): warning C4828: 文件包含在偏移 0x2a3 处开始的字符，该字符在当前源字符集中无效(代码页 65001)。 (编译源文件 TODO_team.cpp)
+C:\Users\yangluwei\source\repos\calendar\calendar\TODO_team.h(1,1): warning C4828: 文件包含在偏移 0x2a7 处开始的字符，该字符在当前源字符集中无效(代码页 65001)。 (编译源文件 TODO_team.cpp)
+C:\Users\yangluwei\source\repos\calendar\calendar\TODO_team.h(1,1): warning C4828: 文件包含在偏移 0x2a8 处开始的字符，该字符在当前源字符集中无效(代码页 65001)。 (编译源文件 TODO_team.cpp)
+C:\Users\yangluwei\source\repos\calendar\calendar\TODO_team.h(1,1): warning C4828: 文件包含在偏移 0x2a9 处开始的字符，该字符在当前源字符集中无效(代码页 65001)。 (编译源文件 TODO_team.cpp)
+C:\Users\yangluwei\source\repos\calendar\calendar\TODO_team.h(1,1): warning C4828: 文件包含在偏移 0x2ab 处开始的字符，该字符在当前源字符集中无效(代码页 65001)。 (编译源文件 TODO_team.cpp)
+C:\Users\yangluwei\source\repos\calendar\calendar\TODO_team.h(1,1): warning C4828: 文件包含在偏移 0x2ad 处开始的字符，该字符在当前源字符集中无效(代码页 65001)。 (编译源文件 TODO_team.cpp)
+C:\Users\yangluwei\source\repos\calendar\calendar\TODO_team.h(1,1): warning C4828: 文件包含在偏移 0x2ae 处开始的字符，该字符在当前源字符集中无效(代码页 65001)。 (编译源文件 TODO_team.cpp)
+C:\Users\yangluwei\source\repos\calendar\calendar\TODO_team.h(1,1): warning C4828: 文件包含在偏移 0x2b0 处开始的字符，该字符在当前源字符集中无效(代码页 65001)。 (编译源文件 TODO_team.cpp)
+C:\Users\yangluwei\source\repos\calendar\calendar\TODO_team.h(1,1): warning C4828: 文件包含在偏移 0x2b1 处开始的字符，该字符在当前源字符集中无效(代码页 65001)。 (编译源文件 TODO_team.cpp)
+C:\Users\yangluwei\source\repos\calendar\calendar\TODO_team.h(1,1): warning C4828: 文件包含在偏移 0x2b2 处开始的字符，该字符在当前源字符集中无效(代码页 65001)。 (编译源文件 TODO_team.cpp)
+  qrc_calendar.cpp
+  moc_calendar.cpp
+  moc_bridge.cpp
+  moc_calendar_team.cpp
+  moc_team_mng.cpp
+  moc_TODO_team.cpp
+  moc_tsplan.cpp
+  moc_REG_N_LOGIN.cpp
+  moc_TODOwidget.cpp
+C:\Users\yangluwei\source\repos\calendar\calendar\TODO_team.h(1,1): warning C4828: 文件包含在偏移 0x26c 处开始的字符，该字符在当前源字符集中无效(代码页 65001)。 (编译源文件 x64\Release\moc\moc_TODO_team.cpp)
+C:\Users\yangluwei\source\repos\calendar\calendar\TODO_team.h(1,1): warning C4828: 文件包含在偏移 0x26e 处开始的字符，该字符在当前源字符集中无效(代码页 65001)。 (编译源文件 x64\Release\moc\moc_TODO_team.cpp)
+C:\Users\yangluwei\source\repos\calendar\calendar\TODO_team.h(1,1): warning C4828: 文件包含在偏移 0x272 处开始的字符，该字符在当前源字符集中无效(代码页 65001)。 (编译源文件 x64\Release\moc\moc_TODO_team.cpp)
+C:\Users\yangluwei\source\repos\calendar\calendar\TODO_team.h(1,1): warning C4828: 文件包含在偏移 0x273 处开始的字符，该字符在当前源字符集中无效(代码页 65001)。 (编译源文件 x64\Release\moc\moc_TODO_team.cpp)
+C:\Users\yangluwei\source\repos\calendar\calendar\TODO_team.h(1,1): warning C4828: 文件包含在偏移 0x279 处开始的字符，该字符在当前源字符集中无效(代码页 65001)。 (编译源文件 x64\Release\moc\moc_TODO_team.cpp)
+C:\Users\yangluwei\source\repos\calendar\calendar\TODO_team.h(1,1): warning C4828: 文件包含在偏移 0x27a 处开始的字符，该字符在当前源字符集中无效(代码页 65001)。 (编译源文件 x64\Release\moc\moc_TODO_team.cpp)
+C:\Users\yangluwei\source\repos\calendar\calendar\TODO_team.h(1,1): warning C4828: 文件包含在偏移 0x27c 处开始的字符，该字符在当前源字符集中无效(代码页 65001)。 (编译源文件 x64\Release\moc\moc_TODO_team.cpp)
+C:\Users\yangluwei\source\repos\calendar\calendar\TODO_team.h(1,1): warning C4828: 文件包含在偏移 0x28f 处开始的字符，该字符在当前源字符集中无效(代码页 65001)。 (编译源文件 x64\Release\moc\moc_TODO_team.cpp)
+C:\Users\yangluwei\source\repos\calendar\calendar\TODO_team.h(1,1): warning C4828: 文件包含在偏移 0x291 处开始的字符，该字符在当前源字符集中无效(代码页 65001)。 (编译源文件 x64\Release\moc\moc_TODO_team.cpp)
+C:\Users\yangluwei\source\repos\calendar\calendar\TODO_team.h(1,1): warning C4828: 文件包含在偏移 0x292 处开始的字符，该字符在当前源字符集中无效(代码页 65001)。 (编译源文件 x64\Release\moc\moc_TODO_team.cpp)
+C:\Users\yangluwei\source\repos\calendar\calendar\TODO_team.h(1,1): warning C4828: 文件包含在偏移 0x296 处开始的字符，该字符在当前源字符集中无效(代码页 65001)。 (编译源文件 x64\Release\moc\moc_TODO_team.cpp)
+C:\Users\yangluwei\source\repos\calendar\calendar\TODO_team.h(1,1): warning C4828: 文件包含在偏移 0x29a 处开始的字符，该字符在当前源字符集中无效(代码页 65001)。 (编译源文件 x64\Release\moc\moc_TODO_team.cpp)
+C:\Users\yangluwei\source\repos\calendar\calendar\TODO_team.h(1,1): warning C4828: 文件包含在偏移 0x29b 处开始的字符，该字符在当前源字符集中无效(代码页 65001)。 (编译源文件 x64\Release\moc\moc_TODO_team.cpp)
+C:\Users\yangluwei\source\repos\calendar\calendar\TODO_team.h(1,1): warning C4828: 文件包含在偏移 0x29c 处开始的字符，该字符在当前源字符集中无效(代码页 65001)。 (编译源文件 x64\Release\moc\moc_TODO_team.cpp)
+C:\Users\yangluwei\source\repos\calendar\calendar\TODO_team.h(1,1): warning C4828: 文件包含在偏移 0x29d 处开始的字符，该字符在当前源字符集中无效(代码页 65001)。 (编译源文件 x64\Release\moc\moc_TODO_team.cpp)
+C:\Users\yangluwei\source\repos\calendar\calendar\TODO_team.h(1,1): warning C4828: 文件包含在偏移 0x29f 处开始的字符，该字符在当前源字符集中无效(代码页 65001)。 (编译源文件 x64\Release\moc\moc_TODO_team.cpp)
+C:\Users\yangluwei\source\repos\calendar\calendar\TODO_team.h(1,1): warning C4828: 文件包含在偏移 0x2a2 处开始的字符，该字符在当前源字符集中无效(代码页 65001)。 (编译源文件 x64\Release\moc\moc_TODO_team.cpp)
+C:\Users\yangluwei\source\repos\calendar\calendar\TODO_team.h(1,1): warning C4828: 文件包含在偏移 0x2a3 处开始的字符，该字符在当前源字符集中无效(代码页 65001)。 (编译源文件 x64\Release\moc\moc_TODO_team.cpp)
+C:\Users\yangluwei\source\repos\calendar\calendar\TODO_team.h(1,1): warning C4828: 文件包含在偏移 0x2a7 处开始的字符，该字符在当前源字符集中无效(代码页 65001)。 (编译源文件 x64\Release\moc\moc_TODO_team.cpp)
+C:\Users\yangluwei\source\repos\calendar\calendar\TODO_team.h(1,1): warning C4828: 文件包含在偏移 0x2a8 处开始的字符，该字符在当前源字符集中无效(代码页 65001)。 (编译源文件 x64\Release\moc\moc_TODO_team.cpp)
+C:\Users\yangluwei\source\repos\calendar\calendar\TODO_team.h(1,1): warning C4828: 文件包含在偏移 0x2a9 处开始的字符，该字符在当前源字符集中无效(代码页 65001)。 (编译源文件 x64\Release\moc\moc_TODO_team.cpp)
+C:\Users\yangluwei\source\repos\calendar\calendar\TODO_team.h(1,1): warning C4828: 文件包含在偏移 0x2ab 处开始的字符，该字符在当前源字符集中无效(代码页 65001)。 (编译源文件 x64\Release\moc\moc_TODO_team.cpp)
+C:\Users\yangluwei\source\repos\calendar\calendar\TODO_team.h(1,1): warning C4828: 文件包含在偏移 0x2ad 处开始的字符，该字符在当前源字符集中无效(代码页 65001)。 (编译源文件 x64\Release\moc\moc_TODO_team.cpp)
+C:\Users\yangluwei\source\repos\calendar\calendar\TODO_team.h(1,1): warning C4828: 文件包含在偏移 0x2ae 处开始的字符，该字符在当前源字符集中无效(代码页 65001)。 (编译源文件 x64\Release\moc\moc_TODO_team.cpp)
+C:\Users\yangluwei\source\repos\calendar\calendar\TODO_team.h(1,1): warning C4828: 文件包含在偏移 0x2b0 处开始的字符，该字符在当前源字符集中无效(代码页 65001)。 (编译源文件 x64\Release\moc\moc_TODO_team.cpp)
+C:\Users\yangluwei\source\repos\calendar\calendar\TODO_team.h(1,1): warning C4828: 文件包含在偏移 0x2b1 处开始的字符，该字符在当前源字符集中无效(代码页 65001)。 (编译源文件 x64\Release\moc\moc_TODO_team.cpp)
+C:\Users\yangluwei\source\repos\calendar\calendar\TODO_team.h(1,1): warning C4828: 文件包含在偏移 0x2b2 处开始的字符，该字符在当前源字符集中无效(代码页 65001)。 (编译源文件 x64\Release\moc\moc_TODO_team.cpp)
+C:\Users\yangluwei\source\repos\calendar\calendar\calendar_team.h(1,1): warning C4828: 文件包含在偏移 0xb9 处开始的字符，该字符在当前源字符集中无效(代码页 65001)。 (编译源文件 x64\Release\moc\moc_calendar_team.cpp)
+C:\Users\yangluwei\source\repos\calendar\calendar\calendar_team.h(1,1): warning C4828: 文件包含在偏移 0xbc 处开始的字符，该字符在当前源字符集中无效(代码页 65001)。 (编译源文件 x64\Release\moc\moc_calendar_team.cpp)
+C:\Users\yangluwei\source\repos\calendar\calendar\calendar_team.h(1,1): warning C4828: 文件包含在偏移 0xbe 处开始的字符，该字符在当前源字符集中无效(代码页 65001)。 (编译源文件 x64\Release\moc\moc_calendar_team.cpp)
+C:\Users\yangluwei\source\repos\calendar\calendar\calendar_team.h(1,1): warning C4828: 文件包含在偏移 0x1bc 处开始的字符，该字符在当前源字符集中无效(代码页 65001)。 (编译源文件 x64\Release\moc\moc_calendar_team.cpp)
+C:\Users\yangluwei\source\repos\calendar\calendar\calendar_team.h(1,1): warning C4828: 文件包含在偏移 0x1bd 处开始的字符，该字符在当前源字符集中无效(代码页 65001)。 (编译源文件 x64\Release\moc\moc_calendar_team.cpp)
+C:\Users\yangluwei\source\repos\calendar\calendar\calendar_team.h(1,1): warning C4828: 文件包含在偏移 0x1c1 处开始的字符，该字符在当前源字符集中无效(代码页 65001)。 (编译源文件 x64\Release\moc\moc_calendar_team.cpp)
+C:\Users\yangluwei\source\repos\calendar\calendar\calendar_team.h(1,1): warning C4828: 文件包含在偏移 0x1c2 处开始的字符，该字符在当前源字符集中无效(代码页 65001)。 (编译源文件 x64\Release\moc\moc_calendar_team.cpp)
+C:\Users\yangluwei\source\repos\calendar\calendar\calendar_team.h(1,1): warning C4828: 文件包含在偏移 0x1c3 处开始的字符，该字符在当前源字符集中无效(代码页 65001)。 (编译源文件 x64\Release\moc\moc_calendar_team.cpp)
+C:\Users\yangluwei\source\repos\calendar\calendar\calendar_team.h(1,1): warning C4828: 文件包含在偏移 0x1c4 处开始的字符，该字符在当前源字符集中无效(代码页 65001)。 (编译源文件 x64\Release\moc\moc_calendar_team.cpp)
+C:\Users\yangluwei\source\repos\calendar\calendar\calendar_team.h(1,1): warning C4828: 文件包含在偏移 0x1c6 处开始的字符，该字符在当前源字符集中无效(代码页 65001)。 (编译源文件 x64\Release\moc\moc_calendar_team.cpp)
+C:\Users\yangluwei\source\repos\calendar\calendar\calendar_team.h(1,1): warning C4828: 文件包含在偏移 0x1c7 处开始的字符，该字符在当前源字符集中无效(代码页 65001)。 (编译源文件 x64\Release\moc\moc_calendar_team.cpp)
+C:\Users\yangluwei\source\repos\calendar\calendar\calendar_team.h(1,1): warning C4828: 文件包含在偏移 0x1ca 处开始的字符，该字符在当前源字符集中无效(代码页 65001)。 (编译源文件 x64\Release\moc\moc_calendar_team.cpp)
+C:\Users\yangluwei\source\repos\calendar\calendar\calendar_team.h(1,1): warning C4828: 文件包含在偏移 0x1cc 处开始的字符，该字符在当前源字符集中无效(代码页 65001)。 (编译源文件 x64\Release\moc\moc_calendar_team.cpp)
+C:\Users\yangluwei\source\repos\calendar\calendar\calendar_team.h(1,1): warning C4828: 文件包含在偏移 0x1cd 处开始的字符，该字符在当前源字符集中无效(代码页 65001)。 (编译源文件 x64\Release\moc\moc_calendar_team.cpp)
+C:\Users\yangluwei\source\repos\calendar\calendar\calendar_team.h(1,1): warning C4828: 文件包含在偏移 0x1d2 处开始的字符，该字符在当前源字符集中无效(代码页 65001)。 (编译源文件 x64\Release\moc\moc_calendar_team.cpp)
+C:\Users\yangluwei\source\repos\calendar\calendar\calendar_team.h(1,1): warning C4828: 文件包含在偏移 0x1d3 处开始的字符，该字符在当前源字符集中无效(代码页 65001)。 (编译源文件 x64\Release\moc\moc_calendar_team.cpp)
+C:\Users\yangluwei\source\repos\calendar\calendar\calendar_team.h(1,1): warning C4828: 文件包含在偏移 0x1d5 处开始的字符，该字符在当前源字符集中无效(代码页 65001)。 (编译源文件 x64\Release\moc\moc_calendar_team.cpp)
+C:\Users\yangluwei\source\repos\calendar\calendar\calendar_team.h(1,1): warning C4828: 文件包含在偏移 0x1d6 处开始的字符，该字符在当前源字符集中无效(代码页 65001)。 (编译源文件 x64\Release\moc\moc_calendar_team.cpp)
+C:\Users\yangluwei\source\repos\calendar\calendar\calendar_team.h(1,1): warning C4828: 文件包含在偏移 0x1d8 处开始的字符，该字符在当前源字符集中无效(代码页 65001)。 (编译源文件 x64\Release\moc\moc_calendar_team.cpp)
+C:\Users\yangluwei\source\repos\calendar\calendar\calendar_team.h(1,1): warning C4828: 文件包含在偏移 0x1da 处开始的字符，该字符在当前源字符集中无效(代码页 65001)。 (编译源文件 x64\Release\moc\moc_calendar_team.cpp)
+C:\Users\yangluwei\source\repos\calendar\calendar\calendar_team.h(1,1): warning C4828: 文件包含在偏移 0x1dd 处开始的字符，该字符在当前源字符集中无效(代码页 65001)。 (编译源文件 x64\Release\moc\moc_calendar_team.cpp)
+C:\Users\yangluwei\source\repos\calendar\calendar\calendar_team.h(1,1): warning C4828: 文件包含在偏移 0x1df 处开始的字符，该字符在当前源字符集中无效(代码页 65001)。 (编译源文件 x64\Release\moc\moc_calendar_team.cpp)
+C:\Users\yangluwei\source\repos\calendar\calendar\usr_mng.h(1,1): warning C4828: 文件包含在偏移 0x5f 处开始的字符，该字符在当前源字符集中无效(代码页 65001)。 (编译源文件 x64\Release\moc\moc_TODO_team.cpp)
+C:\Users\yangluwei\source\repos\calendar\calendar\usr_mng.h(1,1): warning C4828: 文件包含在偏移 0x61 处开始的字符，该字符在当前源字符集中无效(代码页 65001)。 (编译源文件 x64\Release\moc\moc_TODO_team.cpp)
+C:\Users\yangluwei\source\repos\calendar\calendar\usr_mng.h(1,1): warning C4828: 文件包含在偏移 0x62 处开始的字符，该字符在当前源字符集中无效(代码页 65001)。 (编译源文件 x64\Release\moc\moc_TODO_team.cpp)
+C:\Users\yangluwei\source\repos\calendar\calendar\usr_mng.h(1,1): warning C4828: 文件包含在偏移 0x63 处开始的字符，该字符在当前源字符集中无效(代码页 65001)。 (编译源文件 x64\Release\moc\moc_TODO_team.cpp)
+C:\Users\yangluwei\source\repos\calendar\calendar\usr_mng.h(1,1): warning C4828: 文件包含在偏移 0x65 处开始的字符，该字符在当前源字符集中无效(代码页 65001)。 (编译源文件 x64\Release\moc\moc_TODO_team.cpp)
+C:\Users\yangluwei\source\repos\calendar\calendar\usr_mng.h(1,1): warning C4828: 文件包含在偏移 0x66 处开始的字符，该字符在当前源字符集中无效(代码页 65001)。 (编译源文件 x64\Release\moc\moc_TODO_team.cpp)
+C:\Users\yangluwei\source\repos\calendar\calendar\usr_mng.h(1,1): warning C4828: 文件包含在偏移 0x5f 处开始的字符，该字符在当前源字符集中无效(代码页 65001)。 (编译源文件 x64\Release\moc\moc_REG_N_LOGIN.cpp)
+C:\Users\yangluwei\source\repos\calendar\calendar\usr_mng.h(1,1): warning C4828: 文件包含在偏移 0x61 处开始的字符，该字符在当前源字符集中无效(代码页 65001)。 (编译源文件 x64\Release\moc\moc_REG_N_LOGIN.cpp)
+C:\Users\yangluwei\source\repos\calendar\calendar\usr_mng.h(1,1): warning C4828: 文件包含在偏移 0x62 处开始的字符，该字符在当前源字符集中无效(代码页 65001)。 (编译源文件 x64\Release\moc\moc_REG_N_LOGIN.cpp)
+C:\Users\yangluwei\source\repos\calendar\calendar\usr_mng.h(1,1): warning C4828: 文件包含在偏移 0x63 处开始的字符，该字符在当前源字符集中无效(代码页 65001)。 (编译源文件 x64\Release\moc\moc_REG_N_LOGIN.cpp)
+C:\Users\yangluwei\source\repos\calendar\calendar\usr_mng.h(1,1): warning C4828: 文件包含在偏移 0x65 处开始的字符，该字符在当前源字符集中无效(代码页 65001)。 (编译源文件 x64\Release\moc\moc_REG_N_LOGIN.cpp)
+C:\Users\yangluwei\source\repos\calendar\calendar\usr_mng.h(1,1): warning C4828: 文件包含在偏移 0x66 处开始的字符，该字符在当前源字符集中无效(代码页 65001)。 (编译源文件 x64\Release\moc\moc_REG_N_LOGIN.cpp)
+C:\Users\yangluwei\source\repos\calendar\calendar\usr_mng.h(1,1): warning C4828: 文件包含在偏移 0x5f 处开始的字符，该字符在当前源字符集中无效(代码页 65001)。 (编译源文件 x64\Release\moc\moc_calendar_team.cpp)
+C:\Users\yangluwei\source\repos\calendar\calendar\usr_mng.h(1,1): warning C4828: 文件包含在偏移 0x61 处开始的字符，该字符在当前源字符集中无效(代码页 65001)。 (编译源文件 x64\Release\moc\moc_calendar_team.cpp)
+C:\Users\yangluwei\source\repos\calendar\calendar\usr_mng.h(1,1): warning C4828: 文件包含在偏移 0x62 处开始的字符，该字符在当前源字符集中无效(代码页 65001)。 (编译源文件 x64\Release\moc\moc_calendar_team.cpp)
+C:\Users\yangluwei\source\repos\calendar\calendar\usr_mng.h(1,1): warning C4828: 文件包含在偏移 0x63 处开始的字符，该字符在当前源字符集中无效(代码页 65001)。 (编译源文件 x64\Release\moc\moc_calendar_team.cpp)
+C:\Users\yangluwei\source\repos\calendar\calendar\usr_mng.h(1,1): warning C4828: 文件包含在偏移 0x65 处开始的字符，该字符在当前源字符集中无效(代码页 65001)。 (编译源文件 x64\Release\moc\moc_calendar_team.cpp)
+C:\Users\yangluwei\source\repos\calendar\calendar\usr_mng.h(1,1): warning C4828: 文件包含在偏移 0x66 处开始的字符，该字符在当前源字符集中无效(代码页 65001)。 (编译源文件 x64\Release\moc\moc_calendar_team.cpp)
+team_mng.obj : error LNK2001: 无法解析的外部符号 "public: virtual struct QMetaObject const * __cdecl team_mng::metaObject(void)const " (?metaObject@team_mng@@UEBAPEBUQMetaObject@@XZ)
+team_mng.obj : error LNK2001: 无法解析的外部符号 "public: virtual void * __cdecl team_mng::qt_metacast(char const *)" (?qt_metacast@team_mng@@UEAAPEAXPEBD@Z)
+team_mng.obj : error LNK2001: 无法解析的外部符号 "public: virtual int __cdecl team_mng::qt_metacall(enum QMetaObject::Call,int,void * *)" (?qt_metacall@team_mng@@UEAAHW4Call@QMetaObject@@HPEAPEAX@Z)
+TODOwidget.obj : error LNK2001: 无法解析的外部符号 "public: virtual struct QMetaObject const * __cdecl TODOwidget::metaObject(void)const " (?metaObject@TODOwidget@@UEBAPEBUQMetaObject@@XZ)
+TODOwidget.obj : error LNK2001: 无法解析的外部符号 "public: virtual void * __cdecl TODOwidget::qt_metacast(char const *)" (?qt_metacast@TODOwidget@@UEAAPEAXPEBD@Z)
+moc_TODO_team.obj : error LNK2001: 无法解析的外部符号 "public: virtual void * __cdecl TODOwidget::qt_metacast(char const *)" (?qt_metacast@TODOwidget@@UEAAPEAXPEBD@Z)
+TODOwidget.obj : error LNK2001: 无法解析的外部符号 "public: virtual int __cdecl TODOwidget::qt_metacall(enum QMetaObject::Call,int,void * *)" (?qt_metacall@TODOwidget@@UEAAHW4Call@QMetaObject@@HPEAPEAX@Z)
+moc_TODO_team.obj : error LNK2001: 无法解析的外部符号 "public: virtual int __cdecl TODOwidget::qt_metacall(enum QMetaObject::Call,int,void * *)" (?qt_metacall@TODOwidget@@UEAAHW4Call@QMetaObject@@HPEAPEAX@Z)
+TODOwidget.obj : error LNK2019: 无法解析的外部符号 "public: void __cdecl TODOwidget::TODO_add(void)" (?TODO_add@TODOwidget@@QEAAXXZ)，函数 "protected: void __cdecl TODOwidget::TODOwidget_accepted(void)" (?TODOwidget_accepted@TODOwidget@@IEAAXXZ) 中引用了该符号
+calendar.obj : error LNK2001: 无法解析的外部符号 "public: void __cdecl TODOwidget::TODO_add(void)" (?TODO_add@TODOwidget@@QEAAXXZ)
+TODOwidget.obj : error LNK2019: 无法解析的外部符号 "public: void __cdecl TODOwidget::TODO_Add_Correct(void)" (?TODO_Add_Correct@TODOwidget@@QEAAXXZ)，函数 "public: void __cdecl TODOwidget::save_Date(void)" (?save_Date@TODOwidget@@QEAAXXZ) 中引用了该符号
+tsplan.obj : error LNK2001: 无法解析的外部符号 "public: virtual struct QMetaObject const * __cdecl WeatherWidget::metaObject(void)const " (?metaObject@WeatherWidget@@UEBAPEBUQMetaObject@@XZ)
+tsplan.obj : error LNK2001: 无法解析的外部符号 "public: virtual void * __cdecl WeatherWidget::qt_metacast(char const *)" (?qt_metacast@WeatherWidget@@UEAAPEAXPEBD@Z)
+tsplan.obj : error LNK2001: 无法解析的外部符号 "public: virtual int __cdecl WeatherWidget::qt_metacall(enum QMetaObject::Call,int,void * *)" (?qt_metacall@WeatherWidget@@UEAAHW4Call@QMetaObject@@HPEAPEAX@Z)
+tsplan.obj : error LNK2019: 无法解析的外部符号 "public: void __cdecl WeatherWidget::dataReady(void)" (?dataReady@WeatherWidget@@QEAAXXZ)，函数 "public: void __cdecl WeatherWidget::handleWeatherData(class QNetworkReply *)" (?handleWeatherData@WeatherWidget@@QEAAXPEAVQNetworkReply@@@Z) 中引用了该符号
+calendar.obj : error LNK2001: 无法解析的外部符号 "public: void __cdecl WeatherWidget::dataReady(void)" (?dataReady@WeatherWidget@@QEAAXXZ)
+calendar.obj : error LNK2001: 无法解析的外部符号 "public: virtual struct QMetaObject const * __cdecl calendar::metaObject(void)const " (?metaObject@calendar@@UEBAPEBUQMetaObject@@XZ)
+calendar.obj : error LNK2001: 无法解析的外部符号 "public: virtual void * __cdecl calendar::qt_metacast(char const *)" (?qt_metacast@calendar@@UEAAPEAXPEBD@Z)
+calendar.obj : error LNK2001: 无法解析的外部符号 "public: virtual int __cdecl calendar::qt_metacall(enum QMetaObject::Call,int,void * *)" (?qt_metacall@calendar@@UEAAHW4Call@QMetaObject@@HPEAPEAX@Z)
+calendar.obj : error LNK2019: 无法解析的外部符号 "public: static struct QMetaObject const WeatherWidget::staticMetaObject" (?staticMetaObject@WeatherWidget@@2UQMetaObject@@B)，函数 "public: __cdecl calendar::calendar(class QWidget *)" (??0calendar@@QEAA@PEAVQWidget@@@Z) 中引用了该符号
+calendar.obj : error LNK2019: 无法解析的外部符号 "public: static struct QMetaObject const TODOwidget::staticMetaObject" (?staticMetaObject@TODOwidget@@2UQMetaObject@@B)，函数 "public: void __cdecl calendar::handleDate(class QDate)" (?handleDate@calendar@@QEAAXVQDate@@@Z) 中引用了该符号
+moc_TODO_team.obj : error LNK2001: 无法解析的外部符号 "public: static struct QMetaObject const TODOwidget::staticMetaObject" (?staticMetaObject@TODOwidget@@2UQMetaObject@@B)
+C:\Users\yangluwei\source\repos\calendar\x64\Release\calendar.exe : fatal error LNK1120: 17 个无法解析的外部命令

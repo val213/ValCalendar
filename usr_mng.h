@@ -1,8 +1,8 @@
-#pragma once
+ï»¿#pragma once
 #include"config.h"
 extern USER users[MAX_USRS_NUM];
 
 //void init_users();
-	//ÓÃ»§ÊıÁ¿
+	//ç”¨æˆ·æ•°é‡
 
 void init_users_structarr(USER* users, int size);

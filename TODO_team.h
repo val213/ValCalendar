@@ -1,4 +1,4 @@
-#pragma once
+ï»¿#pragma once
 #include"config.h"
 #include"team_mng.h"
 #include <QtWebEngineWidgets/QWebEngineView>
@@ -25,7 +25,7 @@ public:
     Ui::TODOwidget1 ui;
     TEAM team_now;
 signals:
-    // ÉùÃ÷Ò»¸öĞÅºÅ£¬ÓÃÓÚÍ¨Öªcalendar_teamĞÂµÄÈÕ³ÌÒÑ¾­±»Ìí¼Ó£¬ĞèÒª¸üĞÂÈÕ³ÌÊı¾İ
+    // å£°æ˜ä¸€ä¸ªä¿¡å·ï¼Œç”¨äºé€šçŸ¥calendar_teamæ–°çš„æ—¥ç¨‹å·²ç»è¢«æ·»åŠ ï¼Œéœ€è¦æ›´æ–°æ—¥ç¨‹æ•°æ®
     void TODO_add_team();
 
 

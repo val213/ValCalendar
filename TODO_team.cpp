@@ -1,4 +1,4 @@
-#include"config.h"
+ï»¿#include"config.h"
 #include"calendar.h"
 #include"calendar_team.h"
 #include"TODOwidget.h"
@@ -39,37 +39,37 @@ void TODO_team::save_Date()
     qDebug() << "save team new todo!!";
     qDebug()<<"team_id: "<< team_id<<" "<< team_now.team_id;
     team_now.team_events_filename = QString::number(team_now.team_id)+"_team events.txt";
-    QFile file(team_now.team_events_filename); //´´½¨Ò»¸öQFile¶ÔÏó£¬Ö¸¶¨Òª±£´æµÄÎÄ¼şÃû
-    if (file.open(QIODevice::WriteOnly | QIODevice::Text | QFile::Append)) { //ÒÔĞ´ÈëºÍÎÄ±¾Ä£Ê½´ò¿ªÎÄ¼ş
-        QTextStream out(&file); //´´½¨Ò»¸öQTextStream¶ÔÏó£¬¹ØÁªµ½ÎÄ¼ş
-        //ÍÅ¶ÓÊÂ¼şÊıÁ¿+1
+    QFile file(team_now.team_events_filename); //åˆ›å»ºä¸€ä¸ªQFileå¯¹è±¡ï¼ŒæŒ‡å®šè¦ä¿å­˜çš„æ–‡ä»¶å
+    if (file.open(QIODevice::WriteOnly | QIODevice::Text | QFile::Append)) { //ä»¥å†™å…¥å’Œæ–‡æœ¬æ¨¡å¼æ‰“å¼€æ–‡ä»¶
+        QTextStream out(&file); //åˆ›å»ºä¸€ä¸ªQTextStreamå¯¹è±¡ï¼Œå…³è”åˆ°æ–‡ä»¶
+        //å›¢é˜Ÿäº‹ä»¶æ•°é‡+1
         team_now.team_events_nums++;
-        //½«ÎÄ±¾±à¼­¿òµÄÄÚÈİĞ´ÈëÎÄ¼ş
-        //Ğ´ÈëÊÂ¼ş±êÌâ
+        //å°†æ–‡æœ¬ç¼–è¾‘æ¡†çš„å†…å®¹å†™å…¥æ–‡ä»¶
+        //å†™å…¥äº‹ä»¶æ ‡é¢˜
         out << ui.lineEdit->text() << ",";
-        //Ğ´ÈëµØµã
+        //å†™å…¥åœ°ç‚¹
         out << ui.lineEdit_3->text() << ",";
-        //»ñÈ¡¿ªÊ¼Ê±¼ä
-        QDate start_date = ui.dateTimeEdit->date(); //»ñÈ¡dateTimeEditÖĞµÄÈÕÆÚ
-        QTime start_time = ui.dateTimeEdit->time();//»ñÈ¡dateTimeEditÖĞµÄÊ±¼ä
-        QString start_dateString = start_date.toString("yyyy-MM-dd"); //½«ÈÕÆÚ×ª»»Îª×Ö·û´®¸ñÊ½
-        QString start_timeString = start_time.toString("hh:mm:ss"); //½«Ê±¼ä×ª»»Îª×Ö·û´®¸ñÊ½
-        out << start_dateString << " " << start_timeString << ","; //½«ÈÕÆÚºÍÊ±¼ä×Ö·û´®Ğ´ÈëÎÄ¼ş
+        //è·å–å¼€å§‹æ—¶é—´
+        QDate start_date = ui.dateTimeEdit->date(); //è·å–dateTimeEditä¸­çš„æ—¥æœŸ
+        QTime start_time = ui.dateTimeEdit->time();//è·å–dateTimeEditä¸­çš„æ—¶é—´
+        QString start_dateString = start_date.toString("yyyy-MM-dd"); //å°†æ—¥æœŸè½¬æ¢ä¸ºå­—ç¬¦ä¸²æ ¼å¼
+        QString start_timeString = start_time.toString("hh:mm:ss"); //å°†æ—¶é—´è½¬æ¢ä¸ºå­—ç¬¦ä¸²æ ¼å¼
+        out << start_dateString << " " << start_timeString << ","; //å°†æ—¥æœŸå’Œæ—¶é—´å­—ç¬¦ä¸²å†™å…¥æ–‡ä»¶
 
-        //»ñÈ¡½áÊøÊ±¼ä
-        QDate end_date = ui.dateTimeEdit_2->date(); //»ñÈ¡dateTimeEditÖĞµÄÈÕÆÚ
-        QTime end_time = ui.dateTimeEdit_2->time();//»ñÈ¡dateTimeEditÖĞµÄÊ±¼ä
-        QString end_dateString = end_date.toString("yyyy-MM-dd"); //½«ÈÕÆÚ×ª»»Îª×Ö·û´®¸ñÊ½
-        QString end_timeString = end_time.toString("hh:mm:ss"); //½«Ê±¼ä×ª»»Îª×Ö·û´®¸ñÊ½
-        out << end_dateString << " " << end_timeString << ",";//½«ÈÕÆÚºÍÊ±¼ä×Ö·û´®Ğ´ÈëÎÄ¼ş
+        //è·å–ç»“æŸæ—¶é—´
+        QDate end_date = ui.dateTimeEdit_2->date(); //è·å–dateTimeEditä¸­çš„æ—¥æœŸ
+        QTime end_time = ui.dateTimeEdit_2->time();//è·å–dateTimeEditä¸­çš„æ—¶é—´
+        QString end_dateString = end_date.toString("yyyy-MM-dd"); //å°†æ—¥æœŸè½¬æ¢ä¸ºå­—ç¬¦ä¸²æ ¼å¼
+        QString end_timeString = end_time.toString("hh:mm:ss"); //å°†æ—¶é—´è½¬æ¢ä¸ºå­—ç¬¦ä¸²æ ¼å¼
+        out << end_dateString << " " << end_timeString << ",";//å°†æ—¥æœŸå’Œæ—¶é—´å­—ç¬¦ä¸²å†™å…¥æ–‡ä»¶
 
 
-        //Ğ´ÈëÊÂ¼şÀàĞÍ
-        // ¼ÙÉèÏÂÀ­¿ò¿Ø¼şµÄÃû³ÆÎª comboBox
-        QComboBox* comboBox = findChild<QComboBox*>("comboBox");  // »ñÈ¡ÏÂÀ­¿ò¿Ø¼şµÄÖ¸Õë
+        //å†™å…¥äº‹ä»¶ç±»å‹
+        // å‡è®¾ä¸‹æ‹‰æ¡†æ§ä»¶çš„åç§°ä¸º comboBox
+        QComboBox* comboBox = findChild<QComboBox*>("comboBox");  // è·å–ä¸‹æ‹‰æ¡†æ§ä»¶çš„æŒ‡é’ˆ
 
         if (comboBox) {
-            QString selectedText = comboBox->currentText();  // »ñÈ¡µ±Ç°Ñ¡ÖĞÏîµÄÎÄ±¾Öµ
+            QString selectedText = comboBox->currentText();  // è·å–å½“å‰é€‰ä¸­é¡¹çš„æ–‡æœ¬å€¼
             out << selectedText << ",";
         }
 
@@ -88,14 +88,13 @@ void TODO_team::save_Date()
         {
             urgentdegree = 3;
         }
-        //Ğ´Èë½ô¼±³Ì¶È
+        //å†™å…¥ç´§æ€¥ç¨‹åº¦
         out << urgentdegree << ",";
-        //±¸×¢
+        //å¤‡æ³¨
         out << ui.textEdit->toPlainText() << ",";
 
-        out << "\n";
         qDebug() << "save team new todo ok!";
-        file.close(); //¹Ø±ÕÎÄ¼ş
+        file.close(); //å…³é—­æ–‡ä»¶
     }
     
 }
@@ -106,5 +105,5 @@ void TODO_team::TODO_team_accepted()
         
         emit TODO_add_team();
         this->close();
-        //·¢ËÍĞÅºÅ¸øcalendar
+        //å‘é€ä¿¡å·ç»™calendar
     }

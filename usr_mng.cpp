@@ -1,4 +1,4 @@
-#include"config.h"
+ï»¿#include"config.h"
 int user_nums;
 USER users[MAX_USRS_NUM] = { {1001,"666","val","usr_val.txt","team_create_usr_val.txt","team_belong_usr_val.txt",0,0}};
 void init_users_structarr(USER* users, int size)
@@ -15,7 +15,7 @@ void init_users_structarr(USER* users, int size)
             QString line = stream.readLine().trimmed();
             QStringList values = line.split(',');
 
-            // ¶ÁÈ¡²¢±£´æµ½½á¹¹ÌåÊı×é
+            // è¯»å–å¹¶ä¿å­˜åˆ°ç»“æ„ä½“æ•°ç»„
             //{1001,"666","val","usr_val.txt","usr_val_team_create.txt","usr_val_team_belong.txt",0,0}
             if (values.size() >= 8) {
                 users[index].usr_id = values[0].toInt();
@@ -28,7 +28,7 @@ void init_users_structarr(USER* users, int size)
                 users[index].usr_team_belong_num = values[7].toInt();
                 index++;
 
-                //´ò¿ªusers[index].usr_team_create_filenameºÍusers[index].usr_team_belong_filename³õÊ¼»¯QVector<TEAM>teams_create;ºÍQVector<TEAM>teams_belong;
+                //æ‰“å¼€users[index].usr_team_create_filenameå’Œusers[index].usr_team_belong_filenameåˆå§‹åŒ–QVector<TEAM>teams_create;å’ŒQVector<TEAM>teams_belong;
                 QFile file1(users[index].usr_team_create_filename);
                 if (file1.open(QIODevice::ReadOnly | QIODevice::Text))
                 {
@@ -38,16 +38,16 @@ void init_users_structarr(USER* users, int size)
                     {
 						QString line1 = stream1.readLine().trimmed();
 						QStringList values1 = line1.split(',');
-						// ¶ÁÈ¡²¢±£´æµ½½á¹¹ÌåÊı×é
+						// è¯»å–å¹¶ä¿å­˜åˆ°ç»“æ„ä½“æ•°ç»„
 					
-                        //³õÊ¼»¯QVector<TEAM>teams_create
+                        //åˆå§‹åŒ–QVector<TEAM>teams_create
                         //1,2001,SCUT,1001,4,1001,1002,1003,1004,
 
-                        //¶ÁÈ¡´´½¨µÄÍÅ¶Ó×ÜÊı
+                        //è¯»å–åˆ›å»ºçš„å›¢é˜Ÿæ€»æ•°
                         users[USR_ID_NOW - USER_ID_FORE].usr_team_create_num = values1[0].toInt();
                         for (int i = 0; i < users[USR_ID_NOW - USER_ID_FORE].usr_team_create_num; i++)
                         {
-                            //Ñ­»·¶ÁÈ¡´´½¨µÄÃ¿¸öÍÅ¶ÓµÄid¡¢Ãû³Æ¡¢ÈËÊıºÍ´´½¨ÕßµÄid
+                            //å¾ªç¯è¯»å–åˆ›å»ºçš„æ¯ä¸ªå›¢é˜Ÿçš„idã€åç§°ã€äººæ•°å’Œåˆ›å»ºè€…çš„id
                             //1,2001,SCUT,1,1001,
                             users[USR_ID_NOW - USER_ID_FORE].teams_create[i].team_id = values1[1 + 4 * i].toInt();
                             users[USR_ID_NOW - USER_ID_FORE].teams_create[i].team_name = values1[2 + 4 * i];
@@ -55,7 +55,7 @@ void init_users_structarr(USER* users, int size)
                             users[USR_ID_NOW - USER_ID_FORE].teams_create[i].leader_id = values1[4 + 4 * i].toInt();
                             for (int j = 0; j < users[USR_ID_NOW - USER_ID_FORE].teams_create[i].team_members_nums; j++)
                             {
-								//Ñ­»·¶ÁÈ¡´´½¨µÄÃ¿¸öÍÅ¶ÓµÄ³ÉÔ±µÄid
+								//å¾ªç¯è¯»å–åˆ›å»ºçš„æ¯ä¸ªå›¢é˜Ÿçš„æˆå‘˜çš„id
                                 users[USR_ID_NOW - USER_ID_FORE].teams_belong[i].team_members.push_back(users[values1[4 + 4 * i + j].toInt() - USER_ID_FORE]);
                             }
                         }
@@ -74,14 +74,14 @@ void init_users_structarr(USER* users, int size)
                     {
 						QString line2 = stream2.readLine().trimmed();
 						QStringList values2 = line2.split(',');
-						// ¶ÁÈ¡²¢±£´æµ½½á¹¹ÌåÊı×é
+						// è¯»å–å¹¶ä¿å­˜åˆ°ç»“æ„ä½“æ•°ç»„
                         //1,2001,SCUT,1001,4,1001,1002,1003,1004,
-                        //³õÊ¼»¯QVector<TEAM>teams_belong;
-                        //¶ÁÈ¡´ÓÊôÍÅ¶Ó×ÜÊı
+                        //åˆå§‹åŒ–QVector<TEAM>teams_belong;
+                        //è¯»å–ä»å±å›¢é˜Ÿæ€»æ•°
                         users[USR_ID_NOW - USER_ID_FORE].usr_team_belong_num = values2[0].toInt();
                         for (int i = 0; i < users[USR_ID_NOW - USER_ID_FORE].usr_team_belong_num; i++)
                         {
-							//Ñ­»·¶ÁÈ¡´ÓÊôµÄÃ¿¸öÍÅ¶ÓµÄid¡¢Ãû³Æ¡¢ÈËÊıºÍËùÓĞ³ÉÔ±µÄid
+							//å¾ªç¯è¯»å–ä»å±çš„æ¯ä¸ªå›¢é˜Ÿçš„idã€åç§°ã€äººæ•°å’Œæ‰€æœ‰æˆå‘˜çš„id
                             users[USR_ID_NOW - USER_ID_FORE].teams_belong[i].team_id = values2[1 + 4 * i].toInt();
                             users[USR_ID_NOW - USER_ID_FORE].teams_belong[i].team_name = values2[2 + 4 * i];
                             users[USR_ID_NOW - USER_ID_FORE].teams_belong[i].team_members_nums = values2[3 + 4 * i].toInt();

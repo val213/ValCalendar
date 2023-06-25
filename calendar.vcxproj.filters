@@ -49,9 +49,6 @@
     <ClCompile Include="decision_make.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="date.h">
-      <Filter>Header Files</Filter>
-    </ClCompile>
     <ClCompile Include="REG_N_LOGIN.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
@@ -72,9 +69,6 @@
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="event%280%29.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
     <ClInclude Include="category.h">
       <Filter>Header Files</Filter>
     </ClInclude>

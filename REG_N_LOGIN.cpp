@@ -1,27 +1,44 @@
-#include"config.h"
+ï»¿#include"config.h"
 #include<QInputDialog>
 #include<QTextStream>
-//³õÊ¼»¯µ±Ç°ÓÃ»§idÊÇ USER_ID_FORE(1001)£¬ºóĞøÓÃ»§id¸üĞÂµÄÊ±ºò»áÍ¬²½¸üĞÂ
+#include<qwebchannel.h>
+#include<QGraphicsScene>
+#include<QGraphicsPixmapItem>
+#include<QPainter>
+#include<QRect>
+//åˆå§‹åŒ–å½“å‰ç”¨æˆ·idæ˜¯ USER_ID_FORE(1001)ï¼Œåç»­ç”¨æˆ·idæ›´æ–°çš„æ—¶å€™ä¼šåŒæ­¥æ›´æ–°
 int USR_ID_NOW= USER_ID_FORE;
 reg_n_login::reg_n_login(QDialog* parent)
 {
 	ui.setupUi(this);
 	setWindowOpacity(0.9);
-	
+	//éšè—æ ‡é¢˜æ 
+	//setWindowFlags(Qt::CustomizeWindowHint);
+	//ä¸æ˜¾ç¤ºæ ‡é¢˜æ ï¼Œäº¦æ— è¾¹æ¡†
+	setWindowFlags(Qt::Window | Qt::FramelessWindowHint);
 
-    //this->setStyleSheet("background: url(:/calendar/111.jpg);");//´°¿Ú±³¾°ÉèÖÃ
-	//»òsetStyleSheet("background-image: url(:/image/profile.png);")
-	ui.lineEdit->setEchoMode(QLineEdit::Password);//ÃÜÎÄÊäÈë
-	ui.lineEdit_3->setStyleSheet("font: 25 14pt 'Î¢ÈíÑÅºÚ Light';" //×ÖÌå
-		"color: rgb(31,31,31);"		//×ÖÌåÑÕÉ«
-		"padding-left:10px;"       //ÄÚ±ß¾à-×ÖÌåËõ½ø
-		"background-color: rgb(255, 255, 255);" //±³¾°ÑÕÉ«
-		"border:2px solid rgb(20,196,188);border-radius:15px;");//±ß¿ò´ÖÏ¸-ÑÕÉ«-Ô²½ÇÉèÖÃ 
-	ui.lineEdit->setStyleSheet("font: 25 14pt 'Î¢ÈíÑÅºÚ Light';" //×ÖÌå
-		"color: rgb(31,31,31);"		//×ÖÌåÑÕÉ«
-		"padding-left:10px;"       //ÄÚ±ß¾à-×ÖÌåËõ½ø
-		"background-color: rgb(255, 255, 255);" //±³¾°ÑÕÉ«
-		"border:2px solid rgb(20,196,188);border-radius:15px;");//±ß¿ò´ÖÏ¸-ÑÕÉ«-Ô²½ÇÉèÖÃ 
+    this->setStyleSheet("reg_n_login{background: url(:/calendar/111.jpg);}");//çª—å£èƒŒæ™¯è®¾ç½®
+	//æˆ–setStyleSheet("background-image: url(:/image/profile.png);")
+	ui.lineEdit->setEchoMode(QLineEdit::Password);//å¯†æ–‡è¾“å…¥
+	ui.lineEdit_3->setStyleSheet("font: 25 14pt 'å¾®è½¯é›…é»‘ Light';" //å­—ä½“
+		"color: rgb(31,31,31);"		//å­—ä½“é¢œè‰²
+		"padding-left:10px;"       //å†…è¾¹è·-å­—ä½“ç¼©è¿›
+		"background-color: rgb(255, 255, 255);" //èƒŒæ™¯é¢œè‰²
+		"border:2px solid rgb(20,196,188);border-radius:15px;");//è¾¹æ¡†ç²—ç»†-é¢œè‰²-åœ†è§’è®¾ç½® 
+	ui.lineEdit->setStyleSheet("font: 25 14pt 'å¾®è½¯é›…é»‘ Light';" //å­—ä½“
+		"color: rgb(31,31,31);"		//å­—ä½“é¢œè‰²
+		"padding-left:10px;"       //å†…è¾¹è·-å­—ä½“ç¼©è¿›
+		"background-color: rgb(255, 255, 255);" //èƒŒæ™¯é¢œè‰²
+		"border:2px solid rgb(20,196,188);border-radius:15px;");//è¾¹æ¡†ç²—ç»†-é¢œè‰²-åœ†è§’è®¾ç½® 
+
+	//å±•ç¤ºå›¾ç‰‡
+	QGraphicsScene* scene = new QGraphicsScene(this); // åˆ›å»º QGraphicsScen
+	QPixmap pixmap("qrc:/calendar/111.jpg"); // åˆ›å»º QPixmap å¹¶åŠ è½½å›¾åƒæ–‡ä»¶
+
+	QGraphicsPixmapItem* pixmapItem = new QGraphicsPixmapItem(pixmap); // åˆ›å»º QGraphicsPixmapItemï¼Œå¹¶å°† QPixmap ä½œä¸ºå‚æ•°ä¼ é€’
+	scene->addItem(pixmapItem); // å°† QGraphicsPixmapItem æ·»åŠ åˆ° QGraphicsScene
+
+	//ui.graphicsView->show(); // æ˜¾ç¤º QGraphicsView
 
 	connect(ui.buttonBox, &QDialogButtonBox::accepted, this, &reg_n_login::reg_n_login_accepted);
 	connect(ui.buttonBox, &QDialogButtonBox::rejected, this, &QDialog::reject);
@@ -33,10 +50,12 @@ reg_n_login::~reg_n_login()
 {
 }
 
+
+
 void reg_n_login::reg_n_login_accepted()
 {
 
-	//»ñÈ¡lineEditºÍlineEdit_3µÄÊı¾İ,Èç¹ûid²»ÊÇÊÇÕûÊı£¬±¨´íÌáÊ¾
+	//è·å–lineEditå’ŒlineEdit_3çš„æ•°æ®,å¦‚æœidä¸æ˜¯æ˜¯æ•´æ•°ï¼ŒæŠ¥é”™æç¤º
 	if (ui.lineEdit_3->text().toInt() == 0|| ui.lineEdit_3->text().toInt()< USER_ID_FORE || ui.lineEdit_3->text().toInt()>1100)
 	{
 		QMessageBox err;
@@ -50,11 +69,11 @@ void reg_n_login::reg_n_login_accepted()
 		USR_PSWD = ui.lineEdit->text();
 		USR_ID_NOW = USR_ID;
 		/*
-		return£º
-		´´½¨ĞÂÕËºÅ£º	1
-		µÇÂ½³É¹¦£º		2
-		ÃÜÂë´íÎó£º		3
-		·µ»ØµÇÂ½½çÃæ£º  4
+		returnï¼š
+		åˆ›å»ºæ–°è´¦å·ï¼š	1
+		ç™»é™†æˆåŠŸï¼š		2
+		å¯†ç é”™è¯¯ï¼š		3
+		è¿”å›ç™»é™†ç•Œé¢ï¼š  4
 		*/
 		int check_usr_result =checkusr(USR_ID, USR_PSWD);
 		if (check_usr_result == 1)
@@ -66,8 +85,8 @@ void reg_n_login::reg_n_login_accepted()
 		else if (check_usr_result == 2)
 			{
 				calendar* cal = new calendar; // create a new window object
-				//ÑùÊ½±í
-				cal->setStyleSheet(R"(
+				//æ ·å¼è¡¨
+	/*			cal->setStyleSheet(R"(
         QWidget {
             background-color: #E1F5FE;
             color: #000000;
@@ -91,7 +110,7 @@ void reg_n_login::reg_n_login_accepted()
         QLabel {
             color: #000000;
         }
-    )");
+    )");*/
 				cal->show(); // show the window
 			}
 		else if (check_usr_result == 3)
@@ -116,17 +135,17 @@ void reg_n_login::reg_n_login_rejected()
 
 	void reg_n_login::save_USER()
 	{
-		//Ïò½á¹¹ÌåÊı×éÖĞĞ´ÈëĞÂµÄÓÃ»§Êı¾İ£¬²¢¸üĞÂÓÃ»§ÊıÁ¿
-		//user_numsµÄÖµ¸ù¾İ¶ÁÈëÎÄ¼şÖĞÓÃ»§ÊıÁ¿µÄ¶àÉÙÊµÊ±¸üĞÂ
+		//å‘ç»“æ„ä½“æ•°ç»„ä¸­å†™å…¥æ–°çš„ç”¨æˆ·æ•°æ®ï¼Œå¹¶æ›´æ–°ç”¨æˆ·æ•°é‡
+		//user_numsçš„å€¼æ ¹æ®è¯»å…¥æ–‡ä»¶ä¸­ç”¨æˆ·æ•°é‡çš„å¤šå°‘å®æ—¶æ›´æ–°
 		users[user_nums-1].usr_id = USR_ID;
 		users[user_nums-1].usr_passwd = USR_PSWD;
-		//ÈÃÓÃ»§ÊäÈëÓÃ»§Ãû
+		//è®©ç”¨æˆ·è¾“å…¥ç”¨æˆ·å
 		QString user_name = QInputDialog::getText(this, "Input", "Please input your name:", QLineEdit::Normal, "USER");
 
 		QString filename= "usr_";
 		QString file_back = ".txt";
 		filename += user_name;
-		filename += file_back;// ÔÚ×Ö·û´®Ä©Î²Ìí¼ÓÁíÒ»¸ö×Ö·û´®
+		filename += file_back;// åœ¨å­—ç¬¦ä¸²æœ«å°¾æ·»åŠ å¦ä¸€ä¸ªå­—ç¬¦ä¸²
 		users[user_nums - 1].usr_name = user_name;
 		users[user_nums - 1].usr_filename = filename;
 		users[user_nums - 1].usr_team_create_filename= "team_create_" + filename;
@@ -134,12 +153,12 @@ void reg_n_login::reg_n_login_rejected()
 		users[user_nums - 1].usr_team_create_num=0;
 		users[user_nums - 1].usr_team_belong_num=0;
 
-		//½«ÓÃ»§Êı¾İĞ´ÈëÎÄ¼ş
+		//å°†ç”¨æˆ·æ•°æ®å†™å…¥æ–‡ä»¶
 		
-		QFile file("USERS.txt"); //´´½¨Ò»¸öQFile¶ÔÏó£¬Ö¸¶¨Òª±£´æµÄÎÄ¼şÃû
-		if (file.open(QIODevice::WriteOnly | QIODevice::Text | QFile::Append)) { //ÒÔĞ´ÈëºÍÎÄ±¾Ä£Ê½´ò¿ªÎÄ¼ş
-			QTextStream out(&file); //´´½¨Ò»¸öQTextStream¶ÔÏó£¬¹ØÁªµ½ÎÄ¼ş
-			//½«ÓÃ»§ĞÅÏ¢´æÈëtxtÎÄ¼ş
+		QFile file("USERS.txt"); //åˆ›å»ºä¸€ä¸ªQFileå¯¹è±¡ï¼ŒæŒ‡å®šè¦ä¿å­˜çš„æ–‡ä»¶å
+		if (file.open(QIODevice::WriteOnly | QIODevice::Text | QFile::Append)) { //ä»¥å†™å…¥å’Œæ–‡æœ¬æ¨¡å¼æ‰“å¼€æ–‡ä»¶
+			QTextStream out(&file); //åˆ›å»ºä¸€ä¸ªQTextStreamå¯¹è±¡ï¼Œå…³è”åˆ°æ–‡ä»¶
+			//å°†ç”¨æˆ·ä¿¡æ¯å­˜å…¥txtæ–‡ä»¶
 			/*
 			struct USER
 			{
@@ -161,10 +180,10 @@ void reg_n_login::reg_n_login_rejected()
 			out << users[user_nums - 1].usr_team_create_num << ",";
 			out << users[user_nums - 1].usr_team_belong_num << ",";
 			out << "\n";
-			file.close(); //¹Ø±ÕÎÄ¼ş
+			file.close(); //å…³é—­æ–‡ä»¶
 		}
 		else {
-			QMessageBox::warning(this, "Error", "Save failed!"); //±£´æÊ§°ÜÔòµ¯³ö¾¯¸æ¶Ô»°¿ò
+			QMessageBox::warning(this, "Error", "Save failed!"); //ä¿å­˜å¤±è´¥åˆ™å¼¹å‡ºè­¦å‘Šå¯¹è¯æ¡†
 		}
 
 	}
@@ -172,45 +191,46 @@ void reg_n_login::reg_n_login_rejected()
 int reg_n_login::checkusr(int USR_ID, QString USR_PSWD)
 {
 	/*
-	return£º
-	´´½¨ĞÂÕËºÅ£º	1
-	µÇÂ½³É¹¦£º		2
-	ÃÜÂë´íÎó£º		3
-	·µ»ØµÇÂ½½çÃæ£º  4
+	returnï¼š
+	åˆ›å»ºæ–°è´¦å·ï¼š	1
+	ç™»é™†æˆåŠŸï¼š		2
+	å¯†ç é”™è¯¯ï¼š		3
+	è¿”å›ç™»é™†ç•Œé¢ï¼š  4
 	*/
-	//idÊäÈë²»ºÏ·¨
+	//idè¾“å…¥ä¸åˆæ³•
 	if (users[USR_ID- USER_ID_FORE].usr_id==0)
 	{
-		//ÓÃ»§²»´æÔÚ
-		//ÌáÊ¾ÓÃ»§²»´æÔÚ£¬ÊÇ·ñÒª×¢²áĞÂÕËºÅ
+		//ç”¨æˆ·ä¸å­˜åœ¨
+		//æç¤ºç”¨æˆ·ä¸å­˜åœ¨ï¼Œæ˜¯å¦è¦æ³¨å†Œæ–°è´¦å·
 		QMessageBox::StandardButton reply;
 		reply = QMessageBox::question(nullptr, "User does not exist", "Are you sure to create a new user?",
 			QMessageBox::Yes | QMessageBox::No);
 		if (reply == QMessageBox::Yes) {
-			// ÓÃ»§µã»÷ÁË¡°ÊÇ¡±°´Å¥
-			//´´½¨ĞÂÕËºÅ
+			// ç”¨æˆ·ç‚¹å‡»äº†â€œæ˜¯â€æŒ‰é’®
+			//åˆ›å»ºæ–°è´¦å·
 			return 1;
 		}
 		else {
-			// ÓÃ»§µã»÷ÁË¡°·ñ¡±°´Å¥
-			// Ö´ĞĞÏàÓ¦µÄ²Ù×÷
+			// ç”¨æˆ·ç‚¹å‡»äº†â€œå¦â€æŒ‰é’®
+			// æ‰§è¡Œç›¸åº”çš„æ“ä½œ
 
 			return 4;
 		}
 		
 	}
-	//idÊäÈëºÏ·¨ÇÒÃÜÂëÕıÈ·
+	//idè¾“å…¥åˆæ³•ä¸”å¯†ç æ­£ç¡®
 	else if (users[USR_ID- USER_ID_FORE].usr_passwd == USR_PSWD)
 	{
-		//µÇÂ½³É¹¦
+		//ç™»é™†æˆåŠŸ
 		QMessageBox::information(nullptr, "Successful login", "Welcome to ValCalendar!");
 		return 2;
 	}
-	//idÊäÈëºÏ·¨µ«ÊÇÃÜÂë´íÎó
+	//idè¾“å…¥åˆæ³•ä½†æ˜¯å¯†ç é”™è¯¯
 	QMessageBox::critical(nullptr, "Password error", "Please enter the correct password!");
 	return 3;
 
 }
+
 
 
 
@@ -228,15 +248,15 @@ if (!db.open()) {
 else
 {
 	qDebug() << "successfully!";
-	// ÓÃÓÚÖ´ĞĞsqlÓï¾äµÄ¶ÔÏó
+	// ç”¨äºæ‰§è¡Œsqlè¯­å¥çš„å¯¹è±¡
 	QSqlQuery sqlQuery;
 
-	// ¹¹½¨´´½¨Êı¾İ¿âµÄsqlÓï¾ä×Ö·û´®
+	// æ„å»ºåˆ›å»ºæ•°æ®åº“çš„sqlè¯­å¥å­—ç¬¦ä¸²
 	QString createSql = QString("CREATE TABLE usr(\
 					  usr_id INT PRIMARY KEY NOT NULL,\
 					  usr_pswd TEXT NOT NULL)");
 	sqlQuery.prepare(createSql);
-	// Ö´ĞĞsqlÓï¾ä
+	// æ‰§è¡Œsqlè¯­å¥
 		if (!sqlQuery.exec())
 	{
 		qDebug() << "Error: Fail to create table. " << sqlQuery.lastError();

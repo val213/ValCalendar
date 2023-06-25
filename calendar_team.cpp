@@ -15,12 +15,13 @@ calendar_team::calendar_team(QWidget* parent)
     : QMainWindow(parent)
 {
     ui.setupUi(this);
-   
+    this->setStyleSheet("calendar_team{background: url(:/calendar/SCUT.jpg); background-size: 50% auto;}");//窗口背景设置
     connect(ui.calendarWidget, &QCalendarWidget::activated, this, &calendar_team::handleDate);
     //设置时间显示的字体
     QPalette palette;
     palette.setColor(QPalette::WindowText, Qt::red);
     ui.label->setPalette(palette);
+    
     //定时器
     QTimer* CurrentTime = new QTimer(this);
     CurrentTime->start(0);
@@ -32,7 +33,22 @@ calendar_team::calendar_team(QWidget* parent)
         //时间显示格式可自由设定，如hh:mm ddd 显示 时：分 周几 
         //具体格式见函数QString QDateTime::​toString(const QString & format) const
         ui.label->setText(StrCurrentTime);
-        });
+        ui.textEdit_2->setText("团队创建者：" + users[team_now.leader_id - USER_ID_FORE].usr_name + "\n" + "现有总人数：" + QString::number(team_now.team_members_nums));
+          //更新公告栏
+        
+      
+		});
+        
+       
+    //增加对当前用户是否是团队创始人的判断，如果不是，pushButton_4变无法点击
+    if (team_now.leader_id != USR_ID_NOW) {
+		ui.pushButton_4->setEnabled(false);
+	}
+
+      
+
+        
+    
     //设置当前团队的团队名称
     //ui.label_2->setText(user_now.usr_name);
     //users[user_nums - 1].usr_filename
@@ -110,6 +126,34 @@ void calendar_team::updateTable()
         }
         file.close();
 
+        //更新公告栏
+        QString ADFilename =  QString::number(team_now.team_id) + "_AD.txt";
+
+        //如果用户修改textEdit的内容并按下回车，更新对应的文件内容
+        connect(ui.pushButton_4, &QPushButton::clicked, this, [=]() {
+            
+            QFile file(ADFilename);
+            if (!file.open(QIODevice::WriteOnly | QIODevice::Text))
+                return;
+            QTextStream out_ad(&file);
+            out_ad << ui.textEdit->toPlainText();
+            file.close();
+
+            });
+        //创建一个文件，存放不同团队的公告栏文本信息，允许团队创始人修改并更新
+        //文件名为团队id+"公告.txt"
+        //文件内容为团队公告栏的文本信息
+        QFile file(ADFilename);
+        //读取文件内容并显示在公告栏
+        if (!file.open(QIODevice::ReadWrite | QIODevice::Text))
+        {
+            qDebug() << "打开公告文件失败！";
+            return;
+        }
+        QTextStream in_ad(&file);
+        QString line = in_ad.readAll();
+        ui.textEdit->setText(line);
+        file.close();
     }
 
 }

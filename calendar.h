@@ -1,9 +1,11 @@
-#pragma once
+ï»¿#pragma once
 #ifndef CALENDAR_H
 #define CALENDAR_H
+#include"TODOwidget.h"
 #include"config.h"
 #include"team_mng.h"
 #include"tsplan.h"
+
 extern int user_nums;
 extern int USR_ID_NOW;
 class calendar : public QMainWindow
@@ -14,11 +16,12 @@ public:
     calendar(QWidget *parent = nullptr);
     ~calendar();
     USER user_now = users[USR_ID_NOW -1001];
-    //´ÓÎÄ¼şµ¼Èëµ±Ç°ÓÃ»§Ö®Ç°µÄËùÓĞÈÕ³Ì¼ÇÂ¼
+    //ä»æ–‡ä»¶å¯¼å…¥å½“å‰ç”¨æˆ·ä¹‹å‰çš„æ‰€æœ‰æ—¥ç¨‹è®°å½•
     void load_usr_Event();
     void updateTable();
     QPixmap pix;
     WeatherWidget* weather;
+    
     void onSortComboBoxIndexChanged(int);
     void sortTableByColumn(QTableWidget* tableWidget, int column);
     void showWeatherInfo();

@@ -1,10 +1,10 @@
-#pragma once
+ï»¿#pragma once
 #include"config.h"
 //#include"USER.h"
 //#include"TEAM.h"
 //#include"EVENT.h"
 
-//TEAM½á¹¹ÌåµÄÇ°ÏòÉùÃ÷£¬ÈÃÓÃ»§½á¹¹ÌåÄÜ¹»°ÑTEAM×÷Îª³ÉÔ±
+//TEAMç»“æ„ä½“çš„å‰å‘å£°æ˜ï¼Œè®©ç”¨æˆ·ç»“æ„ä½“èƒ½å¤ŸæŠŠTEAMä½œä¸ºæˆå‘˜
 struct TEAM;
 
 struct USER
@@ -13,9 +13,9 @@ struct USER
 	QString usr_passwd;
 	QString usr_name;
 	QString usr_filename;
-	//´æ·ÅÓÃ»§´´½¨µÄÍÅ¶ÓĞÅÏ¢µÄÎÄ¼ş
+	//å­˜æ”¾ç”¨æˆ·åˆ›å»ºçš„å›¢é˜Ÿä¿¡æ¯çš„æ–‡ä»¶
 	QString usr_team_create_filename;
-	//´æ·ÅÓÃ»§ËùÊôµÄÍÅ¶ÓĞÅÏ¢µÄÎÄ¼ş
+	//å­˜æ”¾ç”¨æˆ·æ‰€å±çš„å›¢é˜Ÿä¿¡æ¯çš„æ–‡ä»¶
 	QString usr_team_belong_filename;
 	int usr_team_create_num;
 	int usr_team_belong_num;
@@ -24,13 +24,13 @@ struct USER
 	
 	
 };
-//Õâ¸öÍâ²¿±äÁ¿ÉùÃ÷Ò²±ØĞëÔÚUSER½á¹¹ÌåÉùÃ÷Ö®ºó²ÅÓĞÒâÒå
+//è¿™ä¸ªå¤–éƒ¨å˜é‡å£°æ˜ä¹Ÿå¿…é¡»åœ¨USERç»“æ„ä½“å£°æ˜ä¹‹åæ‰æœ‰æ„ä¹‰
 extern USER users[MAX_USRS_NUM];
 struct EVENT
 {
 	int event_id;
 	QString event_name;
-	QString event_date;
+	QString event_position;
 	QString event_starttime;
 	QString event_endtime;
 	QString event_content;
@@ -47,9 +47,9 @@ struct TEAM
 	int leader_id;
 	int team_members_nums;
 	int team_events_nums;
-	//´æ·ÅÍÅ¶Ó³ÉÔ±ĞÅÏ¢µÄÎÄ¼ş
+	//å­˜æ”¾å›¢é˜Ÿæˆå‘˜ä¿¡æ¯çš„æ–‡ä»¶
 	QString team_members_filename;
-	//´æ·ÅÍÅ¶ÓÊÂ¼şĞÅÏ¢µÄÎÄ¼ş
+	//å­˜æ”¾å›¢é˜Ÿäº‹ä»¶ä¿¡æ¯çš„æ–‡ä»¶
 	QString team_events_filename;
 	QVector<USER> team_members;
 	QVector<EVENT> team_events;
@@ -60,7 +60,7 @@ struct TEAM
 	}
 	TEAM(QString team_name,QString team_passwd,int USR_ID_NOW)
 	{
-		//°Ñ´´Ê¼ÈË×÷ÎªµÚÒ»¸ö³ÉÔ±´æÈëÍÅ¶ÓµÄÈËÔ±ĞÅÏ¢ÖĞ
+		//æŠŠåˆ›å§‹äººä½œä¸ºç¬¬ä¸€ä¸ªæˆå‘˜å­˜å…¥å›¢é˜Ÿçš„äººå‘˜ä¿¡æ¯ä¸­
 		team_members.push_back(users[USR_ID_NOW- USER_ID_FORE]);
 	}
 

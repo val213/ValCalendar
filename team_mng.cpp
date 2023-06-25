@@ -1,4 +1,4 @@
-#include"config.h"
+ï»¿#include"config.h"
 #include"team_mng.h"
 #include"usr_mng.h"
 #include"struct.h"
@@ -6,7 +6,7 @@
 #include<qmessagebox.h>
 #include"calendar_team.h"
 #include"ui_Team_mng.h"
-//ËùÓĞÍÅ¶ÓµÄ¼¯ºÏ
+//æ‰€æœ‰å›¢é˜Ÿçš„é›†åˆ
 TEAM teams[MAX_TEAM_NUM];
 unsigned int team_nums;
 extern USER users[MAX_USRS_NUM];
@@ -18,21 +18,21 @@ team_mng::team_mng(QWidget* parent)
 	ui.setupUi(this);
 	this->setWindowTitle("Team Management");
 
-	//´´½¨ÍÅ¶Ó
+	//åˆ›å»ºå›¢é˜Ÿ
 	connect(ui.pushButton, &QPushButton::clicked,this,&team_mng::create_new_team);
-	//¼ÓÈëÍÅ¶Ó
+	//åŠ å…¥å›¢é˜Ÿ
 	connect(ui.pushButton_4, &QPushButton::clicked, this, &team_mng::join_team);
 
-	//µ¥»÷ÊÂ¼şÑ¡ÖĞÄ³¸öÍÅ¶Ó
+	//å•å‡»äº‹ä»¶é€‰ä¸­æŸä¸ªå›¢é˜Ÿ
 	connect(ui.tableWidget, &QTableWidget::clicked, this, &team_mng::on_cellselect);
 	connect(ui.tableWidget_2, &QTableWidget::clicked, this, &team_mng::on_cellselect);
-	//Ë«»÷QTableWidgetĞĞ£¬½øÈë¸ÃĞĞ¶ÔÓ¦µÄteam_id£¬²¢ÇÒ´«Èë´ò¿ªµÄÍÅ¶ÓÈÕÀú´°¿Ú
+	//åŒå‡»QTableWidgetè¡Œï¼Œè¿›å…¥è¯¥è¡Œå¯¹åº”çš„team_idï¼Œå¹¶ä¸”ä¼ å…¥æ‰“å¼€çš„å›¢é˜Ÿæ—¥å†çª—å£
 	connect(ui.tableWidget, &QTableWidget::doubleClicked, this, &team_mng::on_doubleClicked_belong);
 	connect(ui.tableWidget_2, &QTableWidget::doubleClicked, this, &team_mng::on_doubleClicked_create);
 	updateTable_team();
 	//connect(timer_team, &QTimer::timeout, this, &team_mng::updateTable_team);
-	//timer_team->start(1000); // Ã¿¸ô1Ãë´¥·¢¸üĞÂ
-	//´°¿Ú¹Ø±ÕÖ®ºó³ÌĞò²»ÍË³ö
+	//timer_team->start(1000); // æ¯éš”1ç§’è§¦å‘æ›´æ–°
+	//çª—å£å…³é—­ä¹‹åç¨‹åºä¸é€€å‡º
 	setAttribute(Qt::WA_QuitOnClose, false);
 }
 void team_mng::on_cellselect(const QModelIndex& index) {
@@ -47,37 +47,37 @@ void team_mng::on_cellselect(const QModelIndex& index) {
 
 void team_mng::on_exit_team_ButtonClicked(const QModelIndex& index)
 {
-	int selectedRow = ui.tableWidget->currentRow();  // »ñÈ¡Ñ¡ÖĞĞĞºÅ
+	int selectedRow = ui.tableWidget->currentRow();  // è·å–é€‰ä¸­è¡Œå·
 	if (selectedRow < 0) return;
 
 	qDebug() << "selectedRow: " << selectedRow;
-	QTableWidgetItem* item = ui.tableWidget->item(selectedRow, 0);  // »ñÈ¡Ñ¡ÖĞĞĞµÄµÚÒ»ÁĞµ¥Ôª¸ñ¶ÔÏó
-	QVariant data = item->data(Qt::DisplayRole);  // »ñÈ¡µ¥Ôª¸ñÊı¾İ
-	int team_id = data.toInt();  // ½«Êı¾İ×ª»»ÎªËùĞèµÄÀàĞÍ
+	QTableWidgetItem* item = ui.tableWidget->item(selectedRow, 0);  // è·å–é€‰ä¸­è¡Œçš„ç¬¬ä¸€åˆ—å•å…ƒæ ¼å¯¹è±¡
+	QVariant data = item->data(Qt::DisplayRole);  // è·å–å•å…ƒæ ¼æ•°æ®
+	int team_id = data.toInt();  // å°†æ•°æ®è½¬æ¢ä¸ºæ‰€éœ€çš„ç±»å‹
 	qDebug() << "Selected team_id:" << team_id;
 	
 	
 	ui.tableWidget->removeRow(selectedRow);
-	//°²È«É¾³ıÓÃ»§µÄ´ÓÊôÍÅ¶ÓÎÄ¼şÄÚµÄ¶ÔÓ¦Êı¾İĞĞ
+	//å®‰å…¨åˆ é™¤ç”¨æˆ·çš„ä»å±å›¢é˜Ÿæ–‡ä»¶å†…çš„å¯¹åº”æ•°æ®è¡Œ
 	QFile file_usr_belong(users[USR_ID_NOW - USER_ID_FORE].usr_team_belong_filename);
 	if (file_usr_belong.open(QIODevice::ReadWrite | QIODevice::Text)) {
 		QTextStream stream(&file_usr_belong);
-		QStringList lines; // ±£´æÎÄ¼şËùÓĞÊı¾İ
-		int currentRow = 0; // µ±Ç°ĞĞË÷Òı
+		QStringList lines; // ä¿å­˜æ–‡ä»¶æ‰€æœ‰æ•°æ®
+		int currentRow = 0; // å½“å‰è¡Œç´¢å¼•
 		while (!stream.atEnd()) {
 			QString line = stream.readLine().trimmed();
 			QStringList items = line.split(",");
 			if (currentRow == selectedRow) {
-				// É¾³ı¶ÔÓ¦Î»ÖÃµÄÎÄ±¾
+				// åˆ é™¤å¯¹åº”ä½ç½®çš„æ–‡æœ¬
 				items.clear();
 			}
 			line = items.join(",");
 			lines.append(line);
 			currentRow++;
 		}
-		// Çå¿ÕÎÄ¼şÄÚÈİ
+		// æ¸…ç©ºæ–‡ä»¶å†…å®¹
 		file_usr_belong.resize(0);
-		// ÖØĞÂĞ´Èë¸üĞÂºóµÄÊı¾İ
+		// é‡æ–°å†™å…¥æ›´æ–°åçš„æ•°æ®
 		stream << lines.join("\n");
 		file_usr_belong.close();
 	}
@@ -85,40 +85,40 @@ void team_mng::on_exit_team_ButtonClicked(const QModelIndex& index)
 		QMessageBox::critical(this, "error", "file open fail");
 		return;
 	}
-	//°²È«É¾³ıÓÃ»§ËùÊôµÄÍÅ¶ÓµÄ³ÉÔ±ÎÄ¼şÄÚµÄ¶ÔÓ¦Êı¾İ
+	//å®‰å…¨åˆ é™¤ç”¨æˆ·æ‰€å±çš„å›¢é˜Ÿçš„æˆå‘˜æ–‡ä»¶å†…çš„å¯¹åº”æ•°æ®
 	
 
 		QFile file_team_members(teams[team_id - TEAM_ID_FORE].team_members_filename);
 		if (file_team_members.open(QIODevice::ReadWrite | QIODevice::Text)) {
 			QTextStream stream(&file_team_members);
-			QStringList lines; // ±£´æÎÄ¼şËùÓĞÊı¾İ
-			int currentRow = 0; // µ±Ç°ĞĞË÷Òı
-			//ÎÄ¼ş´æ´¢µÄ¸ñÊ½£º4,1001,1002,1003,1004,
-			//¸üĞÂÎÄ¼şÊı¾İ
-			// Çå¿ÕÎÄ¼şÄÚÈİ
+			QStringList lines; // ä¿å­˜æ–‡ä»¶æ‰€æœ‰æ•°æ®
+			int currentRow = 0; // å½“å‰è¡Œç´¢å¼•
+			//æ–‡ä»¶å­˜å‚¨çš„æ ¼å¼ï¼š4,1001,1002,1003,1004,
+			//æ›´æ–°æ–‡ä»¶æ•°æ®
+			// æ¸…ç©ºæ–‡ä»¶å†…å®¹
 			file_team_members.resize(0);
-			//¸üĞÂÍÅ¶ÓÊı¾İ
-			//°Ñµ±Ç°ÓÃ»§ÔÚÍÅ¶ÓµÄ³ÉÔ±ÖĞÉ¾È¥
+			//æ›´æ–°å›¢é˜Ÿæ•°æ®
+			//æŠŠå½“å‰ç”¨æˆ·åœ¨å›¢é˜Ÿçš„æˆå‘˜ä¸­åˆ å»
 			//int index_usr = teams[team_id - TEAM_ID_FORE].team_members.indexOf(USR_ID_NOW);
-			//ÉÏÃæÕâ¸ö·½·¨²»ĞĞ£¬ĞèÒª¶¨ÒåÏàµÈÔËËã·û£ºÔÚÔªËØÀàĞÍ T µÄ¶¨ÒåÖĞÌí¼ÓÏàµÈÔËËã·û£¨operator==£©¡£ÕâÑù£¬QVector ½«ÄÜ¹»ÕıÈ·±È½ÏÔªËØµÄÏàµÈĞÔ
-			//±éÀúteams[team_id - TEAM_ID_FORE].team_membersÖĞµÄÃ¿¸öUSER½á¹¹ÌåÖĞµÄidÊÇ·ñºÍµ±Ç°µÄÓÃ»§idÒ»ÖÂ£¬Èç¹ûÒ»ÖÂ£¬·µ»ØË÷Òı£¬Ö´ĞĞÉ¾³ıÖ¸Áî
-			//µü´úÆ÷±éÀú
+			//ä¸Šé¢è¿™ä¸ªæ–¹æ³•ä¸è¡Œï¼Œéœ€è¦å®šä¹‰ç›¸ç­‰è¿ç®—ç¬¦ï¼šåœ¨å…ƒç´ ç±»å‹ T çš„å®šä¹‰ä¸­æ·»åŠ ç›¸ç­‰è¿ç®—ç¬¦ï¼ˆoperator==ï¼‰ã€‚è¿™æ ·ï¼ŒQVector å°†èƒ½å¤Ÿæ­£ç¡®æ¯”è¾ƒå…ƒç´ çš„ç›¸ç­‰æ€§
+			//éå†teams[team_id - TEAM_ID_FORE].team_membersä¸­çš„æ¯ä¸ªUSERç»“æ„ä½“ä¸­çš„idæ˜¯å¦å’Œå½“å‰çš„ç”¨æˆ·idä¸€è‡´ï¼Œå¦‚æœä¸€è‡´ï¼Œè¿”å›ç´¢å¼•ï¼Œæ‰§è¡Œåˆ é™¤æŒ‡ä»¤
+			//è¿­ä»£å™¨éå†
 			for (auto it = teams[team_id - TEAM_ID_FORE].team_members.begin(); it != teams[team_id - TEAM_ID_FORE].team_members.end(); it++)
 			{
 				if (it->usr_id == USR_ID_NOW)
 				{
-					teams[team_id - TEAM_ID_FORE].team_members.erase(it);  //É¾³ıµô-1
+					teams[team_id - TEAM_ID_FORE].team_members.erase(it);  //åˆ é™¤æ‰-1
 				}
 			}
 			qDebug() << teams[team_id - TEAM_ID_FORE].team_members_nums << "\n";
-			//°Ñµ±Ç°ÍÅ¶ÓµÄ³ÉÔ±ÊıÁ¿¼õÒ»
+			//æŠŠå½“å‰å›¢é˜Ÿçš„æˆå‘˜æ•°é‡å‡ä¸€
 			teams[team_id - TEAM_ID_FORE].team_members_nums--;
 			qDebug() << teams[team_id - TEAM_ID_FORE].team_members_nums << "\n";
-			//¸üĞÂ¸ÃÍÅ¶ÓÖĞËùÓĞ³ÉÔ±ÔÚ´ÓÊôÍÅ¶ÓÎÄ¼şÖĞ´æ´¢µÄ¸ÃÍÅ¶ÓµÄÈËÔ±ÊıÁ¿
+			//æ›´æ–°è¯¥å›¢é˜Ÿä¸­æ‰€æœ‰æˆå‘˜åœ¨ä»å±å›¢é˜Ÿæ–‡ä»¶ä¸­å­˜å‚¨çš„è¯¥å›¢é˜Ÿçš„äººå‘˜æ•°é‡
 			for (int i = 0; i < teams[team_id - TEAM_ID_FORE].team_members_nums; i++)
 			{
-				//¸üĞÂÊı¾İµ½ÎÄ¼ş´æµµÖĞ
-				//ÏÈÇå¿ÕÎÄ¼ş
+				//æ›´æ–°æ•°æ®åˆ°æ–‡ä»¶å­˜æ¡£ä¸­
+				//å…ˆæ¸…ç©ºæ–‡ä»¶
 				QString filename = users[teams[team_id - TEAM_ID_FORE].team_members[i].usr_id - USER_ID_FORE].usr_team_belong_filename;
 				QFile team_file(filename);
 				if (!team_file.open(QIODevice::ReadWrite | QIODevice::Text | QIODevice::Append))
@@ -126,8 +126,8 @@ void team_mng::on_exit_team_ButtonClicked(const QModelIndex& index)
 				QTextStream out(&team_file);
 				team_file.resize(0);
 				//4,1001,1002,1003,1004,
-				//Ğ´ÈëĞÂµÄÈËÊı
-				//Ğ´ÈëÊ£ÓàµÄ³ÉÔ±id
+				//å†™å…¥æ–°çš„äººæ•°
+				//å†™å…¥å‰©ä½™çš„æˆå‘˜id
 				out << teams[team_id - TEAM_ID_FORE].team_members[i].usr_team_belong_num << ",";
 				qDebug() << teams[team_id - TEAM_ID_FORE].team_members[i].usr_team_belong_num;
 
@@ -144,11 +144,11 @@ void team_mng::on_exit_team_ButtonClicked(const QModelIndex& index)
 }
 void team_mng::on_delete_team_ButtonClicked(const QModelIndex& index)
 {
-	int selectedRow = ui.tableWidget_2->currentRow();  // »ñÈ¡µ±Ç°Ñ¡ÖĞµÄĞĞË÷Òı
+	int selectedRow = ui.tableWidget_2->currentRow();  // è·å–å½“å‰é€‰ä¸­çš„è¡Œç´¢å¼•
 	if (selectedRow >= 0) {
-		QTableWidgetItem* item = ui.tableWidget_2->item(selectedRow, 0);  // »ñÈ¡Ñ¡ÖĞĞĞµÄµÚÒ»ÁĞµ¥Ôª¸ñ¶ÔÏó
-		QVariant data = item->data(Qt::DisplayRole);  // »ñÈ¡µ¥Ôª¸ñÊı¾İ
-		int team_id = data.toInt();  // ½«Êı¾İ×ª»»ÎªËùĞèµÄÀàĞÍ
+		QTableWidgetItem* item = ui.tableWidget_2->item(selectedRow, 0);  // è·å–é€‰ä¸­è¡Œçš„ç¬¬ä¸€åˆ—å•å…ƒæ ¼å¯¹è±¡
+		QVariant data = item->data(Qt::DisplayRole);  // è·å–å•å…ƒæ ¼æ•°æ®
+		int team_id = data.toInt();  // å°†æ•°æ®è½¬æ¢ä¸ºæ‰€éœ€çš„ç±»å‹
 		qDebug() << "Selected team_id:" << team_id;
 	}
 
@@ -163,82 +163,82 @@ void team_mng::create_new_team()
 	
 	QWidget* new_team = new QWidget;
 	new_team->setWindowTitle("Create New Team");
-	new_team->setFixedSize(300, 250); // ÉèÖÃ¹Ì¶¨´óĞ¡£¬±ÜÃâ´°¿Ú´óĞ¡¿Éµ÷Õû
+	new_team->setFixedSize(300, 250); // è®¾ç½®å›ºå®šå¤§å°ï¼Œé¿å…çª—å£å¤§å°å¯è°ƒæ•´
 
 	QLabel* label = new QLabel(new_team);
 	QLabel* label_2 = new QLabel(new_team);
 	label->setText("Input the name of the new team");
-	label->setAlignment(Qt::AlignCenter); // ¾ÓÖĞ¶ÔÆë
-	label->setGeometry(20, 20, 260, 30); // ÉèÖÃÎ»ÖÃºÍ´óĞ¡
+	label->setAlignment(Qt::AlignCenter); // å±…ä¸­å¯¹é½
+	label->setGeometry(20, 20, 260, 30); // è®¾ç½®ä½ç½®å’Œå¤§å°
 
 	QLineEdit* lineEdit = new QLineEdit(new_team);
-	lineEdit->setGeometry(20, 60, 260, 30); // ÉèÖÃÎ»ÖÃºÍ´óĞ¡
+	lineEdit->setGeometry(20, 60, 260, 30); // è®¾ç½®ä½ç½®å’Œå¤§å°
 
 	label_2->setText("Input the password of the team");
-	label_2->setAlignment(Qt::AlignCenter); // ¾ÓÖĞ¶ÔÆë
-	label_2->setGeometry(20, 100, 260, 30); // ÉèÖÃÎ»ÖÃºÍ´óĞ¡
+	label_2->setAlignment(Qt::AlignCenter); // å±…ä¸­å¯¹é½
+	label_2->setGeometry(20, 100, 260, 30); // è®¾ç½®ä½ç½®å’Œå¤§å°
 
 	QLineEdit* lineEdit_2 = new QLineEdit(new_team);
-	lineEdit_2->setGeometry(20, 140, 260, 30); // ÉèÖÃÎ»ÖÃºÍ´óĞ¡
+	lineEdit_2->setGeometry(20, 140, 260, 30); // è®¾ç½®ä½ç½®å’Œå¤§å°
 
 
 	QPushButton* pushButton = new QPushButton("OK", new_team);
-	pushButton->setGeometry(60, 180, 80, 30); // ÉèÖÃÎ»ÖÃºÍ´óĞ¡
+	pushButton->setGeometry(60, 180, 80, 30); // è®¾ç½®ä½ç½®å’Œå¤§å°
 
 	QPushButton* pushButton_2 = new QPushButton("Cancel", new_team);
-	pushButton_2->setGeometry(160, 180, 80, 30); // ÉèÖÃÎ»ÖÃºÍ´óĞ¡
+	pushButton_2->setGeometry(160, 180, 80, 30); // è®¾ç½®ä½ç½®å’Œå¤§å°
 
 	new_team->show();
 	
 
-	//È·ÈÏ´´½¨
+	//ç¡®è®¤åˆ›å»º
 	connect(pushButton, &QPushButton::clicked, this, [this, lineEdit, lineEdit_2,new_team]() {
 		confirm_creat(lineEdit->text(), lineEdit_2->text());
 		new_team->close();
 		});
-	//È¡Ïû´´½¨
+	//å–æ¶ˆåˆ›å»º
 	connect(pushButton_2, &QPushButton::clicked, new_team, &QWidget::close);
 	
 
 
 }
 
-//±»µü´úµôÁË
+//è¢«è¿­ä»£æ‰äº†
 void team_mng::delete_team()
 {
-	//Õâ¸öÊÇ²»ÊÇÄÜÕûºÏ½øteam_createµÄÏÂÒ»¼¶²Ù×÷£¿£¿
-	//ÓÃÒ»¸öQTableView¿Ø¼şÕ¹Ê¾µ±Ç°ÓÃ»§Ëù´´ÔìµÄËùÓĞÍÅ¶Ó
-	//ÏÈ¼ì²éµ±Ç°ÓÃ»§ÊÇ·ñÓĞ´´½¨ÍÅ¶Ó£¬Èç¹ûÃ»ÓĞ£¬ÔòÌáÊ¾
+	//è¿™ä¸ªæ˜¯ä¸æ˜¯èƒ½æ•´åˆè¿›team_createçš„ä¸‹ä¸€çº§æ“ä½œï¼Ÿï¼Ÿ
+	//ç”¨ä¸€ä¸ªQTableViewæ§ä»¶å±•ç¤ºå½“å‰ç”¨æˆ·æ‰€åˆ›é€ çš„æ‰€æœ‰å›¢é˜Ÿ
+	//å…ˆæ£€æŸ¥å½“å‰ç”¨æˆ·æ˜¯å¦æœ‰åˆ›å»ºå›¢é˜Ÿï¼Œå¦‚æœæ²¡æœ‰ï¼Œåˆ™æç¤º
 
-	//Ñ¡ÖĞ¶ÔÓ¦µÄÍÅ¶Ó£¬²¢È·¶¨ÊÇ·ñ½øĞĞÉ¾³ı²Ù×÷
+	//é€‰ä¸­å¯¹åº”çš„å›¢é˜Ÿï¼Œå¹¶ç¡®å®šæ˜¯å¦è¿›è¡Œåˆ é™¤æ“ä½œ
 }
 
 void team_mng::join_team()
 {
 	QWidget* new_team = new QWidget;
 	new_team->setWindowTitle("Join Team");
-	new_team->setFixedSize(300, 250); // ÉèÖÃ¹Ì¶¨´óĞ¡£¬±ÜÃâ´°¿Ú´óĞ¡¿Éµ÷Õû
+	new_team->setFixedSize(300, 250); // è®¾ç½®å›ºå®šå¤§å°ï¼Œé¿å…çª—å£å¤§å°å¯è°ƒæ•´
 
 	QLabel* label = new QLabel(new_team);
 	QLabel* label_2 = new QLabel(new_team);
 
 	label->setText("Input the id of the team");
-	label->setAlignment(Qt::AlignCenter); // ¾ÓÖĞ¶ÔÆë
-	label->setGeometry(20, 20, 260, 30); // ÉèÖÃÎ»ÖÃºÍ´óĞ¡
+	label->setAlignment(Qt::AlignCenter); // å±…ä¸­å¯¹é½
+	label->setGeometry(20, 20, 260, 30); // è®¾ç½®ä½ç½®å’Œå¤§å°
 
 	QLineEdit* lineEdit = new QLineEdit(new_team);
-	lineEdit->setGeometry(20, 60, 260, 30); // ÉèÖÃÎ»ÖÃºÍ´óĞ¡
+	lineEdit->setGeometry(20, 60, 260, 30); // è®¾ç½®ä½ç½®å’Œå¤§å°
 
 	label_2->setText("Input the password of the team");
-	label_2->setAlignment(Qt::AlignCenter); // ¾ÓÖĞ¶ÔÆë
-	label_2->setGeometry(20, 100, 260, 30); // ÉèÖÃÎ»ÖÃºÍ´óĞ¡
+	label_2->setAlignment(Qt::AlignCenter); // å±…ä¸­å¯¹é½
+	label_2->setGeometry(20, 100, 260, 30); // è®¾ç½®ä½ç½®å’Œå¤§å°
 
 	QLineEdit* lineEdit_2 = new QLineEdit(new_team);
-	lineEdit_2->setGeometry(20, 140, 260, 30); // ÉèÖÃÎ»ÖÃºÍ´óĞ¡
+	lineEdit_2->setGeometry(20, 140, 260, 30); // è®¾ç½®ä½ç½®å’Œå¤§å°
 
 	
 	QPushButton* pushButton = new QPushButton("Join", new_team);
-	pushButton->setGeometry(60, 180, 80, 30); // ÉèÖÃÎ»ÖÃºÍ´óĞ¡
+	pushButton->setGeometry(60, 180, 80, 30); // è®¾ç½®ä½ç½®å’Œå¤§å°
 
 
 
@@ -275,14 +275,14 @@ void team_mng::confirm_join(const int& team_id, const QString& team_password)
 		qDebug() << USR_ID_NOW - USER_ID_FORE << " " << USR_ID_NOW << "\n";
 	}
 
-	//³õÊ¼»¯µ±Ç°ÍÅ¶ÓµÄÎÄ¼şĞÅÏ¢¶ÁÈ¡
+	//åˆå§‹åŒ–å½“å‰å›¢é˜Ÿçš„æ–‡ä»¶ä¿¡æ¯è¯»å–
 	QString filename = QString::number(team_id) + "_team members.txt";
 	QFile team_members_file(filename);
 	if (!team_members_file.open(QIODevice::ReadWrite | QIODevice::Text | QIODevice::Append))
 	return;
 	QTextStream out(&team_members_file);
-	//°ÑÎÄ¼şÖĞµÄÄÚÈİĞ´Èë¶ÔÓ¦ÍÅ¶ÓµÄ³ÉÔ±ÖĞ
-	//ÏÈ¶ÁÈ¡ÎÄ¼şÖĞµÄÄÚÈİ
+	//æŠŠæ–‡ä»¶ä¸­çš„å†…å®¹å†™å…¥å¯¹åº”å›¢é˜Ÿçš„æˆå‘˜ä¸­
+	//å…ˆè¯»å–æ–‡ä»¶ä¸­çš„å†…å®¹
 	out.seek(0);
 	QString line;
 	QTextStream in(&team_members_file);
@@ -295,23 +295,25 @@ void team_mng::confirm_join(const int& team_id, const QString& team_password)
 	//1,1001"   QList("1", "1001")
 	//2
 	
-	//¼ì²éÓÃ»§ÊäÈë
-	//ÍÅ¶ÓidÎª¿Õ
+	//æ£€æŸ¥ç”¨æˆ·è¾“å…¥
+	//å›¢é˜Ÿidä¸ºç©º
 	if (teams[team_id - TEAM_ID_FORE].team_id == 0)
 	{
-		//ÌáÊ¾ÍÅ¶Ó²»´æÔÚ
+		//æç¤ºå›¢é˜Ÿä¸å­˜åœ¨
 		QMessageBox::StandardButton reply;
 		reply = QMessageBox::information(this, "Error", "The team does not exist", QMessageBox::Yes);
+		return;
 	}
 	else if (teams[team_id - TEAM_ID_FORE].team_passwd != team_password)
 	{
-		//ÍÅ¶Ó´æÔÚµ«ÊÇÃÜÂë´íÎó£¬ÌáÊ¾
+		//å›¢é˜Ÿå­˜åœ¨ä½†æ˜¯å¯†ç é”™è¯¯ï¼Œæç¤º
 		QMessageBox::StandardButton reply;
 		reply = QMessageBox::information(this, "Error", "The password is wrong", QMessageBox::Yes);
+		return;
 	}
 	else
 	{
-		//ÍÅ¶ÓĞÅÏ¢ÔØÈëÖ®ºó£¬ÅĞ¶Ïµ±Ç°ÓÃ»§ÊÇ·ñÒÑ¾­ÔÚ¸ÃÍÅ¶ÓÖĞÁË
+		//å›¢é˜Ÿä¿¡æ¯è½½å…¥ä¹‹åï¼Œåˆ¤æ–­å½“å‰ç”¨æˆ·æ˜¯å¦å·²ç»åœ¨è¯¥å›¢é˜Ÿä¸­äº†
 		teams[team_id - TEAM_ID_FORE].team_members_nums = list[0].toInt();
 		qDebug() << teams[team_id - TEAM_ID_FORE].team_members_nums << "\n";
 		//1
@@ -329,40 +331,40 @@ void team_mng::confirm_join(const int& team_id, const QString& team_password)
 			}
 		}
 	}
-		//ÍÅ¶Ó´æÔÚÇÒÃÜÂëÕıÈ·£¬¸üĞÂ¸ÃÍÅ¶ÓµÄÓÃ»§Êı¾İÒÔ¼°µ±Ç°ÓÃ»§µÄÍÅ¶ÓÊı¾İ
-		//¸üĞÂÍÅ¶ÓÊı¾İ
-		//°Ñµ±Ç°ÓÃ»§µÄidĞ´Èë¶ÔÓ¦ÍÅ¶ÓµÄ³ÉÔ±ÖĞ
+		//å›¢é˜Ÿå­˜åœ¨ä¸”å¯†ç æ­£ç¡®ï¼Œæ›´æ–°è¯¥å›¢é˜Ÿçš„ç”¨æˆ·æ•°æ®ä»¥åŠå½“å‰ç”¨æˆ·çš„å›¢é˜Ÿæ•°æ®
+		//æ›´æ–°å›¢é˜Ÿæ•°æ®
+		//æŠŠå½“å‰ç”¨æˆ·çš„idå†™å…¥å¯¹åº”å›¢é˜Ÿçš„æˆå‘˜ä¸­
 	teams[team_id - TEAM_ID_FORE].team_members.append(users[USR_ID_NOW - USER_ID_FORE]);
 	qDebug() <<"Current number of users:"<< teams[team_id - TEAM_ID_FORE].team_members_nums;
 	qDebug() << "add a mumber!";
-	//°Ñµ±Ç°ÍÅ¶ÓµÄ³ÉÔ±ÊıÁ¿¼ÓÒ»
+	//æŠŠå½“å‰å›¢é˜Ÿçš„æˆå‘˜æ•°é‡åŠ ä¸€
 	teams[team_id - TEAM_ID_FORE].team_members_nums++;
 	qDebug() << "Current number of users:" << teams[team_id - TEAM_ID_FORE].team_members_nums << "\n";
 
 
-	//¸üĞÂµ±Ç°ÓÃ»§µÄÍÅ¶ÓÊı¾İ
+	//æ›´æ–°å½“å‰ç”¨æˆ·çš„å›¢é˜Ÿæ•°æ®
 	
-	//¸üĞÂÓÃ»§´ÓÊôÍÅ¶ÓÊıÁ¿
+	//æ›´æ–°ç”¨æˆ·ä»å±å›¢é˜Ÿæ•°é‡
 	users[USR_ID_NOW - USER_ID_FORE].usr_team_belong_num++;
 
-	//¸üĞÂÓÃ»§ÕıÔÚ¼ÓÈëµÄÍÅ¶ÓÎªËùÊôÍÅ¶Ó
+	//æ›´æ–°ç”¨æˆ·æ­£åœ¨åŠ å…¥çš„å›¢é˜Ÿä¸ºæ‰€å±å›¢é˜Ÿ
 	users[USR_ID_NOW - USER_ID_FORE].teams_belong.append(teams[team_id - TEAM_ID_FORE]);
 
-	//¸üĞÂ¸ÃÍÅ¶ÓÖĞËùÓĞ³ÉÔ±ÔÚ´ÓÊôÍÅ¶ÓÎÄ¼şÖĞ´æ´¢µÄ¸ÃÍÅ¶ÓµÄÈËÔ±ÊıÁ¿
+	//æ›´æ–°è¯¥å›¢é˜Ÿä¸­æ‰€æœ‰æˆå‘˜åœ¨ä»å±å›¢é˜Ÿæ–‡ä»¶ä¸­å­˜å‚¨çš„è¯¥å›¢é˜Ÿçš„äººå‘˜æ•°é‡
 	for (int i = 0; i < teams[team_id - TEAM_ID_FORE].team_members_nums; i++)
 	{
-		//¸üĞÂÊı¾İµ½ÓÃ»§µÄËùÊôÍÅ¶ÓÎÄ¼ş´æµµÖĞ
+		//æ›´æ–°æ•°æ®åˆ°ç”¨æˆ·çš„æ‰€å±å›¢é˜Ÿæ–‡ä»¶å­˜æ¡£ä¸­
 		
 		QString filename =users[teams[team_id - TEAM_ID_FORE].team_members[i].usr_id-USER_ID_FORE].usr_team_belong_filename;
 		QFile team_file(filename);
 		if (!team_file.open(QIODevice::ReadWrite | QIODevice::Text | QIODevice::Append))
 			return;
 		QTextStream out(&team_file);
-		//ÏÈÇå¿ÕÎÄ¼ş
+		//å…ˆæ¸…ç©ºæ–‡ä»¶
 		team_file.resize(0);
 		//1,2001,SCUT,1001,4,1001,1002,1003,1004,
-		//Ğ´Èë´ÓÊôÍÅ¶Ó×ÜÊı
-		// Ğ´Èë´ÓÊôµÄÃ¿¸öÍÅ¶ÓµÄid¡¢Ãû³Æ¡¢ÈËÊıºÍËùÓĞ³ÉÔ±µÄid
+		//å†™å…¥ä»å±å›¢é˜Ÿæ€»æ•°
+		// å†™å…¥ä»å±çš„æ¯ä¸ªå›¢é˜Ÿçš„idã€åç§°ã€äººæ•°å’Œæ‰€æœ‰æˆå‘˜çš„id
 		
 		out << teams[team_id - TEAM_ID_FORE].team_members[i].usr_team_belong_num << ",";
 		qDebug() << "The number of teams each current user belongs to:" << teams[team_id - TEAM_ID_FORE].team_members[i].usr_team_belong_num;
@@ -378,10 +380,10 @@ void team_mng::confirm_join(const int& team_id, const QString& team_password)
 				qDebug() << "teams_belong[" << j << "] - team_members[" << k << "] - usr_id: " << teams[team_id - TEAM_ID_FORE].team_members[i].teams_belong[j].team_members[k].usr_id;
 			}
 		}
-		//ÔÙĞ´Èë´ÓÊôÍÅ¶ÓµÄid¡¢Ãû³Æ¡¢ÈËÊıºÍËùÓĞ³ÉÔ±µÄid
+		//å†å†™å…¥ä»å±å›¢é˜Ÿçš„idã€åç§°ã€äººæ•°å’Œæ‰€æœ‰æˆå‘˜çš„id
 		for (int j = 0; j < teams[team_id - TEAM_ID_FORE].team_members[i].usr_team_belong_num; j++)
 		{
-			out << teams[team_id - TEAM_ID_FORE].team_members[i].teams_belong[j].team_id << ",";//±ÀÀ£ÁË£¬²»ÖªµÀÎªÊ²Ã´Ô½½ç
+			out << teams[team_id - TEAM_ID_FORE].team_members[i].teams_belong[j].team_id << ",";//å´©æºƒäº†ï¼Œä¸çŸ¥é“ä¸ºä»€ä¹ˆè¶Šç•Œ
 			out << teams[team_id - TEAM_ID_FORE].team_members[i].teams_belong[j].team_name << ",";
 			out << teams[team_id - TEAM_ID_FORE].team_members[i].teams_belong[j].team_members_nums << ",";
 			for (int k = 0; k < teams[team_id - TEAM_ID_FORE].team_members[i].teams_belong[j].team_members_nums; k++)
@@ -389,14 +391,14 @@ void team_mng::confirm_join(const int& team_id, const QString& team_password)
 				out << teams[team_id - TEAM_ID_FORE].team_members[i].teams_belong[j].team_members[k].usr_id << ",";
 			}
 		}	
-		//¹Ø±ÕÎÄ¼ş
+		//å…³é—­æ–‡ä»¶
 		team_file.close();
 	}
 
-	//¸üĞÂÊı¾İµ½ÎÄ¼ş´æµµÖĞ
-	//ÏÈÇå¿ÕÎÄ¼ş
+	//æ›´æ–°æ•°æ®åˆ°æ–‡ä»¶å­˜æ¡£ä¸­
+	//å…ˆæ¸…ç©ºæ–‡ä»¶
 	team_members_file.resize(0);
-	//ÔÙĞ´ÈëÊı¾İ
+	//å†å†™å…¥æ•°æ®
 	out << teams[team_id - TEAM_ID_FORE].team_members_nums << ",";
 	qDebug()<< teams[team_id - TEAM_ID_FORE].team_members_nums << "\n";
 	for (int i = 0; i < teams[team_id - TEAM_ID_FORE].team_members_nums; i++)
@@ -404,26 +406,26 @@ void team_mng::confirm_join(const int& team_id, const QString& team_password)
 		qDebug() << teams[team_id - TEAM_ID_FORE].team_members[i].usr_id << "\n";
 		out << teams[team_id - TEAM_ID_FORE].team_members[i].usr_id << ",";
 	}
-	//¹Ø±ÕÎÄ¼ş
+	//å…³é—­æ–‡ä»¶
 	team_members_file.close();
 
 	
 
-	//¸üĞÂÓÃ»§Êı¾İ
+	//æ›´æ–°ç”¨æˆ·æ•°æ®
 	
 	users[USR_ID_NOW - USER_ID_FORE].teams_belong.push_back(teams[team_id - TEAM_ID_FORE]);
 	users[USR_ID_NOW - USER_ID_FORE].usr_team_belong_num++;
-	//¸üĞÂÓÃ»§µÄÍÅ¶ÓÎÄ¼ş
-	//ÏÈÇå¿ÕÎÄ¼ş
+	//æ›´æ–°ç”¨æˆ·çš„å›¢é˜Ÿæ–‡ä»¶
+	//å…ˆæ¸…ç©ºæ–‡ä»¶
 	QString filename_usr = users[USR_ID_NOW - USER_ID_FORE].usr_team_belong_filename;
 	QFile team_belong_file(filename_usr);
 	if (!team_belong_file.open(QIODevice::ReadWrite | QIODevice::Text | QIODevice::Append))
 		return;
 	QTextStream out_usr(&team_belong_file);
 	team_belong_file.resize(0);
-	//ÔÙĞ´ÈëÊı¾İ
-	//´´½¨µÄÍÅ¶ÓÊıÁ¿
-	//ÍÅ¶Ó1µÄid£¬ÍÅ¶Ó1µÄÃû³Æ£¬ÍÅ¶Ó1´´Ê¼ÈË£¬ÍÅ¶Ó1ÏÖÓĞ×ÜÈËÊı£¬ÍÅ¶Ó1µÄÈ«²¿³ÉÔ±
+	//å†å†™å…¥æ•°æ®
+	//ä»å±çš„å›¢é˜Ÿæ•°é‡
+	//å›¢é˜Ÿ1çš„idï¼Œå›¢é˜Ÿ1çš„åç§°ï¼Œå›¢é˜Ÿ1åˆ›å§‹äººï¼Œå›¢é˜Ÿ1ç°æœ‰æ€»äººæ•°ï¼Œå›¢é˜Ÿ1çš„å…¨éƒ¨æˆå‘˜
 	out_usr << users[USR_ID_NOW - USER_ID_FORE].usr_team_belong_num << ",";
 	for (int i = 0; i < users[USR_ID_NOW - USER_ID_FORE].usr_team_belong_num; i++)
 	{
@@ -437,28 +439,28 @@ void team_mng::confirm_join(const int& team_id, const QString& team_password)
 		}
 	}
 
-	//¹Ø±ÕÎÄ¼ş
+	//å…³é—­æ–‡ä»¶
 	team_belong_file.close();
 
 
-	//ÌáÊ¾ÓÃ»§¼ÓÈë³É¹¦
+	//æç¤ºç”¨æˆ·åŠ å…¥æˆåŠŸ
 	QMessageBox::StandardButton reply;
 	reply = QMessageBox::information(this, "Success", "Join the team successfully", QMessageBox::Yes);
-	//ÒÔÉÏ³ÌĞò±ÀÀ£µÄÔ­ÒòÒÑ¾­ĞŞ¸ÄºÃ£¨qvectorÖ»ÄÜpush_back²»ÄÜÓÃË÷Òı£©
+	//ä»¥ä¸Šç¨‹åºå´©æºƒçš„åŸå› å·²ç»ä¿®æ”¹å¥½ï¼ˆqvectoråªèƒ½push_backä¸èƒ½ç”¨ç´¢å¼•ï¼‰
 }
 
 void team_mng::confirm_creat(const QString& teamName, const QString& password)
 {
 	//id,name,pswd,founder,mem_num,event_num,team_mng_file,team_events_file
 	//2001,SCUT,2023,1001,1,0,2001_team members.txt,2001_team events.txt
-	//´´½¨Ò»¸öĞÂµÄÍÅ¶Ó
+	//åˆ›å»ºä¸€ä¸ªæ–°çš„å›¢é˜Ÿ
 	myteam_create.push_back(TEAM(teamName, password, USR_ID_NOW));
-	//½«ĞÂÍÅ¶ÓµÄĞÅÏ¢Ğ´ÈëTEAMSÎÄ¼şºÍ´´½¨ÍÅ¶Ó×Ô¼ºµÄÎÄ¼ş
-	//·ÖÅäÍÅ¶Óid
+	//å°†æ–°å›¢é˜Ÿçš„ä¿¡æ¯å†™å…¥TEAMSæ–‡ä»¶å’Œåˆ›å»ºå›¢é˜Ÿè‡ªå·±çš„æ–‡ä»¶
+	//åˆ†é…å›¢é˜Ÿid
 	new_team_id = TEAM_ID_FORE + team_nums;
-	//µ¯³ö´°¿ÚÌáÊ¾´´½¨ÍÅ¶Ó³É¹¦²¢ÇÒ·´À¡ÍÅ¶Óid
+	//å¼¹å‡ºçª—å£æç¤ºåˆ›å»ºå›¢é˜ŸæˆåŠŸå¹¶ä¸”åé¦ˆå›¢é˜Ÿid
 	QMessageBox::information(nullptr, "Successfully create a team!", "The id of your team is: " + QString::number(new_team_id));
-	//½«ĞÂÍÅ¶ÓµÄĞÅÏ¢Ğ´Èë¼ÇÂ¼ËùÓĞÍÅ¶ÓµÄÊı×éÖĞ¸ÃÍÅ¶ÓµÄ¶ÔÓ¦ĞÅÏ¢ÖĞ
+	//å°†æ–°å›¢é˜Ÿçš„ä¿¡æ¯å†™å…¥è®°å½•æ‰€æœ‰å›¢é˜Ÿçš„æ•°ç»„ä¸­è¯¥å›¢é˜Ÿçš„å¯¹åº”ä¿¡æ¯ä¸­
 	teams[team_nums].team_id = new_team_id;
 	teams[team_nums].team_name = teamName;
 	teams[team_nums].team_passwd = password;
@@ -467,21 +469,21 @@ void team_mng::confirm_creat(const QString& teamName, const QString& password)
 	teams[team_nums].team_members.push_back(users[USR_ID_NOW - USER_ID_FORE]);
 	teams[team_nums].team_events_nums = 0;
 
-	//ÎªÃ¿¸öÍÅ¶ÓµÄ³ÉÔ±ĞÅÏ¢×¨ÃÅ´´½¨ÎÄ¼ş²¢Ğ´Èë
+	//ä¸ºæ¯ä¸ªå›¢é˜Ÿçš„æˆå‘˜ä¿¡æ¯ä¸“é—¨åˆ›å»ºæ–‡ä»¶å¹¶å†™å…¥
 	QString filename = QString::number(new_team_id) + "_team members.txt";
 	QFile file(filename);
 	if (!file.open(QIODevice::WriteOnly | QIODevice::Text | QIODevice::Append))
 		return;
 	QTextStream out(&file);
 	out << teams[team_nums].team_members_nums << ",";
-	//Ñ­»·Ğ´ÈëËùÓĞ³ÉÔ±µÄid
+	//å¾ªç¯å†™å…¥æ‰€æœ‰æˆå‘˜çš„id
 	for (int i = 0; i < teams[team_nums].team_members_nums; i++)
 	{
 		out << teams[team_nums].team_members[i].usr_id << ",";
 	}
 
 
-	//ÎªÃ¿¸öÍÅ¶ÓµÄÊÂ¼şĞÅÏ¢×¨ÃÅ´´½¨ÎÄ¼ş
+	//ä¸ºæ¯ä¸ªå›¢é˜Ÿçš„äº‹ä»¶ä¿¡æ¯ä¸“é—¨åˆ›å»ºæ–‡ä»¶
 	QString filename_2 = QString::number(new_team_id) + "_team events.txt";
 	QFile file_2(filename_2);
 	if (!file_2.open(QIODevice::WriteOnly | QIODevice::Text | QIODevice::Append))
@@ -493,30 +495,30 @@ void team_mng::confirm_creat(const QString& teamName, const QString& password)
 	{
 		qDebug() << users[USR_ID_NOW - USER_ID_FORE].teams_create[i].team_id << " " << users[USR_ID_NOW - USER_ID_FORE].teams_create[i].team_name << " " << users[USR_ID_NOW - USER_ID_FORE].teams_create[i].leader_id << " " << users[USR_ID_NOW - USER_ID_FORE].teams_create[i].team_members_nums << " " << users[USR_ID_NOW - USER_ID_FORE].teams_create[i].team_members[0].usr_id << " " << users[USR_ID_NOW - USER_ID_FORE].teams_create[i].team_events_nums;
 	}
-	//½«ĞÂÍÅ¶ÓµÄĞÅÏ¢Ğ´ÈëÓÃ»§µÄÍÅ¶ÓÁĞ±í
+	//å°†æ–°å›¢é˜Ÿçš„ä¿¡æ¯å†™å…¥ç”¨æˆ·çš„å›¢é˜Ÿåˆ—è¡¨
 	users[USR_ID_NOW - USER_ID_FORE].teams_create.push_back(teams[team_nums]);
-	//´òÓ¡¼ì²éusers[USR_ID_NOW - USER_ID_FORE].teams_createÖĞµÄÄÚÈİ
+	//æ‰“å°æ£€æŸ¥users[USR_ID_NOW - USER_ID_FORE].teams_createä¸­çš„å†…å®¹
 	for (int i = 0; i < users[USR_ID_NOW - USER_ID_FORE].teams_create.size(); i++)
 	{
 		qDebug() << users[USR_ID_NOW - USER_ID_FORE].teams_create[i].team_id << " " << users[USR_ID_NOW - USER_ID_FORE].teams_create[i].team_name << " " << users[USR_ID_NOW - USER_ID_FORE].teams_create[i].leader_id << " " << users[USR_ID_NOW - USER_ID_FORE].teams_create[i].team_members_nums << " " << users[USR_ID_NOW - USER_ID_FORE].teams_create[i].team_members[0].usr_id << " " << users[USR_ID_NOW - USER_ID_FORE].teams_create[i].team_events_nums;
 	}
 
-	//¸üĞÂÓÃ»§µÄÍÅ¶Ó´´½¨ÎÄ¼ş
-	//ÏÈÇå¿ÕÎÄ¼ş
+	//æ›´æ–°ç”¨æˆ·çš„å›¢é˜Ÿåˆ›å»ºæ–‡ä»¶
+	//å…ˆæ¸…ç©ºæ–‡ä»¶
 	QString filename_usr_create = users[USR_ID_NOW - USER_ID_FORE].usr_team_create_filename;
 	QFile team_create_file(filename_usr_create);
 	if (!team_create_file.open(QIODevice::ReadWrite | QIODevice::Text | QIODevice::Append))
 		return;
 	QTextStream out_usr_create(&team_create_file);
 	team_create_file.seek(0);
-	//¶ÁÈ¡ÎÄ¼şÖĞµÚÒ»¸ö¶ººÅÇ°µÄÄÚÈİ´æÈëusers[USR_ID_NOW - USER_ID_FORE].usr_team_create_num
+	//è¯»å–æ–‡ä»¶ä¸­ç¬¬ä¸€ä¸ªé€—å·å‰çš„å†…å®¹å­˜å…¥users[USR_ID_NOW - USER_ID_FORE].usr_team_create_num
 	QString temp;
 	temp = team_create_file.readLine();
 	users[USR_ID_NOW - USER_ID_FORE].usr_team_create_num = temp.section(',', 0, 0).toInt();
 	team_create_file.resize(0);
-	//ÔÙĞ´ÈëÊı¾İ
-	//´´½¨µÄÍÅ¶ÓÊıÁ¿
-	//ÍÅ¶Ó1µÄid£¬ÍÅ¶Ó1µÄÃû³Æ£¬ÍÅ¶Ó1ÏÖÓĞ×ÜÈËÊı£¬ÍÅ¶Ó1µÄÈ«²¿³ÉÔ±
+	//å†å†™å…¥æ•°æ®
+	//åˆ›å»ºçš„å›¢é˜Ÿæ•°é‡
+	//å›¢é˜Ÿ1çš„idï¼Œå›¢é˜Ÿ1çš„åç§°ï¼Œå›¢é˜Ÿ1ç°æœ‰æ€»äººæ•°ï¼Œå›¢é˜Ÿ1çš„å…¨éƒ¨æˆå‘˜
 	qDebug() << "users[USR_ID_NOW - USER_ID_FORE].usr_team_create_num++;" << users[USR_ID_NOW - USER_ID_FORE].usr_team_create_num;
 	users[USR_ID_NOW - USER_ID_FORE].usr_team_create_num++;
 	qDebug() << "users[USR_ID_NOW - USER_ID_FORE].usr_team_create_num++;" << users[USR_ID_NOW - USER_ID_FORE].usr_team_create_num;
@@ -531,23 +533,23 @@ void team_mng::confirm_creat(const QString& teamName, const QString& password)
 			out_usr_create << users[USR_ID_NOW - USER_ID_FORE].teams_create[i].team_members[j].usr_id << ",";
 		}
 	}
-	//¹Ø±ÕÎÄ¼ş
+	//å…³é—­æ–‡ä»¶
 	team_create_file.close();
 
 
-	//¸üĞÂÓÃ»§µÄÍÅ¶Ó´ÓÊôÎÄ¼ş
+	//æ›´æ–°ç”¨æˆ·çš„å›¢é˜Ÿä»å±æ–‡ä»¶
 	users[USR_ID_NOW - USER_ID_FORE].teams_belong.push_back(teams[new_team_id - TEAM_ID_FORE]);
-	//¸üĞÂÓÃ»§µÄÍÅ¶ÓÎÄ¼ş
-	//ÏÈÇå¿ÕÎÄ¼ş
+	//æ›´æ–°ç”¨æˆ·çš„å›¢é˜Ÿæ–‡ä»¶
+	//å…ˆæ¸…ç©ºæ–‡ä»¶
 	QString filename_usr_belong = users[USR_ID_NOW - USER_ID_FORE].usr_team_belong_filename;
 	QFile team_belong_file(filename_usr_belong);
 	if (!team_belong_file.open(QIODevice::ReadWrite | QIODevice::Text | QIODevice::Append))
 		return;
 	QTextStream out_usr_belong(&team_belong_file);
 	team_belong_file.resize(0);
-	//ÔÙĞ´ÈëÊı¾İ
-	//´´½¨µÄÍÅ¶ÓÊıÁ¿
-	//ÍÅ¶Ó1µÄid£¬ÍÅ¶Ó1µÄÃû³Æ£¬ÍÅ¶Ó1´´Ê¼ÈË£¬ÍÅ¶Ó1ÏÖÓĞ×ÜÈËÊı£¬ÍÅ¶Ó1µÄÈ«²¿³ÉÔ±
+	//å†å†™å…¥æ•°æ®
+	//åˆ›å»ºçš„å›¢é˜Ÿæ•°é‡
+	//å›¢é˜Ÿ1çš„idï¼Œå›¢é˜Ÿ1çš„åç§°ï¼Œå›¢é˜Ÿ1åˆ›å§‹äººï¼Œå›¢é˜Ÿ1ç°æœ‰æ€»äººæ•°ï¼Œå›¢é˜Ÿ1çš„å…¨éƒ¨æˆå‘˜
 	out_usr_belong << users[USR_ID_NOW - USER_ID_FORE].usr_team_belong_num << ",";
 	qDebug()<< users[USR_ID_NOW - USER_ID_FORE].usr_team_belong_num;
 	for (int i = 0; i < users[USR_ID_NOW - USER_ID_FORE].usr_team_belong_num; i++)
@@ -562,11 +564,11 @@ void team_mng::confirm_creat(const QString& teamName, const QString& password)
 		}
 	}
 
-	//¹Ø±ÕÎÄ¼ş
+	//å…³é—­æ–‡ä»¶
 	team_belong_file.close();
 	
 
-	//½«ĞÂÍÅ¶ÓµÄĞÅÏ¢Ğ´ÈëTEAMSÎÄ¼şºÍ´´½¨×Ô¼ºµÄÎÄ¼ş
+	//å°†æ–°å›¢é˜Ÿçš„ä¿¡æ¯å†™å…¥TEAMSæ–‡ä»¶å’Œåˆ›å»ºè‡ªå·±çš„æ–‡ä»¶
 	QFile team_file("TEAMS.txt");
 	if (!team_file.open(QIODevice::WriteOnly | QIODevice::Text | QIODevice::Append))
 		return;
@@ -574,7 +576,7 @@ void team_mng::confirm_creat(const QString& teamName, const QString& password)
 	team_file_out << teams[team_nums].team_id << "," << teamName << "," << password << "," << USR_ID_NOW << "," << 1 << "," << 0 << "," << filename << "," << filename_2;
 	team_file_out << "\n";
 	team_file.close();
-	//¸üĞÂ±í¸ñÊÓÍ¼
+	//æ›´æ–°è¡¨æ ¼è§†å›¾
 	team_nums++;
 	updateTable_team();
 	
@@ -582,11 +584,84 @@ void team_mng::confirm_creat(const QString& teamName, const QString& password)
 
 
 
+
+
+void  init_team_members_structarr(QVector<USER>team_members, int size, QString filename)
+{
+	//åˆå§‹åŒ–å›¢é˜Ÿæˆå‘˜
+	QFile file(filename);
+	if (file.open(QIODevice::ReadOnly | QIODevice::Text)) {
+		QTextStream in(&file);
+		int index = 0;
+		while (!in.atEnd() && index < size)
+		{
+			QRegularExpression re(",$");
+			QString line = in.readLine().replace(re, "");
+			;
+			QStringList values = line.split(',');
+
+			//å‚è€ƒä»¥ä¸Šå†™å…¥ï¼Œè¯»å–æ–‡ä»¶å†…å®¹å¹¶ä¿å­˜åˆ°ç»“æ„ä½“æ•°ç»„
+			if (values.size() >= 5) {
+				team_members[index].usr_id = values[0].toInt();
+				team_members[index].usr_name = values[1];
+				team_members[index].usr_passwd = values[2];
+				team_members[index].usr_team_belong_num = values[3].toInt();
+				team_members[index].usr_team_belong_filename = values[4];
+				index++;
+			}
+		
+		}
+		file.close();
+		qDebug() << "The team members structure array is initialized successfully!";
+	}
+	else {
+		qDebug() << "Could not open The team members structure array file!";
+	}
+}
+void  init_team_events_structarr(QVector<EVENT> team_events, int size, QString filename)
+{
+	//åˆå§‹åŒ–å›¢é˜Ÿäº‹ä»¶
+	QFile file(filename);
+	if (file.open(QIODevice::ReadOnly | QIODevice::Text)) {
+		QTextStream in(&file);
+		int index = 0;
+		while (!in.atEnd() && index < size)
+		{
+			QRegularExpression re(",$");
+			QString line = in.readLine().replace(re, "");
+			;
+			QStringList values = line.split(',');
+			//è¯»å–æ–‡ä»¶å†…å®¹å¹¶ä¿å­˜åˆ°ç»“æ„ä½“æ•°ç»„
+			if (values.size() >= 7) {
+				//ç”¨qdebugï¼ˆï¼‰æ‰“å°valueä¸­çš„æ‰€æœ‰å†…å®¹æ£€æŸ¥
+				for (int i = 0; i < 7; i++) qDebug() << values[i];
+				qDebug() << index;
+				team_events[index].event_name=values[0];
+				team_events[index].event_position = values[1];
+				team_events[index].event_starttime = values[2];
+				team_events[index].event_endtime = values[3];
+				team_events[index].event_type = values[4];
+				team_events[index].urgentdegree = values[5].toInt();
+				team_events[index].event_content= values[6];
+				
+				
+				index++;
+			}
+		
+		}
+		file.close();
+		qDebug() << "The team events structure array is initialized successfully!";
+	}
+	else {
+		qDebug() << "Could not open The team events structure array file!";
+	}
+}
+
 void init_teams_structarr(TEAM* teams, int size)
 {
 	QFile file("TEAMS.txt");
 
-	if (file.open(QIODevice::ReadOnly | QIODevice::Text)){
+	if (file.open(QIODevice::ReadOnly | QIODevice::Text)) {
 		QTextStream stream(&file);
 
 		int index = 0;
@@ -598,7 +673,7 @@ void init_teams_structarr(TEAM* teams, int size)
 			;
 			QStringList values = line.split(',');
 
-			// ¶ÁÈ¡²¢±£´æµ½½á¹¹ÌåÊı×é
+			// è¯»å–å¹¶ä¿å­˜åˆ°ç»“æ„ä½“æ•°ç»„
 			if (values.size() >= 8) {
 
 				teams[index].team_id = values[0].toInt();
@@ -621,49 +696,56 @@ void init_teams_structarr(TEAM* teams, int size)
 	else {
 		qDebug() << "Could not open The team structure array file!";
 	}
-
+	//æ›´æ–°æ¯ä¸ªå›¢é˜Ÿçš„å…¶ä»–æ•°æ®
+	for (int i = 0; i < team_nums; i++)
+	{
+		//åˆå§‹åŒ–å›¢é˜Ÿæˆå‘˜
+		init_team_members_structarr(teams[i].team_members, teams[i].team_members_nums, teams[i].team_members_filename);
+		//åˆå§‹åŒ–å›¢é˜Ÿäº‹ä»¶
+		init_team_events_structarr(teams[i].team_events, teams[i].team_events_nums, teams[i].team_events_filename);
+	}
 }
 
 void team_mng::updateTable_team()
 {
-	//¸üĞÂ´´½¨µÄÍÅ¶Ó
+	//æ›´æ–°åˆ›å»ºçš„å›¢é˜Ÿ
 	QFile file_create(users[USR_ID_NOW - USER_ID_FORE].usr_team_create_filename);
 	qDebug() << "users[USR_ID_NOW - USER_ID_FORE].usr_team_create_filename "<< users[USR_ID_NOW - USER_ID_FORE].usr_team_create_filename;
 	if (file_create.open(QIODevice::ReadOnly | QIODevice::Text)) {
 		QTextStream in(&file_create);
 
-		// Çå¿ÕÔ­ÓĞ±í¸ñÄÚÈİ
+		// æ¸…ç©ºåŸæœ‰è¡¨æ ¼å†…å®¹
 		ui.tableWidget_2->clearContents();
 		ui.tableWidget_2->setRowCount(0);
-		ui.tableWidget_2->setColumnCount(3); // ÉèÖÃÁĞÊıÎª3
-		//ui.tableWidget->setHorizontalHeaderLabels(QStringList()<<"ÍÅ¶ÓID"<<"ÍÅ¶ÓÃû³Æ"<<"ÍÅ¶ÓÏÖÓĞ×ÜÈËÊı");
+		ui.tableWidget_2->setColumnCount(3); // è®¾ç½®åˆ—æ•°ä¸º3
+		//ui.tableWidget->setHorizontalHeaderLabels(QStringList()<<"å›¢é˜ŸID"<<"å›¢é˜Ÿåç§°"<<"å›¢é˜Ÿç°æœ‰æ€»äººæ•°");
 		ui.tableWidget_2->setHorizontalHeaderLabels(QStringList() << "team id" << "team name" <<  "total number of the team");
-		int row = 0; // ĞĞ¼ÆÊıÆ÷
+		int row = 0; // è¡Œè®¡æ•°å™¨
 		while (!in.atEnd()) {
 			QString line = in.readLine().trimmed();
 			QStringList fields = line.split(",");
 
 			if (fields.size() >= 3) {
-				QString content1 = fields[1]; // µÚÒ»¸ö×Ö¶ÎÄÚÈİ
-				QString content2 = fields[2]; // µÚ¶ş¸ö×Ö¶ÎÄÚÈİ
-				QString content3 = fields[3]; // µÚÈı¸ö×Ö¶ÎÄÚÈİ
-				// ÔÚ±í¸ñÖĞÌí¼ÓÒ»ĞĞ
+				QString content1 = fields[1]; // ç¬¬ä¸€ä¸ªå­—æ®µå†…å®¹
+				QString content2 = fields[2]; // ç¬¬äºŒä¸ªå­—æ®µå†…å®¹
+				QString content3 = fields[3]; // ç¬¬ä¸‰ä¸ªå­—æ®µå†…å®¹
+				// åœ¨è¡¨æ ¼ä¸­æ·»åŠ ä¸€è¡Œ
 				ui.tableWidget_2->insertRow(row);
 				qDebug()<<"add a line in QTableWidget! " << content1 << content2 << content3;
-				// ´´½¨QTableWidgetItem²¢ÉèÖÃÄÚÈİ
+				// åˆ›å»ºQTableWidgetItemå¹¶è®¾ç½®å†…å®¹
 				QTableWidgetItem* item1 = new QTableWidgetItem(content1);
 				QTableWidgetItem* item2 = new QTableWidgetItem(content2);
 				QTableWidgetItem* item3 = new QTableWidgetItem(content3);
-				//×Ô¶¯µ÷ÕûÃ¿Ò»ÁĞµÄ³¤¶È
+				//è‡ªåŠ¨è°ƒæ•´æ¯ä¸€åˆ—çš„é•¿åº¦
 				ui.tableWidget_2->horizontalHeader()->setSectionResizeMode(QHeaderView::Stretch);
-				//ÔÊĞíÓÃ»§×Ô¼ºµ÷Õû
+				//å…è®¸ç”¨æˆ·è‡ªå·±è°ƒæ•´
 				//ui.tableWidget->horizontalHeader()->setSectionResizeMode(QHeaderView::Interactive);
 				ui.tableWidget_2->resizeColumnsToContents();
-				// ½«QTableWidgetItemÌí¼Óµ½±í¸ñÖĞµÄ¶ÔÓ¦Î»ÖÃ
+				// å°†QTableWidgetItemæ·»åŠ åˆ°è¡¨æ ¼ä¸­çš„å¯¹åº”ä½ç½®
 				ui.tableWidget_2->setItem(row, 0, item1);
 				ui.tableWidget_2->setItem(row, 1, item2);
 				ui.tableWidget_2->setItem(row, 2, item3);
-				row++; // ĞĞ¼ÆÊıÆ÷µİÔö
+				row++; // è¡Œè®¡æ•°å™¨é€’å¢
 			}
 
 		}
@@ -671,47 +753,47 @@ void team_mng::updateTable_team()
 
 	}
 
-	//¸üĞÂ´ÓÊôµÄÍÅ¶Ó
+	//æ›´æ–°ä»å±çš„å›¢é˜Ÿ
 	QFile file_belong(users[USR_ID_NOW - USER_ID_FORE].usr_team_belong_filename);
 	
 	if (file_belong.open(QIODevice::ReadOnly | QIODevice::Text)){
 		QTextStream in(&file_belong);
 
-		// Çå¿ÕÔ­ÓĞ±í¸ñÄÚÈİ
+		// æ¸…ç©ºåŸæœ‰è¡¨æ ¼å†…å®¹
 		ui.tableWidget->clearContents();
 		ui.tableWidget->setRowCount(0);
-		ui.tableWidget->setColumnCount(4); // ÉèÖÃÁĞÊıÎª4
-		//ui.tableWidget->setHorizontalHeaderLabels(QStringList()<<"ÍÅ¶ÓID"<<"ÍÅ¶ÓÃû³Æ"<<"ÍÅ¶Ó´´Ê¼ÈË"<<"ÍÅ¶ÓÏÖÓĞ×ÜÈËÊı");
+		ui.tableWidget->setColumnCount(4); // è®¾ç½®åˆ—æ•°ä¸º4
+		//ui.tableWidget->setHorizontalHeaderLabels(QStringList()<<"å›¢é˜ŸID"<<"å›¢é˜Ÿåç§°"<<"å›¢é˜Ÿåˆ›å§‹äºº"<<"å›¢é˜Ÿç°æœ‰æ€»äººæ•°");
 		ui.tableWidget->setHorizontalHeaderLabels(QStringList() << "team id" << "team name" << "memner num" << "founder");
-		int row = 0; // ĞĞ¼ÆÊıÆ÷
+		int row = 0; // è¡Œè®¡æ•°å™¨
 		while (!in.atEnd()) {
 			QString line = in.readLine().trimmed();
 			QStringList fields = line.split(",");
 
 			if (fields.size() >= 4) {
-				QString content1 = fields[1]; // µÚÒ»¸ö×Ö¶ÎÄÚÈİ
-				QString content2 = fields[2]; // µÚ¶ş¸ö×Ö¶ÎÄÚÈİ
-				QString content3 = fields[3]; // µÚÈı¸ö×Ö¶ÎÄÚÈİ
-				QString content4 = fields[4]; // µÚËÄ¸ö×Ö¶ÎÄÚÈİ
-				// ÔÚ±í¸ñÖĞÌí¼ÓÒ»ĞĞ
+				QString content1 = fields[1]; // ç¬¬ä¸€ä¸ªå­—æ®µå†…å®¹
+				QString content2 = fields[2]; // ç¬¬äºŒä¸ªå­—æ®µå†…å®¹
+				QString content3 = fields[3]; // ç¬¬ä¸‰ä¸ªå­—æ®µå†…å®¹
+				QString content4 = fields[4]; // ç¬¬å››ä¸ªå­—æ®µå†…å®¹
+				// åœ¨è¡¨æ ¼ä¸­æ·»åŠ ä¸€è¡Œ
 				ui.tableWidget->insertRow(row);
 				qDebug() << "add a line in QTableWidget! " << content1 << content2 << content3<<content4;
-				// ´´½¨QTableWidgetItem²¢ÉèÖÃÄÚÈİ
+				// åˆ›å»ºQTableWidgetItemå¹¶è®¾ç½®å†…å®¹
 				QTableWidgetItem* item1 = new QTableWidgetItem(content1);
 				QTableWidgetItem* item2 = new QTableWidgetItem(content2);
 				QTableWidgetItem* item3 = new QTableWidgetItem(content3);
 				QTableWidgetItem* item4 = new QTableWidgetItem(content4);
-				//×Ô¶¯µ÷ÕûÃ¿Ò»ÁĞµÄ³¤¶È
+				//è‡ªåŠ¨è°ƒæ•´æ¯ä¸€åˆ—çš„é•¿åº¦
 				ui.tableWidget->horizontalHeader()->setSectionResizeMode(QHeaderView::Stretch);
-				//ÔÊĞíÓÃ»§×Ô¼ºµ÷Õû
+				//å…è®¸ç”¨æˆ·è‡ªå·±è°ƒæ•´
 				//ui.tableWidget->horizontalHeader()->setSectionResizeMode(QHeaderView::Interactive);
 				ui.tableWidget->resizeColumnsToContents();
-				// ½«QTableWidgetItemÌí¼Óµ½±í¸ñÖĞµÄ¶ÔÓ¦Î»ÖÃ
+				// å°†QTableWidgetItemæ·»åŠ åˆ°è¡¨æ ¼ä¸­çš„å¯¹åº”ä½ç½®
 				ui.tableWidget->setItem(row, 0, item1);
 				ui.tableWidget->setItem(row, 1, item2);
 				ui.tableWidget->setItem(row, 2, item3);
 				ui.tableWidget->setItem(row, 3, item4);
-				row++; // ĞĞ¼ÆÊıÆ÷µİÔö
+				row++; // è¡Œè®¡æ•°å™¨é€’å¢
 			}
 
 		}
@@ -724,24 +806,26 @@ void team_mng::updateTable_team()
 
 void team_mng::on_doubleClicked_belong()
 {
-	//Ë«»÷QTableWidgetĞĞ£¬½øÈë¸ÃĞĞ¶ÔÓ¦µÄteam_id£¬²¢ÇÒ´«Èë´ò¿ªµÄÍÅ¶ÓÈÕÀú´°¿Ú
+	//åŒå‡»QTableWidgetè¡Œï¼Œè¿›å…¥è¯¥è¡Œå¯¹åº”çš„team_idï¼Œå¹¶ä¸”ä¼ å…¥æ‰“å¼€çš„å›¢é˜Ÿæ—¥å†çª—å£
 	QModelIndex index = ui.tableWidget->currentIndex();
 	int row = index.row();
 	QTableWidgetItem *item = ui.tableWidget->item(row, 0);
 	QString team_id = item->text();
 	//qDebug() << team_id;
 	//qDebug() << "double clicked";
-	//´ò¿ªÍÅ¶ÓÈÕÀú´°¿Ú
+	//æ‰“å¼€å›¢é˜Ÿæ—¥å†çª—å£
 	calendar_team *calendar = new calendar_team;
 	calendar->setWindowTitle("Team Calendar");
 	calendar->set_team_id(team_id);
+	//æ— ç”¨
 	calendar->updateTable_calendar();
 	calendar->show();
 }
 
 void team_mng::on_doubleClicked_create()
 {
-	//Ë«»÷QTableWidgetĞĞ£¬½øÈë¸ÃĞĞ¶ÔÓ¦µÄteam_id£¬²¢ÇÒ´«Èë´ò¿ªµÄÍÅ¶ÓÈÕÀú´°¿Ú
+
+	//åŒå‡»QTableWidgetè¡Œï¼Œè¿›å…¥è¯¥è¡Œå¯¹åº”çš„team_idï¼Œå¹¶ä¸”ä¼ å…¥æ‰“å¼€çš„å›¢é˜Ÿæ—¥å†çª—å£
 	QModelIndex index = ui.tableWidget_2->currentIndex();
 	int row = index.row();
 	QTableWidgetItem* item = ui.tableWidget_2->item(row, 0);
@@ -749,10 +833,11 @@ void team_mng::on_doubleClicked_create()
 	qDebug() << "on_doubleClicked_create" << team_id;
 	//qDebug() << team_id;
 	//qDebug() << "double clicked";
-	//´ò¿ªÍÅ¶ÓÈÕÀú´°¿Ú
+	//æ‰“å¼€å›¢é˜Ÿæ—¥å†çª—å£
 	calendar_team* calendar = new calendar_team;
 	calendar->setWindowTitle("Team Calendar");
 	calendar->set_team_id(team_id);
+	//æ— ç”¨
 	calendar->updateTable_calendar();
 	calendar->show();
 }

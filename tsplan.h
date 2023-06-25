@@ -1,4 +1,4 @@
-#pragma once
+ï»¿#pragma once
 #ifndef TSPLAN_H
 #define TSPLAN_H
 
@@ -29,12 +29,12 @@ public slots:
     void handleWeatherData(QNetworkReply* reply);
 
 private:
-    QLabel* weatherLabel; // ÏÔÊ¾ÌìÆøĞÅÏ¢µÄ±êÇ©
-    QNetworkAccessManager* networkManager; // ÍøÂç¹ÜÀíÆ÷
-    QTimer* timer; // ¶¨Ê±Æ÷
-
+    QLabel* weatherLabel; // æ˜¾ç¤ºå¤©æ°”ä¿¡æ¯çš„æ ‡ç­¾
+    QNetworkAccessManager* networkManager; // ç½‘ç»œç®¡ç†å™¨
+    QTimer* timer; // å®šæ—¶å™¨
+    QString notice;
 signals:
-    // ¶¨ÒåÒ»¸öĞÅºÅ£¬ÓÃÀ´Í¨ÖªÁíÒ»¸öÀàÊı¾İÒÑ¾­×¼±¸ºÃÁË
+    // å®šä¹‰ä¸€ä¸ªä¿¡å·ï¼Œç”¨æ¥é€šçŸ¥å¦ä¸€ä¸ªç±»æ•°æ®å·²ç»å‡†å¤‡å¥½äº†
     void dataReady();
 };
 

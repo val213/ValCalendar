@@ -9,7 +9,8 @@ public:
 	~reg_n_login();
 	int USR_ID=0;
 	QString USR_PSWD;
-	
+private:
+	QPixmap m_imgTitle, m_back;
 
 
 

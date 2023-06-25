@@ -1,7 +1,7 @@
-#pragma once
+ï»¿#pragma once
 #include"config.h"
 #include"TEAM.h"
-//TEAM½á¹¹ÌåµÄÇ°ÏòÉùÃ÷£¬ÈÃÓÃ»§½á¹¹ÌåÄÜ¹»°ÑTEAM×÷Îª³ÉÔ±
+//TEAMç»“æ„ä½“çš„å‰å‘å£°æ˜ï¼Œè®©ç”¨æˆ·ç»“æ„ä½“èƒ½å¤ŸæŠŠTEAMä½œä¸ºæˆå‘˜
 struct TEAM;
 struct USER
 {
@@ -9,15 +9,15 @@ struct USER
 	QString usr_passwd;
 	QString usr_name;
 	QString usr_filename;
-	//´æ·ÅÓÃ»§´´½¨µÄÍÅ¶ÓĞÅÏ¢µÄÎÄ¼ş
+	//å­˜æ”¾ç”¨æˆ·åˆ›å»ºçš„å›¢é˜Ÿä¿¡æ¯çš„æ–‡ä»¶
 	QString usr_team_create_filename;
-	//´æ·ÅÓÃ»§ËùÊôµÄÍÅ¶ÓĞÅÏ¢µÄÎÄ¼ş
+	//å­˜æ”¾ç”¨æˆ·æ‰€å±çš„å›¢é˜Ÿä¿¡æ¯çš„æ–‡ä»¶
 	QString usr_team_belong_filename;
 	int usr_team_create_num;
 	int usr_team_belong_num;
 	QVector<TEAM>teams_create;
 	QVector<TEAM>teams_belong;
-	//ÔÚÄÚ²¿ÖØÔØÔËËã·û==£¬±ãÓÚÔÚÓÃ»§ÍË³öÍÅ¶ÓµÄÊ±ºò°´ÕÕid¼ìË÷³ÉÔ±É¾³ı
+	//åœ¨å†…éƒ¨é‡è½½è¿ç®—ç¬¦==ï¼Œä¾¿äºåœ¨ç”¨æˆ·é€€å‡ºå›¢é˜Ÿçš„æ—¶å€™æŒ‰ç…§idæ£€ç´¢æˆå‘˜åˆ é™¤
 	bool operator==(const USER& other) const
 	{
 		return (usr_id == other.usr_id &&
@@ -33,5 +33,5 @@ struct USER
 	}
 
 };
-//Õâ¸öÍâ²¿±äÁ¿ÉùÃ÷Ò²±ØĞëÔÚUSER½á¹¹ÌåÉùÃ÷Ö®ºó²ÅÓĞÒâÒå
+//è¿™ä¸ªå¤–éƒ¨å˜é‡å£°æ˜ä¹Ÿå¿…é¡»åœ¨USERç»“æ„ä½“å£°æ˜ä¹‹åæ‰æœ‰æ„ä¹‰
 extern USER users[MAX_USRS_NUM];

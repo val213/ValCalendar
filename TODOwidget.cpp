@@ -1,4 +1,4 @@
-#include"config.h"
+ï»¿#include"config.h"
 #include<qwebchannel.h>
 #include <QWebEngineSettings>
 #include <QWebEngineView>
@@ -13,54 +13,58 @@ TODOwidget::TODOwidget(QWidget* parent)
     this->setWindowTitle("Add to do");
 	connect(ui.buttonBox,&QDialogButtonBox::accepted,this,&TODOwidget::TODOwidget_accepted);
 	connect(ui.buttonBox, &QDialogButtonBox::rejected, this, &TODOwidget::close);
-
+    ui.webEngineView->show();
+    
     JSBridge = new bridge(ui.webEngineView, this); 
     QWebChannel* channel = new QWebChannel(this);
-    channel->registerObject("bridge", JSBridge); // ½«¶ÔÏóÃû³Æ¸ÄÎª"bridge"
+    channel->registerObject("bridge", JSBridge); // å°†å¯¹è±¡åç§°æ”¹ä¸º"bridge"
 
 
     ui.webEngineView->settings()->setAttribute(QWebEngineSettings::JavascriptEnabled, true);
     ui.webEngineView->settings()->setAttribute(QWebEngineSettings::WebGLEnabled, true);
-    // ½« QWebChannel ¶ÔÏó°ó¶¨µ½ view µÄ profile ÖĞ
+    // å°† QWebChannel å¯¹è±¡ç»‘å®šåˆ° view çš„ profile ä¸­
     ui.webEngineView->page()->setWebChannel(channel);
-
-
-    //ui.webEngineView->settings()->setAttribute(QWebEngineSettings::JavascriptEnabled, true);
-    //ui.webEngineView->setGeometry(QRect(10, 30, 581, 341));// ÉèÖÃÃªµãÓë´óĞ¡
-    //ui.webEngineView->load(QUrl("C:\\Users\\yangluwei\\source\\repos\\calendar\\calendar\\Baidu_JS\\BDmap.html"));
-    //QString path = QApplication::applicationDirPath() + "/BDmap.html";  //½«htmlÎÄ¼ş·ÅÈëdebugÄ¿Â¼ÏÂ
-    //qDebug() << __FUNCTION__ << path;
     ui.webEngineView->load(QUrl("qrc:/calendar/Baidu_JS/BDmap.html"));
-    //ui.webEngineView->load(QUrl::fromLocalFile(path));
-
-    //ui.webEngineView->load(QUrl(u8"https://www.ditu6.com/walk/"));  // ¼ÓÔØÄ¿±êÍøÒ³
 
     connect(ui.webEngineView, &QWebEngineView::loadFinished, [](bool ok) {
         if (ok) {
-            // Ò³Ãæ¼ÓÔØÍê³ÉºóÖ´ĞĞµÄ²Ù×÷
+            // é¡µé¢åŠ è½½å®Œæˆåæ‰§è¡Œçš„æ“ä½œ
             qDebug() << "Page loaded successfully";
-  
-           
+
+
         }
         else {
-            // Ò³Ãæ¼ÓÔØÊ§°ÜÊ±Ö´ĞĞµÄ²Ù×÷
+            // é¡µé¢åŠ è½½å¤±è´¥æ—¶æ‰§è¡Œçš„æ“ä½œ
             qDebug() << "Page failed to load";
         }
         });
-    connect(ui.calculateButton, &QPushButton::clicked, this, &TODOwidget::onCalculateButtonClicked);
+    
     connect(JSBridge, &bridge::distanceAndTimeCalculated, this, &TODOwidget::onDistanceAndTimeCalculated);
 
-    ui.webEngineView->show();
+    ui.webEngineView->page()->setDevToolsPage(ui.webEngineView->page());
 
+    
+    connect(ui.calculateButton, &QPushButton::clicked, this, &TODOwidget::onCalculateButtonClicked);
+    //ui.webEngineView->settings()->setAttribute(QWebEngineSettings::JavascriptEnabled, true);
+    //ui.webEngineView->setGeometry(QRect(10, 30, 581, 341));// è®¾ç½®é”šç‚¹ä¸å¤§å°
+    //ui.webEngineView->load(QUrl("C:\\Users\\yangluwei\\source\\repos\\calendar\\calendar\\Baidu_JS\\BDmap.html"));
+    //QString path = QApplication::applicationDirPath() + "/BDmap.html";  //å°†htmlæ–‡ä»¶æ”¾å…¥debugç›®å½•ä¸‹
+    //qDebug() << __FUNCTION__ << path;
+    
+    //ui.webEngineView->load(QUrl::fromLocalFile(path));
+
+    //ui.webEngineView->load(QUrl(u8"https://www.ditu6.com/walk/"));  // åŠ è½½ç›®æ ‡ç½‘é¡µ
+
+    
        
-    //ui.webEngineView->setZoomFactor(1.2);  // µ÷ÕûËõ·ÅÒò×ÓÒÔÊÊÓ¦Ò³Ãæ´óĞ¡
+    //ui.webEngineView->setZoomFactor(1.2);  // è°ƒæ•´ç¼©æ”¾å› å­ä»¥é€‚åº”é¡µé¢å¤§å°
 
     
    // ui.webEngineView->page()->setWebChannel(channel);
     
     /*
-    QString htmlPath = QCoreApplication::applicationDirPath() + "Baidu_JS/BDmap.html";//´Ó´ËhtmlÎÄ¼şÖĞ¶ÁÈ¡ÄÚÈİºóĞ´Èëwebview
-    QUrl baseUrl = QCoreApplication::applicationDirPath() + "/Baidu_JS/";//Íâ²¿¶ÔÏó£¬°üÀ¨ÒÔÏÂCSSºÍjsÎÄ¼ş
+    QString htmlPath = QCoreApplication::applicationDirPath() + "Baidu_JS/BDmap.html";//ä»æ­¤htmlæ–‡ä»¶ä¸­è¯»å–å†…å®¹åå†™å…¥webview
+    QUrl baseUrl = QCoreApplication::applicationDirPath() + "/Baidu_JS/";//å¤–éƒ¨å¯¹è±¡ï¼ŒåŒ…æ‹¬ä»¥ä¸‹CSSå’Œjsæ–‡ä»¶
     QFile file(htmlPath);
     if (!file.open(QIODevice::ReadOnly))
     {
@@ -81,18 +85,18 @@ TODOwidget::TODOwidget(QWidget* parent)
 
 void TODOwidget::onCalculateButtonClicked()
 {
-    // »ñÈ¡ÆğµãºÍÖÕµãÊäÈë¿òµÄÎÄ±¾
+    // è·å–èµ·ç‚¹å’Œç»ˆç‚¹è¾“å…¥æ¡†çš„æ–‡æœ¬
     QString start = ui.startInput->text();
     QString end = ui.endInput->text();
 
-    // µ÷ÓÃJSBridgeµÄ²Ûº¯Êı£¬½«ÆğµãºÍÖÕµã´«µİ¸øJSÎÄ¼ş
+    // è°ƒç”¨JSBridgeçš„æ§½å‡½æ•°ï¼Œå°†èµ·ç‚¹å’Œç»ˆç‚¹ä¼ é€’ç»™JSæ–‡ä»¶
     JSBridge->setStartAndEnd(start, end);
 }
 
-// ²Ûº¯Êı£¬ÓÃÓÚ½ÓÊÕ¼ÆËã½á¹û²¢¸üĞÂQTÖĞµÄÎÄ±¾¿ò
+// æ§½å‡½æ•°ï¼Œç”¨äºæ¥æ”¶è®¡ç®—ç»“æœå¹¶æ›´æ–°QTä¸­çš„æ–‡æœ¬æ¡†
 void TODOwidget::onDistanceAndTimeCalculated(const QString& duration, const QString& distance)
 {
-    // ¸üĞÂÎÄ±¾¿òÏÔÊ¾¼ÆËã½á¹û
+    // æ›´æ–°æ–‡æœ¬æ¡†æ˜¾ç¤ºè®¡ç®—ç»“æœ
     ui.distanceOutput->setText(duration);
     ui.durationOutput->setText(distance);
 }
@@ -103,37 +107,38 @@ TODOwidget::~TODOwidget()
 void TODOwidget::save_Date()
 {
 
-    QFile file(user_now.usr_filename); //´´½¨Ò»¸öQFile¶ÔÏó£¬Ö¸¶¨Òª±£´æµÄÎÄ¼şÃû
-    if (file.open(QIODevice::WriteOnly | QIODevice::Text| QFile::Append)) { //ÒÔĞ´ÈëºÍÎÄ±¾Ä£Ê½´ò¿ªÎÄ¼ş
-        QTextStream out(&file); //´´½¨Ò»¸öQTextStream¶ÔÏó£¬¹ØÁªµ½ÎÄ¼ş
-        //ÁíÆğÒ»ĞĞ
+    QFile file(user_now.usr_filename); //åˆ›å»ºä¸€ä¸ªQFileå¯¹è±¡ï¼ŒæŒ‡å®šè¦ä¿å­˜çš„æ–‡ä»¶å
+    if (file.open(QIODevice::WriteOnly | QIODevice::Text| QFile::Append)) { //ä»¥å†™å…¥å’Œæ–‡æœ¬æ¨¡å¼æ‰“å¼€æ–‡ä»¶
+        QTextStream out(&file); //åˆ›å»ºä¸€ä¸ªQTextStreamå¯¹è±¡ï¼Œå…³è”åˆ°æ–‡ä»¶
+        //å¦èµ·ä¸€è¡Œ
         out << "\n";
-        //½«ÎÄ±¾±à¼­¿òµÄÄÚÈİĞ´ÈëÎÄ¼ş
-        //Ğ´ÈëÊÂ¼ş±êÌâ
+        //å°†æ–‡æœ¬ç¼–è¾‘æ¡†çš„å†…å®¹å†™å…¥æ–‡ä»¶
+        //å†™å…¥äº‹ä»¶æ ‡é¢˜
         out << ui.lineEdit->text() << ",";
-        //Ğ´ÈëµØµã
+        //å†™å…¥åœ°ç‚¹
        out << ui.lineEdit_3->text() << ",";
-        //»ñÈ¡¿ªÊ¼Ê±¼ä
-        QDate start_date = ui.dateTimeEdit->date(); //»ñÈ¡dateTimeEditÖĞµÄÈÕÆÚ
-        QTime start_time = ui.dateTimeEdit->time();//»ñÈ¡dateTimeEditÖĞµÄÊ±¼ä
-        QString start_dateString = start_date.toString("yyyy-MM-dd"); //½«ÈÕÆÚ×ª»»Îª×Ö·û´®¸ñÊ½
-        QString start_timeString = start_time.toString("hh:mm:ss"); //½«Ê±¼ä×ª»»Îª×Ö·û´®¸ñÊ½
-        out << start_dateString<<" "<<start_timeString << ","; //½«ÈÕÆÚºÍÊ±¼ä×Ö·û´®Ğ´ÈëÎÄ¼ş
+        //è·å–å¼€å§‹æ—¶é—´
+        QDate start_date = ui.dateTimeEdit->date(); //è·å–dateTimeEditä¸­çš„æ—¥æœŸ
+        QTime start_time = ui.dateTimeEdit->time();//è·å–dateTimeEditä¸­çš„æ—¶é—´
+        QString start_dateString = start_date.toString("yyyy-MM-dd"); //å°†æ—¥æœŸè½¬æ¢ä¸ºå­—ç¬¦ä¸²æ ¼å¼
+        QString start_timeString = start_time.toString("hh:mm:ss"); //å°†æ—¶é—´è½¬æ¢ä¸ºå­—ç¬¦ä¸²æ ¼å¼
+       
 
-        //»ñÈ¡½áÊøÊ±¼ä
-        QDate end_date = ui.dateTimeEdit_2->date(); //»ñÈ¡dateTimeEditÖĞµÄÈÕÆÚ
-        QTime end_time = ui.dateTimeEdit_2->time();//»ñÈ¡dateTimeEditÖĞµÄÊ±¼ä
-        QString end_dateString = end_date.toString("yyyy-MM-dd"); //½«ÈÕÆÚ×ª»»Îª×Ö·û´®¸ñÊ½
-        QString end_timeString = end_time.toString("hh:mm:ss"); //½«Ê±¼ä×ª»»Îª×Ö·û´®¸ñÊ½
-        out << end_dateString <<" "<<  end_timeString << ",";//½«ÈÕÆÚºÍÊ±¼ä×Ö·û´®Ğ´ÈëÎÄ¼ş
+        //è·å–ç»“æŸæ—¶é—´
+        QDate end_date = ui.dateTimeEdit_2->date(); //è·å–dateTimeEditä¸­çš„æ—¥æœŸ
+        QTime end_time = ui.dateTimeEdit_2->time();//è·å–dateTimeEditä¸­çš„æ—¶é—´
+        QString end_dateString = end_date.toString("yyyy-MM-dd"); //å°†æ—¥æœŸè½¬æ¢ä¸ºå­—ç¬¦ä¸²æ ¼å¼
+        QString end_timeString = end_time.toString("hh:mm:ss"); //å°†æ—¶é—´è½¬æ¢ä¸ºå­—ç¬¦ä¸²æ ¼å¼
+       
 
-
-        //Ğ´ÈëÊÂ¼şÀàĞÍ
-        // ¼ÙÉèÏÂÀ­¿ò¿Ø¼şµÄÃû³ÆÎª comboBox
-        QComboBox* comboBox = findChild<QComboBox*>("comboBox");  // »ñÈ¡ÏÂÀ­¿ò¿Ø¼şµÄÖ¸Õë
+         out << start_dateString<<" "<<start_timeString << ","; //å°†æ—¥æœŸå’Œæ—¶é—´å­—ç¬¦ä¸²å†™å…¥æ–‡ä»¶
+         out << end_dateString <<" "<<  end_timeString << ",";//å°†æ—¥æœŸå’Œæ—¶é—´å­—ç¬¦ä¸²å†™å…¥æ–‡ä»¶
+            //å†™å…¥äº‹ä»¶ç±»å‹
+        // å‡è®¾ä¸‹æ‹‰æ¡†æ§ä»¶çš„åç§°ä¸º comboBox
+        QComboBox* comboBox = findChild<QComboBox*>("comboBox");  // è·å–ä¸‹æ‹‰æ¡†æ§ä»¶çš„æŒ‡é’ˆ
 
         if (comboBox) {
-            QString selectedText = comboBox->currentText();  // »ñÈ¡µ±Ç°Ñ¡ÖĞÏîµÄÎÄ±¾Öµ
+            QString selectedText = comboBox->currentText();  // è·å–å½“å‰é€‰ä¸­é¡¹çš„æ–‡æœ¬å€¼
             out << selectedText << ",";
         }
 
@@ -152,23 +157,58 @@ void TODOwidget::save_Date()
         {
             urgentdegree = 3;
         }
-        //Ğ´Èë½ô¼±³Ì¶È
+        //å†™å…¥ç´§æ€¥ç¨‹åº¦
         out << urgentdegree << ",";
-        //±¸×¢
+        //å¤‡æ³¨
         out << ui.textEdit->toPlainText() << ",";
 
         out <<"\n";
-        file.close(); //¹Ø±ÕÎÄ¼ş
+        file.close(); //å…³é—­æ–‡ä»¶
     }
+    emit TODO_Add_Correct();
+}
 
+int TODOwidget::check_todo()
+{
+    QDate start_date = ui.dateTimeEdit->date(); //è·å–dateTimeEditä¸­çš„æ—¥æœŸ
+    QTime start_time = ui.dateTimeEdit->time();//è·å–dateTimeEditä¸­çš„æ—¶é—´
+    QString start_dateString = start_date.toString("yyyy-MM-dd"); //å°†æ—¥æœŸè½¬æ¢ä¸ºå­—ç¬¦ä¸²æ ¼å¼
+    QString start_timeString = start_time.toString("hh:mm:ss"); //å°†æ—¶é—´è½¬æ¢ä¸ºå­—ç¬¦ä¸²æ ¼å¼
+
+
+    //è·å–ç»“æŸæ—¶é—´
+    QDate end_date = ui.dateTimeEdit_2->date(); //è·å–dateTimeEditä¸­çš„æ—¥æœŸ
+    QTime end_time = ui.dateTimeEdit_2->time();//è·å–dateTimeEditä¸­çš„æ—¶é—´
+    QString end_dateString = end_date.toString("yyyy-MM-dd"); //å°†æ—¥æœŸè½¬æ¢ä¸ºå­—ç¬¦ä¸²æ ¼å¼
+    QString end_timeString = end_time.toString("hh:mm:ss"); //å°†æ—¶é—´è½¬æ¢ä¸ºå­—ç¬¦ä¸²æ ¼å¼
+
+    //åˆ¤æ–­èµ·å§‹æ—¶é—´æ˜¯å¦åˆç†ï¼Œå¼€å§‹æ—¶é—´å¿…é¡»ä¸æ™šäºç»“æŸæ—¶é—´
+    if (start_date > end_date)
+    {
+        QMessageBox::warning(this, "è­¦å‘Š", "å¼€å§‹æ—¶é—´ä¸èƒ½æ™šäºç»“æŸæ—¶é—´");
+
+        //å…³é—­æç¤ºæ¡†
+        return 0;
+
+    }
+    return 1;
 }
 
 void TODOwidget::TODOwidget_accepted()
 {
-	this->save_Date();
-	this->close();
-    //·¢ËÍĞÅºÅ¸øcalendar
+    //å¦‚æœæ—¥ç¨‹æ·»åŠ åˆæ³•
+    if (this->check_todo())
+    {
+    this->save_Date();
+    //å…³é—­çª—å£
+    this->close();
+    //å‘é€ä¿¡å·ç»™calendar
     emit TODO_add();
+    }
+	
+    
+    
+	
 }
 
 void TODOwidget::handleWebPageLoadFinished(bool success)
