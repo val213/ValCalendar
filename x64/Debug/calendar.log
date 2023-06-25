@@ -1,7 +1,4 @@
-﻿  uic Mapwidget.ui
-  moc Mapwidget.h
-  Mapwidget.cpp
-  moc_Mapwidget.cpp
+﻿  calendar.cpp
   calendar.vcxproj -> C:\Users\yangluwei\source\repos\calendar\x64\Debug\calendar.exe
   windeployqt: "C:/Qt/6.2.4/msvc2019_64/bin\windeployqt.exe" --list target --dir C:\Users\yangluwei\source\repos\calendar\x64\Debug\ C:\Users\yangluwei\source\repos\calendar\x64\Debug\calendar.exe
 EXEC : warning : Cannot find Visual Studio installation directory, VCINSTALLDIR is not set.

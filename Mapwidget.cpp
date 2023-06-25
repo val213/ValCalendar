@@ -4,6 +4,7 @@
 MapWidget::MapWidget(QWidget* parent) :QMainWindow(parent)
 {
 	ui.setupUi(this);
+	this->setWindowTitle("选择地点");
 	JSBridge = new bridge(ui.webEngineView, this);
 	QWebChannel* channel = new QWebChannel(this);
 	channel->registerObject("bridge", JSBridge); // 将对象名称改为"bridge"

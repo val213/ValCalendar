@@ -5,7 +5,7 @@
 #include"config.h"
 #include"team_mng.h"
 #include"tsplan.h"
-
+#include "Mapwidget.h"
 extern int user_nums;
 extern int USR_ID_NOW;
 class calendar : public QMainWindow
@@ -21,7 +21,7 @@ public:
     void updateTable();
     QPixmap pix;
     WeatherWidget* weather;
-    
+    MapWidget* map=new MapWidget;
     void onSortComboBoxIndexChanged(int);
     void sortTableByColumn(QTableWidget* tableWidget, int column);
     void showWeatherInfo();
@@ -29,7 +29,8 @@ private:
     Ui::calendarClass ui;
     QTimer* timer = new QTimer(this);
     void paintEvent(QPaintEvent* e);
-    
+    void on_check_isChecked(int team_id);
+    void on_check_not_checked(int team_id);
 public slots:
     void handleDate(QDate date); // declare the slot function
     void team_manage();

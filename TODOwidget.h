@@ -18,15 +18,10 @@ protected:
 public:
     TODOwidget(QWidget* parent = nullptr);
 
-    void onCalculateButtonClicked();
-    void on_pushButton_clicked();
-    void onDistanceAndTimeCalculated(const QString& duration, const QString& distance);
     ~TODOwidget();
     void save_Date();
     int check_todo();
-    void handleWebPageLoadFinished(bool success);
 
-    void handleJavaScriptConsoleMessage(const QString& message);
 
     USER user_now = users[USR_ID_NOW - USER_ID_FORE];
     //QWebEngineView* webEngineView_2;

@@ -63,45 +63,97 @@ calendar::calendar(QWidget *parent)
     connect(weather,&WeatherWidget::dataReady,this, &calendar::showWeatherInfo);
     updateTable();
     
- //   //verticalLayout_3
- //   QString usr_team = users[USR_ID_NOW - USER_ID_FORE].usr_team_belong_filename;
- //   QFile file(usr_team); // 读取文件
- //   if (!file.open(QIODevice::ReadOnly | QIODevice::Text))
- //       return;
+   //verticalLayout_3
+   QString usr_team = users[USR_ID_NOW - USER_ID_FORE].usr_team_belong_filename;
+   QFile file(usr_team); // 读取文件
+   if (!file.open(QIODevice::ReadOnly | QIODevice::Text))
+       return;
 
- //   QTextStream in(&file);
- //   //文件内容格式：2,2001,SCUT,2,1001,2002,SE,2,1001,
- //   //读取第一个数字作为团队数量，代表后面有几组（团队id+人数+创始人id的数据）
- //   QString line = in.readLine().trimmed();
- //   QStringList fields = line.split(",");
- //   int team_nums = fields[0].toInt();
- //   //继续读取每个团队的id（如2001，2002）
- //   for (int i = 0; i < team_nums; i++) {
- //       line = in.readLine().trimmed();
- //       fields = line.split(",");
- //       QString team_id = fields[0];
- //       QCheckBox* check = new QCheckBox;
- //       check->setText(fields[i + 1]);
- //       ui.verticalLayout_3->addWidget(check);
- //       //将新建的checkbox的文本设置为当前循环读到的团队id
- //       check->setText(team_id);
+   QTextStream in(&file);
+   //文件内容格式：2,2001,SCUT,2,1001,2002,SE,2,1001,
+   //读取第一个数字作为团队数量，代表后面有几组（团队id+人数+创始人id的数据）
+   QString line = in.readLine().trimmed();
+   QStringList fields = line.split(",");
+   qDebug() <<"fields:" << fields;
+   int team_nums = fields[0].toInt();
+   //继续读取每个团队的id（如2001，2002）
+   for (int i = 0; i < team_nums; i++) {
+       int team_id = fields[i*4+1].toInt();//fields[i*4+1]不能加括号
+       //将新建的checkbox的文本设置为当前循环读到的团队名称
+       QCheckBox* check = new QCheckBox;
+       check->setText(fields[i*4+2]);
+       //添加到对应的布局中
+       ui.verticalLayout->addWidget(check); 
+       //把新添加的checkbox的选中信号作为信号，一个传递team_id的connect函数,连接到处理选中的函数
+       connect(check, &QCheckBox::stateChanged, [this,team_id,check]() {
+           if (check->isChecked()) on_check_isChecked(team_id);  
+           else on_check_not_checked(team_id);
 
- //   }
-
- //   //qDebug() << team_nums;
- //   //根据读到的数字，在verticalLayout_3中添加对应数量的checkbook
- //   for (int i = 0; i < team_nums; i++) {
-	//	
-
-	//}
-
- //   file.close();
-
-   
+           });
 
 
-   
+   }
+  file.close();
     }
+void calendar::on_check_not_checked(int team_id)
+{
+    updateTable();
+}
+void calendar::on_check_isChecked(int team_id)
+{
+    qDebug() << "ieam_id!:" << team_id;
+    //在现有的ui.tableWidget的基础上新增对应团队的日程的展示
+    //读取团队日程文件
+    qDebug() << "index="<< team_id - TEAM_ID_FORE <<" " << teams[team_id - TEAM_ID_FORE].team_events_filename;
+    QString team_filename = teams[team_id - TEAM_ID_FORE].team_events_filename;
+    QFile file(team_filename);
+    if (!file.open(QIODevice::ReadOnly | QIODevice::Text))
+        return;
+    //文件内容格式：创见团队日程,广州,2000-01-01 00:00:00,2000-01-01 00:00:00,考试,2,顺顺利利,
+    QTextStream in_team(&file);
+    //获取当前ui.tableWidget的行数
+    int row_count = ui.tableWidget->rowCount();
+    while (!in_team.atEnd()) {
+        QString line = in_team.readLine().trimmed();
+        QStringList fields = line.split(",");
+
+        if (fields.size() >= 7) {
+            QString content1 = fields[0]; // 第一个字段内容
+            QString content2 = fields[1]; // 第二个字段内容
+            QString content3 = fields[2]; // 第三个字段内容
+            QString content4 = fields[3];
+            QString content5 = fields[4];
+            QString content6 = fields[5];
+            QString content7 = fields[6];
+            // 在表格中添加一行
+            ui.tableWidget->insertRow(row_count);
+
+            // 创建QTableWidgetItem并设置内容
+            QTableWidgetItem* item1 = new QTableWidgetItem(content1);
+            QTableWidgetItem* item2 = new QTableWidgetItem(content2);
+            QTableWidgetItem* item3 = new QTableWidgetItem(content3);
+            QTableWidgetItem* item4 = new QTableWidgetItem(content4);
+            QTableWidgetItem* item5 = new QTableWidgetItem(content5);
+            QTableWidgetItem* item6 = new QTableWidgetItem(content6);
+            QTableWidgetItem* item7 = new QTableWidgetItem(content7);
+            //自动调整每一列的长度
+            ui.tableWidget->horizontalHeader()->setSectionResizeMode(QHeaderView::Stretch);
+            //允许用户自己调整
+            //ui.tableWidget->horizontalHeader()->setSectionResizeMode(QHeaderView::Interactive);
+
+            // 将QTableWidgetItem添加到表格中的对应位置
+            ui.tableWidget->setItem(row_count, 0, item1);
+            ui.tableWidget->setItem(row_count, 1, item2);
+            ui.tableWidget->setItem(row_count, 2, item3);
+            ui.tableWidget->setItem(row_count, 3, item4);
+            ui.tableWidget->setItem(row_count, 4, item5);
+            ui.tableWidget->setItem(row_count, 5, item6);
+            ui.tableWidget->setItem(row_count, 6, item7);
+
+            row_count++; // 行计数器递增
+        }
+    }
+}
 // 读取文件内容并解析为表格数据并更新
 void calendar::updateTable()
 {
@@ -327,6 +379,7 @@ void calendar::handleDate(QDate date) // define the slot function
     TODOwidget* todo = new TODOwidget;
     todo->show(); // show the window
     connect(todo, &TODOwidget::TODO_add, this, &calendar::updateTable);
+    map->show();
 }
 
 

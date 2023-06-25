@@ -10,7 +10,6 @@
 #define UI_TODOWIDGET_H
 
 #include <QtCore/QVariant>
-#include <QtWebEngineWidgets/QWebEngineView>
 #include <QtWidgets/QAbstractButton>
 #include <QtWidgets/QApplication>
 #include <QtWidgets/QComboBox>
@@ -19,7 +18,6 @@
 #include <QtWidgets/QHBoxLayout>
 #include <QtWidgets/QLabel>
 #include <QtWidgets/QLineEdit>
-#include <QtWidgets/QPushButton>
 #include <QtWidgets/QRadioButton>
 #include <QtWidgets/QTextEdit>
 #include <QtWidgets/QVBoxLayout>
@@ -44,17 +42,6 @@ public:
     QVBoxLayout *verticalLayout_4;
     QLabel *label_3;
     QLineEdit *lineEdit_3;
-    QWebEngineView *webEngineView;
-    QHBoxLayout *horizontalLayout_2;
-    QLabel *label_8;
-    QLineEdit *startInput;
-    QLabel *label_9;
-    QLineEdit *endInput;
-    QPushButton *calculateButton;
-    QLabel *label_6;
-    QLineEdit *distanceOutput;
-    QLabel *label_10;
-    QLineEdit *durationOutput;
     QHBoxLayout *horizontalLayout_4;
     QLabel *label_7;
     QComboBox *comboBox;
@@ -71,7 +58,7 @@ public:
     {
         if (TODOwidget1->objectName().isEmpty())
             TODOwidget1->setObjectName(QString::fromUtf8("TODOwidget1"));
-        TODOwidget1->resize(516, 822);
+        TODOwidget1->resize(275, 480);
         QSizePolicy sizePolicy(QSizePolicy::Fixed, QSizePolicy::Preferred);
         sizePolicy.setHorizontalStretch(0);
         sizePolicy.setVerticalStretch(0);
@@ -79,7 +66,7 @@ public:
         TODOwidget1->setSizePolicy(sizePolicy);
         verticalLayoutWidget = new QWidget(TODOwidget1);
         verticalLayoutWidget->setObjectName(QString::fromUtf8("verticalLayoutWidget"));
-        verticalLayoutWidget->setGeometry(QRect(10, 10, 503, 811));
+        verticalLayoutWidget->setGeometry(QRect(10, 10, 261, 461));
         verticalLayout_3 = new QVBoxLayout(verticalLayoutWidget);
         verticalLayout_3->setObjectName(QString::fromUtf8("verticalLayout_3"));
         verticalLayout_3->setContentsMargins(0, 0, 0, 0);
@@ -156,72 +143,6 @@ public:
 
         verticalLayout_4->addWidget(lineEdit_3);
 
-        webEngineView = new QWebEngineView(verticalLayoutWidget);
-        webEngineView->setObjectName(QString::fromUtf8("webEngineView"));
-        QSizePolicy sizePolicy3(QSizePolicy::Expanding, QSizePolicy::Expanding);
-        sizePolicy3.setHorizontalStretch(0);
-        sizePolicy3.setVerticalStretch(0);
-        sizePolicy3.setHeightForWidth(webEngineView->sizePolicy().hasHeightForWidth());
-        webEngineView->setSizePolicy(sizePolicy3);
-        webEngineView->setInputMethodHints(Qt::ImhNone);
-        webEngineView->setUrl(QUrl(QString::fromUtf8("about:blank")));
-
-        verticalLayout_4->addWidget(webEngineView);
-
-        horizontalLayout_2 = new QHBoxLayout();
-        horizontalLayout_2->setObjectName(QString::fromUtf8("horizontalLayout_2"));
-        label_8 = new QLabel(verticalLayoutWidget);
-        label_8->setObjectName(QString::fromUtf8("label_8"));
-        label_8->setMinimumSize(QSize(0, 30));
-
-        horizontalLayout_2->addWidget(label_8);
-
-        startInput = new QLineEdit(verticalLayoutWidget);
-        startInput->setObjectName(QString::fromUtf8("startInput"));
-
-        horizontalLayout_2->addWidget(startInput);
-
-        label_9 = new QLabel(verticalLayoutWidget);
-        label_9->setObjectName(QString::fromUtf8("label_9"));
-        label_9->setMinimumSize(QSize(0, 30));
-
-        horizontalLayout_2->addWidget(label_9);
-
-        endInput = new QLineEdit(verticalLayoutWidget);
-        endInput->setObjectName(QString::fromUtf8("endInput"));
-
-        horizontalLayout_2->addWidget(endInput);
-
-        calculateButton = new QPushButton(verticalLayoutWidget);
-        calculateButton->setObjectName(QString::fromUtf8("calculateButton"));
-
-        horizontalLayout_2->addWidget(calculateButton);
-
-        label_6 = new QLabel(verticalLayoutWidget);
-        label_6->setObjectName(QString::fromUtf8("label_6"));
-        label_6->setMinimumSize(QSize(0, 30));
-
-        horizontalLayout_2->addWidget(label_6);
-
-        distanceOutput = new QLineEdit(verticalLayoutWidget);
-        distanceOutput->setObjectName(QString::fromUtf8("distanceOutput"));
-
-        horizontalLayout_2->addWidget(distanceOutput);
-
-        label_10 = new QLabel(verticalLayoutWidget);
-        label_10->setObjectName(QString::fromUtf8("label_10"));
-        label_10->setMinimumSize(QSize(0, 30));
-
-        horizontalLayout_2->addWidget(label_10);
-
-        durationOutput = new QLineEdit(verticalLayoutWidget);
-        durationOutput->setObjectName(QString::fromUtf8("durationOutput"));
-
-        horizontalLayout_2->addWidget(durationOutput);
-
-
-        verticalLayout_4->addLayout(horizontalLayout_2);
-
 
         verticalLayout_3->addLayout(verticalLayout_4);
 
@@ -276,11 +197,11 @@ public:
 
         label_4 = new QLabel(verticalLayoutWidget);
         label_4->setObjectName(QString::fromUtf8("label_4"));
-        QSizePolicy sizePolicy4(QSizePolicy::Fixed, QSizePolicy::Fixed);
-        sizePolicy4.setHorizontalStretch(0);
-        sizePolicy4.setVerticalStretch(0);
-        sizePolicy4.setHeightForWidth(label_4->sizePolicy().hasHeightForWidth());
-        label_4->setSizePolicy(sizePolicy4);
+        QSizePolicy sizePolicy3(QSizePolicy::Fixed, QSizePolicy::Fixed);
+        sizePolicy3.setHorizontalStretch(0);
+        sizePolicy3.setVerticalStretch(0);
+        sizePolicy3.setHeightForWidth(label_4->sizePolicy().hasHeightForWidth());
+        label_4->setSizePolicy(sizePolicy3);
 
         verticalLayout_3->addWidget(label_4);
 
@@ -293,11 +214,11 @@ public:
 
         buttonBox = new QDialogButtonBox(verticalLayoutWidget);
         buttonBox->setObjectName(QString::fromUtf8("buttonBox"));
-        QSizePolicy sizePolicy5(QSizePolicy::Expanding, QSizePolicy::Maximum);
-        sizePolicy5.setHorizontalStretch(0);
-        sizePolicy5.setVerticalStretch(0);
-        sizePolicy5.setHeightForWidth(buttonBox->sizePolicy().hasHeightForWidth());
-        buttonBox->setSizePolicy(sizePolicy5);
+        QSizePolicy sizePolicy4(QSizePolicy::Expanding, QSizePolicy::Maximum);
+        sizePolicy4.setHorizontalStretch(0);
+        sizePolicy4.setVerticalStretch(0);
+        sizePolicy4.setHeightForWidth(buttonBox->sizePolicy().hasHeightForWidth());
+        buttonBox->setSizePolicy(sizePolicy4);
         buttonBox->setStandardButtons(QDialogButtonBox::Cancel|QDialogButtonBox::Ok);
 
         verticalLayout_3->addWidget(buttonBox);
@@ -315,11 +236,6 @@ public:
         label_2->setText(QCoreApplication::translate("TODOwidget1", "start time", nullptr));
         label_5->setText(QCoreApplication::translate("TODOwidget1", "end time", nullptr));
         label_3->setText(QCoreApplication::translate("TODOwidget1", "position", nullptr));
-        label_8->setText(QCoreApplication::translate("TODOwidget1", "\350\265\267\347\202\271\357\274\232", nullptr));
-        label_9->setText(QCoreApplication::translate("TODOwidget1", "\347\273\210\347\202\271\357\274\232", nullptr));
-        calculateButton->setText(QCoreApplication::translate("TODOwidget1", "\350\256\241\347\256\227\350\267\235\347\246\273\346\227\266\351\227\264", nullptr));
-        label_6->setText(QCoreApplication::translate("TODOwidget1", "\350\267\235\347\246\273\357\274\232", nullptr));
-        label_10->setText(QCoreApplication::translate("TODOwidget1", "\346\227\266\351\227\264", nullptr));
         label_7->setText(QCoreApplication::translate("TODOwidget1", "\344\272\213\344\273\266\347\261\273\345\236\213\357\274\232", nullptr));
         comboBox->setItemText(0, QCoreApplication::translate("TODOwidget1", "\350\200\203\350\257\225", nullptr));
         comboBox->setItemText(1, QCoreApplication::translate("TODOwidget1", "\350\207\252\344\271\240", nullptr));

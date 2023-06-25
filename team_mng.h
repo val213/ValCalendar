@@ -32,5 +32,5 @@ public slots:
 };
 void init_team_members_structarr(QVector<USER>team_members, int size, QString filename);
 void init_team_events_structarr(QVector<EVENT> team_events, int size, QString filename);
-void init_teams_structarr(TEAM* teams, int size);
+void init_teams_structarr(TEAM* teams, int maxsize);
 

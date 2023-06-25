@@ -33,7 +33,7 @@
   </PropertyGroup>
   <ItemDefinitionGroup Condition="&apos;$(Configuration)|$(Platform)&apos;==&apos;Debug|x64&apos;">
     <ClCompile>
-      <AdditionalIncludeDirectories>C:\Users\YANGLU~1\AppData\Local\Temp\0iuh4pwl.qnx;C:\Qt\6.2.4\msvc2019_64\include;C:\Qt\6.2.4\msvc2019_64\include\QtOpenGLWidgets;C:\Qt\6.2.4\msvc2019_64\include\QtWebEngineWidgets;C:\Qt\6.2.4\msvc2019_64\include\QtPrintSupport;C:\Qt\6.2.4\msvc2019_64\include\QtWidgets;C:\Qt\6.2.4\msvc2019_64\include\QtWebEngineQuick;C:\Qt\6.2.4\msvc2019_64\include\QtWebEngineCore;C:\Qt\6.2.4\msvc2019_64\include\QtQuick;C:\Qt\6.2.4\msvc2019_64\include\QtOpenGL;C:\Qt\6.2.4\msvc2019_64\include\QtWebView;C:\Qt\6.2.4\msvc2019_64\include\QtGui;C:\Qt\6.2.4\msvc2019_64\include\QtRemoteObjects;C:\Qt\6.2.4\msvc2019_64\include\QtWebChannel;C:\Qt\6.2.4\msvc2019_64\include\QtQmlModels;C:\Qt\6.2.4\msvc2019_64\include\QtQml;C:\Qt\6.2.4\msvc2019_64\include\QtWebSockets;C:\Qt\6.2.4\msvc2019_64\include\QtNetworkAuth;C:\Qt\6.2.4\msvc2019_64\include\QtNetwork;C:\Qt\6.2.4\msvc2019_64\include\QtSql;C:\Qt\6.2.4\msvc2019_64\include\QtPositioning;C:\Qt\6.2.4\msvc2019_64\include\QtCore;C:\Users\YANGLU~1\AppData\Local\Temp\0iuh4pwl.qnx;/include;C:\Qt\6.2.4\msvc2019_64\mkspecs\win32-msvc;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>C:\Users\YANGLU~1\AppData\Local\Temp\qhvjysx1.5gd;C:\Qt\6.2.4\msvc2019_64\include;C:\Qt\6.2.4\msvc2019_64\include\QtOpenGLWidgets;C:\Qt\6.2.4\msvc2019_64\include\QtWebEngineWidgets;C:\Qt\6.2.4\msvc2019_64\include\QtPrintSupport;C:\Qt\6.2.4\msvc2019_64\include\QtWidgets;C:\Qt\6.2.4\msvc2019_64\include\QtWebEngineQuick;C:\Qt\6.2.4\msvc2019_64\include\QtWebEngineCore;C:\Qt\6.2.4\msvc2019_64\include\QtQuick;C:\Qt\6.2.4\msvc2019_64\include\QtOpenGL;C:\Qt\6.2.4\msvc2019_64\include\QtWebView;C:\Qt\6.2.4\msvc2019_64\include\QtGui;C:\Qt\6.2.4\msvc2019_64\include\QtRemoteObjects;C:\Qt\6.2.4\msvc2019_64\include\QtWebChannel;C:\Qt\6.2.4\msvc2019_64\include\QtQmlModels;C:\Qt\6.2.4\msvc2019_64\include\QtQml;C:\Qt\6.2.4\msvc2019_64\include\QtWebSockets;C:\Qt\6.2.4\msvc2019_64\include\QtNetworkAuth;C:\Qt\6.2.4\msvc2019_64\include\QtNetwork;C:\Qt\6.2.4\msvc2019_64\include\QtSql;C:\Qt\6.2.4\msvc2019_64\include\QtPositioning;C:\Qt\6.2.4\msvc2019_64\include\QtCore;C:\Users\YANGLU~1\AppData\Local\Temp\qhvjysx1.5gd;/include;C:\Qt\6.2.4\msvc2019_64\mkspecs\win32-msvc;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <AdditionalOptions>-Zc:rvalueCast -Zc:inline -Zc:strictStrings -Zc:throwingNew -permissive- -Zc:__cplusplus -Zc:externConstexpr -utf-8 %(AdditionalOptions)</AdditionalOptions>
       <AssemblerListingLocation>.\</AssemblerListingLocation>
       <BrowseInformation>false</BrowseInformation>
@@ -80,10 +80,10 @@
     <ClCompile Include="qrc_qml.cpp" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="C:\Users\YANGLU~1\AppData\Local\Temp\0iuh4pwl.qnx\main.qml" />
+    <None Include="C:\Users\YANGLU~1\AppData\Local\Temp\qhvjysx1.5gd\main.qml" />
     <CustomBuild Include="qml.qrc">
       <FileType>Document</FileType>
-      <AdditionalInputs Condition="&apos;$(Configuration)|$(Platform)&apos;==&apos;Debug|x64&apos;">qml.qrc;C:\Qt\6.2.4\msvc2019_64\bin\rcc.exe;C:\Users\YANGLU~1\AppData\Local\Temp\0iuh4pwl.qnx\main.qml;%(AdditionalInputs)</AdditionalInputs>
+      <AdditionalInputs Condition="&apos;$(Configuration)|$(Platform)&apos;==&apos;Debug|x64&apos;">qml.qrc;C:\Qt\6.2.4\msvc2019_64\bin\rcc.exe;C:\Users\YANGLU~1\AppData\Local\Temp\qhvjysx1.5gd\main.qml;%(AdditionalInputs)</AdditionalInputs>
       <Command Condition="&apos;$(Configuration)|$(Platform)&apos;==&apos;Debug|x64&apos;">C:\Qt\6.2.4\msvc2019_64\bin\rcc.exe -name qml qml.qrc -o qrc_qml.cpp</Command>
       <Message Condition="&apos;$(Configuration)|$(Platform)&apos;==&apos;Debug|x64&apos;">RCC qml.qrc</Message>
       <Outputs Condition="&apos;$(Configuration)|$(Platform)&apos;==&apos;Debug|x64&apos;">qrc_qml.cpp;%(Outputs)</Outputs>

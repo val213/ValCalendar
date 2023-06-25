@@ -621,33 +621,46 @@ void  init_team_members_structarr(QVector<USER>team_members, int size, QString f
 void  init_team_events_structarr(QVector<EVENT> team_events, int size, QString filename)
 {
 	//初始化团队事件
+	//size 是团队事件数量
 	QFile file(filename);
 	if (file.open(QIODevice::ReadOnly | QIODevice::Text)) {
+		qDebug() << "open"<<filename<<"success!";
 		QTextStream in(&file);
 		int index = 0;
 		while (!in.atEnd() && index < size)
 		{
+			qDebug() << "init_team_events_structarr";
 			QRegularExpression re(",$");
 			QString line = in.readLine().replace(re, "");
-			;
 			QStringList values = line.split(',');
+			qDebug() <<"values: " << values;
 			//读取文件内容并保存到结构体数组
 			if (values.size() >= 7) {
 				//用qdebug（）打印value中的所有内容检查
 				for (int i = 0; i < 7; i++) qDebug() << values[i];
 				qDebug() << index;
-				team_events[index].event_name=values[0];
+				/*
+				* 初始的赋值方式
+				team_events[index].event_name.push_back(values[0]);
 				team_events[index].event_position = values[1];
 				team_events[index].event_starttime = values[2];
 				team_events[index].event_endtime = values[3];
 				team_events[index].event_type = values[4];
 				team_events[index].urgentdegree = values[5].toInt();
-				team_events[index].event_content= values[6];
+				team_events[index].event_content= values[6];*/
+				//修改后的赋值方式
+				EVENT event;
+				event.event_name.append(values[0]);
+				event.event_position.append(values[1]);
+				event.event_starttime.append(values[2]);
+				event.event_endtime.append(values[3]);
+				event.event_type.append(values[4]);
+				event.urgentdegree = values[5].toInt();
+				event.event_content.append(values[6]);
+				team_events.push_back(event);
 				
-				
-				index++;
 			}
-		
+			index++;
 		}
 		file.close();
 		qDebug() << "The team events structure array is initialized successfully!";
@@ -657,7 +670,7 @@ void  init_team_events_structarr(QVector<EVENT> team_events, int size, QString f
 	}
 }
 
-void init_teams_structarr(TEAM* teams, int size)
+void init_teams_structarr(TEAM* teams, int max_num)
 {
 	QFile file("TEAMS.txt");
 
@@ -665,7 +678,7 @@ void init_teams_structarr(TEAM* teams, int size)
 		QTextStream stream(&file);
 
 		int index = 0;
-		while (!stream.atEnd() && index < size)
+		while (!stream.atEnd() && index < max_num)
 		{
 			QRegularExpression re(",$");
 
@@ -684,6 +697,8 @@ void init_teams_structarr(TEAM* teams, int size)
 				teams[index].team_events_nums = values[5].toInt();
 				teams[index].team_members_filename = values[6];
 				teams[index].team_events_filename = values[7];
+				//打印输出检查
+				qDebug() <<"check! index= "<<index<<" "<< teams[index].team_id << teams[index].team_name << teams[index].team_passwd << teams[index].leader_id << teams[index].team_members_nums << teams[index].team_events_nums << teams[index].team_members_filename << teams[index].team_events_filename;
 
 				index++;
 			}

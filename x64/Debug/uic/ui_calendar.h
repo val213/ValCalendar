@@ -37,10 +37,10 @@ public:
     QWidget *verticalLayoutWidget_5;
     QVBoxLayout *verticalLayout_7;
     QHBoxLayout *horizontalLayout_6;
-    QVBoxLayout *verticalLayout;
-    QLabel *label_3;
-    QVBoxLayout *verticalLayout_3;
     QVBoxLayout *verticalLayout_6;
+    QVBoxLayout *verticalLayout;
+    QPushButton *pushButton_5;
+    QLabel *label_3;
     QCalendarWidget *Calendar1;
     QVBoxLayout *verticalLayout_5;
     QHBoxLayout *horizontalLayout_3;
@@ -112,9 +112,22 @@ public:
         horizontalLayout_6 = new QHBoxLayout();
         horizontalLayout_6->setSpacing(6);
         horizontalLayout_6->setObjectName(QString::fromUtf8("horizontalLayout_6"));
+        verticalLayout_6 = new QVBoxLayout();
+        verticalLayout_6->setSpacing(6);
+        verticalLayout_6->setObjectName(QString::fromUtf8("verticalLayout_6"));
+
+        horizontalLayout_6->addLayout(verticalLayout_6);
+
         verticalLayout = new QVBoxLayout();
         verticalLayout->setSpacing(6);
         verticalLayout->setObjectName(QString::fromUtf8("verticalLayout"));
+        verticalLayout->setSizeConstraint(QLayout::SetDefaultConstraint);
+        pushButton_5 = new QPushButton(verticalLayoutWidget_5);
+        pushButton_5->setObjectName(QString::fromUtf8("pushButton_5"));
+        pushButton_5->setContextMenuPolicy(Qt::DefaultContextMenu);
+
+        verticalLayout->addWidget(pushButton_5);
+
         label_3 = new QLabel(verticalLayoutWidget_5);
         label_3->setObjectName(QString::fromUtf8("label_3"));
         QSizePolicy sizePolicy1(QSizePolicy::Preferred, QSizePolicy::Fixed);
@@ -126,23 +139,12 @@ public:
         font.setFamilies({QString::fromUtf8("Times New Roman")});
         font.setBold(true);
         label_3->setFont(font);
+        label_3->setAlignment(Qt::AlignCenter);
 
         verticalLayout->addWidget(label_3);
 
-        verticalLayout_3 = new QVBoxLayout();
-        verticalLayout_3->setSpacing(6);
-        verticalLayout_3->setObjectName(QString::fromUtf8("verticalLayout_3"));
-
-        verticalLayout->addLayout(verticalLayout_3);
-
 
         horizontalLayout_6->addLayout(verticalLayout);
-
-        verticalLayout_6 = new QVBoxLayout();
-        verticalLayout_6->setSpacing(6);
-        verticalLayout_6->setObjectName(QString::fromUtf8("verticalLayout_6"));
-
-        horizontalLayout_6->addLayout(verticalLayout_6);
 
         Calendar1 = new QCalendarWidget(verticalLayoutWidget_5);
         Calendar1->setObjectName(QString::fromUtf8("Calendar1"));
@@ -442,7 +444,7 @@ public:
         tableWidget->setSizePolicy(sizePolicy5);
         horizontalLayoutWidget = new QWidget(centralWidget);
         horizontalLayoutWidget->setObjectName(QString::fromUtf8("horizontalLayoutWidget"));
-        horizontalLayoutWidget->setGeometry(QRect(20, 0, 191, 32));
+        horizontalLayoutWidget->setGeometry(QRect(20, 0, 191, 16));
         horizontalLayout = new QHBoxLayout(horizontalLayoutWidget);
         horizontalLayout->setSpacing(6);
         horizontalLayout->setContentsMargins(11, 11, 11, 11);
@@ -512,6 +514,7 @@ public:
     void retranslateUi(QMainWindow *calendarClass)
     {
         calendarClass->setWindowTitle(QCoreApplication::translate("calendarClass", "calendar", nullptr));
+        pushButton_5->setText(QCoreApplication::translate("calendarClass", "\346\233\264\346\226\260\345\233\242\351\230\237\346\227\245\345\216\206\346\241\206", nullptr));
         label_3->setText(QCoreApplication::translate("calendarClass", "MyCalendar", nullptr));
         label->setText(QCoreApplication::translate("calendarClass", "Time now", nullptr));
         label_12->setText(QString());
