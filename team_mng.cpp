@@ -130,8 +130,6 @@ void team_mng::on_exit_team_ButtonClicked(const QModelIndex& index)
 				//写入剩余的成员id
 				out << teams[team_id - TEAM_ID_FORE].team_members[i].usr_team_belong_num << ",";
 				qDebug() << teams[team_id - TEAM_ID_FORE].team_members[i].usr_team_belong_num;
-
-
 				file_team_members.close();
 			}
 
@@ -341,20 +339,64 @@ void team_mng::confirm_join(const int& team_id, const QString& team_password)
 	teams[team_id - TEAM_ID_FORE].team_members_nums++;
 	qDebug() << "Current number of users:" << teams[team_id - TEAM_ID_FORE].team_members_nums << "\n";
 
+	//是不是还要在TEAMS.txt中更新？
+
+
+
+
+
+
+
+
+
+
+
+	////更新该团队中所有成员在从属团队文件中存储的该团队的人员数量
+	////先打开“USERS.txt”,更新对应用户的创建和所属团队数量
+	////1001,666,val,usr_val.txt,team_create_usr_val.txt,team_belong_usr_val.txt,2,2
+	//QFile users_file("USERS.txt");
+	//if (!users_file.open(QIODevice::ReadWrite | QIODevice::Text | QIODevice::Append))
+	//	return;
+	//QTextStream users_file_stream(&users_file);
+	////如果用户当前ID是1001，则读取文件第1行，以此类推
+	//int lineindex = 0;
+	//while (!users_file.atEnd())
+	//{
+	//	if (lineindex == USR_ID_NOW - USER_ID_FORE - 1)
+	//	{
+	//		//读取当前用户的信息
+	//		QRegularExpression re(",$");
+	//		QString line = users_file_stream.readLine().replace(re, "");
+	//		QStringList values = line.split(',');
+	//		//例如：1001,666,val,usr_val.txt,team_create_usr_val.txt,team_belong_usr_val.txt,2,2
+	//		//读取values[6]和values[7]的数值，并自增
+	//		int team_create_num = values[6].toInt();
+	//		int team_belong_num = values[7].toInt();
+	//		team_create_num++;
+	//		team_belong_num++;
+	//		//用新的数据覆盖原来对应位置的数据，其他位置不变，重写入文件
+	//		values[6] = QString::number(team_create_num);
+	//		values[7] = QString::number(team_belong_num);
+
+	//		// 将更新后的数据重新写入文件
+	//		users_file.seek(lineindex * (line.size() + 1)); // 定位到当前行的开头
+	//		users_file_stream << values.join(','); // 将更新后的数据写入文件
+	//	}
+	//}
+	//users_file.close();
 
 	//更新当前用户的团队数据
-	
 	//更新用户从属团队数量
 	users[USR_ID_NOW - USER_ID_FORE].usr_team_belong_num++;
-
 	//更新用户正在加入的团队为所属团队
 	users[USR_ID_NOW - USER_ID_FORE].teams_belong.append(teams[team_id - TEAM_ID_FORE]);
 
-	//更新该团队中所有成员在从属团队文件中存储的该团队的人员数量
+
+
 	for (int i = 0; i < teams[team_id - TEAM_ID_FORE].team_members_nums; i++)
 	{
 		//更新数据到用户的所属团队文件存档中
-		
+		//打开每一个当前用户所在的团队的所有成员的团队归属文件
 		QString filename =users[teams[team_id - TEAM_ID_FORE].team_members[i].usr_id-USER_ID_FORE].usr_team_belong_filename;
 		QFile team_file(filename);
 		if (!team_file.open(QIODevice::ReadWrite | QIODevice::Text | QIODevice::Append))
@@ -362,15 +404,24 @@ void team_mng::confirm_join(const int& team_id, const QString& team_password)
 		QTextStream out(&team_file);
 		//先清空文件
 		team_file.resize(0);
-		//1,2001,SCUT,1001,4,1001,1002,1003,1004,
+		/*
+		3,
+		2001,SCUT,1001,1,1001,
+		2002,SE,1001,1,1001,
+		2003,BBQ,1001,1,1001,
+		*/
 		//写入从属团队总数
 		// 写入从属的每个团队的id、名称、人数和所有成员的id
 		
 		out << teams[team_id - TEAM_ID_FORE].team_members[i].usr_team_belong_num << ",";
+		
 		qDebug() << "The number of teams each current user belongs to:" << teams[team_id - TEAM_ID_FORE].team_members[i].usr_team_belong_num;
+
 		qDebug() << "teams_belong size: " << teams[team_id - TEAM_ID_FORE].team_members[i].teams_belong.size();
+
 		for (int j = 0; j < teams[team_id - TEAM_ID_FORE].team_members[i].usr_team_belong_num; j++)
 		{
+
 			qDebug() << "teams_belong[" << j << "] - team_id: " << teams[team_id - TEAM_ID_FORE].team_members[i].teams_belong[j].team_id;
 			qDebug() << "teams_belong[" << j << "] - team_name: " << teams[team_id - TEAM_ID_FORE].team_members[i].teams_belong[j].team_name;
 			qDebug() << "teams_belong[" << j << "] - team_members_nums: " << teams[team_id - TEAM_ID_FORE].team_members[i].teams_belong[j].team_members_nums;
@@ -383,6 +434,7 @@ void team_mng::confirm_join(const int& team_id, const QString& team_password)
 		//再写入从属团队的id、名称、人数和所有成员的id
 		for (int j = 0; j < teams[team_id - TEAM_ID_FORE].team_members[i].usr_team_belong_num; j++)
 		{
+			out << "\n";
 			out << teams[team_id - TEAM_ID_FORE].team_members[i].teams_belong[j].team_id << ",";//崩溃了，不知道为什么越界
 			out << teams[team_id - TEAM_ID_FORE].team_members[i].teams_belong[j].team_name << ",";
 			out << teams[team_id - TEAM_ID_FORE].team_members[i].teams_belong[j].team_members_nums << ",";
@@ -411,17 +463,18 @@ void team_mng::confirm_join(const int& team_id, const QString& team_password)
 
 	
 
-	//更新用户数据
+	//更新用户数据（可能重复了？？？？）
 	
 	users[USR_ID_NOW - USER_ID_FORE].teams_belong.push_back(teams[team_id - TEAM_ID_FORE]);
 	users[USR_ID_NOW - USER_ID_FORE].usr_team_belong_num++;
 	//更新用户的团队文件
-	//先清空文件
+	//打开当前用户的团队归属文件，如果上面的“所有用户”包含当前用户本身，这一步是不是多余了？
 	QString filename_usr = users[USR_ID_NOW - USER_ID_FORE].usr_team_belong_filename;
 	QFile team_belong_file(filename_usr);
 	if (!team_belong_file.open(QIODevice::ReadWrite | QIODevice::Text | QIODevice::Append))
 		return;
 	QTextStream out_usr(&team_belong_file);
+	//先清空文件
 	team_belong_file.resize(0);
 	//再写入数据
 	//从属的团队数量
@@ -469,7 +522,7 @@ void team_mng::confirm_creat(const QString& teamName, const QString& password)
 	teams[team_nums].team_members.push_back(users[USR_ID_NOW - USER_ID_FORE]);
 	teams[team_nums].team_events_nums = 0;
 
-	//为每个团队的成员信息专门创建文件并写入
+
 	QString filename = QString::number(new_team_id) + "_team members.txt";
 	QFile file(filename);
 	if (!file.open(QIODevice::WriteOnly | QIODevice::Text | QIODevice::Append))
@@ -510,6 +563,13 @@ void team_mng::confirm_creat(const QString& teamName, const QString& password)
 	if (!team_create_file.open(QIODevice::ReadWrite | QIODevice::Text | QIODevice::Append))
 		return;
 	QTextStream out_usr_create(&team_create_file);
+	//为每个团队的成员信息专门创建文件并写入
+	/*
+	3,
+	2001,SCUT,1001,1,1001,
+	2002,SE,1001,1,1001,
+	2003,BBQ,1001,1,1001,
+	*/
 	team_create_file.seek(0);
 	//读取文件中第一个逗号前的内容存入users[USR_ID_NOW - USER_ID_FORE].usr_team_create_num
 	QString temp;
@@ -525,8 +585,11 @@ void team_mng::confirm_creat(const QString& teamName, const QString& password)
 	out_usr_create << users[USR_ID_NOW - USER_ID_FORE].usr_team_create_num<< ",";
 	for (int i = 0; i < users[USR_ID_NOW - USER_ID_FORE].usr_team_create_num; i++)
 	{
+		out_usr_create << "\n";
+		qDebug()<< "users[USR_ID_NOW - USER_ID_FORE].teams_create[i].team_id" << users[USR_ID_NOW - USER_ID_FORE].teams_create[i].team_id;
 		out_usr_create << users[USR_ID_NOW - USER_ID_FORE].teams_create[i].team_id << ",";
 		out_usr_create << users[USR_ID_NOW - USER_ID_FORE].teams_create[i].team_name << ",";
+		out_usr_create << users[USR_ID_NOW - USER_ID_FORE].teams_create[i].leader_id << ",";
 		out_usr_create << users[USR_ID_NOW - USER_ID_FORE].teams_create[i].team_members_nums << ",";
 		for (int j = 0; j < users[USR_ID_NOW - USER_ID_FORE].teams_create[i].team_members_nums; j++)
 		{
@@ -548,12 +611,19 @@ void team_mng::confirm_creat(const QString& teamName, const QString& password)
 	QTextStream out_usr_belong(&team_belong_file);
 	team_belong_file.resize(0);
 	//再写入数据
+	/*
+	3,
+	2001,SCUT,1001,1,1001,
+	2002,SE,1001,1,1001,
+	2003,BBQ,1001,1,1001,
+	*/
 	//创建的团队数量
 	//团队1的id，团队1的名称，团队1创始人，团队1现有总人数，团队1的全部成员
 	out_usr_belong << users[USR_ID_NOW - USER_ID_FORE].usr_team_belong_num << ",";
 	qDebug()<< users[USR_ID_NOW - USER_ID_FORE].usr_team_belong_num;
 	for (int i = 0; i < users[USR_ID_NOW - USER_ID_FORE].usr_team_belong_num; i++)
 	{
+		out_usr_belong << "\n";
 		out_usr_belong << users[USR_ID_NOW - USER_ID_FORE].teams_belong[i].team_id << ",";
 		out_usr_belong << users[USR_ID_NOW - USER_ID_FORE].teams_belong[i].team_name << ",";
 		out_usr_belong << users[USR_ID_NOW - USER_ID_FORE].teams_belong[i].team_members[0].usr_id << ",";
@@ -602,11 +672,19 @@ void  init_team_members_structarr(QVector<USER>team_members, int size, QString f
 
 			//参考以上写入，读取文件内容并保存到结构体数组
 			if (values.size() >= 5) {
-				team_members[index].usr_id = values[0].toInt();
+				/*team_members[index].usr_id = values[0].toInt();
 				team_members[index].usr_name = values[1];
 				team_members[index].usr_passwd = values[2];
 				team_members[index].usr_team_belong_num = values[3].toInt();
-				team_members[index].usr_team_belong_filename = values[4];
+				team_members[index].usr_team_belong_filename = values[4];*/
+				//修改后的赋值方式
+				USER us;
+				us.usr_id = values[0].toInt();
+				us.usr_name = values[1];
+				us.usr_passwd = values[2];
+				us.usr_team_belong_num = values[3].toInt();
+				us.usr_team_belong_filename = values[4];
+				team_members.push_back(us);
 				index++;
 			}
 		
@@ -689,14 +767,25 @@ void init_teams_structarr(TEAM* teams, int max_num)
 			// 读取并保存到结构体数组
 			if (values.size() >= 8) {
 
-				teams[index].team_id = values[0].toInt();
+				/*teams[index].team_id = values[0].toInt();
 				teams[index].team_name = values[1];
 				teams[index].team_passwd = values[2];
 				teams[index].leader_id = values[3].toInt();
 				teams[index].team_members_nums = values[4].toInt();
 				teams[index].team_events_nums = values[5].toInt();
 				teams[index].team_members_filename = values[6];
-				teams[index].team_events_filename = values[7];
+				teams[index].team_events_filename = values[7];*/
+				//修改后的赋值方式
+				TEAM te;
+				te.team_id = values[0].toInt();
+				te.team_name = values[1];
+				te.team_passwd = values[2];
+				te.leader_id = values[3].toInt();
+				te.team_members_nums = values[4].toInt();
+				te.team_events_nums = values[5].toInt();
+				te.team_members_filename = values[6];
+				te.team_events_filename = values[7];
+				teams[index]= te;
 				//打印输出检查
 				qDebug() <<"check! index= "<<index<<" "<< teams[index].team_id << teams[index].team_name << teams[index].team_passwd << teams[index].leader_id << teams[index].team_members_nums << teams[index].team_events_nums << teams[index].team_members_filename << teams[index].team_events_filename;
 

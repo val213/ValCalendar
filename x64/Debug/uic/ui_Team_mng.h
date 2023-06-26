@@ -47,7 +47,7 @@ public:
         team_mng->resize(362, 354);
         horizontalLayoutWidget = new QWidget(team_mng);
         horizontalLayoutWidget->setObjectName(QString::fromUtf8("horizontalLayoutWidget"));
-        horizontalLayoutWidget->setGeometry(QRect(20, 30, 324, 88));
+        horizontalLayoutWidget->setGeometry(QRect(20, 10, 324, 88));
         horizontalLayout = new QHBoxLayout(horizontalLayoutWidget);
         horizontalLayout->setObjectName(QString::fromUtf8("horizontalLayout"));
         horizontalLayout->setContentsMargins(0, 0, 0, 0);
@@ -99,22 +99,22 @@ public:
 
         tableWidget = new QTableWidget(team_mng);
         tableWidget->setObjectName(QString::fromUtf8("tableWidget"));
-        tableWidget->setGeometry(QRect(20, 260, 321, 86));
+        tableWidget->setGeometry(QRect(20, 250, 321, 86));
         tableWidget->setVerticalScrollBarPolicy(Qt::ScrollBarAlwaysOn);
         tableWidget->setHorizontalScrollBarPolicy(Qt::ScrollBarAlwaysOn);
         tableWidget->setSizeAdjustPolicy(QAbstractScrollArea::AdjustToContents);
         tableWidget_2 = new QTableWidget(team_mng);
         tableWidget_2->setObjectName(QString::fromUtf8("tableWidget_2"));
-        tableWidget_2->setGeometry(QRect(20, 140, 321, 86));
+        tableWidget_2->setGeometry(QRect(20, 120, 321, 86));
         tableWidget_2->setVerticalScrollBarPolicy(Qt::ScrollBarAlwaysOn);
         tableWidget_2->setHorizontalScrollBarPolicy(Qt::ScrollBarAlwaysOn);
         tableWidget_2->setSizeAdjustPolicy(QAbstractScrollArea::AdjustToContents);
         label_2 = new QLabel(team_mng);
         label_2->setObjectName(QString::fromUtf8("label_2"));
-        label_2->setGeometry(QRect(20, 230, 111, 16));
+        label_2->setGeometry(QRect(20, 220, 111, 16));
         label_3 = new QLabel(team_mng);
         label_3->setObjectName(QString::fromUtf8("label_3"));
-        label_3->setGeometry(QRect(20, 120, 101, 16));
+        label_3->setGeometry(QRect(20, 100, 101, 16));
 
         retranslateUi(team_mng);
 

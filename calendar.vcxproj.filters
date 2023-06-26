@@ -101,9 +101,6 @@
     <QtUic Include="TODOwidget.ui">
       <Filter>Header Files\ui</Filter>
     </QtUic>
-    <QtUic Include="REG_N_LOGIN.ui">
-      <Filter>Header Files\ui</Filter>
-    </QtUic>
     <QtUic Include="calendar.ui">
       <Filter>Header Files\ui</Filter>
     </QtUic>
@@ -111,6 +108,9 @@
       <Filter>Header Files\ui</Filter>
     </QtUic>
     <QtUic Include="calendar_team.ui">
+      <Filter>Header Files\ui</Filter>
+    </QtUic>
+    <QtUic Include="REG_N_LOGIN.ui">
       <Filter>Header Files\ui</Filter>
     </QtUic>
     <QtUic Include="Mapwidget.ui">

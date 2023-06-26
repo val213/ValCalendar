@@ -170,7 +170,6 @@ void reg_n_login::reg_n_login_rejected()
 				QVector<QString>teams_belong;
 			};
 			*/
-			out << "-----------------------------------" << "\n";
 			out << users[user_nums - 1].usr_id<<",";
 			out << users[user_nums - 1].usr_passwd<<",";
 			out << users[user_nums - 1].usr_name << ",";

@@ -72,16 +72,22 @@ calendar::calendar(QWidget *parent)
    QTextStream in(&file);
    //文件内容格式：2,2001,SCUT,2,1001,2002,SE,2,1001,
    //读取第一个数字作为团队数量，代表后面有几组（团队id+人数+创始人id的数据）
-   QString line = in.readLine().trimmed();
+   QString line = in.readAll().trimmed();
    QStringList fields = line.split(",");
    qDebug() <<"fields:" << fields;
    int team_nums = fields[0].toInt();
+   /*
+   3,
+   2001,SCUT,1001,1,1001,
+   2002,SE,1001,1,1001,
+   2003,BBQ,1001,1,1001,
+   */
    //继续读取每个团队的id（如2001，2002）
    for (int i = 0; i < team_nums; i++) {
-       int team_id = fields[i*4+1].toInt();//fields[i*4+1]不能加括号
+       int team_id = fields[i*5+1].toInt();//fields[i*4+1]不能加括号
        //将新建的checkbox的文本设置为当前循环读到的团队名称
        QCheckBox* check = new QCheckBox;
-       check->setText(fields[i*4+2]);
+       check->setText(fields[i*5+2]);
        //添加到对应的布局中
        ui.verticalLayout->addWidget(check); 
        //把新添加的checkbox的选中信号作为信号，一个传递team_id的connect函数,连接到处理选中的函数
