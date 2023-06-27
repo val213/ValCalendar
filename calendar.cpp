@@ -66,40 +66,54 @@ calendar::calendar(QWidget *parent)
    //verticalLayout_3
    QString usr_team = users[USR_ID_NOW - USER_ID_FORE].usr_team_belong_filename;
    QFile file(usr_team); // 读取文件
-   if (!file.open(QIODevice::ReadOnly | QIODevice::Text))
-       return;
+   if (file.open(QIODevice::ReadOnly | QIODevice::Text))
+   {
+     QTextStream in(&file);
+       //文件内容格式：
+       /*
+        3,
+        2001,SCUT,1001,1,1001,
+        2002,SE,1001,1,1001,
+       */
+       //读取第一个数字作为团队数量，代表后面有几组（团队id+人数+创始人id的数据）
+        int team_nums=0;
+       while (!in.atEnd())//要用QTextStream类型的变量作为控制while的对象
+       {
+           
+           QString line = in.readLine().trimmed();
+           QStringList fields = line.split(",");
+           qDebug()<<"左边这一块读到的是"<<fields<<"sizeof(line)= "<< line.size();
+           if (line.size() < 4)
+           { 
+            qDebug() << "该用户归属于团队的数量: " << fields[0];
+           team_nums = fields[0].toInt();
+           }
+           else if (line.size()> 4)
+           {
+               qDebug() << "halo!";
+            //继续读取每个团队的id（如2001，2002）
+            int team_id = fields[0].toInt();//fields[i*4+1]不能加括号
+            //将新建的checkbox的文本设置为当前循环读到的团队名称
+            QCheckBox* check = new QCheckBox;
+            check->setText(fields[1]);
+            //添加到对应的布局中
+            ui.verticalLayout->addWidget(check);
+            //把新添加的checkbox的选中信号作为信号，一个传递team_id的connect函数,连接到处理选中的函数
+            connect(check, &QCheckBox::stateChanged, [this, team_id, check]() {
+                if (check->isChecked()) on_check_isChecked(team_id);
+                else on_check_not_checked(team_id);
 
-   QTextStream in(&file);
-   //文件内容格式：2,2001,SCUT,2,1001,2002,SE,2,1001,
-   //读取第一个数字作为团队数量，代表后面有几组（团队id+人数+创始人id的数据）
-   QString line = in.readAll().trimmed();
-   QStringList fields = line.split(",");
-   qDebug() <<"fields:" << fields;
-   int team_nums = fields[0].toInt();
-   /*
-   3,
-   2001,SCUT,1001,1,1001,
-   2002,SE,1001,1,1001,
-   2003,BBQ,1001,1,1001,
-   */
-   //继续读取每个团队的id（如2001，2002）
-   for (int i = 0; i < team_nums; i++) {
-       int team_id = fields[i*5+1].toInt();//fields[i*4+1]不能加括号
-       //将新建的checkbox的文本设置为当前循环读到的团队名称
-       QCheckBox* check = new QCheckBox;
-       check->setText(fields[i*5+2]);
-       //添加到对应的布局中
-       ui.verticalLayout->addWidget(check); 
-       //把新添加的checkbox的选中信号作为信号，一个传递team_id的connect函数,连接到处理选中的函数
-       connect(check, &QCheckBox::stateChanged, [this,team_id,check]() {
-           if (check->isChecked()) on_check_isChecked(team_id);  
-           else on_check_not_checked(team_id);
+                });
 
-           });
-
-
+           }
+           
+           
+       } 
+       file.close();
    }
-  file.close();
+   else {
+	   qDebug() << "open [usr_team_belong_filename] file in [calendar] failed!";
+   }
     }
 void calendar::on_check_not_checked(int team_id)
 {
@@ -112,9 +126,11 @@ void calendar::on_check_isChecked(int team_id)
     //读取团队日程文件
     qDebug() << "index="<< team_id - TEAM_ID_FORE <<" " << teams[team_id - TEAM_ID_FORE].team_events_filename;
     QString team_filename = teams[team_id - TEAM_ID_FORE].team_events_filename;
-    QFile file(team_filename);
-    if (!file.open(QIODevice::ReadOnly | QIODevice::Text))
-        return;
+    QFile file(team_filename); // 读取文件
+    if (file.open(QIODevice::ReadOnly | QIODevice::Text))
+    {
+
+    
     //文件内容格式：创见团队日程,广州,2000-01-01 00:00:00,2000-01-01 00:00:00,考试,2,顺顺利利,
     QTextStream in_team(&file);
     //获取当前ui.tableWidget的行数
@@ -146,7 +162,14 @@ void calendar::on_check_isChecked(int team_id)
             ui.tableWidget->horizontalHeader()->setSectionResizeMode(QHeaderView::Stretch);
             //允许用户自己调整
             //ui.tableWidget->horizontalHeader()->setSectionResizeMode(QHeaderView::Interactive);
+            //判断是否已经存在表头了
 
+
+            ui.tableWidget->setColumnCount(7); // 设置列数为7
+            // 设置表头为自定义的字符串列表
+            ui.tableWidget->setHorizontalHeaderLabels(QStringList() << "日程名称"
+                << "地点" << "开始时间" << "结束时间" << "事件类型" << "紧急程度" << "备注");
+            
             // 将QTableWidgetItem添加到表格中的对应位置
             ui.tableWidget->setItem(row_count, 0, item1);
             ui.tableWidget->setItem(row_count, 1, item2);
@@ -158,6 +181,10 @@ void calendar::on_check_isChecked(int team_id)
 
             row_count++; // 行计数器递增
         }
+    }
+    }
+    else {
+		qDebug() << "open [team_events_filename] file in [calendar] failed!";
     }
 }
 // 读取文件内容并解析为表格数据并更新

@@ -44,51 +44,42 @@ void init_users_structarr(USER* users, int size)
                         {
                             //读取创建的团队总数
                             QStringList values1 = line1.split(',');
-                            users[USR_ID_NOW - USER_ID_FORE].usr_team_create_num = values1[0].toInt();
-                            qDebug() << users[USR_ID_NOW - USER_ID_FORE].usr_team_create_num;
+                            users[index].usr_team_create_num = values1[0].toInt();
+                            qDebug() << users[index].usr_team_create_num;
                         }
                         else if (line1.size() >= 4)//具体信息存储行
-                        {
-                            
+                        {                           
                             // 读取并保存到结构体数组
-
-                            //初始化QVector<TEAM>teams_create
+                            //初始化QVector<TEAM>teams_create          
+                            QStringList values1 = line1.split(',');                          
+                            //循环读取创建的每个团队的id、名称、人数和创建者的id
                             /*
-                            3,
-                            2001,SCUT,1001,1,1001,
-                            2002,SE,1001,1,1001,
-                            2003,BBQ,1001,1,1001,
+                            2,
+                            2001,SCUT,1001,2,1001,1002,
+                            2002,SE,1001,2,1001,1002,
                             */
-                            
-                            QStringList values1 = line1.split(',');
-                          
-                                //循环读取创建的每个团队的id、名称、人数和创建者的id
-                                /*
-                                3,
-                                2001,SCUT,1001,1,1001,
-                                2002,SE,1001,1,1001,
-                                2003,BBQ,1001,1,1001,
-                                */
-                                //先使用过度对象接受数据
-                                TEAM te;
-                                te.team_id = values1[0].toInt();
-                                te.team_name = values1[1];
-                                te.leader_id= values1[2].toInt();
-                                te.team_members_nums = values1[3].toInt();
-                                qDebug() << "te.team_members_nums = ;" << te.team_members_nums;
-                                te.team_members.append(users[USR_ID_NOW - USER_ID_FORE]);//从0开始压入
-
-                                users[USR_ID_NOW - USER_ID_FORE].teams_create.append(te);
-                                qDebug() << users[USR_ID_NOW - USER_ID_FORE].teams_create[index1].team_members_nums;
-                                //遍历每一个创建的团队的成员，将他们写入团队创建者的
-                                for (int j = 1; j <= users[USR_ID_NOW - USER_ID_FORE].teams_create[index1].team_members_nums; j++)
-                                {
-                                    //循环读取创建的每个团队的成员的id
-                                    qDebug() << "!" << users[values1[3+ j].toInt() - USER_ID_FORE].usr_id;
-
-                                    users[USR_ID_NOW - USER_ID_FORE].teams_create[index1].team_members.append(users[values1[3+j].toInt() - USER_ID_FORE]);
-                                }
-                                index1++;
+                            //使用过渡对象1号接受团队的数据给到用户
+                            TEAM te;
+                            te.team_id = values1[0].toInt();
+                            te.team_name = values1[1];
+                            te.leader_id= values1[2].toInt();
+                            te.team_members_nums = values1[3].toInt();
+                            qDebug() << "te.team_members_nums =" << te.team_members_nums;          
+                            //遍历当前用户创建的团队的所有成员，将他们的id写入团队创建者的QVector中
+                            for (int j = 1; j <= te.team_members_nums; j++)
+                            {
+                                //循环读取创建的每个团队的成员的id
+                                //这里有个问题，因为用户是顺序初始化的，所以即使包含了1002，1001也无法载入1002的消息。。。
+                                //那么就直接把读到的id写入吧！
+                                /*qDebug() << "!" << users[values1[3+ j].toInt() - USER_ID_FORE].usr_id;
+                                te.team_members.append(users[values1[3+j].toInt() - USER_ID_FORE].usr_id);*/
+                                qDebug() << values1[3 + j].toInt();
+                                te.team_members.append(values1[3 + j].toInt());
+                            }
+                            users[index].teams_belong.append(te);
+                            //输出检查现在的users[USR_ID_NOW - USER_ID_FORE].teams_belong
+                            qDebug() << "users[USR_ID_NOW - USER_ID_FORE].teams_create.size() = " << users[USR_ID_NOW - USER_ID_FORE].teams_create.size();
+                            index1++;
                         }
                         
 					}
@@ -112,8 +103,9 @@ void init_users_structarr(USER* users, int size)
                         {
                             //读取创建的团队总数
                             QStringList values2 = line2.split(',');
-                            users[USR_ID_NOW - USER_ID_FORE].usr_team_belong_num = values2[0].toInt();
-                            qDebug() << users[USR_ID_NOW - USER_ID_FORE].usr_team_create_num;
+                            //在用户登录之前USE_ID_NOW默认是1000，存储无效，小心！！
+                            users[index].usr_team_belong_num = values2[0].toInt();
+                            qDebug() << users[index].usr_team_create_num;
                         }
                         else if (line2.size() >= 4)//具体信息存储行
                         {
@@ -134,18 +126,18 @@ void init_users_structarr(USER* users, int size)
                             te2.team_name = values2[1];
                             te2.leader_id = values2[2].toInt();
                             te2.team_members_nums = values2[3].toInt();
-                            qDebug() << "te2.team_members_nums = ;" << te2.team_members_nums;
-                            te2.team_members.append(users[USR_ID_NOW - USER_ID_FORE]);//从0开始压入
-
-                            users[USR_ID_NOW - USER_ID_FORE].teams_belong.append(te2);
-                            qDebug() << users[USR_ID_NOW - USER_ID_FORE].teams_belong[index2].team_members_nums;
-                            for (int j = 1; j <= users[USR_ID_NOW - USER_ID_FORE].teams_belong[index2].team_members_nums; j++)
+                            qDebug() << "te2.team_members_nums =" << te2.team_members_nums;
+                            for (int j = 1; j <= te2.team_members_nums; j++)
                             {
                                 //循环读取创建的每个团队的成员的id
-                                qDebug() << "!" << users[values2[3 + j].toInt() - USER_ID_FORE].usr_id;
-
-                                users[USR_ID_NOW - USER_ID_FORE].teams_create[index2].team_members.append(users[values2[3 + j].toInt() - USER_ID_FORE]);
+                                /*qDebug() << "!" << users[values2[3 + j].toInt() - USER_ID_FORE].usr_id;
+                                te2.team_members.append(users[values2[3 + j].toInt() - USER_ID_FORE].usr_id);*/
+                                qDebug() << values2[3 + j].toInt();
+                                te2.team_members.append(values2[3 + j].toInt());
                             }
+                            users[index].teams_belong.append(te2);
+                            //输出检查现在的users[USR_ID_NOW - USER_ID_FORE].teams_belong
+                            qDebug() << "users[USR_ID_NOW - USER_ID_FORE].teams_belong.size() = " << users[USR_ID_NOW - USER_ID_FORE].teams_belong.size();
                             index2++;
                         }
                         qDebug() << " User usr_team_belong_filename: User structure array initialized successfully!";

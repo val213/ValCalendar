@@ -51,7 +51,8 @@ struct TEAM
 	QString team_members_filename;
 	//存放团队事件信息的文件
 	QString team_events_filename;
-	QVector<USER> team_members;
+	//存放团队成员的id就行了，可以到总成员数组那里去访问
+	QVector<int> team_members;
 	QVector<EVENT> team_events;
 
 	TEAM():team_members_nums(0),team_events_nums(0),leader_id(0),team_id(0),team_name(""),team_passwd(""),team_members_filename(""),team_events_filename(""),team_members(),team_events()
@@ -61,7 +62,7 @@ struct TEAM
 	TEAM(QString team_name,QString team_passwd,int USR_ID_NOW)
 	{
 		//把创始人作为第一个成员存入团队的人员信息中
-		team_members.push_back(users[USR_ID_NOW- USER_ID_FORE]);
+		team_members.push_back(users[USR_ID_NOW- USER_ID_FORE].usr_id);
 	}
 
 };
