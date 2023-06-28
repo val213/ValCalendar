@@ -40,10 +40,7 @@ calendar_team::calendar_team(QWidget* parent)
 		});
         
        
-    //增加对当前用户是否是团队创始人的判断，如果不是，pushButton_4变无法点击
-    if (team_now.leader_id != USR_ID_NOW) {
-		ui.pushButton_4->setEnabled(false);
-	}
+
 
       
 
@@ -166,6 +163,11 @@ void calendar_team::set_team_id(QString id)
     updateTable();
     //设置当前团队的团队名称
     ui.label_2->setText(team_id);
+    ui.label_3->setText(QString::number(USR_ID_NOW));
+    //增加对当前用户是否是团队创始人的判断，如果不是，pushButton_4变无法点击
+    if (team_now.leader_id != USR_ID_NOW) {
+        ui.pushButton_4->setEnabled(false);
+    }
 }
 
 void calendar_team::updateTable_calendar()

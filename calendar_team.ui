@@ -6,19 +6,104 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>824</width>
-    <height>472</height>
+    <width>683</width>
+    <height>482</height>
    </rect>
   </property>
   <property name="windowTitle">
    <string>Form</string>
   </property>
+  <widget class="QWidget" name="layoutWidget">
+   <property name="geometry">
+    <rect>
+     <x>328</x>
+     <y>205</y>
+     <width>345</width>
+     <height>66</height>
+    </rect>
+   </property>
+   <layout class="QVBoxLayout" name="verticalLayout_2">
+    <item>
+     <widget class="QPushButton" name="pushButton_4">
+      <property name="font">
+       <font>
+        <family>潮字社国风睿楷简繁-闪</family>
+        <pointsize>12</pointsize>
+       </font>
+      </property>
+      <property name="text">
+       <string>更新公告栏</string>
+      </property>
+     </widget>
+    </item>
+    <item>
+     <layout class="QHBoxLayout" name="horizontalLayout_2">
+      <item>
+       <widget class="QPushButton" name="pushButton_2">
+        <property name="font">
+         <font>
+          <family>潮字社国风睿楷简繁-闪</family>
+          <pointsize>12</pointsize>
+         </font>
+        </property>
+        <property name="text">
+         <string>确定修改日程</string>
+        </property>
+       </widget>
+      </item>
+      <item>
+       <widget class="QPushButton" name="pushButton_3">
+        <property name="font">
+         <font>
+          <family>潮字社国风睿楷简繁-闪</family>
+          <pointsize>12</pointsize>
+         </font>
+        </property>
+        <property name="text">
+         <string>删除选中日程</string>
+        </property>
+       </widget>
+      </item>
+      <item>
+       <widget class="QComboBox" name="comboBox">
+        <property name="font">
+         <font>
+          <family>潮字社国风睿楷简繁-闪</family>
+          <pointsize>12</pointsize>
+         </font>
+        </property>
+        <item>
+         <property name="text">
+          <string>默认添加顺序</string>
+         </property>
+        </item>
+        <item>
+         <property name="text">
+          <string>开始时间</string>
+         </property>
+        </item>
+        <item>
+         <property name="text">
+          <string>结束时间</string>
+         </property>
+        </item>
+        <item>
+         <property name="text">
+          <string>紧急程度</string>
+         </property>
+        </item>
+       </widget>
+      </item>
+     </layout>
+    </item>
+   </layout>
+  </widget>
   <widget class="QCalendarWidget" name="calendarWidget">
    <property name="geometry">
     <rect>
      <x>10</x>
-     <y>20</y>
-     <width>411</width>
+     <y>10</y>
+     <width>312</width>
      <height>261</height>
     </rect>
    </property>
@@ -29,106 +114,11 @@
     </font>
    </property>
   </widget>
-  <widget class="QTableWidget" name="tableWidget">
-   <property name="geometry">
-    <rect>
-     <x>10</x>
-     <y>290</y>
-     <width>771</width>
-     <height>161</height>
-    </rect>
-   </property>
-   <property name="sizePolicy">
-    <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
-     <horstretch>0</horstretch>
-     <verstretch>0</verstretch>
-    </sizepolicy>
-   </property>
-  </widget>
-  <widget class="QPushButton" name="pushButton_4">
-   <property name="geometry">
-    <rect>
-     <x>660</x>
-     <y>220</y>
-     <width>121</width>
-     <height>24</height>
-    </rect>
-   </property>
-   <property name="font">
-    <font>
-     <family>潮字社国风睿楷简繁-闪</family>
-     <pointsize>12</pointsize>
-    </font>
-   </property>
-   <property name="text">
-    <string>更新公告栏</string>
-   </property>
-  </widget>
-  <widget class="QWidget" name="horizontalLayoutWidget">
-   <property name="geometry">
-    <rect>
-     <x>430</x>
-     <y>50</y>
-     <width>351</width>
-     <height>22</height>
-    </rect>
-   </property>
-   <layout class="QHBoxLayout" name="horizontalLayout">
-    <item>
-     <widget class="QLabel" name="label_14">
-      <property name="sizePolicy">
-       <sizepolicy hsizetype="Minimum" vsizetype="Fixed">
-        <horstretch>0</horstretch>
-        <verstretch>0</verstretch>
-       </sizepolicy>
-      </property>
-      <property name="text">
-       <string>Current team:</string>
-      </property>
-      <property name="alignment">
-       <set>Qt::AlignLeading|Qt::AlignLeft|Qt::AlignVCenter</set>
-      </property>
-     </widget>
-    </item>
-    <item>
-     <widget class="QLabel" name="label_2">
-      <property name="font">
-       <font>
-        <family>华文琥珀</family>
-        <pointsize>14</pointsize>
-       </font>
-      </property>
-      <property name="text">
-       <string>TextLabel</string>
-      </property>
-     </widget>
-    </item>
-   </layout>
-  </widget>
-  <widget class="QLabel" name="label">
-   <property name="geometry">
-    <rect>
-     <x>430</x>
-     <y>20</y>
-     <width>221</width>
-     <height>16</height>
-    </rect>
-   </property>
-   <property name="font">
-    <font>
-     <family>华文琥珀</family>
-     <pointsize>16</pointsize>
-    </font>
-   </property>
-   <property name="text">
-    <string>TextLabel</string>
-   </property>
-  </widget>
   <widget class="QTabWidget" name="tabWidget">
    <property name="geometry">
     <rect>
-     <x>440</x>
-     <y>110</y>
+     <x>328</x>
+     <y>96</y>
      <width>341</width>
      <height>111</height>
     </rect>
@@ -140,7 +130,7 @@
     </font>
    </property>
    <property name="currentIndex">
-    <number>1</number>
+    <number>0</number>
    </property>
    <widget class="QWidget" name="tab">
     <attribute name="title">
@@ -151,7 +141,7 @@
       <rect>
        <x>0</x>
        <y>0</y>
-       <width>351</width>
+       <width>341</width>
        <height>81</height>
       </rect>
      </property>
@@ -173,71 +163,114 @@
     </widget>
    </widget>
   </widget>
-  <widget class="QWidget" name="layoutWidget">
+  <widget class="QTableWidget" name="tableWidget">
    <property name="geometry">
     <rect>
-     <x>429</x>
-     <y>250</y>
-     <width>351</width>
-     <height>30</height>
+     <x>10</x>
+     <y>280</y>
+     <width>663</width>
+     <height>190</height>
     </rect>
    </property>
-   <layout class="QHBoxLayout" name="horizontalLayout_2">
+   <property name="sizePolicy">
+    <sizepolicy hsizetype="Expanding" vsizetype="Expanding">
+     <horstretch>0</horstretch>
+     <verstretch>0</verstretch>
+    </sizepolicy>
+   </property>
+  </widget>
+  <widget class="QWidget" name="">
+   <property name="geometry">
+    <rect>
+     <x>328</x>
+     <y>10</y>
+     <width>341</width>
+     <height>82</height>
+    </rect>
+   </property>
+   <layout class="QVBoxLayout" name="verticalLayout_3">
     <item>
-     <widget class="QPushButton" name="pushButton_2">
+     <widget class="QLabel" name="label">
       <property name="font">
        <font>
-        <family>潮字社国风睿楷简繁-闪</family>
-        <pointsize>12</pointsize>
+        <family>华文琥珀</family>
+        <pointsize>16</pointsize>
        </font>
       </property>
       <property name="text">
-       <string>确定修改日程</string>
+       <string>TextLabel</string>
       </property>
      </widget>
     </item>
     <item>
-     <widget class="QPushButton" name="pushButton_3">
-      <property name="font">
-       <font>
-        <family>潮字社国风睿楷简繁-闪</family>
-        <pointsize>12</pointsize>
-       </font>
-      </property>
-      <property name="text">
-       <string>删除选中日程</string>
-      </property>
-     </widget>
-    </item>
-    <item>
-     <widget class="QComboBox" name="comboBox">
-      <property name="font">
-       <font>
-        <family>潮字社国风睿楷简繁-闪</family>
-        <pointsize>12</pointsize>
-       </font>
-      </property>
+     <layout class="QVBoxLayout" name="verticalLayout">
       <item>
-       <property name="text">
-        <string>默认添加顺序</string>
-       </property>
+       <layout class="QHBoxLayout" name="horizontalLayout">
+        <item>
+         <widget class="QLabel" name="label_14">
+          <property name="sizePolicy">
+           <sizepolicy hsizetype="Minimum" vsizetype="Fixed">
+            <horstretch>0</horstretch>
+            <verstretch>0</verstretch>
+           </sizepolicy>
+          </property>
+          <property name="text">
+           <string>Current team:</string>
+          </property>
+          <property name="alignment">
+           <set>Qt::AlignLeading|Qt::AlignLeft|Qt::AlignVCenter</set>
+          </property>
+         </widget>
+        </item>
+        <item>
+         <widget class="QLabel" name="label_2">
+          <property name="font">
+           <font>
+            <family>华文琥珀</family>
+            <pointsize>14</pointsize>
+           </font>
+          </property>
+          <property name="text">
+           <string>TextLabel</string>
+          </property>
+         </widget>
+        </item>
+       </layout>
       </item>
       <item>
-       <property name="text">
-        <string>开始时间</string>
-       </property>
+       <layout class="QHBoxLayout" name="horizontalLayout_3">
+        <item>
+         <widget class="QLabel" name="label_15">
+          <property name="sizePolicy">
+           <sizepolicy hsizetype="Minimum" vsizetype="Fixed">
+            <horstretch>0</horstretch>
+            <verstretch>0</verstretch>
+           </sizepolicy>
+          </property>
+          <property name="text">
+           <string>Current user:</string>
+          </property>
+          <property name="alignment">
+           <set>Qt::AlignLeading|Qt::AlignLeft|Qt::AlignVCenter</set>
+          </property>
+         </widget>
+        </item>
+        <item>
+         <widget class="QLabel" name="label_3">
+          <property name="font">
+           <font>
+            <family>华文琥珀</family>
+            <pointsize>14</pointsize>
+           </font>
+          </property>
+          <property name="text">
+           <string>TextLabel</string>
+          </property>
+         </widget>
+        </item>
+       </layout>
       </item>
-      <item>
-       <property name="text">
-        <string>结束时间</string>
-       </property>
-      </item>
-      <item>
-       <property name="text">
-        <string>紧急程度</string>
-       </property>
-      </item>
-     </widget>
+     </layout>
     </item>
    </layout>
   </widget>

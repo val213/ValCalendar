@@ -649,7 +649,9 @@ void team_mng::confirm_creat(const QString& teamName, const QString& password)
 	out_usr_create << users[USR_ID_NOW - USER_ID_FORE].usr_team_create_num<< ",";
 	for (int i = 0; i < users[USR_ID_NOW - USER_ID_FORE].usr_team_create_num; i++)
 	{
+
 		out_usr_create << "\n";
+		//bug
 		qDebug()<< "users[USR_ID_NOW - USER_ID_FORE].teams_create[i].team_id" << users[USR_ID_NOW - USER_ID_FORE].teams_create[i].team_id;
 		out_usr_create << users[USR_ID_NOW - USER_ID_FORE].teams_create[i].team_id << ",";
 		out_usr_create << users[USR_ID_NOW - USER_ID_FORE].teams_create[i].team_name << ",";
@@ -723,8 +725,7 @@ void team_mng::confirm_creat(const QString& teamName, const QString& password)
 	//更新表格视图
 	team_nums++;
 	updateTable_team();
-
-
+	qDebug() << "updateTable_team();结束！";
 	//更新“USERS.txt”中对应成员的创建团队数量
 	/*
 	1001,666,val,usr_val.txt,team_create_usr_val.txt,team_belong_usr_val.txt,2,2
@@ -732,29 +733,54 @@ void team_mng::confirm_creat(const QString& teamName, const QString& password)
 	*/
 	QFile file_USERS("USERS.txt");
 	if (!file_USERS.open(QIODevice::ReadWrite | QIODevice::Text | QIODevice::Append))
+	{
+		//错误处理
+		qDebug() << "无法打开USERS.txt！";
 		return;
-	QTextStream out_USERS(&file);
+	}
+		
+	QTextStream out_USERS(&file_USERS);
 	//先找到团队创始人所在的行，再找到代表创建团队数量的数据
 	file_USERS.seek(0);
-	QString temp3;
-	temp3 = file_USERS.readLine();
-	while (!temp3.isNull())
+	int index = 0;
+	while (!out_USERS.atEnd())
 	{
-		//遍历所有行，找到第一个数据与 teams[team_nums].team_id对应的行
-		if (temp3.section(',', 0, 0).toInt() == USR_ID_NOW)
+		QString temp3;
+		temp3 = file_USERS.readLine(); 
+		qDebug() << "正在循环";
+		if (!temp3.isNull())
 		{
-			//找到了该用户所在的行
-			//找到代表创建团队数量的数据
-			int temp_team_create_num = temp.section(',', 6, 6).toInt();
-			temp_team_create_num++;
-			temp3.replace(temp.section(',', 6, 6), QString::number(temp_team_create_num));
-			file_USERS.seek(0);
-			file_USERS.resize(0);
-			out_USERS << temp2;
-			break;
+			qDebug() << "不为空";
+			//遍历所有行，找到第一个数据与 teams[team_nums].team_id对应的行
+			if (temp3.section(',', 0, 0).toInt() == USR_ID_NOW)
+			{
+				//找到了该用户所在的行
+				//找到代表创建团队数量的数据
+				qDebug() << "找到了行是第：" << index;
+				int temp_team_create_num = temp3.section(',', 6, 6).toInt();
+				qDebug() << "找到了数字是：" << temp_team_create_num;
+				temp_team_create_num++;
+
+				QStringList values = temp3.split(',');
+				if (values.size() > 6) {
+					values[6] = QString::number(temp_team_create_num);
+					temp3 = values.join(',');
+				}
+
+
+				//temp3.replace(temp3.section(',', 6, 6), QString::number(temp_team_create_num));
+				//qDebug() <<"替换后的数字是 ："<< temp_team_create_num;
+				out_USERS.seek(index * (temp3.size() + 1)); // "+1" 是为了包括换行符的长度
+				out_USERS << temp3;
+				break;
+			}
 		}
+		index++;
+		qDebug() << index;
 	}
+	file_USERS.close();
 }
+
 
 
 
@@ -936,7 +962,7 @@ void team_mng::updateTable_team()
 			if (fields.size() >= 3) {
 				QString content1 = fields[0]; // 第一个字段内容
 				QString content2 = fields[1]; // 第二个字段内容
-				QString content3 = fields[2]; // 第三个字段内容
+				QString content3 = fields[3]; // 第三个字段内容
 				// 在表格中添加一行
 				ui.tableWidget_2->insertRow(row);
 				qDebug()<<"add a line in QTableWidget! " << content1 << content2 << content3;
@@ -1009,7 +1035,38 @@ void team_mng::updateTable_team()
 
 	}
 
-	
+	//如果当前表格为空，表格中添加一行消息：当前您没有该类型的团队！
+	if (ui.tableWidget->rowCount() == 0) {
+		//清空表头
+		ui.tableWidget->clearContents();
+		//设置表头为一列，名称为”提示“
+		ui.tableWidget->setColumnCount(1);
+		ui.tableWidget->setHorizontalHeaderLabels(QStringList() << "提示！");
+		ui.tableWidget->horizontalHeader()->setSectionResizeMode(QHeaderView::Stretch);
+		ui.tableWidget->insertRow(0);
+		QTableWidgetItem* item1 = new QTableWidgetItem("当前您没有该类型的团队！");
+		ui.tableWidget->setItem(0, 0, item1);
+		//设置为禁止点击
+		ui.tableWidget->setEditTriggers(QAbstractItemView::NoEditTriggers);
+
+	}
+	//如果当前表格为空，表格中添加一行消息：当前您没有该类型的团队！
+	if (ui.tableWidget_2->rowCount() == 0) {
+		//清空表头
+		ui.tableWidget_2->clearContents();
+		//设置表头为一列，名称为”提示“
+		ui.tableWidget_2->setColumnCount(1);
+		ui.tableWidget_2->setHorizontalHeaderLabels(QStringList() << "提示！");
+		ui.tableWidget_2->horizontalHeader()->setSectionResizeMode(QHeaderView::Stretch);
+		ui.tableWidget_2->insertRow(0);
+		QTableWidgetItem* item1 = new QTableWidgetItem("当前您没有该类型的团队！");
+		//居中展示
+		item1->setTextAlignment(Qt::AlignCenter);
+		ui.tableWidget_2->setItem(0, 0, item1);
+		//设置为禁止点击
+		ui.tableWidget_2->setEditTriggers(QAbstractItemView::NoEditTriggers);
+	}
+	qDebug() << "updateTable_team();还没结束！";
 }
 
 void team_mng::on_doubleClicked_belong()

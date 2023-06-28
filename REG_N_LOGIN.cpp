@@ -11,7 +11,7 @@ int USR_ID_NOW= USER_ID_FORE;
 reg_n_login::reg_n_login(QDialog* parent)
 {
 	ui.setupUi(this);
-	setWindowOpacity(0.9);
+	setWindowOpacity(1);//设置透明度
 	//隐藏标题栏
 	//setWindowFlags(Qt::CustomizeWindowHint);
 	//不显示标题栏，亦无边框

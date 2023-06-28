@@ -9,7 +9,7 @@
 extern int user_nums;
 extern int USR_ID_NOW;
 
-class TODO_team : public TODOwidget
+class TODO_team : public TODOwidget,public Ui::TODOwidget1
 {
 	Q_OBJECT
 
@@ -24,6 +24,7 @@ public:
     //QWebEngineView* webEngineView_2;
     Ui::TODOwidget1 ui;
     TEAM team_now;
+    void todo_current_time();
 signals:
     // 声明一个信号，用于通知calendar_team新的日程已经被添加，需要更新日程数据
     void TODO_add_team();

@@ -16,7 +16,7 @@ TODO_team::TODO_team(QWidget* parent)
     this->setWindowTitle("Add to do");
     connect(ui.buttonBox, &QDialogButtonBox::accepted, this, &TODO_team::TODO_team_accepted);
     connect(ui.buttonBox, &QDialogButtonBox::rejected, this, &TODOwidget::close);
-
+    todo_current_time();
 
 
 
@@ -107,3 +107,14 @@ void TODO_team::TODO_team_accepted()
         this->close();
         //发送信号给calendar
     }
+
+void TODO_team::todo_current_time()
+{
+    //将dateTimeEdit和dateTimeEdit_2的默认时间设置为当前时间
+    ui.dateTimeEdit->setDateTime(QDateTime::currentDateTime());
+    ui.dateTimeEdit_2->setDateTime(QDateTime::currentDateTime());
+    //dateTimeEdit的时间要不早于现在的时间
+    ui.dateTimeEdit->setMinimumDateTime(QDateTime::currentDateTime());
+    ui.dateTimeEdit->setCalendarPopup(true);
+    ui.dateTimeEdit_2->setCalendarPopup(true);
+}

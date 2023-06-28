@@ -13,6 +13,9 @@ TODOwidget::TODOwidget(QWidget* parent)
     this->setWindowTitle("Add to do");
 	connect(ui.buttonBox,&QDialogButtonBox::accepted,this,&TODOwidget::TODOwidget_accepted);
 	connect(ui.buttonBox, &QDialogButtonBox::rejected, this, &TODOwidget::close);
+    todo_current_time();
+
+
     /*
     * 地图加载功能已经转移到MapWidget
     ui.webEngineView->show();
@@ -145,6 +148,18 @@ int TODOwidget::check_todo()
 
     }
     return 1;
+}
+
+void TODOwidget::todo_current_time()
+{
+    //将dateTimeEdit和dateTimeEdit_2的默认时间设置为当前时间
+    ui.dateTimeEdit->setDateTime(QDateTime::currentDateTime());
+    ui.dateTimeEdit_2->setDateTime(QDateTime::currentDateTime());
+    //dateTimeEdit的时间要不早于现在的时间
+    ui.dateTimeEdit->setMinimumDateTime(QDateTime::currentDateTime());
+    //点击dateTimeEdit和dateTimeEdit_2唤起日历选择日期
+    ui.dateTimeEdit->setCalendarPopup(true);
+    ui.dateTimeEdit_2->setCalendarPopup(true);
 }
 
 void TODOwidget::TODOwidget_accepted()

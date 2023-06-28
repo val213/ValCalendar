@@ -8,13 +8,16 @@ void init_users_structarr(USER* users, int size)
     if (file.open(QIODevice::ReadOnly | QIODevice::Text)) 
     {
         QTextStream stream(&file);
-
+        /*
+        1001,666,val,usr_val.txt,team_create_usr_val.txt,team_belong_usr_val.txt,2,2,
+        1002,777,bob,usr_bob.txt,team_create_usr_bob.txt,team_belong_usr_bob.txt,0,2,
+        */
         int index = 0;//用户的索引
         while (!stream.atEnd() && index < size) 
         {
             QString line = stream.readLine().trimmed();
             QStringList values = line.split(',');
-
+            qDebug() << line;
             // 读取并保存到结构体数组
             //{1001,"666","val","usr_val.txt","usr_val_team_create.txt","usr_val_team_belong.txt",0,0}
             if (values.size() >= 8) {
@@ -76,12 +79,13 @@ void init_users_structarr(USER* users, int size)
                                 qDebug() << values1[3 + j].toInt();
                                 te.team_members.append(values1[3 + j].toInt());
                             }
-                            users[index].teams_belong.append(te);
-                            //输出检查现在的users[USR_ID_NOW - USER_ID_FORE].teams_belong
-                            qDebug() << "users[USR_ID_NOW - USER_ID_FORE].teams_create.size() = " << users[USR_ID_NOW - USER_ID_FORE].teams_create.size();
-                            index1++;
+                            users[index].teams_create.append(te);
+                            qDebug() << "users[index].teams_create.append(te);";
+                            //输出检查现在的users
+                            qDebug() << "users[index].teams_create.size() = " << users[index].teams_create.size();
+                            
                         }
-                        
+                        index1++;
 					}
                     qDebug() << " User usr_team_create_filename: User structure array initialized successfully!";
 				}
@@ -105,7 +109,7 @@ void init_users_structarr(USER* users, int size)
                             QStringList values2 = line2.split(',');
                             //在用户登录之前USE_ID_NOW默认是1000，存储无效，小心！！
                             users[index].usr_team_belong_num = values2[0].toInt();
-                            qDebug() << users[index].usr_team_create_num;
+                            qDebug() << users[index].usr_team_belong_num;
                         }
                         else if (line2.size() >= 4)//具体信息存储行
                         {
@@ -136,8 +140,9 @@ void init_users_structarr(USER* users, int size)
                                 te2.team_members.append(values2[3 + j].toInt());
                             }
                             users[index].teams_belong.append(te2);
+                            qDebug() << " users[index].teams_belong.append(te2);";
                             //输出检查现在的users[USR_ID_NOW - USER_ID_FORE].teams_belong
-                            qDebug() << "users[USR_ID_NOW - USER_ID_FORE].teams_belong.size() = " << users[USR_ID_NOW - USER_ID_FORE].teams_belong.size();
+                            qDebug() << "users[index].teams_belong.size() = " << users[index].teams_belong.size();
                             index2++;
                         }
                         qDebug() << " User usr_team_belong_filename: User structure array initialized successfully!";
@@ -152,6 +157,7 @@ void init_users_structarr(USER* users, int size)
             index++;
         }
         user_nums = index;
+        qDebug() << "用户数量：" << user_nums;
         file.close();
 
         qDebug() << "User structure array initialized successfully!";

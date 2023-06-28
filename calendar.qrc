@@ -1,11 +1,12 @@
 <RCC>
-    <qresource prefix="/calendar">
-        <file>Baidu_JS/heli.png</file>
-        <file>Baidu_JS/home.png</file>
-        <file>Baidu_JS/qwebchannel.js</file>
-        <file>Baidu_JS/BDmap.html</file>
-        <file>111.jpg</file>
-        <file>paperwall_7.jpg</file>
-        <file>SCUT.jpg</file>
-    </qresource>
+  <qresource prefix="/calendar">
+    <file>D:/图片/Saved Pictures/微信图片_20230111183050.jpg</file>
+    <file>Baidu_JS/heli.png</file>
+    <file>Baidu_JS/home.png</file>
+    <file>Baidu_JS/qwebchannel.js</file>
+    <file>Baidu_JS/BDmap.html</file>
+    <file>111.jpg</file>
+    <file>paperwall_7.jpg</file>
+    <file>SCUT.jpg</file>
+  </qresource>
 </RCC>
