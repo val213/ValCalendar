@@ -21,7 +21,6 @@
 #define FILED_TEAM_NUM 0//用户成员数量，【所有用户成员id】
 #define FILED_TEAM_EVENT 7//事件标题，地点，开始时间，结束时间，事件类型，紧急程度，备注，
 
-
 #include <iostream>  // C++ 标准库头文件应放在其他头文件之前
 #include <QString>  // Qt 核心头文件应放在其他 Qt 相关头文件之前
 #include <QApplication>

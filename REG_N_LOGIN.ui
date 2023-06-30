@@ -358,7 +358,7 @@ font: 16pt &quot;潮字社国风睿楷简繁-闪&quot;;</string>
           <property name="font">
            <font>
             <family>Rockwell Extra Bold</family>
-            <pointsize>24</pointsize>
+            <pointsize>20</pointsize>
             <italic>false</italic>
             <bold>true</bold>
            </font>
@@ -368,7 +368,7 @@ font: 16pt &quot;潮字社国风睿楷简繁-闪&quot;;</string>
 </string>
           </property>
           <property name="text">
-           <string>REGISITER OR LOGIN</string>
+           <string>Welcome to ValCalendar</string>
           </property>
           <property name="textFormat">
            <enum>Qt::MarkdownText</enum>

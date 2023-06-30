@@ -22,7 +22,6 @@ struct TEAM
 
 	TEAM() :team_members_nums(0), team_events_nums(0), leader_id(0), team_id(0), team_name(""), team_passwd(""), team_members_filename(""), team_events_filename(""), team_members(), team_events()
 	{
-
 	}
 	TEAM(QString team_name, QString team_passwd, int USR_ID_NOW)
 	{
@@ -42,5 +41,4 @@ struct TEAM
 			team_members == other.team_members &&
 			team_events == other.team_events);
 	}
-
 };

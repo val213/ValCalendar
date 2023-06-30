@@ -31,7 +31,6 @@ struct USER
 			teams_create == other.teams_create &&
 			teams_belong == other.teams_belong);
 	}
-
 };
 //这个外部变量声明也必须在USER结构体声明之后才有意义
 extern USER users[MAX_USRS_NUM];

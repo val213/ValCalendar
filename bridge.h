@@ -19,21 +19,21 @@
 
 class bridge : public QObject
 {
-    Q_OBJECT
+	Q_OBJECT
 public:
-    explicit bridge(QWebEngineView* webEngineView, QObject* parent);
+	explicit bridge(QWebEngineView* webEngineView, QObject* parent);
 
 signals:
-    void distanceAndTimeCalculated(const QString& duration, const QString& distance);
+	void distanceAndTimeCalculated(const QString& duration, const QString& distance);
 
 private:
-    QString m_start;
-    QString m_end;
-    QWebEngineView* m_webEngineView;
+	QString m_start;
+	QString m_end;
+	QWebEngineView* m_webEngineView;
 public slots:
-    void setStartAndEnd(const QString& start, const QString& end);
+	void setStartAndEnd(const QString& start, const QString& end);
 
-    void calculateDistanceAndTime(const QString& start, const QString& end);
+	void calculateDistanceAndTime(const QString& start, const QString& end);
 };
 
 #endif // BRIDGE_H

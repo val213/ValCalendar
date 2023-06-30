@@ -22,5 +22,4 @@ struct EVENT
 			event_type == other.event_type &&
 			urgentdegree == other.urgentdegree);
 	}
-
 };

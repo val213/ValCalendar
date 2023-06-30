@@ -24,14 +24,14 @@
     <Filter Include="Header Files\ui">
       <UniqueIdentifier>{896b376a-dbf9-43d9-b7e9-755062888ea3}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Header Files\header">
+      <UniqueIdentifier>{322e2a40-da62-424f-86b3-6423b42621a5}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <QtRcc Include="calendar.qrc">
       <Filter>Form Files\Resource Files</Filter>
     </QtRcc>
-    <QtMoc Include="calendar.h">
-      <Filter>Header Files</Filter>
-    </QtMoc>
     <ClCompile Include="calendar.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
@@ -73,28 +73,28 @@
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="category.h">
-      <Filter>Header Files</Filter>
+      <Filter>Header Files\header</Filter>
     </ClInclude>
     <ClInclude Include="config.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="event_mng.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="struct.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="usr_mng.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="USER.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="TEAM.h">
-      <Filter>Header Files</Filter>
+      <Filter>Header Files\header</Filter>
     </ClInclude>
     <ClInclude Include="EVENT.h">
-      <Filter>Header Files</Filter>
+      <Filter>Header Files\header</Filter>
+    </ClInclude>
+    <ClInclude Include="event_mng.h">
+      <Filter>Header Files\header</Filter>
+    </ClInclude>
+    <ClInclude Include="struct.h">
+      <Filter>Header Files\header</Filter>
+    </ClInclude>
+    <ClInclude Include="TEAM.h">
+      <Filter>Header Files\header</Filter>
+    </ClInclude>
+    <ClInclude Include="USER.h">
+      <Filter>Header Files\header</Filter>
+    </ClInclude>
+    <ClInclude Include="usr_mng.h">
+      <Filter>Header Files\header</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
@@ -118,29 +118,32 @@
     </QtUic>
   </ItemGroup>
   <ItemGroup>
-    <QtMoc Include="TODOwidget.h">
-      <Filter>Header Files</Filter>
-    </QtMoc>
-    <QtMoc Include="REG_N_LOGIN.h">
-      <Filter>Header Files</Filter>
-    </QtMoc>
-    <QtMoc Include="team_mng.h">
-      <Filter>Header Files</Filter>
-    </QtMoc>
     <QtMoc Include="bridge.h">
-      <Filter>Header Files</Filter>
+      <Filter>Header Files\header</Filter>
+    </QtMoc>
+    <QtMoc Include="calendar.h">
+      <Filter>Header Files\header</Filter>
     </QtMoc>
     <QtMoc Include="calendar_team.h">
-      <Filter>Header Files</Filter>
-    </QtMoc>
-    <QtMoc Include="TODO_team.h">
-      <Filter>Header Files</Filter>
-    </QtMoc>
-    <QtMoc Include="tsplan.h">
-      <Filter>Header Files</Filter>
+      <Filter>Header Files\header</Filter>
     </QtMoc>
     <QtMoc Include="Mapwidget.h">
-      <Filter>Header Files</Filter>
+      <Filter>Header Files\header</Filter>
+    </QtMoc>
+    <QtMoc Include="REG_N_LOGIN.h">
+      <Filter>Header Files\header</Filter>
+    </QtMoc>
+    <QtMoc Include="team_mng.h">
+      <Filter>Header Files\header</Filter>
+    </QtMoc>
+    <QtMoc Include="TODO_team.h">
+      <Filter>Header Files\header</Filter>
+    </QtMoc>
+    <QtMoc Include="TODOwidget.h">
+      <Filter>Header Files\header</Filter>
+    </QtMoc>
+    <QtMoc Include="tsplan.h">
+      <Filter>Header Files\header</Filter>
     </QtMoc>
   </ItemGroup>
   <ItemGroup>

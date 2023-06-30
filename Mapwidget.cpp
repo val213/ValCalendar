@@ -30,7 +30,6 @@ MapWidget::MapWidget(QWidget* parent) :QMainWindow(parent)
 	connect(ui.calculateButton, &QPushButton::clicked, this, &MapWidget::onCalculateButtonClicked);
 }
 
-
 MapWidget::~MapWidget()
 {
 }

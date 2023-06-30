@@ -2,5 +2,4 @@
 #define EVENT_MNG_H
 #include"config.h"
 
-
 #endif

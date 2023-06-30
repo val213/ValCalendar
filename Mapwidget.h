@@ -27,7 +27,6 @@ public:
 
 	void handleJavaScriptConsoleMessage(const QString& message);
 
-
 	Ui::Mapwidget ui;
 };
-#endif // !MAPWIDGET_H 
+#endif // !MAPWIDGET_H
